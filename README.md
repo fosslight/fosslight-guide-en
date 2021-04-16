@@ -1,4 +1,4 @@
-# OSS Review Toolkit (ORT) 란
+# About FOSSLight System
 
 OSS Review Toolkit (ORT)은 Project에 포함된 Open Source Software의 dependency 정보를 자동으로 추출하고, 해당 Open Source Software를 다운로드 받아 Source Code에 대하여 String Search를 기반으로 분석하는 Open Source tool([ScanCode](https://github.com/nexB/scancode-toolkit), [Askalono](https://github.com/amzn/askalono), [lc](https://github.com/boyter/lc), [Licensee](https://github.com/benbalter/licensee))을 이용하여 License, Copyright등의 정보를 추출합니다. 검출된 License에 대하여 사용자가 정의한 Policy를 적용할 수 있으며, 분석 결과를 다양한 형태의 Report로 생성합니다.    
 
