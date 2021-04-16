@@ -1,0 +1,1023 @@
+---
+repository:
+  vcs:
+    type: "Git"
+    url: "https://github.com/carletes/mock-ssh-server"
+    revision: "ba2b30425651a71ebbb990a252503c4dee960081"
+    path: ""
+  vcs_processed:
+    type: "Git"
+    url: "https://github.com/carletes/mock-ssh-server.git"
+    revision: "ba2b30425651a71ebbb990a252503c4dee960081"
+    path: ""
+  config: {}
+analyzer:
+  start_time: "2020-11-24T11:26:29.229440Z"
+  end_time: "2020-11-24T11:27:37.653826Z"
+  environment:
+    ort_version: "5b61274"
+    java_version: "11.0.9.1"
+    os: "Linux"
+    processors: 8
+    max_memory: 8401190912
+    variables:
+      SHELL: "/bin/bash"
+      TERM: "xterm"
+    tool_versions: {}
+  config:
+    ignore_tool_versions: false
+    allow_dynamic_versions: false
+  result:
+    projects:
+    - id: "PIP::mock-ssh-server-requirements-devel:0.8.2"
+      definition_file_path: "requirements-devel.txt"
+      declared_licenses:
+      - "MIT"
+      - "MIT License"
+      declared_licenses_processed:
+        spdx_expression: "MIT"
+        mapped:
+          MIT License: "MIT"
+      vcs:
+        type: ""
+        url: ""
+        revision: ""
+        path: ""
+      vcs_processed:
+        type: "Git"
+        url: "https://github.com/carletes/mock-ssh-server.git"
+        revision: "ba2b30425651a71ebbb990a252503c4dee960081"
+        path: ""
+      homepage_url: "https://github.com/carletes/mock-ssh-server"
+      scopes:
+      - name: "install"
+        dependencies:
+        - id: "PyPI::paramiko:2.7.2"
+          dependencies:
+          - id: "PyPI::bcrypt:3.2.0"
+            dependencies:
+            - id: "PyPI::cffi:1.14.3"
+              dependencies:
+              - id: "PyPI::pycparser:2.20"
+            - id: "PyPI::six:1.15.0"
+          - id: "PyPI::cryptography:3.2.1"
+            dependencies:
+            - id: "PyPI::cffi:1.14.3"
+              dependencies:
+              - id: "PyPI::pycparser:2.20"
+            - id: "PyPI::six:1.15.0"
+          - id: "PyPI::pynacl:1.4.0"
+            dependencies:
+            - id: "PyPI::cffi:1.14.3"
+              dependencies:
+              - id: "PyPI::pycparser:2.20"
+            - id: "PyPI::six:1.15.0"
+        - id: "PyPI::pyflakes:2.2.0"
+        - id: "PyPI::pytest:6.1.2"
+          dependencies:
+          - id: "PyPI::attrs:20.3.0"
+          - id: "PyPI::importlib-metadata:2.1.0"
+            dependencies:
+            - id: "PyPI::zipp:3.4.0"
+          - id: "PyPI::iniconfig:1.1.1"
+          - id: "PyPI::packaging:20.4"
+            dependencies:
+            - id: "PyPI::pyparsing:2.4.7"
+            - id: "PyPI::six:1.15.0"
+          - id: "PyPI::pluggy:0.13.1"
+            dependencies:
+            - id: "PyPI::importlib-metadata:2.1.0"
+              dependencies:
+              - id: "PyPI::zipp:3.4.0"
+          - id: "PyPI::py:1.9.0"
+          - id: "PyPI::toml:0.10.2"
+        - id: "PyPI::tox:3.20.1"
+          dependencies:
+          - id: "PyPI::filelock:3.0.12"
+          - id: "PyPI::importlib-metadata:2.1.0"
+            dependencies:
+            - id: "PyPI::zipp:3.4.0"
+          - id: "PyPI::packaging:20.4"
+            dependencies:
+            - id: "PyPI::pyparsing:2.4.7"
+            - id: "PyPI::six:1.15.0"
+          - id: "PyPI::pluggy:0.13.1"
+            dependencies:
+            - id: "PyPI::importlib-metadata:2.1.0"
+              dependencies:
+              - id: "PyPI::zipp:3.4.0"
+          - id: "PyPI::py:1.9.0"
+          - id: "PyPI::six:1.15.0"
+          - id: "PyPI::toml:0.10.2"
+          - id: "PyPI::virtualenv:20.2.1"
+            dependencies:
+            - id: "PyPI::appdirs:1.4.4"
+            - id: "PyPI::distlib:0.3.1"
+            - id: "PyPI::filelock:3.0.12"
+            - id: "PyPI::importlib-metadata:2.1.0"
+              dependencies:
+              - id: "PyPI::zipp:3.4.0"
+            - id: "PyPI::importlib-resources:3.3.0"
+              dependencies:
+              - id: "PyPI::zipp:3.4.0"
+            - id: "PyPI::six:1.15.0"
+    - id: "PIP::mock-ssh-server-requirements:0.8.2"
+      definition_file_path: "requirements.txt"
+      declared_licenses:
+      - "MIT"
+      - "MIT License"
+      declared_licenses_processed:
+        spdx_expression: "MIT"
+        mapped:
+          MIT License: "MIT"
+      vcs:
+        type: ""
+        url: ""
+        revision: ""
+        path: ""
+      vcs_processed:
+        type: "Git"
+        url: "https://github.com/carletes/mock-ssh-server.git"
+        revision: "ba2b30425651a71ebbb990a252503c4dee960081"
+        path: ""
+      homepage_url: "https://github.com/carletes/mock-ssh-server"
+      scopes:
+      - name: "install"
+        dependencies:
+        - id: "PyPI::paramiko:2.7.2"
+          dependencies:
+          - id: "PyPI::bcrypt:3.2.0"
+            dependencies:
+            - id: "PyPI::cffi:1.14.3"
+              dependencies:
+              - id: "PyPI::pycparser:2.20"
+            - id: "PyPI::six:1.15.0"
+          - id: "PyPI::cryptography:3.2.1"
+            dependencies:
+            - id: "PyPI::cffi:1.14.3"
+              dependencies:
+              - id: "PyPI::pycparser:2.20"
+            - id: "PyPI::six:1.15.0"
+          - id: "PyPI::pynacl:1.4.0"
+            dependencies:
+            - id: "PyPI::cffi:1.14.3"
+              dependencies:
+              - id: "PyPI::pycparser:2.20"
+            - id: "PyPI::six:1.15.0"
+    packages:
+    - package:
+        id: "PyPI::appdirs:1.4.4"
+        purl: "pkg:pypi/appdirs@1.4.4"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "A small Python module for determining appropriate platform-specific\
+          \ dirs, e.g. a \"user data dir\"."
+        homepage_url: "http://github.com/ActiveState/appdirs"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/3b/00/2344469e2084fb287c2e0b57b72910309874c3245463acd6cf5e3db69324/appdirs-1.4.4-py2.py3-none-any.whl"
+          hash:
+            value: "1d638a5913a8d8ed8e7c7d789ece149c"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
+          hash:
+            value: "d6bca12613174185dd9abc8a29f4f012"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/ActiveState/appdirs.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::attrs:20.3.0"
+        purl: "pkg:pypi/attrs@20.3.0"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Classes Without Boilerplate"
+        homepage_url: "https://www.attrs.org/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/c3/aa/cb45262569fcc047bf070b5de61813724d6726db83259222cd7b4c79821a/attrs-20.3.0-py2.py3-none-any.whl"
+          hash:
+            value: "e8156a6d3ff4d7c6362c40451cddc897"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/f0/cb/80a4a274df7da7b8baf083249b0890a0579374c3d74b5ac0ee9291f912dc/attrs-20.3.0.tar.gz"
+          hash:
+            value: "4fe38f89297b2b446d83190fce189f29"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::bcrypt:3.2.0"
+        purl: "pkg:pypi/bcrypt@3.2.0"
+        declared_licenses:
+        - "Apache License, Version 2.0"
+        - "Apache Software License"
+        declared_licenses_processed:
+          spdx_expression: "Apache-2.0"
+          mapped:
+            Apache License, Version 2.0: "Apache-2.0"
+            Apache Software License: "Apache-2.0"
+        description: "Modern password hashing for your software and your servers"
+        homepage_url: "https://github.com/pyca/bcrypt/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/bf/6a/0afb1e04aebd4c3ceae630a87a55fbfbbd94dea4eaf01e53d36743c85f02/bcrypt-3.2.0-cp36-abi3-macosx_10_9_x86_64.whl"
+          hash:
+            value: "bacdb21e8f9c7dab81501c74fc27d7b3"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/d8/ba/21c475ead997ee21502d30f76fd93ad8d5858d19a3fad7cd153de698c4dd/bcrypt-3.2.0.tar.gz"
+          hash:
+            value: "fe31390dab603728f756cd3d6830c80a"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/pyca/bcrypt.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::cffi:1.14.3"
+        purl: "pkg:pypi/cffi@1.14.3"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Foreign Function Interface for Python calling C code."
+        homepage_url: "http://cffi.readthedocs.org"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/d4/48/db25d742bdc912c2128885f38dc1e4607960736b51e5c108147525962ef0/cffi-1.14.3-2-cp27-cp27m-macosx_10_9_x86_64.whl"
+          hash:
+            value: "f8d65ce5d7fe43ae94224afda1a82fd5"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/cb/ae/380e33d621ae301770358eb11a896a34c34f30db188847a561e8e39ee866/cffi-1.14.3.tar.gz"
+          hash:
+            value: "c2a47ffd5d183b193ac8ed3414dcfd07"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::cryptography:3.2.1"
+        purl: "pkg:pypi/cryptography@3.2.1"
+        declared_licenses:
+        - "Apache Software License"
+        - "BSD License"
+        - "BSD or Apache License, Version 2.0"
+        declared_licenses_processed:
+          spdx_expression: "Apache-2.0 AND BSD-3-Clause AND (BSD-3-Clause OR Apache-2.0)"
+          mapped:
+            Apache Software License: "Apache-2.0"
+            BSD License: "BSD-3-Clause"
+            BSD or Apache License, Version 2.0: "BSD-3-Clause OR Apache-2.0"
+        description: "cryptography is a package which provides cryptographic recipes\
+          \ and primitives to Python developers."
+        homepage_url: "https://github.com/pyca/cryptography"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/f2/7f/2a0a1c2793b48825ce91150ae61c8c246687fdad991111458813b95453a5/cryptography-3.2.1-cp27-cp27m-macosx_10_10_x86_64.whl"
+          hash:
+            value: "9f4009ffaf9974db712a2dcf16281089"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/94/5c/42de91c7fbdb817b2d9a4e64b067946eb38a4eb36c1a09c96c87a0f86a82/cryptography-3.2.1.tar.gz"
+          hash:
+            value: "906eb57df20bb8a60222a5196c38d843"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/pyca/cryptography.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::distlib:0.3.1"
+        purl: "pkg:pypi/distlib@0.3.1"
+        declared_licenses:
+        - "Python Software Foundation License"
+        - "Python license"
+        declared_licenses_processed:
+          spdx_expression: "PSF-2.0"
+          mapped:
+            Python Software Foundation License: "PSF-2.0"
+          unmapped:
+          - "Python license"
+        description: "Distribution utilities"
+        homepage_url: "https://bitbucket.org/pypa/distlib"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/f5/0a/490fa011d699bb5a5f3a0cf57de82237f52a6db9d40f33c53b2736c9a1f9/distlib-0.3.1-py2.py3-none-any.whl"
+          hash:
+            value: "fd12d085eefe9339b39fa892552d899b"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/2f/83/1eba07997b8ba58d92b3e51445d5bf36f9fba9cb8166bcae99b9c3464841/distlib-0.3.1.zip"
+          hash:
+            value: "4baf787d8aceb260d6f77cb31bf27cf6"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://bitbucket.org/pypa/distlib.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::filelock:3.0.12"
+        purl: "pkg:pypi/filelock@3.0.12"
+        declared_licenses:
+        - "Public Domain"
+        - "Public Domain <http://unlicense.org>"
+        declared_licenses_processed:
+          spdx_expression: "LicenseRef-scancode-public-domain-disclaimer"
+          mapped:
+            Public Domain: "LicenseRef-scancode-public-domain-disclaimer"
+            Public Domain <http://unlicense.org>: "LicenseRef-scancode-public-domain-disclaimer"
+        description: "A platform independent file lock."
+        homepage_url: "https://github.com/benediktschmitt/py-filelock"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/93/83/71a2ee6158bb9f39a90c0dea1637f81d5eef866e188e1971a1b1ab01a35a/filelock-3.0.12-py3-none-any.whl"
+          hash:
+            value: "6ba8f81427ba4566f249684b563b9db4"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/14/ec/6ee2168387ce0154632f856d5cc5592328e9cf93127c5c9aeca92c8c16cb/filelock-3.0.12.tar.gz"
+          hash:
+            value: "c1fe6d9a7433a7ca6ce4f36e273317d1"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/benediktschmitt/py-filelock.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::importlib-metadata:2.1.0"
+        purl: "pkg:pypi/importlib-metadata@2.1.0"
+        declared_licenses:
+        - "Apache Software License"
+        declared_licenses_processed:
+          spdx_expression: "Apache-2.0"
+          mapped:
+            Apache Software License: "Apache-2.0"
+        description: "Read metadata from Python packages"
+        homepage_url: "http://importlib-metadata.readthedocs.io/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/9b/f1/1e6b4b2af60ab7999c8d5317ab321ebe9ad3820cbe2033ee99be77936afd/importlib_metadata-2.1.0-py2.py3-none-any.whl"
+          hash:
+            value: "b91dbeb5abbfbe4149f668af6c280466"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/7a/e5/ed6a763f4aa6df0a054016dbd55ee4603e0a10a2b1fcdf679dced92d51ea/importlib_metadata-2.1.0.tar.gz"
+          hash:
+            value: "4bfeff54f8e27e0dee78a46d9e904493"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::importlib-resources:3.3.0"
+        purl: "pkg:pypi/importlib-resources@3.3.0"
+        declared_licenses:
+        - "Apache Software License"
+        declared_licenses_processed:
+          spdx_expression: "Apache-2.0"
+          mapped:
+            Apache Software License: "Apache-2.0"
+        description: "Read resources from Python packages"
+        homepage_url: "https://github.com/python/importlib_resources"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/c5/1f/ec86d2a5c48ac6490d4471b297885603cf0e8da89d5ffbf0bce6e57f4d64/importlib_resources-3.3.0-py2.py3-none-any.whl"
+          hash:
+            value: "1b46df6bc1e6906f873591aaa14764b4"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/d1/34/f2aedc50b3a32eefd249159ea7497ece70022e35f6531bd4718fd9688cb1/importlib_resources-3.3.0.tar.gz"
+          hash:
+            value: "8df17c6ae1115357211f1956982f4d82"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/python/importlib_resources.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::iniconfig:1.1.1"
+        purl: "pkg:pypi/iniconfig@1.1.1"
+        declared_licenses:
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "iniconfig: brain-dead simple config-ini parsing"
+        homepage_url: "http://github.com/RonnyPfannschmidt/iniconfig"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/9b/dd/b3c12c6d707058fa947864b67f0c4e0c39ef8610988d7baea9578f3c48f3/iniconfig-1.1.1-py2.py3-none-any.whl"
+          hash:
+            value: "90f3e1bb7ced782f2b04eb5af266ecb7"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/23/a2/97899f6bd0e873fed3a7e67ae8d3a08b21799430fb4da15cfedf10d6e2c2/iniconfig-1.1.1.tar.gz"
+          hash:
+            value: "0b7f3be87481211c183eae095bcea6f1"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/RonnyPfannschmidt/iniconfig.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::packaging:20.4"
+        purl: "pkg:pypi/packaging@20.4"
+        declared_licenses:
+        - "Apache Software License"
+        - "BSD License"
+        - "BSD-2-Clause or Apache-2.0"
+        declared_licenses_processed:
+          spdx_expression: "Apache-2.0 AND BSD-3-Clause AND (BSD-2-Clause OR Apache-2.0)"
+          mapped:
+            Apache Software License: "Apache-2.0"
+            BSD License: "BSD-3-Clause"
+            BSD-2-Clause or Apache-2.0: "BSD-2-Clause OR Apache-2.0"
+        description: "Core utilities for Python packages"
+        homepage_url: "https://github.com/pypa/packaging"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/46/19/c5ab91b1b05cfe63cccd5cfc971db9214c6dd6ced54e33c30d5af1d2bc43/packaging-20.4-py2.py3-none-any.whl"
+          hash:
+            value: "10fb9726d3c55a20ec972098865601ba"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/55/fd/fc1aca9cf51ed2f2c11748fa797370027babd82f87829c7a8e6dbe720145/packaging-20.4.tar.gz"
+          hash:
+            value: "3208229da731c5d8e29d4d8941e75005"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/pypa/packaging.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::paramiko:2.7.2"
+        purl: "pkg:pypi/paramiko@2.7.2"
+        declared_licenses:
+        - "GNU Library or Lesser General Public License (LGPL)"
+        - "LGPL"
+        declared_licenses_processed:
+          spdx_expression: "LGPL-2.1-only AND LGPL-2.0-or-later"
+          mapped:
+            GNU Library or Lesser General Public License (LGPL): "LGPL-2.1-only"
+            LGPL: "LGPL-2.0-or-later"
+        description: "SSH2 protocol library"
+        homepage_url: "https://github.com/paramiko/paramiko/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/95/19/124e9287b43e6ff3ebb9cdea3e5e8e88475a873c05ccdf8b7e20d2c4201e/paramiko-2.7.2-py2.py3-none-any.whl"
+          hash:
+            value: "668849392fb06a2abcd5eb12cf141d26"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/cf/a1/20d00ce559a692911f11cadb7f94737aca3ede1c51de16e002c7d3a888e0/paramiko-2.7.2.tar.gz"
+          hash:
+            value: "44136d79da4cd7619e368018ad022619"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/paramiko/paramiko.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::pluggy:0.13.1"
+        purl: "pkg:pypi/pluggy@0.13.1"
+        declared_licenses:
+        - "MIT License"
+        - "MIT license"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+            MIT license: "MIT"
+        description: "plugin and hook calling mechanisms for python"
+        homepage_url: "https://github.com/pytest-dev/pluggy"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/a0/28/85c7aa31b80d150b772fbe4a229487bc6644da9ccb7e427dd8cc60cb8a62/pluggy-0.13.1-py2.py3-none-any.whl"
+          hash:
+            value: "32a771dc4df48273d4967e5aab043653"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/f8/04/7a8542bed4b16a65c2714bf76cf5a0b026157da7f75e87cc88774aa10b14/pluggy-0.13.1.tar.gz"
+          hash:
+            value: "7f610e28b8b34487336b585a3dfb803d"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/pytest-dev/pluggy.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::py:1.9.0"
+        purl: "pkg:pypi/py@1.9.0"
+        declared_licenses:
+        - "MIT License"
+        - "MIT license"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+            MIT license: "MIT"
+        description: "library with cross-python path, ini-parsing, io, code, log facilities"
+        homepage_url: "https://py.readthedocs.io/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/68/0f/41a43535b52a81e4f29e420a151032d26f08b62206840c48d14b70e53376/py-1.9.0-py2.py3-none-any.whl"
+          hash:
+            value: "94b2981fde7bf3e115b85064a8a64255"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/97/a6/ab9183fe08f69a53d06ac0ee8432bc0ffbb3989c575cc69b73a0229a9a99/py-1.9.0.tar.gz"
+          hash:
+            value: "b80db4e61eef724f49feb4d20b649e62"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::pycparser:2.20"
+        purl: "pkg:pypi/pycparser@2.20"
+        declared_licenses:
+        - "BSD"
+        - "BSD License"
+        declared_licenses_processed:
+          spdx_expression: "BSD-3-Clause"
+          mapped:
+            BSD: "BSD-3-Clause"
+            BSD License: "BSD-3-Clause"
+        description: "C parser in Python"
+        homepage_url: "https://github.com/eliben/pycparser"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/ae/e7/d9c3a176ca4b02024debf82342dab36efadfc5776f9c8db077e8f6e71821/pycparser-2.20-py2.py3-none-any.whl"
+          hash:
+            value: "61112f106163fef25a95b73ad471c4cc"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz"
+          hash:
+            value: "b8f88de737db8c346ee8d31c07c7a25a"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/eliben/pycparser.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::pyflakes:2.2.0"
+        purl: "pkg:pypi/pyflakes@2.2.0"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "passive checker of Python programs"
+        homepage_url: "https://github.com/PyCQA/pyflakes"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/69/5b/fd01b0c696f2f9a6d2c839883b642493b431f28fa32b29abc465ef675473/pyflakes-2.2.0-py2.py3-none-any.whl"
+          hash:
+            value: "b7be0efa9d4e480a62e8856d53dc782f"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/f1/e2/e02fc89959619590eec0c35f366902535ade2728479fc3082c8af8840013/pyflakes-2.2.0.tar.gz"
+          hash:
+            value: "48b1c29732ca810a70cba0e6d0531169"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/PyCQA/pyflakes.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::pynacl:1.4.0"
+        purl: "pkg:pypi/pynacl@1.4.0"
+        declared_licenses:
+        - "Apache License 2.0"
+        declared_licenses_processed:
+          spdx_expression: "Apache-2.0"
+          mapped:
+            Apache License 2.0: "Apache-2.0"
+        description: "Python binding to the Networking and Cryptography (NaCl) library"
+        homepage_url: "https://github.com/pyca/pynacl/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/8c/17/251c05c818e4e6142a035895b1ff88b8b15afc50d481ee77d020ceaffb58/PyNaCl-1.4.0-cp27-cp27m-macosx_10_10_x86_64.whl"
+          hash:
+            value: "bdf5b1b6856e2ec36f37e7796cf3c3d4"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/cf/5a/25aeb636baeceab15c8e57e66b8aa930c011ec1c035f284170cacb05025e/PyNaCl-1.4.0.tar.gz"
+          hash:
+            value: "8c6c57893327a694c72510fb620e4744"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/pyca/pynacl.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::pyparsing:2.4.7"
+        purl: "pkg:pypi/pyparsing@2.4.7"
+        declared_licenses:
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Python parsing module"
+        homepage_url: "https://github.com/pyparsing/pyparsing/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl"
+          hash:
+            value: "dbfd0a241aad2595f43377ec7f1836ea"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz"
+          hash:
+            value: "f0953e47a0112f7a65aec2305ffdf7b4"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/pyparsing/pyparsing.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::pytest:6.1.2"
+        purl: "pkg:pypi/pytest@6.1.2"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "pytest: simple powerful testing with Python"
+        homepage_url: "https://docs.pytest.org/en/latest/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/b1/ee/53945d50284906adb1e613fabf2e1b8b25926e8676854bb25b93564c0ce7/pytest-6.1.2-py3-none-any.whl"
+          hash:
+            value: "4b715c5f2f17acc462c992839e1811af"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/d4/df/bd7c25c4fe809a17315b3fc9878edf48d31dde7b431b6836848b063c0428/pytest-6.1.2.tar.gz"
+          hash:
+            value: "91a421ffffe3310096b4273b2fa13819"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::six:1.15.0"
+        purl: "pkg:pypi/six@1.15.0"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Python 2 and 3 compatibility utilities"
+        homepage_url: "https://github.com/benjaminp/six"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl"
+          hash:
+            value: "16dc2d0f87a1ed05579ad7c4965cf0ef"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
+          hash:
+            value: "9f90a0eaa0ea7747fda01ca79d21ebcb"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/benjaminp/six.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::toml:0.10.2"
+        purl: "pkg:pypi/toml@0.10.2"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Python Library for Tom's Obvious, Minimal Language"
+        homepage_url: "https://github.com/uiri/toml"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl"
+          hash:
+            value: "dc26cd71b80d6757139f38156a43c545"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
+          hash:
+            value: "59bce5d8d67e858735ec3f399ec90253"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/uiri/toml.git"
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::tox:3.20.1"
+        purl: "pkg:pypi/tox@3.20.1"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "tox is a generic virtualenv management and test command line\
+          \ tool"
+        homepage_url: "http://tox.readthedocs.org"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/e0/79/5915b9dad867e89bb6495456acfe5d4e2287e74dfa29c059f7b127d5480e/tox-3.20.1-py2.py3-none-any.whl"
+          hash:
+            value: "a70d1817943fb250cf730a0eddedcccc"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/fe/66/7206a6c69a5f717fb80cd3a532c0639bc183ad2aa1f23a943ca93b0814bd/tox-3.20.1.tar.gz"
+          hash:
+            value: "ee15e2a79e22ed16d22222477ee759e4"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::virtualenv:20.2.1"
+        purl: "pkg:pypi/virtualenv@20.2.1"
+        declared_licenses:
+        - "MIT"
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Virtual Python Environment builder"
+        homepage_url: "https://virtualenv.pypa.io/"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/79/88/66ac964ab8cf87c8db839c11812292a966825af205411cb67477cb4e73d3/virtualenv-20.2.1-py2.py3-none-any.whl"
+          hash:
+            value: "4ccbb66e0705fc34d9971e82cf81484c"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/49/63/8e16d7f59ec7be34fbf57f9935e3ce1ab8b96cb6f1609ff30f16bbe7cf0d/virtualenv-20.2.1.tar.gz"
+          hash:
+            value: "96b3d1dcb320dbccede293fc7c415925"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+      curations: []
+    - package:
+        id: "PyPI::zipp:3.4.0"
+        purl: "pkg:pypi/zipp@3.4.0"
+        declared_licenses:
+        - "MIT License"
+        declared_licenses_processed:
+          spdx_expression: "MIT"
+          mapped:
+            MIT License: "MIT"
+        description: "Backport of pathlib-compatible object wrapper for zip files"
+        homepage_url: "https://github.com/jaraco/zipp"
+        binary_artifact:
+          url: "https://files.pythonhosted.org/packages/41/ad/6a4f1a124b325618a7fb758b885b68ff7b058eec47d9220a12ab38d90b1f/zipp-3.4.0-py3-none-any.whl"
+          hash:
+            value: "bbd9aa1c9d53ed2178157746c7198fae"
+            algorithm: "MD5"
+        source_artifact:
+          url: "https://files.pythonhosted.org/packages/ce/b0/757db659e8b91cb3ea47d90350d7735817fe1df36086afc77c1c4610d559/zipp-3.4.0.tar.gz"
+          hash:
+            value: "ae81f228995578b840d76d1b7d87fede"
+            algorithm: "MD5"
+        vcs:
+          type: ""
+          url: ""
+          revision: ""
+          path: ""
+        vcs_processed:
+          type: "Git"
+          url: "https://github.com/jaraco/zipp.git"
+          revision: ""
+          path: ""
+      curations: []
+    has_issues: true
+scanner: null
+advisor: null
+evaluator:
+  start_time: "2020-11-24T12:00:45.914856Z"
+  end_time: "2020-11-24T12:00:49.922258Z"
+  violations:
+  - rule: "UNHANDLED_LICENSE"
+    pkg: "PyPI::distlib:0.3.1"
+    license: "PSF-2.0"
+    license_source: "DECLARED"
+    severity: "ERROR"
+    message: "The license PSF-2.0 is currently not covered by policy rules. The license\
+      \ was declared in package PyPI::distlib:0.3.1"
+    how_to_fix: "A text written in MarkDown to help users resolve policy violations\n\
+      which may link to additional resources."
+  - rule: "UNHANDLED_LICENSE"
+    pkg: "PyPI::filelock:3.0.12"
+    license: "LicenseRef-scancode-public-domain-disclaimer"
+    license_source: "DECLARED"
+    severity: "ERROR"
+    message: "The license LicenseRef-scancode-public-domain-disclaimer is currently\
+      \ not covered by policy rules. The license was declared in package PyPI::filelock:3.0.12"
+    how_to_fix: "A text written in MarkDown to help users resolve policy violations\n\
+      which may link to additional resources."
+  - rule: "UNMAPPED_DECLARED_LICENSE"
+    pkg: "PyPI::distlib:0.3.1"
+    license: null
+    license_source: null
+    severity: "WARNING"
+    message: "The declared license 'Python license' could not be mapped to a valid\
+      \ license or parsed as an SPDX expression. The license was found in package\
+      \ PyPI::distlib:0.3.1."
+    how_to_fix: "A text written in MarkDown to help users resolve policy violations\n\
+      which may link to additional resources."
+  - rule: "COPYLEFT_LIMITED_IN_SOURCE"
+    pkg: "PyPI::paramiko:2.7.2"
+    license: "LGPL-2.1-only"
+    license_source: "DECLARED"
+    severity: "ERROR"
+    message: "The package PyPI::paramiko:2.7.2 has the declared  ScanCode copyleft-limited\
+      \ categorized license LGPL-2.1-only."
+    how_to_fix: "A text written in MarkDown to help users resolve policy violations\n\
+      which may link to additional resources."
+  - rule: "COPYLEFT_LIMITED_IN_SOURCE"
+    pkg: "PyPI::paramiko:2.7.2"
+    license: "LGPL-2.0-or-later"
+    license_source: "DECLARED"
+    severity: "ERROR"
+    message: "The package PyPI::paramiko:2.7.2 has the declared  ScanCode copyleft-limited\
+      \ categorized license LGPL-2.0-or-later."
+    how_to_fix: "A text written in MarkDown to help users resolve policy violations\n\
+      which may link to additional resources."

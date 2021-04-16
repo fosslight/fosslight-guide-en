@@ -1,0 +1,24 @@
+$primary-color: #A50034;
+$secondary-color: #444444;
+
+.header {
+  color : $secondary-color;
+  background: $primary-color;
+}
+
+.sidebar {
+  color: $primary-color;
+  background: $secondary-color;
+}
+
+.toctree {
+  color: $primary-color;
+}
+
+input.form-control {
+	border-color: #3E4538;
+}
+
+a.caption {
+  color: lighten($primary-color, 20%) !important;
+}

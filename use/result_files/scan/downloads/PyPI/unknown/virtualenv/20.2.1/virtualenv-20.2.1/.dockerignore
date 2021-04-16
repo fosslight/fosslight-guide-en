@@ -1,0 +1,4 @@
+.tox
+pip-wheel-metadata
+venv*
+*.pyz
