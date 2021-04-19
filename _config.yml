@@ -5,7 +5,7 @@ description: FOSSLight System English Guide
 
 remote_theme: fosslight/jekyll-rtd-theme
 
-top_link: "https://fosslight.github.io/fosslight-system-guide/"
+top_link: "https://fosslight.github.io/fosslight-system-guide"
 top_link_word: "Ko"
 
 readme_index:
