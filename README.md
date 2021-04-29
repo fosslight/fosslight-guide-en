@@ -1,4 +1,4 @@
-# FOSSLight란?
+# FOSSLight
 To develop and distribute software containing open source software, you need to follow the OSC(Open Source Compliance) process. FOSSLight system is an integrated system that can process four steps of the OSC process sequentially.
 
 ## Features
