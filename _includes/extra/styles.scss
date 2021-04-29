@@ -22,3 +22,236 @@ input.form-control {
 a.caption {
   color: lighten($primary-color, 20%) !important;
 }
+
+.dl-table {
+  a {
+    @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
+      text-underline-offset: .8rem;
+    }
+    @supports not ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
+      padding-bottom: .45rem;
+    }
+  }
+
+  .btn, .gumroad-button  {
+    margin: 1rem 0;
+  }
+}
+
+.center {
+  display: block;
+  margin: auto;
+}
+.right {
+  text-align: right;
+  font-size: small;
+  a {
+    text-decoration: none;
+  }
+}
+
+.emphasis_text {
+  font-weight: bolder;
+  text-decoration: none;
+  color: rgb(191, 13, 63);
+  font-size: 1.2rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-container > .flex-contents {
+  display: flex;
+  border: 1px solid rgb(191, 13, 63);
+  margin: 0rem auto 0rem auto;
+  padding: 20px;
+  width: 30%;
+  height: 23rem;
+}
+
+.flex-container > .flex-contents:hover {
+  background-color: rgb(209, 143, 154);
+
+  #feature_title {
+    color: white;
+  }
+}
+
+#feature_title {
+  display: block;
+  margin: initial;
+  color: rgb(197, 103, 119);
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  width: 100%;
+  height: 20%;
+  font-weight: bold;
+  text-align: center;
+  line-height: normal;
+}
+
+#feature_img {
+  display: block;
+  margin: initial;
+  padding-top: 2rem;
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}
+
+#feature_content {
+  display: block;
+  margin: initial;
+  color: black;
+  font-size: 1rem;
+  padding-top: 3rem;
+  width: 100%;
+  font-weight: initial;
+  text-align: center;
+  line-height: normal;
+}
+
+.home_contents :hover {
+  opacity: 0.7;
+}
+
+
+
+* { box-sizing: border-box; }
+
+body {
+  background-color: #fff;
+  color: #fff;
+  margin: 0;
+  min-height: 100%;
+}
+
+.person-container { width: 100%;}
+
+.persons {
+  padding: 20px auto;
+  max-width: 1000px;
+  margin: 0px auto;
+  position: relative;
+}
+
+.persons:before,
+.persons:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.persons .person {
+  width: 17%;
+  margin: 14px;
+  display: table;
+  float: left;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  border: 1px solid #A50034;
+}
+
+.persons .person .avatar {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+.persons .person .avatar img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 64px;
+}
+
+.persons .person.active { background-color: rgb(197, 103, 119); }
+
+.persons .person.active .fullname { color:#fff; }
+
+.persons .person .fullname {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  color: black;
+  font-size: 20px;
+  padding: 5px 0 5px;
+  font-weight: bold;
+}
+
+.persons .person .title {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  color: black;
+  font-size: 16px;
+}
+
+.persons .person .js-description { display: none; }
+@media screen and (max-width: 700px) {
+
+.persons .person { width: 50%; }
+}
+@media screen and (max-width: 400px) {
+
+.persons .person {
+  width: 100%;
+  border-left: medium none;
+}
+}
+
+.persons .js-dropdown {
+  background-clip: padding-box !important;
+  box-sizing: border-box;
+  float: left;
+  padding: 10px 0 10px;
+  margin: 20px 0 10px;
+  width: 100%;
+  display: table;
+}
+
+.persons .js-dropdown:before,
+.persons .js-dropdown:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+@media screen and (max-width: 400px) {
+
+.persons .js-dropdown { border-left: medium none; }
+}
+
+.persons .js-dropdown .js-dropdown-content {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 4px solid rgb(197, 103, 119);
+  color: black;
+  position: relative;
+  width: 100%;
+  padding: 10px 10px 10px;
+}
+
+.persons .js-dropdown .js-dropdown-content .js-dropdown-arrow {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -45px;
+  border: 46px solid transparent;
+  border-bottom-color: rgb(197, 103, 119);
+  pointer-events: none;
+  -webkit-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  transition: left 0.3s;
+}
+
+.persons .js-dropdown .js-dropdown-content p {
+  line-height: 26px;
+  margin: 0 0 40px;
+  padding: 0;
+  font-size: 16px;
+}
