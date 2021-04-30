@@ -29,7 +29,7 @@ Self-Check can be done through the following procedure.
 2. Load OSS information from OSS report file
     1. Upload the OSS Report containing the OSS list in the Upload Analysis Result column.
         - Uploadable OSS Report form can be downloaded by clicking the Export button.
-    2. Select the sheet to load and click OK.
+    2. Select the sheet to load and click OK.  
     ![select_sheet](../images/6_self_select_sheet.png)
     3. Click the Save button.
  
