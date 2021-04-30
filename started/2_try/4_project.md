@@ -115,7 +115,7 @@ Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
 3. Click the Request Review button to request a review.
     - However, if there is a red warning message, you cannot request a review.
 
-##### (Admin only) Review method
+##### (Admin only) How to review
 1. Click the Review Start button on the top right of the BOM tab.
 2. [Review items by warning message](#warning)     
 3. Click Merge And Save and click Confirm to activate the Packaging tab.
@@ -148,6 +148,15 @@ On the Packaging tab, OSS Package files are uploaded and verified. (However, if 
 #### 3-2. Notice Tab
 ![prj](../images/4_project_notice.png)
 OSS Notice is automatically generated based on Identification > BOM tab. At this time, you can modify the format or contents of the issued OSS Notice.
+
+#### 3-3. How to request a review
+- Click the "Request Review" button on the top right of the Packaging tab to request a review.
+
+#### 3-4. (Admin only) How to review
+- Click the "Review Start" button on the top right of the Packaging tab.
+- If you click "Confirm" on the upper right, Packaging is confirmed and OSC Process is completed.
+- You can download the OSS Notice issued from the Project List for the project whose packaging has been confirmed.
+     - If the creator needs reconfirmation, click "Reject" to change the Status to Progress.
 
 ## ⭐ Tips for Project
 ### Check OSS Name button (SRC, BIN Tab)
