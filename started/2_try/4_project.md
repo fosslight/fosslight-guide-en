@@ -5,7 +5,7 @@ published: true
 # Project
 ```note
 The process that must be performed for the development and distribution of software including open source software is performed sequentially.
-![prj_status](../images/4_project_process.png)
+![prj_status](../images/4_prj_process_en.png)
 ```
 
 ## Project List
