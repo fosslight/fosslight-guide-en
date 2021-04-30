@@ -5,7 +5,7 @@ published: true
 # Overview
 FOSSLight description by category.
 
-## Description of FOSSLight by function.
+## Description of FOSSLight by function
 - [Sign in / Account registration](../started/2_try/1_sign.md)
 - [OSS(Open Source Software)](../started/2_try/2_oss.md)
 - [License](../started/2_try/3_license.md)

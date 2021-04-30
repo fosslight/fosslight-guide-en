@@ -4,8 +4,4 @@ published: true
 ---
 # Getting Started
 
-```note
-
-
-```
 {% include list.liquid all=true %}
