@@ -111,7 +111,7 @@ Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
 ##### How to request a review
 1. Click the "Merge And Save" button.
     - Collect OSS List created in 3rd Party, SRC, BIN tab.
-2. [Review items by warning message](#warning) Confirm the review items.
+2. [Review items by warning message](#warning)  
 3. Click the Request Review button to request a review.
     - However, if there is a red warning message, you cannot request a review.
 
