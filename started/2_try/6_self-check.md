@@ -1,3 +1,7 @@
+---
+sort: 6
+published: true
+---
 # Self-Check
 ```note
 In Self-Check, you can easily check information such as licenses and vulnerabilities for the OSS(Open Source Software) to be reviewed without the review process.
