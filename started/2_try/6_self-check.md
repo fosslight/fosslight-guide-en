@@ -44,7 +44,7 @@ Self-Check can be done through the following procedure.
 #### OSS and License information
 If you click the icon in the column below, detailed information of registered OSS, detailed information about the license, and guide for the corresponding license are provided.
 However, even for registered OSS, User Guide may not be provided.
-- OSS Detail: Detailed information such as multiple versions of registered OSS, each license, and copyright is provided in a pop-up window.
+- OSS Detail: Detailed information such as multiple versions of registered OSS, each license, and copyright are provided in a pop-up window.
 - License Detail: Detailed information of the license used by the relevant OSS and license text are provided in a pop-up window.
 - User Guide: Links to information that can be referenced when using the license are provided.
 
@@ -58,7 +58,7 @@ However, even for registered OSS, User Guide may not be provided.
 ### 4. Vulnerability information check
 ```note
 - Check in the Vulnerability column: When the OSS is searched in the CVE DB provided by NIST, the Vulnerability icon is displayed in color according to the CVSS Score.
-- Confirmation with export file (.xlsx): An Excel file containing a list of all described OSS and vulnerability information is downloaded.
+- Confirmation with an export file (.xlsx): An Excel file containing a list of all described OSS and vulnerability information is downloaded.
 - Detailed information related to Vulnerability can be found in [Vulnerability](7_vulnerability.md).
 ```
 1. Check in OSC System UI
