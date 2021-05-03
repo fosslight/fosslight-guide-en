@@ -1,13 +1,13 @@
 # Create a Self-Check
 ```note
 Create a Self-Check and check OSS (Open Source Software) information.
-1. Create Self-Check
+1. Create a Self-Check
 2. Write OSS information
 3. Check OSS information
 4. Download as a file
 ```
 
-## 1. Create Self-Check
+## 1. Create a Self-Check
 1. Click the Add button in the Self-Check List.
 2. Enter the Self-Check information.
     ![new](images/2_self_new.png)
