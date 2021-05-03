@@ -1,7 +1,3 @@
----
-sort: 2
-published: true
----
 # Contribution
 
 ## Report an issue
