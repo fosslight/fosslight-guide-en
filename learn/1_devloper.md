@@ -1,7 +1,3 @@
----
-sort: 1
-published: true
----
 # Developer Documentation
 ```note
 How to install and run FOSSLight.
