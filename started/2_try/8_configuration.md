@@ -15,14 +15,14 @@ FOSSLight uses JNDI to support user password authentication using LDAP in an env
 ## SMTP Setting
 
 - Mail Server: SMTP Host (e.g. smtp.gmail.com)
-- Email Address: Sender email address (eg no-reply@fosslight.org)
-- Port: SMTP Port number (eg 25 or 587)
--Encoding: Default UTF-8 (Change only if necessary)
+- Email Address: Sender email address (e.g. no-reply@fosslight.org)
+- Port: SMTP Port number (e.g. 25 or 587)
+- Encoding: Default UTF-8 (Change only if necessary)
 - Username: SMTP username (usually the same as the sender's email address)
 - Password: SMTP user password (Password is encrypted and stored, if blank, existing password is not changed.)
 
 ## Workspace Path Setting
-- Root Path: Top work space path of upload/download file storage
+- Root Path: Top workspace path of upload/download file storage
 
 ## Notice Setting
 - Notice Type: Set the type of OSS notice that can be issued.
