@@ -41,7 +41,7 @@ TOKEN must be issued to call REST API.
 
 | API  | Response format | Description |
 | ------------- | ------------- | ------------- |
-|/api/v1/vulnerability_data|	JSON|	Search OSS Name, CVE ID for each version, CVSS Score, and NVD Link. |
+|/api/v1/vulnerability_data|	JSON|	Search OSS Name, CVE-ID for each version, CVSS Score, and NVD Link. |
 |/api/v1/vulnerability_max_data	|JSON	|Search max score and the NVD link by OSS Name and Version.|
 
 5\. Create Self-Check and register OSS Report
