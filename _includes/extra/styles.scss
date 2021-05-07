@@ -59,16 +59,41 @@ a.caption {
 
 .flex-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .flex-container > .flex-contents {
-  display: flex;
+  display: block;
   border: 1px solid rgb(191, 13, 63);
-  margin: 0rem auto 0rem auto;
+  margin-bottom: 1rem;
   padding: 20px;
-  width: 30%;
-  height: 23rem;
+  width: 70%;
+  height: 24rem;
+
+  @media (min-width: 48em) {
+    width: 47.5%;
+    margin-right: 5%;
+
+    &:last-of-type,
+    &:nth-child(2n + 2) {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: 75em) {
+    width: 30%;
+    margin-right: 5%;
+
+    &:nth-child(2n + 2) {
+      margin-right: 5%;
+    }
+
+    &:last-of-type,
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+  }
 }
 
 .flex-container > .flex-contents:hover {
