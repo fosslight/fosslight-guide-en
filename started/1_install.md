@@ -32,9 +32,8 @@ Delete (or change) the CREATE USER and GRANT parts if the connection account alr
 [sql]: https://github.com/fosslight/fosslight/blob/main/install/db/fosslight_create.sql
 [maria]: https://mariadb.org/download
 
-
 ### How to run
-- How to build Source code : [Development Guide](../learn/1_devloper.md)
+- How to build Source code : [Development Guide](https://fosslight.org/fosslight-guide-en/learn/1_developer.html)
 - Run the command in the environment where java is installed.
     ```
     java -jar fosslight.war --root.dir=/data/fosslight --server.port=8180
