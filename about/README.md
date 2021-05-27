@@ -20,4 +20,4 @@ FOSSLight description by category.
 
 ## How to run FOSSLight
 - [Quick Start](../started/1_install.md)
-- [Start with development environment settings](../learn/1_devloper.md)
+- [Start with development environment settings](../learn/1_developer.md)
