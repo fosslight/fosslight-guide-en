@@ -33,11 +33,15 @@ Delete (or change) the CREATE USER and GRANT parts if the connection account alr
 [maria]: https://mariadb.org/download
 
 ### How to run
+1. Download [FOSSLight.war][war]
 - How to build Source code : [Development Guide](https://fosslight.org/fosslight-guide-en/learn/1_developer.html)
-- Run the command in the environment where java is installed.
+
+2. Run the command in the environment where java is installed.
     ```
-    java -jar fosslight.war --root.dir=/data/fosslight --server.port=8180
+    java -jar FOSSLight.war --root.dir=/data/fosslight --server.port=8180
     ```
+
+[war]: https://github.com/fosslight/fosslight/releases
 
 #### Running options
 - Change web server port.
