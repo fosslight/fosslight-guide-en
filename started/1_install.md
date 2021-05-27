@@ -34,7 +34,7 @@ Delete (or change) the CREATE USER and GRANT parts if the connection account alr
 
 ### How to run
 1. Download [FOSSLight.war][war]
-- How to build Source code : [Development Guide](https://fosslight.org/fosslight-guide-en/learn/1_developer.html)
+- How to build Source code : [Development Guide](../learn/1_developer.md)
 
 2. Run the command in the environment where java is installed.
     ```
