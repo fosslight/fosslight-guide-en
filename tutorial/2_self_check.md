@@ -2,9 +2,9 @@
 ```note
 Create a Self-Check and check OSS (Open Source Software) information.
 1. Create a Self-Check
-2. Write OSS information
+2. Fill in OSS list
 3. Check OSS information
-4. Download as a file
+4. Download the result
 ```
 
 ## 1. Create a Self-Check
@@ -14,8 +14,8 @@ Create a Self-Check and check OSS (Open Source Software) information.
 3. Check the created Self-Check.
     ![new](images/2_self_new_list.png)
 
-## 2. Write OSS list
-1. Double-click the Self-Check created in the Self-Check List.
+## 2. Fill in OSS list
+1. Double-click the created Self-Check.
 2. Fill in the OSS information in the Self-Check Details tab.
     ![new](images/2_self_add.png)
     1. Click the + button at the top left of the OSS Table.
@@ -37,10 +37,10 @@ Based on the created Download location, it is automatically changed to the OSS N
     ![new](images/2_self_oss.png)
 - Click the License Detail icon: License information and License Text are provided in a pop-up window.
     ![new](images/2_self_lic.png)
-- Click the User Guide icon: Check the User Guide for the created license in a pop-up window.
+- Click the User Guide icon: Check the User Guide for the license in a pop-up window.
     ![new](images/2_self_lic2.png)
 
-## 4. Export and download as a file
+## 4. Download the result
 ![new](images/2_self_export.png)
 - Self-Check Sheet: Prints the information written on the OSS Table. You can upload this sheet to the Identification tab of [Project](../started/2_try/4_project.md).
 - Vulnerability Sheet: Prints vulnerability information for each OSS.
