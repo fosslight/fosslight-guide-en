@@ -72,7 +72,7 @@ You can build and run it in two ways.
     ```
     $ gradlew bootRun
     ```
-    - buildl & run (Run the application after building)
+    - build & run (Run the application after building)
     ```
     $ gradlew clean build && java -jar build/libs/FOSSLight-0.0.2.war
     ```
@@ -81,7 +81,7 @@ You can build and run it in two ways.
     - Boot Dashboard > local > FOSSLight, (right click) start (Crtl + Alt + Shift + B, R)
 
 #### Operation check
-- If you connect to [http://localhost:8180][local] from a web browser, the sign in page is displayed.
+- If you connect to [http://localhost:8180][local] from a web browser, the sign-in page is displayed.
 - Default account :
     -  id: admin, pswd :admin
 
