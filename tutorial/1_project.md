@@ -3,7 +3,7 @@
 Create a project and perform the OSC (Open Source Compliance) process.
 1. Project creation
 2. Identification
-3. Packaging execution
+3. Packaging 
 4. Download OSS Notice
 ```
 
@@ -20,11 +20,11 @@ Click the button in the Identification Column of the project created in the Proj
 
 ### 2-2. Go to SRC Tab.
 - Download Sample [OSS Report](result_files/OSS-Report_SampleProject.xlsx) with OSS List written.
-- Click the Upload button to upload the downloaded sample file. At this time, select SRC Sheet as the sheet to be loaded.
+- Click the Upload button to upload the OSS Report file. At this time, select SRC Sheet as the sheet to be loaded.
     ![bin](images/1_prj_sheet.PNG)
 - Confirm that the SRC Sheet of the OSS Report is loaded and click Save.
 
-### 2-3. Move to BIN Tab.
+### 2-3. Go to BIN Tab.
 ![bin](images/1_prj_bin.png)
 - Click the + button at the top left of the OSS Table.
 - Write OSS information in the added row.
@@ -36,9 +36,9 @@ Click the button in the Identification Column of the project created in the Proj
 
 ### 2-5. (Admin Only) Review
 - Log in as ID: admin, PSWD: admin.
-- Project List > Status: Move to the BOM of the project that is the request.
+- Project List > Status: Move to the BOM of the project.
 - Review [Waring Message](../started/2_try/4_project.html#warning).
--Click Confirm at the top right.
+- Click Confirm at the top right.
 
 ## 3. Packaging
 ### 3-1. Packaging Tab
@@ -47,7 +47,7 @@ Click the button in the Identification Column of the project created in the Proj
     $ ls sample_src
     CImg-master.zip cairo-1.4.12/
     ```
-- Click the Upload button to upload the downloaded file.
+- Click the Upload button to upload the packaging file.
 - Fill in "Path of source code in the OSS Package" as shown below and click Save.
 ![pkg](images/1_prj_pkg.png)
 - If you click Verify, you can see that the README, File List, and Banned List buttons are activated.
@@ -55,7 +55,7 @@ Click the button in the Identification Column of the project created in the Proj
 ### 3-2. Notice Tab
 ![pkg](images/1_prj_notice.png)
 - Click "Request to generate a modified OSS Notice." to customize the OSS Notice.
-- OSS Notice File Format is additionally checked. (The OSS Notice to be issued can be set in several formats.)
+- OSS Notice File Format is additionally checked. (The OSS Notice can be issued in several formats.)
 - Click the Preview button to check the OSS Notice in advance, and then click the OK button at the bottom right.
 - If you click the Download button, you can download the OSS Notice file in advance.
 - Click Save.
@@ -67,8 +67,8 @@ Click the button in the Identification Column of the project created in the Proj
 - Click "Confirm" in the upper right corner.
 
 ## 4. Download OSS Notice
-Click the icon in the Download column of the Project List to check the files for each icon.
+Click the icon in the Download column of the Project List.
 - Click the OSS Notice icon to download the issued OSS Notice.  
-    At this time, if OSS Notice in various formats is issued, it is downloaded as a compressed file.
+    At this time, if OSS Notice are issued in various formats, it is downloaded as a compressed file.
 - ex. Part of OSS Notice (html format):
 ![notice](images/1_prj_oss_notice.png)
