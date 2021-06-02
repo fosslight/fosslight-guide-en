@@ -8,6 +8,9 @@ remote_theme: fosslight/jekyll-rtd-theme
 top_link: "https://fosslight.github.io/fosslight-guide"
 top_link_word: "Kor"
 
+google:
+  gtag: UA-196813776-4
+
 readme_index:
   with_frontmatter: true
 
