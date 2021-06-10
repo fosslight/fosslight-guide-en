@@ -3,7 +3,7 @@ title: FOSSLight
 lang: en
 description: FOSSLight English Guide
 
-remote_theme: fosslight/jekyll-rtd-theme
+remote_theme: fosslight/guide_theme
 
 top_link: "https://fosslight.github.io/fosslight-guide"
 top_link_word: "Kor"
