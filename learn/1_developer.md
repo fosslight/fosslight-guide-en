@@ -63,8 +63,8 @@ Download [Spring Tool Suite][spring].
 [java]: https://openjdk.java.net
 [git_repo]: https://github.com/fosslight/fosslight
 
-## How to run
-### Change the running options.
+### How to run
+#### Change the running options.
 Change running options in [application.properties][props] file.
  - server.port=8180: Web server port (In case of 8180, [http://localhost:8180][local])
  - spring.datasource.url=127.0.0.1:3306/fosslight: Set the IP, Port, and Database Name of the DB server where FOSSLight Database is installed.
@@ -76,13 +76,13 @@ Change running options in [application.properties][props] file.
 
 [props]: https://github.com/fosslight/fosslight/blob/main/src/main/resources/application.properties
 
-### Build & Run
+#### Build & Run
 You can build and run it in the following way.
 You can also download the official release version of the built [war file][war].
 
 [war]: https://github.com/fosslight/fosslight/releases
 
-#### Build & Run
+##### Build & Run    
 - build (Create a war file.)
 ```
 $ ./gradlew build
@@ -116,7 +116,7 @@ $ ./gradlew clean build && java -jar build/libs/FOSSLight-1.0.0.war
         --logging.path=<LOG_PATH>
         ```
 
-- Run from IDE
+##### Run from IDE    
     - Boot Dashboard > local > FOSSLight, (right click) start (Crtl + Alt + Shift + B, R)
 
 
