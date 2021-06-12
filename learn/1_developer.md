@@ -3,7 +3,22 @@
 How to install and run FOSSLight.
 ```
 
-## How to install
+## How to install - 1
+Build and run using Docker.
+
+### Requirements
+1. [Docker][docker]
+2. [Docker Compose][doccompose]
+
+[docker]: https://docs.docker.com/engine/install/
+[doccompose]: https://docs.docker.com/compose/install/
+
+### Build and run
+```
+sudo docker-compose up
+```
+
+## How to install - 2
 ### Requirements
 - Java 1.8 or higher
 - MariaDB (10.0 or higher) or MySql (5.6 or higher)
@@ -48,8 +63,8 @@ Download [Spring Tool Suite][spring].
 [java]: https://openjdk.java.net
 [git_repo]: https://github.com/fosslight/fosslight
 
-## How to run
-### Change the running options.
+### How to run
+#### Change the running options.
 Change running options in [application.properties][props] file.
  - server.port=8180: Web server port (In case of 8180, [http://localhost:8180][local])
  - spring.datasource.url=127.0.0.1:3306/fosslight: Set the IP, Port, and Database Name of the DB server where FOSSLight Database is installed.
@@ -61,27 +76,51 @@ Change running options in [application.properties][props] file.
 
 [props]: https://github.com/fosslight/fosslight/blob/main/src/main/resources/application.properties
 
-### Build & Run
-You can build and run it in two ways.  
-1. Gradle build & Run
-    - build (Create a war file.)
-    ```
-    $ gradlew build
-    ```
-    - run
-    ```
-    $ gradlew bootRun
-    ```
-    - build & run (Run the application after building)
-    ```
-    $ gradlew clean build && java -jar build/libs/FOSSLight-0.0.2.war
-    ```
+#### Build & Run
+You can build and run it in the following way.      
+You can also download the official release version of the built [war file][war].
 
-2. Run from IDE
+[war]: https://github.com/fosslight/fosslight/releases
+  
+- build (Create a war file.)
+```
+$ ./gradlew build
+```
+- run
+```
+$ ./gradlew bootRun
+```
+- build & run 2 (Run the application after building)
+```
+$ ./gradlew clean build && java -jar build/libs/FOSSLight-1.0.0.war
+```
+
+   -   Running options
+        - Web server port
+        ```
+        --server.port=<PORT>
+        ```
+        - Work Directory (Default: /usr/share/fosslight)
+        ```
+        --root.dir=<WORK_DIRECTORY>
+        ```
+        - Database Connections (Default: 127.0.0.1:3306/fosslight)
+        ```
+        --spring.datasource.url=<IP>:<Port>/<Database>
+        --spring.datasource.username=<USER_NAME>
+        --spring.datasource.password=<PASSWORD>
+        ```
+        - log file path
+        ```
+        --logging.path=<LOG_PATH>
+        ```
+
+#### Run from IDE    
     - Boot Dashboard > local > FOSSLight, (right click) start (Crtl + Alt + Shift + B, R)
 
-#### Operation check
-- If you connect to [http://localhost:8180][local] from a web browser, the sign-in page is displayed.
+
+## Operation check
+- If you connect to [http://localhost:8180][local] from a web browser, the sign in page is displayed.
 - Default account :
     -  id: admin, pswd :admin
 
