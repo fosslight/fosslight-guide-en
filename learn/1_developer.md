@@ -15,7 +15,7 @@ Build and run using Docker.
 
 ### Build and run
 ```
-sudo docker-compose up
+docker-compose up --build
 ```
 
 ## How to install - 2
