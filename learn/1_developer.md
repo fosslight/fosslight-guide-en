@@ -22,6 +22,7 @@ docker-compose up --build
 ### Requirements
 - Java 1.8 or higher
 - MariaDB (10.0 or higher) or MySql (5.6 or higher)
+- Memory : 8GB+
 
 ### Development environment
 - Framework : Spring Boot 2.1.x
