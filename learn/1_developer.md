@@ -33,7 +33,7 @@ sudo docker-compose up
 
 ### Download & Installation
 1. Install Java.: [https://openjdk.java.net][java]
-2. Download a DDL file. : [https://github.com/fosslight/fosslight/blob/main/install/db/fosslight_create.sql][sql]
+2. Download a DDL file. : [fosslight_create.sql][sql]
 3. Install MariaDB or Mysql. : [https://mariadb.org/download][maria]
 4. Create a database and initialize data.
 ```
@@ -58,7 +58,7 @@ Download [Spring Tool Suite][spring].
 [spring]: https://spring.io/tools
 [lb]: https://projectlombok.org/setup/eclipse
 [src]: https://github.com/fosslight/fosslight
-[sql]: https://github.com/fosslight/fosslight/blob/main/install/db/fosslight_create.sql
+[sql]: https://github.com/fosslight/fosslight/blob/main/db/initdb.d/fosslight_create.sql
 [maria]: https://mariadb.org/download/
 [java]: https://openjdk.java.net
 [git_repo]: https://github.com/fosslight/fosslight
