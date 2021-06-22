@@ -10,14 +10,14 @@ The process that must be performed for the development and distribution of softw
 
 ## Project List
 ![ProjectList](../images/project_list.png)
-You can search for a project, check the overall information of the project, and download the OSS Report, OSS Notice, and OSS Package.
+You can search for a project, check the overall information of the project, and download the FOSSLight Report, OSS Notice, and OSS Package.
 
 - Search: You can search for a project by basic information of the project, status, license, OSS name, etc.
 - Project Name (Version): Double-clicking a row moves to the project detail screen.
 - Status: Displays the status information of the project.
 - Identification, Packaging: Click each item to move to the Identification and Packaging details.
 - Download: Click each icon to download the file.
-    - OSS Report: You can download the list entered in Identification in OSS Report format.
+    - FOSSLight Report: You can download the list entered in Identification in FOSSLight Report format.
     - OSS Notice: Displayed when the packaging step is completed, and issued OSS Notices can be downloaded.
     - Packaging file: Displayed when the source code to be published in Packaging is uploaded, and packaging files can be downloaded.
 - Vulnerability: Displays the highest Critical Level among Vulnerability information of the entire Open Source List (excluding Exclude) included in the identification of the project.
@@ -86,8 +86,8 @@ You can call up the 3rd Party Software information by selecting one of the follo
 - Written by hand in the OSS Table
     - Click the + button at the top left of the OSS Table to enter the OSS information.
 - How to batch load OSS information
-    1. Upload the OSS Report with the OSS List created in the Upload Analysis Result column.
-        - The loadable OSS Report form can be downloaded by clicking the "Export" button in the upper right corner.
+    1. Upload the FOSSLight Report with the OSS List created in the Upload Analysis Result column.
+        - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
     2. Project Search: Loads the SRC tab of another project.
 
 #### 2-3. BIN Tab
@@ -100,8 +100,8 @@ You can call up the 3rd Party Software information by selecting one of the follo
 - Written by hand in the OSS Table
     - Click the + button at the top left of the OSS Table to enter the OSS information.
 - How to batch load OSS information
-    1. Upload the OSS Report with the OSS List created in the Upload Analysis Result column.
-        - The loadable OSS Report form can be downloaded by clicking the "Export" button in the upper right corner.
+    1. Upload the FOSSLight Report with the OSS List created in the Upload Analysis Result column.
+        - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
     2. Project Search: Load the BIN tab of another project.
 
 #### 2-1. BOM Tab

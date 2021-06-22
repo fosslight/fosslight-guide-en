@@ -25,13 +25,13 @@ TOKEN must be issued to call REST API.
 | ------------- | ------------- | ------------- |
 |/api/v1/partner_search|	JSON	|Get 3rd party information. |
 
-3\. Check project information, upload OSS Report/Packaging, export/comparison of BOM.
+3\. Check project information, upload FOSSLight Report/Packaging, export/comparison of BOM.
 
 | API  | Response format | Description |
 | ------------- | ------------- | ------------- |
 |/api/v1/create_project|	JSON|Create a Project and the generated project's ID is returned.|
-|/api/v1/oss_report_bin	|-	|Upload OSS Report to BIN Tab. If data already exists in the OSS Table, the OSS Report uploaded after reset. (Loaded Sheet Name : "BIN")|
-|/api/v1/oss_report_src|	-	|Upload OSS Report to SRC Tab. If data already exists in the OSS Table, the OSS Report uploaded after reset. (Loaded Sheet Name : "SRC")|
+|/api/v1/oss_report_bin	|-	|Upload FOSSLight Report to BIN Tab. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name : "BIN")|
+|/api/v1/oss_report_src|	-	|Upload FOSSLight Report to SRC Tab. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name : "SRC")|
 |/api/v1/package_upload|-	|Upload the Packaging file to the Packaging tab. If packaging files have already been uploaded, an additional packaging file is uploaded. Packaging file upload result will be sent by mail.|
 |/api/v1/prj_bom_compare|	JSON	|Compare the OSS Name, OSS Version, and License of the two projects' BOM.
 |/api/v1/prj_bom_export	|File	|Download the result file exported from the BOM of the project.
@@ -44,12 +44,12 @@ TOKEN must be issued to call REST API.
 |/api/v1/vulnerability_data|	JSON|	Search OSS Name, CVE-ID for each version, CVSS Score, and NVD Link. |
 |/api/v1/vulnerability_max_data	|JSON	|Search max score and the NVD link by OSS Name and Version.|
 
-5\. Create Self-Check and register OSS Report
+5\. Create Self-Check and register FOSSLight Report
 
 | API  | Response format | Description |
 | ------------- | ------------- | ------------- |
 |/api/v1/create_selfcheck|	JSON	|Create a Self-Check Project and the generated Self-Check's ID is returned.|
-|/api/v1/oss_report_selfcheck|	-	|Upload OSS Report to Self-Check. If data already exists in the OSS Table, the OSS Report uploaded after reset. (Loaded Sheet Name: "Self-Check")|
+|/api/v1/oss_report_selfcheck|	-	|Upload FOSSLight Report to Self-Check. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name: "Self-Check")|
 
 6\. Check the value of the code used when using API
 

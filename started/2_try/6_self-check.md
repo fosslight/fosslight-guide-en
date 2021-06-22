@@ -26,9 +26,9 @@ Self-Check can be done through the following procedure.
 ### 2. OSS information input
 1. Enter OSS information on OSS Table
     - Click the + button to add a row, enter the OSS you want to check, and save.
-2. Load OSS information from OSS report file
-    1. Upload the OSS Report containing the OSS list in the Upload Analysis Result column.
-        - Uploadable OSS Report form can be downloaded by clicking the Export button.
+2. Load OSS information from FOSSLight Report file
+    1. Upload the FOSSLight Report containing the OSS list in the Upload Analysis Result column.
+        - Uploadable FOSSLight Report form can be downloaded by clicking the Export button.
     2. Select the sheet to load and click OK.  
     ![select_sheet](../images/6_self_select_sheet.png)
     3. Click the Save button.
@@ -68,7 +68,7 @@ When you click the Vulnerability icon, the vulnerability information of the corr
 2. Confirm with export file
     - Self-Check Sheet
     ![self_check_sheet](../images/6_self_sheet1.png)
-    The OSS list entered by the user is described in accordance with the OSS report form.  
+    The OSS list entered by the user is described in accordance with the FOSSLight Report form.  
     The information in this tab can be used later in Identification of [Project](4_project.md).
     - Vulnerability Sheet
     ![self_check_sheet2](../images/6_self_sheet2.png)

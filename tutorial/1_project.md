@@ -19,10 +19,10 @@ Click the button in the Identification Column of the project created in the Proj
 - Check "Not Applicable" and click Save.
 
 ### 2-2. Go to SRC Tab.
-- Download Sample [OSS Report](result_files/OSS-Report_SampleProject.xlsx) with OSS List written.
-- Click the Upload button to upload the OSS Report file. At this time, select SRC Sheet as the sheet to be loaded.
+- Download Sample [FOSSLight Report](result_files/FOSSLight-Report_SampleProject.xlsx) with OSS List written.
+- Click the Upload button to upload the FOSSLight Report file. At this time, select SRC Sheet as the sheet to be loaded.
     ![bin](images/1_prj_sheet.PNG)
-- Confirm that the SRC Sheet of the OSS Report is loaded and click Save.
+- Confirm that the SRC Sheet of the FOSSLight Report is loaded and click Save.
 
 ### 2-3. Go to BIN Tab.
 ![bin](images/1_prj_bin.png)
