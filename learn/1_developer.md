@@ -29,7 +29,7 @@ docker-compose up --build
 - Build Tool : Gradle 6.x
 - Git : [https://github.com/fosslight/fosslight][src]
 - IDE : [Spring Tool Suite][spring]
-    - [lombock][lb] installation required.
+    - [lombok][lb] installation required.
 - Project Character Set: UTF-8
 
 ### Download & Installation

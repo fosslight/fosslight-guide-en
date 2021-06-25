@@ -4,7 +4,7 @@ Functions of FOSSLight can be called with REST API.
 ```
 
 ## How to start
-### Creat a TOKEN
+### Create a TOKEN
 TOKEN must be issued to call REST API.
 1. Sign in as Admin account.
 2. You can issue tokens for each user in the System > User Management tab.
