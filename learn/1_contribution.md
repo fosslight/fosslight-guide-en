@@ -10,7 +10,7 @@ For improvements or bugs, please report by creating an issue in Git repository. 
 
 Hi! I'm really appreciate that you'd like to contribute to this project. Your help is essential for keeping it great.
 
-## Submitting a pull request
+### Submitting a pull request
 
 1. Fork and clone the repository
 2. Create a new branch: `git checkout -b my-branch-name`
@@ -31,7 +31,7 @@ Here are a few things you can do that will increase the likelihood of your pull 
 
 Work in Progress pull request are also welcome to get feedback early on, or if there is something blocked you.
 
-## Developer Certificate of Origin
+### Developer Certificate of Origin
 
 To contribute to this project, you must agree to the Developer Certificate of Origin (DCO) for each commit you make.
 
@@ -49,7 +49,7 @@ You can add this signoff to your commit automatically with the -s or --signoff f
 git commit -s -m "Write the commit message"
 ```
 
-## Resources
+### Resources
 
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 - [Using Pull Requests](https://help.github.com/articles/about-pull-requests/)
