@@ -3,6 +3,6 @@ sort: 3
 published: true
 ---
 
-# Basic Tutorials
+# FOSSLight Basic Tutorials
 
 {% include list.liquid all=true %}

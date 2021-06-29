@@ -14,7 +14,7 @@ published: true
 ## User Management
 ![config](../images/9_system_user.png)
 Check the list of registered accounts and correct the information.
-- Create button: Creates a Token to be used in [Rest API](../../features/1_rest_api.md).
+- Create button: Creates a Token to be used in [Rest API](../../features/2_rest_api.md).
 - Reset button: Resets the password to the same ID as the ID.
 - Use YN: Set up dormant account.
 - Admin: Admin authority is granted.

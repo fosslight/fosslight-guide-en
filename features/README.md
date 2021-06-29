@@ -2,9 +2,13 @@
 sort: 4
 published: true
 ---
-# Advanced features
-
+# FOSSLight Advanced
 ```note
 You can check out the useful advanced features of FOSSLight.
 ```
-{% include list.liquid all=true %}
+
+## Development environment
+- [Development environment Setting](1_developer.md)
+
+## Add-ons
+- [REST API](2_rest_api.md)

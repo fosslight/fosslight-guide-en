@@ -2,6 +2,8 @@
 ```note
 How to install and run FOSSLight.
 ```
+## Download FOSSLight Source
+Clone the [FOSSLight](https://github.com/fosslight/fosslight) repository.
 
 ## How to install - 1
 Build and run using Docker.

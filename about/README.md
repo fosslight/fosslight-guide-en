@@ -1,8 +1,9 @@
 ---
 sort: 1
 published: true
+title: 🔎 FOSSLight
 ---
-# Overview
+# FOSSLight Overview
 FOSSLight description by category.
 
 ## Description of FOSSLight by function
@@ -20,4 +21,4 @@ FOSSLight description by category.
 
 ## How to run FOSSLight
 - [Quick Start](../started/1_install.md)
-- [Start with development environment settings](../learn/1_developer.md)
+- [Start with development environment settings](../features/1_developer.md)
