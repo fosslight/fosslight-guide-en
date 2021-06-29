@@ -33,4 +33,4 @@ $ source venv/bin/activate
 | ------------- | ------------- |
 | Create a virtual environment. | virtualenv -p [python_version] [env_name] |
 | Activate a virtual environment. | source [env_name]/bin/activate |
-| Deactivate a virtual environment | deactivate | conda deactivate |
+| Deactivate a virtual environment | deactivate | 

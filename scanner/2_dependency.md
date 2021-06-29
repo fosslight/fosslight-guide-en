@@ -186,7 +186,7 @@ $ pod install
 
 ## 🎉 How to install
 
-FOSSLight Dependency Scanner can be installed using pip3.
+FOSSLight Dependency Scanner can be installed using pip3.    
 It is recommended to install in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
 
 ```
