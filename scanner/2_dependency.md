@@ -18,20 +18,17 @@ The list of supported Package Managers is as follows.
 
 
 ## User Guide
-
-- [FOSSLight Dependency Scanner](#fosslight-dependency-scanner)
-  - [User Guide](#user-guide)
-  - [📋 Prerequisite](#-prerequisite)
+  - [Prerequisite](#-prerequisite)
     - [NPM](#npm)
     - [Gradle](#gradle)
-    - [Android (gradle)](#android-gradle)
+    - [Android-gradle](#android-gradle)
     - [Pypi](#pypi)
     - [Maven (optional)](#maven-optional)
     - [Pub](#pub)
     - [Cocoapods](#cocoapods)
-  - [🎉 How to install](#-how-to-install)
-  - [🚀 How to run](#-how-to-run)
-  - [📁 Result](#-result)
+  - [How to install](#-how-to-install)
+  - [How to run](#-how-to-run)
+  - [Result](#-result)
 
 
 ## 📋 Prerequisite
@@ -39,7 +36,7 @@ Because we utilizes the different open source software to analyze the dependenci
 
 ### NPM
 
-1. Install the NPM License Checker to ananlyze the npm dependencies.
+1. Install the NPM License Checker to analyze the npm dependencies.
 
 ```
 $ npm install -g license-checker
@@ -221,14 +218,14 @@ The manifest file of each package manager is as follows:
 | Manifest file   | package.json | requirements.txt | pom.xml | build.gradle | pubspec.yaml | Podfile   | gradlew |
 
 In other words, the input directory('-p' option) should be designated as the top directory of the project where the package manager's manifest file exists as above.
-The manifest file of android project is 'build.gradle' as same as the gradle project. But for differenciating with other java projects, it checks 'gradlew' files.
+The manifest file of android project is 'build.gradle' as same as the gradle project. But for differentiating with other java projects, it checks 'gradlew' files.
 
 
 ## 📁 Result
 
 FOSSLight Dependency Scanner creates the result file that has xlsx extension (Microsoft Excel file).
 
-It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependenices).
+It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
 For a unique OSS name, OSS name is printed such as (package_manager):(oss name) or (group id):(artifact id).
 
 | Package manager                | OSS Name                 | Download Location                                                                                  | Homepage                                            |

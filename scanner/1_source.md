@@ -9,16 +9,13 @@ published: true
 
 [sc]: https://github.com/nexB/scancode-toolkit
 
-## Contents
-
-- [FOSSLight Source Scanner](#fosslight-source-scanner)
-  - [Contents](#contents)
-  - [📋 Prerequisite](#-prerequisite)
-  - [🎉 How to install](#-how-to-install)
-  - [🚀 How to run](#-how-to-run)
+## User Guide
+  - [Prerequisite](#-prerequisite)
+  - [How to install](#-how-to-install)
+  - [How to run](#-how-to-run)
     - [1. fosslight_source](#1-fosslight_source)
     - [2. fosslight_convert](#2-fosslight_convert)
-  - [📁 Result](#-result)
+  - [Result](#-result)
 
 
 ## 📋 Prerequisite
