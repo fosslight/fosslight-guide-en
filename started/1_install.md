@@ -9,4 +9,4 @@ If you use [https://demo.fosslight.org](https://demo.fosslight.org), you can exp
 - (Sample) Admin Account: You can experience admin mode through the following admin account.
     - id: admin, pswd: admin
 
-Note. How to build and run: [Development Guide](../learn/1_developer.md)
+Note. How to build and run: [Development Guide](../features/1_developer.md)
