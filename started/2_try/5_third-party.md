@@ -7,6 +7,7 @@ published: true
 - Registers and manages the software's open source information received from the 3rd party.
 - Status: Only the 3rd party, which is Confirm, can be loaded from the Project > Identification - 3rd Party tab.
 ```
+<iframe width="400" src="https://www.youtube.com/embed/FxQlpnaCO2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 3rd Party Project
 ### 1. Creating a 3rd Party Project
