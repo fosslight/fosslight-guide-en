@@ -9,7 +9,7 @@ title: FOSSLight Dependency Scanner
 [**FOSSLight Dependency Scanner**](https://github.com/fosslight/fosslight_dependency_scanner)utilizes the open source software for analyzing each package manager dependencies. We choose the open source software for each package manager that shows not only the direct dependencies but also the transitive dependencies including the information of dependencies such as oss name, oss version and license name.    
     
 The list of supported Package Managers is as follows.     
-- [Gradle](https://gradle.org/) (Java)
+- [Gradle](https://gradle.org/) (Java/Android)
 - [Maven](http://maven.apache.org/) (Java)
 - [NPM](https://www.npmjs.com/) (Node.js)
 - [PIP](https://pip.pypa.io/) (Python)
@@ -71,31 +71,33 @@ downloadLicenses {
 2. Run the 'downloadLicenses' task.
 
 ```
-$ gradle downloadLicenses
+$ gradlew downloadLicenses
 ```
 
 ### Android (gradle)
 
-1. Add the Android License Plugin in build.gradle file.
+1. Add the android-dependency-scanning Plugin in build.gradle file.
 
 ```
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.lge.android.licensetools:android-dependency-scanning:0.4.0'
+        classpath 'org.fosslight:android-dependency-scanning:1.0.0'
     }
 }
-
-apply plugin: 'com.lge.android.licensetools'
+```
+2. Add the below line in build.gradle file in the app(your application name, default:app) directory.
+```
+apply plugin: 'org.fosslight'
 ```
 
-2. Run the 'generateLicenseTxt' task.
+3. Run the 'generateLicenseTxt' task.
 
 ```
-$ gradle generateLicenseTxt
+$ gradlew generateLicenseTxt
 ```
 
 
@@ -159,7 +161,7 @@ $ pip install -r requirements.txt
 2. Run the license-maven-plugin task.
 
 ```
-$ mvn license:aggregate-download-licenses
+$ mvnw license:aggregate-download-licenses
 ```
 
 ### Pub
@@ -213,12 +215,11 @@ Note that input directory should be the top directory of the project where the m
 For example, if your project uses the NPM package manager, then the input directory should be the path where 'package.json' file is located.
 The manifest file of each package manager is as follows:
 
-| Package manager | Npm          | Pip              | Maven   | Gradle       | Pub          | Cocoapods | Android |
-| --------------- | ------------ | ---------------- | ------- | ------------ | ------------ | --------- | ------- |
-| Manifest file   | package.json | requirements.txt | pom.xml | build.gradle | pubspec.yaml | Podfile   | gradlew |
+| Package manager | Npm          | Pip              | Maven   | Gradle (Android) | Pub          | Cocoapods |
+| --------------- | ------------ | ---------------- | ------- | ---------------- | ------------ | --------- |
+| Manifest file   | package.json | requirements.txt | pom.xml | build.gradle     | pubspec.yaml | Podfile   |
 
 In other words, the input directory('-p' option) should be designated as the top directory of the project where the package manager's manifest file exists as above.
-The manifest file of android project is 'build.gradle' as same as the gradle project. But for differentiating with other java projects, it checks 'gradlew' files.
 
 
 ## 📁 Result
