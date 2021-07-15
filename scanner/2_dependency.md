@@ -6,7 +6,7 @@ title: FOSSLight Dependency Scanner
 
 <img src="https://img.shields.io/pypi/l/fosslight_dependency" alt="License" /> <img src="https://img.shields.io/pypi/v/fosslight_dependency" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_dependency" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_dependency_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_dependency_scanner)
     
-[**FOSSLight Dependency Scanner**](https://github.com/fosslight/fosslight_dependency_scanner)utilizes the open source software for analyzing each package manager dependencies. We choose the open source software for each package manager that shows not only the direct dependencies but also the transitive dependencies including the information of dependencies such as oss name, oss version and license name.    
+[**FOSSLight Dependency Scanner**](https://github.com/fosslight/fosslight_dependency_scanner) utilizes the open source software for analyzing each package manager dependencies. We choose the open source software for each package manager that shows not only the direct dependencies but also the transitive dependencies including the information of dependencies such as oss name, oss version and license name.    
     
 The list of supported Package Managers is as follows.     
 - [Gradle](https://gradle.org/) (Java/Android)
@@ -32,7 +32,7 @@ The list of supported Package Managers is as follows.
 
 
 ## 📋 Prerequisite
-Because we utilizes the different open source software to analyze the dependencies of each package manager, you need to set up the below [Prerequisite](#-prerequisite) steps according to package manager to analyze.
+Because we utilize the different open source software to analyze the dependencies of each package manager, you need to set up the below [Prerequisite](#-prerequisite) steps according to package manager to analyze.
 
 ### NPM
 
