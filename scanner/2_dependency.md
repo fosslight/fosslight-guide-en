@@ -41,6 +41,11 @@ Because we utilizes the different open source software to analyze the dependenci
 ```
 $ npm install -g license-checker
 ```
+> To install license-checker globally, '-g' option is required. If you do not have 'sudo' access, then you can change default path to install global modules.
+> ```
+$ npm set prefix ~/.npm
+$ PATH=~/.npm/bin:$PATH
+```
 
 2. Run the command to install the dependencies. (optional)
 
