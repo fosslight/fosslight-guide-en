@@ -22,7 +22,7 @@ v1.0 : [FOSSLight-Report.xlsx](./files/FOSSLight-Report_v1.0.xlsx)
    Provide information about the OSC process.
 
 ### 3rd Party Sheet
-If your project includes software from 3rd party, you should obtain OSS checklist from 3rd party and check what open sources are used. (Refer to [3rd Party OSS Checklist](./files/FOSSLight-OSS-Checklist-for-3rdParty_Eng_1.0.xlsx))         
+If your project includes software from 3rd party, you should obtain OSS checklist from 3rd party and check what open sources are used. (Refer to [3rd Party OSS Checklist](https://github.com/fosslight/fosslight/raw/main/src/main/resources/static/sample/FOSSLight-OSS-Checklist-for-3rdParty_Eng_1.0.xlsx))         
 The OSS Checklist obtained should be registered in the [3rd Party](../started/2_try/5_third-party.md) menu of the FOSSLight and collected in the 3rd Party tab.     
 If you export the FOSSLight report from the FOSSLight, the contents registered in the 3rd Party tab will be filled in the "3rd party" sheet. Therefore, do not fill in the "3rd party" sheet manually.       
 
