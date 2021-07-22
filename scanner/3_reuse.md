@@ -34,11 +34,11 @@ $ fosslight_reuse lint
 ### Parameters      
 | Parameter  | Argument | Required  | Description |
 | ------------- | ------------- | ------------- |------------- |
-| p | [root_path_to_check] | O | Source path to check. | 
+| p | root_path_to_check | O | Source path to check. | 
 | h | None | X | Print help message. | 
 | n | None | X | Add this parameter if you do not want to exclude venv*, node_modules, and .*/ from the analysis.|    
-| o | [result_file_name] | X | xml format result file name. (Default: reuse_checker.xml) |    
-| f | [file1,file2,...] | X | List of files to check copyright and license. |
+| o | result_file_name | X | xml format result file name. (Default: reuse_checker.xml) |    
+| f | file1,file2,... | X | List of files to check copyright and license. |
 
 ### Ex 1. Run with minimal parameters 
 ``` 
@@ -113,10 +113,10 @@ $ fosslight_reuse report
 ### Parameters      
 | Parameter  | Argument | Required  | Description |
 | ------------- | ------------- | ------------- |------------- |
-| p | [path_to_check] | O | Convert all oss-pkg-info*.yaml or oss-pkg-info*.yml in the path recursively | 
+| p | path_to_check | O | Convert all oss-pkg-info*.yaml or oss-pkg-info*.yml in the path recursively | 
 | h | None | X | Print help message. | 
-| o | [result_file_name] | X | Output file name |    
-| f | [file1,file2,...] | X | 1. Yaml files are converted as FOSSLight Report (separated by, if multiple) <br> ex) -f src/oss-pkg-info.yaml,main/setting.yml 2. FOSSLight Report file to be converted to oss-pkg-info.yaml. |
+| o | result_file_name | X | Output file name |    
+| f | file1,file2,... | X | 1. Yaml files are converted as FOSSLight Report (separated by, if multiple) <br> ex) -f src/oss-pkg-info.yaml,main/setting.yml 2. FOSSLight Report file to be converted to oss-pkg-info.yaml. |
 
 ### Ex 1. Convert oss-pkg-info.yaml file to FOSSLight Report.
 1-1. Convert all oss-pkg-info*.yaml or oss-pkg-info*.yml in the path recursively.
