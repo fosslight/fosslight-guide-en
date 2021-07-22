@@ -1,12 +1,12 @@
 ---
 published: true
-title: FOSSLight REUSE
+title: FOSSLight Reuse
 ---
-# FOSSLight REUSE
+# FOSSLight Reuse
 
 <img src="https://img.shields.io/pypi/l/fosslight_reuse" alt="License" /> <img src="https://img.shields.io/pypi/v/fosslight_reuse" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_reuse" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_reuse)](https://api.reuse.software/info/github.com/fosslight/fosslight_reuse)
     
-[**FOSSLight REUSE**](https://github.com/fosslight/fosslight_reuse) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code.    
+[**FOSSLight Reuse**](https://github.com/fosslight/fosslight_reuse) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code.    
 It uses [reuse-tool][ret] to check whether the source code's copyright and license writing rules are complied with.
 
 [ret]: https://github.com/fsfe/reuse-tool
@@ -32,6 +32,7 @@ $ pip3 install fosslight_reuse
 $ fosslight_reuse lint
 ```
 ### Parameters      
+
 | Parameter  | Argument | Required  | Description |
 | ------------- | ------------- | ------------- |------------- |
 | p | root_path_to_check | O | Source path to check. | 
@@ -110,7 +111,8 @@ The detected License and Copyright information for each file is output.
 ``` 
 $ fosslight_reuse report
 ```
-### Parameters      
+### Parameters     
+
 | Parameter  | Argument | Required  | Description |
 | ------------- | ------------- | ------------- |------------- |
 | p | path_to_check | O | Convert all oss-pkg-info*.yaml or oss-pkg-info*.yml in the path recursively | 
