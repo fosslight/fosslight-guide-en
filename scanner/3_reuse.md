@@ -13,8 +13,8 @@ It uses [reuse-tool][ret] to check whether the source code's copyright and licen
 [rule]: https://oss.lge.com/guide/process/osc_process/1-identification/copyright_license_rule.html
 
 ##  Functions
-1. `lint` --- Check whether the source code's copyright and license writing rules are complied with.    
-2. `report` --- Convert oss-pkg-info.yaml to FOSSLight-Report.xlsx and vice versa.
+1. `lint` --- Check whether the [source code's copyright and license writing rules][rule] are complied with.    
+2. `report` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
      - It converts oss-pkg-info.yaml to SRC Sheet of FOSSLight Report or    
      - BIN (Android) and BOM Sheet of FOSSLight Report to oss-pkg-info.yaml.
 
@@ -108,6 +108,7 @@ The detected License and Copyright information for each file is output.
 ```
 
 ## 🚀 How to run - report (Convert oss-pkg-info.yaml <-> FOSSLight-Report.xlsx)
+- File examples: [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml), [FOSSLight-Report.xlsx](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/OSS-Report-Sample_0.xlsx)
 ``` 
 $ fosslight_reuse report
 ```
