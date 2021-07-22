@@ -128,6 +128,8 @@ Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
 - Click the button in the Packaging column of the Project List to enter.
 ```
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/45voRAZC7n4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 #### 3-1. Packaging Tab
 ![prj](../images/4_project_pkg.png)
 On the Packaging tab, OSS Package files are uploaded and verified. (However, if you have not used Open Source under a license that requires disclosure of the source code, this tab is disabled.)
