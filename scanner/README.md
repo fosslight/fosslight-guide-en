@@ -70,16 +70,13 @@ FOSSLight Scanner Projects **inherit** other open source projects.
 
 ## Scanner Projects
 
-- [**FOSSLight Source Scanner**](1_source.md)
-- [**FOSSLight Dependency Scanner**](2_dependency.md)
+- [**FOSSLight Source Scanner**](1_source.md) (License: [Apache-2.0](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE))
+- [**FOSSLight Dependency Scanner**](2_dependency.md) (License: [Apache-2.0](https://github.com/fosslight/fosslight_dependency_scanner/blob/main/LICENSE))
+- [**FOSSLight REUSE**](3_reuse.md) (License: [GPL-3.0-only](https://github.com/fosslight/fosslight_reuse/blob/main/LICENSE))
 - Projects to be released soon
   - FOSSLight Binary Scanner
-  - FOSSLight REUSE
   - FOSSLight Scanner
-
-## License
-
-FOSSLight Scanner projects are licensed under [**Apache-2.0 License**](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE).        
+  
      
       
 <div class="right"><a href="https://icons8.com/icon">&lt;Icons by Icons8&gt;</a></div>
