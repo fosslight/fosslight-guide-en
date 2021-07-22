@@ -67,7 +67,7 @@ FOSSLight Scanner Projects **inherit** other open source projects.
   - Gradle : **[License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)**
   - Maven : **[license-maven-plugin](https://github.com/mojohaus/license-maven-plugin)**
   - Pub : **[flutter_oss_licenses](https://github.com/espresso3389/flutter_oss_licenses)**
-
+- [**FOSSLight Reuse**](3_reuse.md) checks reuse compliance by using the **[reuse-tool](https://github.com/fsfe/reuse-tool)**.
 
 ## Scanner Projects
 
