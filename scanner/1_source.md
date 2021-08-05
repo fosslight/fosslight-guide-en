@@ -5,7 +5,7 @@ published: true
 
 <img src="https://img.shields.io/pypi/l/fosslight_source" alt="FOSSLight Source is released under the Apache-2.0 License." /> <img src="https://img.shields.io/pypi/v/fosslight_source" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_source" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_source_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_source_scanner)
 
-[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses [ScanCode][sc], a source code scanner, to detect the copyright and license phrases contained in the file. Some files (ex- build script), binary files, directory and files in specific directories (ex-test) are excluded from the result. And removes words such as "-only" and "-old-style" from the license name to be printed. The output result is generated in Excel format.
+[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses [ScanCode][sc], a source code scanner, to detect the copyright and license phrases contained in the file. Some files (ex- build script), binary files, directory and files in specific directories (ex-test) are excluded from the result. And removes words such as "-only" and "-old-style" from the license name to be printed. The output result is generated in spreadsheet format.
 
 [sc]: https://github.com/nexB/scancode-toolkit
 
@@ -77,7 +77,7 @@ $ tree
 └── fosslight_src_log_2021-05-03_00-39-49.txt
 
 ```
-- FOSSLight-Report_[datetime].xlsx : FOSSLight Source Scanner result in OSS Report format.
+- FOSSLight-Report_[datetime].xlsx : FOSSLight Source Scanner result in spreadsheet format.
 - FOSSLight-Report_[datetime].csv : FOSSLight Source Scanner result in csv format. (Except Windows)
 - fosslight_src_log_[datetime].txt : The execution log.
 - scancode_[datetime].json : The ScanCode result in case of -j option.
