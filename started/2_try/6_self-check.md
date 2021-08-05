@@ -6,6 +6,7 @@ published: true
 ```note
 In Self-Check, you can easily check information such as licenses and vulnerabilities for the OSS(Open Source Software) to be reviewed without the review process.
 ```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ihldFWFIbrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Information that can be checked through Self-Check
 
