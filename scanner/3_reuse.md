@@ -71,7 +71,7 @@ $ fosslight_reuse lint -p /home/test/ -f "notice/sample.py,src/init.py"
 ## 📁 Result
 ### Ex 1. Analyze the files in path.
 ```
-(venv)$ fosslight_reuse lint -p /home/test/reuse-example -r result.xml
+(venv)$ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
 ```
 ```
 # SUMMARY
