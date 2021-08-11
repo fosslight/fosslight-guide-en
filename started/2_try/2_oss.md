@@ -15,9 +15,9 @@ You can check detailed information by clicking a cell in the OSS Name column of 
 - If multiple versions of OSS are registered,'+' is displayed and the highest version is displayed. If you click the '+' button, you can see the other version of same OSS 
 
 ### OSS Type
-- M: This is a case where source codes of multiple licenses are included in one OSS as a multiple license.
-- D: You can select one of several OSS Licenses with Dual License.
-- V: Version different License. License is different for each version of OSS.
+- M : This is a case where source codes of multiple licenses are included in one OSS as a multiple license.
+- D : You can select one of several OSS Licenses with Dual License.
+- V : Version different License. License is different for each version of OSS.
 
 ### OSS Name
 - For OSS marked with Nick, one OSS has multiple names.  
@@ -32,15 +32,15 @@ You can check detailed information by clicking a cell in the OSS Name column of 
 - Dual License allows you to select one of several OSS Licenses and is displayed as OR.
 
 ### License Type
-- Permissive: It is a license that has minimum requirements. In general, it is required to maintain the copyright notice and disclaimer.
-- Weak Copyleft: You can freely distribute copies and modified versions of the work on the condition that the same rights are maintained in the derivative work. Source codes of copies and revisions of the work must be disclosed.
-- Copyleft: You can freely distribute copies and modified versions of the work on the condition that the same rights are maintained in the derivative work. You must disclose the source code of the entire program linked to or operated with, as well as copies and modifications of the work.
-- Proprietary: Software developed by the 3rd party without using open source, and can be used only when contracted with the 3rd party.
-- Proprietary Free: Software developed by the 3rd party without using Open Source, does not require an additional contract, but can only be used in a limited condition.
+- Permissive : It is a license that has minimum requirements. In general, it is required to maintain the copyright notice and disclaimer.
+- Weak Copyleft : You can freely distribute copies and modified versions of the work on the condition that the same rights are maintained in the derivative work. Source codes of copies and revisions of the work must be disclosed.
+- Copyleft : You can freely distribute copies and modified versions of the work on the condition that the same rights are maintained in the derivative work. You must disclose the source code of the entire program linked to or operated with, as well as copies and modifications of the work.
+- Proprietary : Software developed by the 3rd party without using open source, and can be used only when contracted with the 3rd party.
+- Proprietary Free : Software developed by the 3rd party without using Open Source, does not require an additional contract, but can only be used in a limited condition.
 
 ### Obligation
-- Notice: You are obligated to notify.
-- Source Code: You are obligated to disclose the source code.
+- Notice : You are obligated to notify.
+- Source Code : You are obligated to disclose the source code.
 
 ### Download Location
 - The URL where you can download the open source is displayed as a link.
@@ -61,8 +61,8 @@ You can check detailed information by clicking a cell in the OSS Name column of 
 1. Click the Add button in the upper right of the OSS List.
 2. In the "New_Opensource" tab, fill in the information of the new OSS.
     - OSS Name and Nick Name cannot be duplicated.
-    - Summary Description: Fill in information about the OSS.
-    - Attribution: Fill in the phrase that must be included to issued OSS Notice.
+    - Summary Description : Fill in information about the OSS.
+    - Attribution : Fill in the phrase that must be included to issued OSS Notice.
 3. Click the Save button at the bottom right.
 
 ### Modify

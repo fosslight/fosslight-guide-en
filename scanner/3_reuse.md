@@ -109,7 +109,7 @@ The detected License and Copyright information for each file is output.
 
 ## 🚀 How to run - report (Convert oss-pkg-info.yaml <-> FOSSLight-Report.xlsx)
 
-- File examples: [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml), [FOSSLight-Report.xlsx](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/OSS-Report-Sample_0.xlsx)
+- File examples : [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml), [FOSSLight-Report.xlsx](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/OSS-Report-Sample_0.xlsx)
 
 ``` 
 $ fosslight_reuse report

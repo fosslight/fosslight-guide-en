@@ -32,10 +32,10 @@ docker-compose up --build
 - Git : [https://github.com/fosslight/fosslight][src]
 - IDE : [Spring Tool Suite][spring]
     - [lombok][lb] installation required.
-- Project Character Set: UTF-8
+- Project Character Set : UTF-8
 
 ### Download & Installation
-1. Install Java.: [https://openjdk.java.net][java]
+1. Install Java. : [https://openjdk.java.net][java]
 2. Download a DDL file. : [fosslight_create.sql][sql]
 3. Install MariaDB or Mysql. : [https://mariadb.org/download][maria]
 4. Create a database and initialize data.
@@ -53,7 +53,7 @@ Download [Spring Tool Suite][spring].
 
 #### Project Import
 ※ Based on STS (Spring Tool suite) 4.x
-1. Install lombok.: [https://projectlombok.org/setup/eclipse][lb]
+1. Install lombok. : [https://projectlombok.org/setup/eclipse][lb]
 2. File > Import > Gradle > Existing Gradle Project
 3. Set up and import the [Git Source Directory][git_repo].
 4. Set to UTF-8 in Project> Properties> Resource> Text file encoding.
@@ -69,13 +69,13 @@ Download [Spring Tool Suite][spring].
 ### How to run
 #### Change the running options.
 Change running options in [application.properties][props] file.
- - server.port=8180: Web server port (In case of 8180, [http://localhost:8180][local])
- - spring.datasource.url=127.0.0.1:3306/fosslight: Set the IP, Port, and Database Name of the DB server where FOSSLight Database is installed.
- - spring.datasource.username=fosslight: Database username.
- - spring.datasource.password=fosslight: Database password.
+ - server.port=8180 : Web server port (In case of 8180, [http://localhost:8180][local])
+ - spring.datasource.url=127.0.0.1:3306/fosslight : Set the IP, Port, and Database Name of the DB server where FOSSLight Database is installed.
+ - spring.datasource.username=fosslight : Database username.
+ - spring.datasource.password=fosslight : Database password.
  - logging.path=./logs : Set log file path. ( Default "./logs" means an application execution path.)
  - logging.file=fosslight : The name of the log file. (Ref. logback-spring.xml)
- - root.dir=./data: Top path of file upload/download.
+ - root.dir=./data : Top path of file upload/download.
 
 [props]: https://github.com/fosslight/fosslight/blob/main/src/main/resources/application.properties
 
@@ -103,11 +103,11 @@ $ ./gradlew clean build && java -jar build/libs/FOSSLight-1.0.0.war
         ```
         --server.port=<PORT>
         ```
-        - Work Directory (Default: /usr/share/fosslight)
+        - Work Directory (Default : /usr/share/fosslight)
         ```
         --root.dir=<WORK_DIRECTORY>
         ```
-        - Database Connections (Default: 127.0.0.1:3306/fosslight)
+        - Database Connections (Default : 127.0.0.1:3306/fosslight)
         ```
         --spring.datasource.url=<IP>:<Port>/<Database>
         --spring.datasource.username=<USER_NAME>
@@ -125,6 +125,6 @@ $ ./gradlew clean build && java -jar build/libs/FOSSLight-1.0.0.war
 ## Operation check
 - If you connect to [http://localhost:8180][local] from a web browser, the sign in page is displayed.
 - Default account :
-    -  id: admin, pswd :admin
+    -  id : admin, pswd : admin
 
 [local]: http://localhost:8180

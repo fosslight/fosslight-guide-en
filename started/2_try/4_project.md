@@ -12,15 +12,15 @@ The process that must be performed for the development and distribution of softw
 ![ProjectList](../images/project_list.png)
 You can search for a project, check the overall information of the project, and download the FOSSLight Report, OSS Notice, and OSS Package.
 
-- Search: You can search for a project by basic information of the project, status, license, OSS name, etc.
-- Project Name (Version): Double-clicking a row moves to the project detail screen.
-- Status: Displays the status information of the project.
-- Identification, Packaging: Click each item to move to the Identification and Packaging details.
-- Download: Click each icon to download the file.
-    - FOSSLight Report: You can download the list entered in Identification in FOSSLight Report format.
-    - OSS Notice: Displayed when the packaging step is completed, and issued OSS Notices can be downloaded.
-    - Packaging file: Displayed when the source code to be published in Packaging is uploaded, and packaging files can be downloaded.
-- Vulnerability: Displays the highest Critical Level among Vulnerability information of the entire Open Source List (excluding Exclude) included in the identification of the project.
+- Search : You can search for a project by basic information of the project, status, license, OSS name, etc.
+- Project Name (Version) : Double-clicking a row moves to the project detail screen.
+- Status : Displays the status information of the project.
+- Identification, Packaging : Click each item to move to the Identification and Packaging details.
+- Download : Click each icon to download the file.
+    - FOSSLight Report : You can download the list entered in Identification in FOSSLight Report format.
+    - OSS Notice : Displayed when the packaging step is completed, and issued OSS Notices can be downloaded.
+    - Packaging file : Displayed when the source code to be published in Packaging is uploaded, and packaging files can be downloaded.
+- Vulnerability : Displays the highest Critical Level among Vulnerability information of the entire Open Source List (excluding Exclude) included in the identification of the project.
     - Critical (Critical Score 9.0 ~ 10.0)
     - High (Critical Score 7.0 ~ 8.9)
     - Medium (Critical Score 4.0 ~ 6.9)
@@ -50,15 +50,15 @@ Create a project for the software to be distributed.
 This is a tab to modify basic information about the project or change the status.
 ![prj_basic](../images/4_project_bi.png)
 Double-click the Project Name in the Project List.
-- Delete: Delete the project.
-- Drop: Changes the status of the project to Drop. To proceed with the process again, you need to click the Open button.
-- Copy: Copy a project and create a new project.
-- Save: After modifying basic information, click to save.
-- Open: Displayed when the Status is Drop, and when clicked, the Status is changed to Progress.
-- Request to Open: It is displayed when the status is Complete, and the process can be re-executed by changing the status to Progress.
+- Delete : Delete the project.
+- Drop : Changes the status of the project to Drop. To proceed with the process again, you need to click the Open button.
+- Copy : Copy a project and create a new project.
+- Save : After modifying basic information, click to save.
+- Open : Displayed when the Status is Drop, and when clicked, the Status is changed to Progress.
+- Request to Open : It is displayed when the status is Complete, and the process can be re-executed by changing the status to Progress.
 - (Admin Only)
-    - Complete: Changes the status of the project where all processes have been completed.
-    - Open: Displayed when the Status is Complete or Drop, and the Status is changed to Progress.
+    - Complete : Changes the status of the project where all processes have been completed.
+    - Open : Displayed when the Status is Complete or Drop, and the Status is changed to Progress.
 
 ### 2. Identification
 Enter the Open Source Software analysis result for the project to be distributed.
@@ -67,20 +67,20 @@ Enter the Open Source Software analysis result for the project to be distributed
 #### 2-1. 3rd Party Tab
 ![prj](../images/4_project_3rd.png)
 *3rd Party Tab Creation Process*  
-- In case 3rd party software is included: Load → Save 3rd party reviewed in advance
-- If 3rd Party Software is not included: Check Not Applicable → Save
+- In case 3rd party software is included : Load → Save 3rd party reviewed in advance
+- If 3rd Party Software is not included : Check Not Applicable → Save
 
 *How to load a reviewed 3rd party*  
 You can call up the 3rd Party Software information by selecting one of the following methods.  
 (💁 3rd Pary can be loaded multiple times.)
-1. 3rd Party Search: Search and load 3rd Party Software with Status: Confirm in the 3rd Party List menu.
-2. Project Search: Load the 3rd Party tab of another project.
+1. 3rd Party Search : Search and load 3rd Party Software with Status : Confirm in the 3rd Party List menu.
+2. Project Search : Load the 3rd Party tab of another project.
 
 #### 2-2. SRC Tab
 ![prj](../images/4_project_src.png)
 *SRC tab creation process*  
-- When OSS by source code is included: Write OSS information by source code -> Save
-- If the source code is not subject to OSS analysis: Check Not Applicable → Save
+- When OSS by source code is included : Write OSS information by source code -> Save
+- If the source code is not subject to OSS analysis : Check Not Applicable → Save
 
 *How to write OSS information by source code*  
 - Written by hand in the OSS Table
@@ -88,13 +88,13 @@ You can call up the 3rd Party Software information by selecting one of the follo
 - How to batch load OSS information
     1. Upload the FOSSLight Report with the OSS List created in the Upload Analysis Result column.
         - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
-    2. Project Search: Loads the SRC tab of another project.
+    2. Project Search : Loads the SRC tab of another project.
 
 #### 2-3. BIN Tab
 ![prj](../images/4_project_bin.png)
 *BIN tab creation process*  
-- When binary is included: Write OSS information for each binary -> Save
-- When Binary is not included: Check Not Applicable → Save
+- When binary is included : Write OSS information for each binary -> Save
+- When Binary is not included : Check Not Applicable → Save
   
 *How to write OSS information by binary*  
 - Written by hand in the OSS Table
@@ -102,7 +102,7 @@ You can call up the 3rd Party Software information by selecting one of the follo
 - How to batch load OSS information
     1. Upload the FOSSLight Report with the OSS List created in the Upload Analysis Result column.
         - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
-    2. Project Search: Load the BIN tab of another project.
+    2. Project Search : Load the BIN tab of another project.
 
 #### 2-1. BOM Tab
 Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
@@ -142,9 +142,9 @@ On the Packaging tab, OSS Package files are uploaded and verified. (However, if 
 3. Click the'Verify' button to perform the verification process.
     - After verifying, the number of files found in the OSS Package is displayed in the File Count column. If there is an open source that was not found, it displays "path not found".
     - You can check the README, File List and Banned List found in the OSS Package.
-        - README: README file included in OSS Package
-        - File List: List of files in OSS Package
-        - Banned List: List of files that should not be disclosed such as "Proprietary", "Commercial"
+        - README : README file included in OSS Package
+        - File List : List of files in OSS Package
+        - Banned List : List of files that should not be disclosed such as "Proprietary", "Commercial"
 
 
 #### 3-2. Notice Tab
@@ -164,17 +164,17 @@ OSS Notice is automatically generated based on Identification > BOM tab. At this
 ### Check OSS Name button (SRC, BIN Tab)
 It automatically changes to the OSS Name stored in FOSSLight based on the Download location written in the OSS Table.
 - A list of OSS to be automatically converted is displayed in the pop-up.
-    - Change OSS Name button: The OSS Name of the OSS Table is changed for the checked row.
-    - (Admin Only) Add Nickname button: OSS Name written in OSS Table is added as Nickname to OSS stored in FOSSLight for the checked row.
+    - Change OSS Name button : The OSS Name of the OSS Table is changed for the checked row.
+    - (Admin Only) Add Nickname button : OSS Name written in OSS Table is added as Nickname to OSS stored in FOSSLight for the checked row.
 
 ### <a name="comment"></a> Leave a Comment
 - If you click the Comment Edit button at the top right of each tab, you can leave a comment and send the comment to the reviewer, watcher, or creator by e-mail.
 
 ### <a name="warning"></a> OSS Table's Warning message
 #### Warning message meaning by color
-- Red: You cannot request a review or confirm. Correction is required after review.
-- Blue: Review request or confirmation is possible, but it is a matter that needs to be reviewed.
-- Gray: This message is for information delivery.
+- Red : You cannot request a review or confirm. Correction is required after review.
+- Blue : Review request or confirmation is possible, but it is a matter that needs to be reviewed.
+- Gray : This message is for information delivery.
 
 #### Review items according to Warning message
 
