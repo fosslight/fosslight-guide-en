@@ -35,8 +35,8 @@ Click the button in the Identification Column of the project created in the Proj
 - Click the "Request Review" button to request a review.
 
 ### 2-5. (Admin Only) Review
-- Log in as ID: admin, PSWD: admin.
-- Project List > Status: Move to the BOM of the project.
+- Log in as ID : admin, PSWD : admin.
+- Project List > Status : Move to the BOM of the project.
 - Review [Waring Message](../started/2_try/4_project.html#warning).
 - Click Confirm at the top right.
 
@@ -62,7 +62,7 @@ Click the button in the Identification Column of the project created in the Proj
 
 ### 3-3. Click the "Request Review" button in the upper right corner to request a review.
 ### 3-4. (Admin Only) Review
-- Log in as ID: admin, PSWD: admin.
+- Log in as ID : admin, PSWD : admin.
 - Click the "Review Start" button on the top right of the Packaging tab.
 - Click "Confirm" in the upper right corner.
 
@@ -70,5 +70,5 @@ Click the button in the Identification Column of the project created in the Proj
 Click the icon in the Download column of the Project List.
 - Click the OSS Notice icon to download the issued OSS Notice.  
     At this time, if OSS Notice are issued in various formats, it is downloaded as a compressed file.
-- ex. Part of OSS Notice (html format):
+- ex. Part of OSS Notice (html format) :
 ![notice](images/1_prj_oss_notice.png)

@@ -11,10 +11,10 @@ In Self-Check, you can easily check information such as licenses and vulnerabili
 ## Information that can be checked through Self-Check
 
 You can check the information below by creating a Self-Check Project and entering the OSS to be reviewed.
-- OSS detailed information: Registered Version, License by Version, Copyright, Homepage, Download Location, etc.
-- License details: Type of license, obligations, restrictions, full license, etc.
-- User Guide: Precautions when using the relevant OSS, etc.
-- Vulnerability: Security vulnerability information provided by NVD (National Vulnerability Database)
+- OSS detailed information : Registered Version, License by Version, Copyright, Homepage, Download Location, etc.
+- License details : Type of license, obligations, restrictions, full license, etc.
+- User Guide : Precautions when using the relevant OSS, etc.
+- Vulnerability : Security vulnerability information provided by NVD (National Vulnerability Database)
 
 ## Verification procedure through Self-Check
 Self-Check can be done through the following procedure.
@@ -37,29 +37,29 @@ Self-Check can be done through the following procedure.
 ### 3. Check OSS and License information
 ![oss_table](../images/6_self_oss_table.png)
 #### Warning Messages
-- Unconfirmed open source: Displayed when the same OSS Name is not registered in the OSC System.
-- Unconfirmed version: Displayed when there is the same OSS Name in the OSC System, but the same version is not registered.
-- This field is required: Displayed when license information is not entered. (Not required for Self-Check.)
-- Non-included license: Displayed when the same OSS Name and OSS Version are registered in the OSC system, but different from the existing registered license.
+- Unconfirmed open source : Displayed when the same OSS Name is not registered in the OSC System.
+- Unconfirmed version : Displayed when there is the same OSS Name in the OSC System, but the same version is not registered.
+- This field is required : Displayed when license information is not entered. (Not required for Self-Check.)
+- Non-included license : Displayed when the same OSS Name and OSS Version are registered in the OSC system, but different from the existing registered license.
 
 #### OSS and License information
 If you click the icon in the column below, detailed information of registered OSS, detailed information about the license, and guide for the corresponding license are provided.
 However, even for registered OSS, User Guide may not be provided.
-- OSS Detail: Detailed information such as multiple versions of registered OSS, each license, and copyright are provided in a pop-up window.
-- License Detail: Detailed information of the license used by the relevant OSS and license text are provided in a pop-up window.
-- User Guide: Links to information that can be referenced when using the license are provided.
+- OSS Detail : Detailed information such as multiple versions of registered OSS, each license, and copyright are provided in a pop-up window.
+- License Detail : Detailed information of the license used by the relevant OSS and license text are provided in a pop-up window.
+- User Guide : Links to information that can be referenced when using the license are provided.
 
 #### Obligations/restrictions according to the use of OSS
 ❕ Details can be checked in the License List.
-- Obligation > Notify icon: indicates that you are obligated to notify copyright or license (or both).
-- Obligation > Source icon: It means you are obligated to disclose the source code.
-- Restriction icon: It means that there are restrictions on using the OSS.  
+- Obligation > Notify icon : indicates that you are obligated to notify copyright or license (or both).
+- Obligation > Source icon : It means you are obligated to disclose the source code.
+- Restriction icon : It means that there are restrictions on using the OSS.  
 (E.g., restrictions on modification, restrictions on commercial use, etc.)
 
 ### 4. Vulnerability information check
 ```note
-- Check in the Vulnerability column: When the OSS is searched in the CVE DB provided by NIST, the Vulnerability icon is displayed in color according to the CVSS Score.
-- Confirmation with an export file (.xlsx): An Excel file containing a list of all described OSS and vulnerability information is downloaded.
+- Check in the Vulnerability column : When the OSS is searched in the CVE DB provided by NIST, the Vulnerability icon is displayed in color according to the CVSS Score.
+- Confirmation with an export file (.xlsx) : An Excel file containing a list of all described OSS and vulnerability information is downloaded.
 - Detailed information related to Vulnerability can be found in [Vulnerability](7_vulnerability.md).
 ```
 1. Check in OSC System UI

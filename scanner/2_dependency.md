@@ -94,7 +94,7 @@ buildscript {
     }
 }
 ```
-2. Add the below line in build.gradle file in the app(your application name, default:app) directory.
+2. Add the below line in build.gradle file in the app(your application name, default : app) directory.
 ```
 apply plugin: 'org.fosslight'
 ```

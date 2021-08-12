@@ -55,7 +55,7 @@ TOKEN must be issued to call REST API.
 | API  | Response format | Description |
 | ------------- | ------------- | ------------- |
 |/api/v1/create_selfcheck|	JSON	|Create a Self-Check Project and the generated Self-Check's ID is returned.|
-|/api/v1/oss_report_selfcheck|	-	|Upload FOSSLight Report to Self-Check. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name: "Self-Check")|
+|/api/v1/oss_report_selfcheck|	-	|Upload FOSSLight Report to Self-Check. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name : "Self-Check")|
 
 6\. Check the value of the code used when using API
 
