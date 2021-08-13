@@ -10,7 +10,7 @@ published: true
 
 ## Authentication using LDAP
 FOSSLight uses JNDI to support user password authentication using LDAP in an environment where LDAP such as Active Directory can be used.
-- Provider Url : Set the LDAP server information in the format ldap://<AD_SERVER_IP>:<LDAP_PORT>. (javax.naming.Context.PROVIDER_URL)
+- Provider Url : Set the LDAP server information in the format ldap://&lt;AD_SERVER_IP&gt;:&lt;LDAP_PORT&gt;. (javax.naming.Context.PROVIDER_URL)
 
 ## SMTP Setting
 
