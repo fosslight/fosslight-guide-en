@@ -46,6 +46,7 @@ After executing ScanCode, the source code scanner, print the FOSSLight Report.
 | p | String | Path to detect source. | 
 | j | None | As an output, the result of executing ScanCode in json format other than FOSSLight Report is additionally generated. | 
 | o | String | Output file name without file extension. | 
+| m | None | Print the Matched text for each license on a separate sheet. | 
 
 Ex. Print result to FOSSLight Report and json file
 ```
@@ -60,6 +61,7 @@ Converts the result of executing ScanCode in json format into FOSSLight Report f
 | h | None | Print help message. | 
 | p | String | Path of ScanCode json files. | 
 | o | String | Output file name without file extension. | 
+| m | None | Print the Matched text for each license on a separate sheet. | 
 
 Ex. Converting scancode json result to FOSSLight report
 ```
@@ -71,13 +73,13 @@ $ fosslight_convert -p /home/jsonfile_dir
 ```
 $ tree
 .
-├── FOSSLight-Report_2021-05-03_00-39-49.csv
+├── FOSSLight-Report_2021-05-03_00-39-49_SRC.csv
 ├── FOSSLight-Report_2021-05-03_00-39-49.xlsx
 ├── scancode_2021-05-03_00-39-49.json
 └── fosslight_src_log_2021-05-03_00-39-49.txt
 
 ```
 - FOSSLight-Report_[datetime].xlsx : FOSSLight Source Scanner result in spreadsheet format.
-- FOSSLight-Report_[datetime].csv : FOSSLight Source Scanner result in csv format. (Except Windows)
+- FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Source Scanner result in csv format. (Except Windows)
 - fosslight_src_log_[datetime].txt : The execution log.
 - scancode_[datetime].json : The ScanCode result in case of -j option.
