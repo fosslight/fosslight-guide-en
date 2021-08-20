@@ -64,6 +64,8 @@ Double-click the Project Name in the Project List.
 Enter the Open Source Software analysis result for the project to be distributed.
 - Click the button in the Identification column of the Project List to enter.
 
+<iframe width="560" height="315"  src="https://www.youtube.com/embed/LmJH3e5hRRM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 #### 2-1. 3rd Party Tab
 ![prj](../images/4_project_3rd.png)
 *3rd Party Tab Creation Process*  
