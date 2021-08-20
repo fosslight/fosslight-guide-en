@@ -15,6 +15,7 @@ The list of supported Package Managers is as follows.
 - [PIP](https://pip.pypa.io/) (Python)
 - [Pub](https://pub.dev/) (Dart with flutter)
 - [Cocoapods](https://cocoapods.org/) (Swift/Obj-C)
+- [Swift](https://swift.org/package-manager/) (Swift)
 
 
 ## User Guide
@@ -26,6 +27,7 @@ The list of supported Package Managers is as follows.
     - [Maven (optional)](#maven-optional)
     - [Pub](#pub)
     - [Cocoapods](#cocoapods)
+    - [Swift](#swift)
   - [How to install](#-how-to-install)
   - [How to run](#-how-to-run)
   - [Result](#-result)
@@ -187,6 +189,12 @@ $ flutter pub global run flutter_oss_licenses:generate.dart
 $ pod install
 ```
 
+### Swift
+
+1. Create a github personal access token. It needs the Github API to get the license information of the github repository.  
+Please refer the [github docs guide to create a token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+
 
 ## 🎉 How to install
 
@@ -207,7 +215,7 @@ $ fosslight_dependency
 
 | Option | Argument                                         | Description                                                                                 |
 | ------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| -m     | npm, maven, gradle, pip, pub, cocoapods, android | (optional) <br> package manager for your project                                            |
+| -m     | npm, maven, gradle, pip, pub, cocoapods, android, swift | (optional) <br> package manager for your project                                            |
 | -p     | (path)                                           | (optional) <br> input directory                                                             |
 | -o     | (path)                                           | (optional) <br> output file directory                                                       |
 | -a     | conda example: 'conda activate (venv name)'      | (pypi only required) <br> virtual environment activate command                              |
@@ -215,16 +223,21 @@ $ fosslight_dependency
 | -c     | (customized output directory name)               | (gradle, maven only optional) <br> customized build output directory name (default: target) |
 | -n     | (app name)                                       | (android only optional) <br> app directory name (default: app)                              |
 | -v     | N/A                                              | release version                                                                             |
+| -t     | github token                                     | (swift only required) <br> github personal access token                                     |
 
 Note that input directory should be the top directory of the project where the manifest file of the package manager is located.
 For example, if your project uses the NPM package manager, then the input directory should be the path where 'package.json' file is located.
 The manifest file of each package manager is as follows:
 
-| Package manager | Npm          | Pip              | Maven   | Gradle (Android) | Pub          | Cocoapods |
-| --------------- | ------------ | ---------------- | ------- | ---------------- | ------------ | --------- |
-| Manifest file   | package.json | requirements.txt | pom.xml | build.gradle     | pubspec.yaml | Podfile   |
+| Package manager | Npm          | Pip              | Maven   | Gradle (Android) | Pub          | Cocoapods | Swift            |
+| --------------- | ------------ | ---------------- | ------- | ---------------- | ------------ | --------- | ---------------- |
+| Manifest file   | package.json | requirements.txt | pom.xml | build.gradle     | pubspec.yaml | Podfile   | Package.resolved |
 
 In other words, the input directory('-p' option) should be designated as the top directory of the project where the package manager's manifest file exists as above.
+
+\<Tips to run for swift package manager\>
+  * You can run "fosslight_dependency -m swift -t {token} command in the path where {Projectname}.xcodeproj file is located.
+  * Then it can find the 'Package.resolved' file in {Projectname}.xcodeproj/project.xcworkspace/xcshareddata/swiftpm and run automatically.
 
 
 ## 📁 Result
@@ -241,3 +254,4 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Maven<br>& Gradle<br>& Android | (group_id):(artifact_id) | mvnrepository.com/artifact/(group id)/(artifact id)/(version)                                      | mvnrepository.com/artifact/(group id)/(artifact id) |
 | Pub                            | pub:(oss name)           | pub.dev/packages/(oss name)/versions/(version)                                                     | homepage in (pub information)                       |
 | Cocoapods                      | cocoapods:(oss name)     | source in (pod spec information)                                                                   | cocoapods.org/(oss name)                            |
+| Swift                      | swift:(oss name)     | repositoryURL in Package.resolved                                                                   | repositoryURL in Package.resolved                            |
