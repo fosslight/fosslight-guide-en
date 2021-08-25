@@ -5,6 +5,7 @@ For improvements or bugs, please report by creating an issue in Git repository. 
 - [FOSSLight](https://github.com/fosslight/fosslight/issues)
 - [FOSSLight Dependency Scanner](https://github.com/fosslight/fosslight_dependency_scanner/issues)
 - [FOSSLight Source Scanner](https://github.com/fosslight/fosslight_source_scanner/issues)
+- [FOSSLight Guide](https://github.com/fosslight/fosslight-guide-en/issues)
 
 ## Contributing
 
@@ -54,3 +55,6 @@ git commit -s -m "Write the commit message"
 - [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
 - [Using Pull Requests](https://help.github.com/articles/about-pull-requests/)
 - [GitHub Help](https://help.github.com)
+
+### FOSSLight Guide's License
+All contents written in the [FOSSLight Guide page](https://fosslight.org/fosslight-guide-en) is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0) License.
