@@ -50,7 +50,7 @@ Write open source information included by binary.
 ### BOM Sheet
 The "BOM" (Bill of Materials) sheet is a sheet to show the contents of the open sources listed in the FOSSLight Report. Do not write this sheet.     
       
-The "BOM" sheet is automatically included in the FOSSLight Report downloaded from the FOSSLight.
+The "BOM" sheet is automatically filled in the FOSSLight Report downloaded from the FOSSLight.
 
 ![info](./images/bom.png)
 
