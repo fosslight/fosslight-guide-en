@@ -67,7 +67,7 @@ You can check detailed information by clicking a cell in the OSS Name column of 
 
 ### OSS Details tab
 ![OSS_DETAIL](../images/2_oss_detail.png)  
-Click OSS Name in the OSS List.
+Click OSS Name in the OSS List.    
 Only in case of Admin, it is displayed as editable and the Save, Sync, Copy, and Delete buttons are displayed.
 
 #### Modify
@@ -81,7 +81,7 @@ The OSS copy function is useful when adding different versions of the same OSS.
 3. At this time, "_Copied" is appended to the OSS Name.
 4. After editing the information, click the Save button at the bottom right to register OSS.
 
-### Delete
+#### Delete
 1. Click the OSS Name to be deleted.
 2. In the OSS Details tab, fill in the reason for deletion in the Comment column.
 3. Click the Delete button at the bottom left.
@@ -94,10 +94,11 @@ The OSS copy function is useful when adding different versions of the same OSS.
 If multiple versions are registered in OSS, information for each version is updated at once.
 Click the Sync button at the bottom right.
 ![OSS_SYNC](../images/2_oss_sync.png)  
-(1) Select the OSS version to be modified.
+- (1) Select the OSS version to be modified.
      - Versions that already have the same OSS information are grayed out and cannot be selected.
-(2) Select the OSS information to be modified. Information is updated only for checked items.
+- (2) Select the OSS information to be modified. Information is updated only for checked items.
      - The information displayed is the OSS information of the corresponding version of the row selected in (1).
-(3) Comment field. When you click OK, the comment entered in the OSS version to be modified selected in (1) is added.
+- (3) Comment field.
+     - When you click OK, the comment entered in the OSS version to be modified selected in (1) is added.
 
 
