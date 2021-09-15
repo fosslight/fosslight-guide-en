@@ -237,7 +237,6 @@ Successfully changed header of src/fosslight_oss_pkg/_common.py
 (venv)$ fosslight_reuse add -p tests/add -m
 ```
 ```
-(venv) jaekwonbang@jaekwonbang-desktop:~/commit_0915$ fosslight_reuse add -p tests/add -m
 # File list that have both license and copyright : 1 / 4
 # __init__.py
 * License:
