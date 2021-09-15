@@ -253,8 +253,7 @@ Successfully changed header of tests/add/test_add.py
   * test_add.py
 # Input Copyright to write in the copyright missing files (ex, Copyright <year> <name>) : Copyright 2021 LGE Electronics Inc.
   * Your input Copyright : Copyright 2021 LGE Electronics Inc.
-Successfully changed header of /home/jaekwonbang/commit_0915/tests/add/test_add.py
-
+Successfully changed header of tests/add/test_add.py
 ```
 
 
