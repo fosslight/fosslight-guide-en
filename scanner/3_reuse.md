@@ -232,7 +232,7 @@ Successfully changed header of src/fosslight_oss_pkg/_common.py
 Successfully changed header of src/fosslight_oss_pkg/_common.py
 ```
 
-### Ex 3. Add copyright and license manually while running program(not need to use -c, -l option)
+### Ex 3. Add copyright and license manually (-c and -l options are ignored.)
 ```
 (venv)$ fosslight_reuse add -p tests/add -m
 ```
