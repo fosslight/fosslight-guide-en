@@ -71,10 +71,10 @@ $ fosslight_reuse lint -p /home/test/ -f "notice/sample.py,src/init.py"
 
 ## 📁 Result
 ### Ex 1. Analyze the files in path.
-```
+```bash
 (venv)$ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
 ```
-```
+```bash
 # SUMMARY
 # Open Source Package info: File to which OSS Package information is written.
 # Used licenses: License detected in the path.
@@ -90,10 +90,10 @@ $ fosslight_reuse lint -p /home/test/ -f "notice/sample.py,src/init.py"
 
 ### Ex 2. Analyze specific files. 
 The detected License and Copyright information for each file is output.
-```
+```bash
 (venv)$ fosslight_reuse lint -p /home/soimkim/test/reuse-example -f "src/load.c,src/dummy.c,src/main.c"
 ```
-```
+```bash
 # src/load.c
 * License:
 * Copyright: SPDX-FileCopyrightText: 2019 Jane Doe <jane@example.com>
@@ -127,17 +127,17 @@ $ fosslight_reuse report
 
 ### Ex 1. Convert oss-pkg-info.yaml file to FOSSLight Report.
 1-1. Convert all oss-pkg-info*.yaml or oss-pkg-info*.yml in the path recursively.
-``` 
+```bash 
 $ fosslight_reuse report -p /home/test/source
 ```
 
 1-2. Covert the specific oss-pkg-info.yaml files.
-``` 
+```bash 
 $ fosslight_reuse report -f src/oss-pkg-info.yaml,main/setting.yml
 ```
 
 ### Ex 2. Convert FOSSLight Report to oss-pkg-info.yaml file.
-```
+```bash
 $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 ```
 
@@ -154,7 +154,7 @@ If an output file name is specified with -o, a result file is created with that 
 
 
 ## 🚀 How to run - add (Add copyright and license)
-``` 
+```bash 
 $ fosslight_reuse add
 ```
 
@@ -169,17 +169,17 @@ $ fosslight_reuse add
 | m | manual mode | X | add copyright and license manually while running |    
 
 ### Ex 1. Add copyright and license to file(s) in input path
-``` 
+```bash
 $ fosslight_reuse add -p src/ -c "Copyright 2021 LG Electronics Inc." -l "GPL-3.0"
 ```
     
 ### Ex 2. Add copyright and license to input file(s)
-``` 
+```bash 
 $ fosslight_reuse add -f "src/load.c,src/dummy.c,src/main.c" -c "Copyright 2021 LG Electronics Inc." -l "GPL-3.0"
 ```
  
 ### Ex 3. Add copyright and license manually while running program(not need to use -c, -l option)
-``` 
+```bash 
 $ fosslight_reuse add -p src/ -m
 ```
 
@@ -198,10 +198,10 @@ $ fosslight_reuse add -p src/ -m
 
 ## 📁 Result
 ### Ex 1. Add copyright and license to file(s) in input path
-```
+```bash
 (venv)$ fosslight_reuse add -p tests/add -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0"
 ```
-```
+```bash
 # File list that have both license and copyright : 1 / 4
 # __init__.py
 * License:
@@ -218,10 +218,10 @@ Successfully changed header of /home/jaekwonbang/commit_0915/tests/add/test_add.
 ```
     
 ### Ex 2. Add copyright and license to input file(s)
-```
+```bash
 (venv)$ fosslight_reuse add -f "src/fosslight_oss_pkg/_common.py" -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
-```
+```bash
 # src/fosslight_oss_pkg/_common.py
 * License:
 * Copyright:
@@ -233,10 +233,10 @@ Successfully changed header of src/fosslight_oss_pkg/_common.py
 ```
 
 ### Ex 3. Add copyright and license manually (-c and -l options are ignored.)
-```
+```bash
 (venv)$ fosslight_reuse add -p tests/add -m
 ```
-```
+```bash
 # File list that have both license and copyright : 1 / 4
 # __init__.py
 * License:
