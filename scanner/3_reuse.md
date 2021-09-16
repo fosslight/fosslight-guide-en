@@ -160,7 +160,7 @@ $ fosslight_reuse add
 
 ### Parameters      
 
-| Parameter  | Argument | 필수  | 설명 |
+| Parameter  | Argument | Required  | Description |
 | ------------- | ------------- | ------------- |------------- |
 | p | path_to_check | O | path to check files | 
 | f | file1,file2,... | X | file(s) to add copyright and license |
