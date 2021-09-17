@@ -17,7 +17,7 @@ It uses [reuse-tool][ret] to check whether the source code's copyright and licen
 2. `report` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
      - It converts oss-pkg-info.yaml to SRC Sheet of FOSSLight Report or    
      - BIN (Android) and BOM Sheet of FOSSLight Report to oss-pkg-info.yaml.
-3. `add` --- Add copyright and License to missing file(s)
+3. `add` --- Add copyright and icense to missing file(s)
 
 ## 🎉 How to install
 
@@ -164,9 +164,8 @@ $ fosslight_reuse add
 | ------------- | ------------- | ------------- |------------- |
 | p | path_to_check | O | path to check files | 
 | f | file1,file2,... | X | file(s) to add copyright and license |
-| c | copyright | O | copyright to add(Copyright <year> <holder name> - Kee this format  ) | 
+| c | copyright | O | copyright to add(Copyright <year> <holder name>) | 
 | l | license | O | license name to add(recommended to use SPDX format) |
-| m | manual mode | X | add copyright and license manually while running |    
 
 ### Ex 1. Add copyright and license to file(s) in input path
 ```bash
@@ -177,11 +176,6 @@ $ fosslight_reuse add -p src/ -c "Copyright 2021 LG Electronics Inc." -l "GPL-3.
 ```bash 
 $ fosslight_reuse add -f "src/load.c,src/dummy.c,src/main.c" -c "Copyright 2021 LG Electronics Inc." -l "GPL-3.0"
 ```
- 
-### Ex 3. Add copyright and license manually while running program(not need to use -c, -l option)
-```bash 
-$ fosslight_reuse add -p src/ -m
-```
 
 ## How it works
 1. Check to present input path using -p option
@@ -190,71 +184,96 @@ $ fosslight_reuse add -p src/ -m
     3-1. When running on a project basis. (without -f parameter)
     - Filter available file(s) by file extension in the path
     - Print file list that both has copyright and license(excluded from Adding)
-    - Add input copyright and license using -c and -l option
+    - Add input copyright and license to missing file(s) using -c and -l option
 
     3-2. When executing in file unit (with -f parameter)
     - Print the copyright text and license text extraction by file.
-    - Add input copyright and license using -c and -l option
+    - Add input copyright and license to missing file(s) using -c and -l option
 
 ## 📁 Result
-### Ex 1. Add copyright and license to file(s) in input path
-```bash
-(venv)$ fosslight_reuse add -p tests/add -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0"
+### Result print
+ * File list that have both license and copyright : the file list which both have copyright and license
+ * Missing License File(s) : the file list which has no license
+ * Missing Copyright File(s) : the file list which has no copyright
+
+### Changes in the file - Added copyright or license at the top of the file
+<table>
+<tr>
+    <td>Before</td>
+    <td>After</td>
+</tr>
+<tr>
+<td>
+
+ <pre lang="python">
+  int x = 1
+  const string y = "FOSSLight"
+  z = sum(x, 1)
+  
+  </pre>
+</td>
+<td>
+  <pre lang="python">
+# SPDX-FileCopyrightText: Copyright 2019-2021 LG Electronics Inc.
+#
+# SPDX-License-Identifier: GPL-3.0-only   
+
+    
+    
+### Ex 1. Add copyright or license in the input path
+```
+(venv)$ fosslight_reuse add -p tests/add -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
 ```bash
-# File list that have both license and copyright : 1 / 4
+# File list that have both license and copyright : 3 / 7
 # __init__.py
 * License:
 * Copyright:
 
+# test_both_have_1.py
+* License: GPL-3.0-only
+* Copyright: SPDX-FileCopyrightText: Copyright 2019-2021 LG Electronics Inc.
+
+# test_both_have_2.py
+* License: MIT
+* Copyright: SPDX-FileCopyrightText: Copyright (c) 2011 LG Electronics Inc.
+
 # Missing license File(s)
-  * test_add.py
-  * Your input license : GPL-3.0
-Successfully changed header of tests/add/test_add.py
+  * test_no_license.py
+  * Your input license : GPL-3.0-only
+Successfully changed header of tests/add_result/test_no_license.py
+
 # Missing Copyright File(s)
-  * test_add.py
+  * test_no_copyright.py
   * Your input Copyright : Copyright 2019-2021 LG Electronics Inc.
-Successfully changed header of /home/jaekwonbang/commit_0915/tests/add/test_add.py
+Successfully changed header of /home/jaekwonbang/commit_0915/tests/add_result/test_no_copyright.py
 ```
     
-### Ex 2. Add copyright and license to input file(s)
-```bash
-(venv)$ fosslight_reuse add -f "src/fosslight_oss_pkg/_common.py" -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+### Ex 2. Add copyright or license in the input file(s)
+```
+(venv)$ fosslight_reuse add -f "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
 ```bash
-# src/fosslight_oss_pkg/_common.py
-* License:
+# add/test_both_have_1.py
+* License: GPL-3.0-only
+* Copyright: SPDX-FileCopyrightText: Copyright 2019-2021 LG Electronics Inc.
+
+# add/test_both_have_2.py
+* License: MIT
+* Copyright: SPDX-FileCopyrightText: Copyright (c) 2011 LG Electronics Inc.
+
+# add/test_no_copyright.py
+* License: GPL-3.0-only
 * Copyright:
+
+# add/test_no_license.py
+* License:
+* Copyright: SPDX-FileCopyrightText: Copyright 2019-2021 LG Electronics Inc.
 
   * Your input license : GPL-3.0-only
-Successfully changed header of src/fosslight_oss_pkg/_common.py
+Successfully changed header of add/test_no_license.py
   * Your input Copyright : Copyright 2019-2021 LG Electronics Inc.
-Successfully changed header of src/fosslight_oss_pkg/_common.py
+Successfully changed header of add/test_no_copyright.py
 ```
-
-### Ex 3. Add copyright and license manually (-c and -l options are ignored.)
-```bash
-(venv)$ fosslight_reuse add -p tests/add -m
-```
-```bash
-# File list that have both license and copyright : 1 / 4
-# __init__.py
-* License:
-* Copyright:
-
-# Missing license File(s)
-  * test_add.py
-# Select a license to write in the license missing files
-   1.MIT,  2.Apache-2.0,  3.LGE-Proprietary,  4.Manaully Input,  5.Not select now : 3
-  * Your input license : LicenseRef-LGE-Proprietary
-Successfully changed header of tests/add/test_add.py
-
-# Missing Copyright File(s)
-  * test_add.py
-# Input Copyright to write in the copyright missing files (ex, Copyright <year> <name>) : Copyright 2021 LGE Electronics Inc.
-  * Your input Copyright : Copyright 2021 LGE Electronics Inc.
-Successfully changed header of tests/add/test_add.py
-```
-
 
 [release]: https://github.com/fosslight/fosslight_reuse/releases
