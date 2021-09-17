@@ -218,6 +218,13 @@ $ fosslight_reuse add -f "src/load.c,src/dummy.c,src/main.c" -c "Copyright 2021 
 #
 # SPDX-License-Identifier: GPL-3.0-only   
 
+ int x = 1
+  const string y = "FOSSLight"
+  z = sum(x, 1)
+</pre>
+</td>
+</tr>
+</table>
     
     
 ### Ex 1. Add copyright or license in the input path
