@@ -14,7 +14,6 @@ published: true
 - [How to run](#-how-to-run)
 - [How it works](#-how-it-works)
 - [Result](#-result)
-- [Development](#-development)
 
 
 ## 📋 Prerequisite
