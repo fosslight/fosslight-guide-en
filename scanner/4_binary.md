@@ -51,9 +51,9 @@ $ fosslight_binary [option] <arg>
 ## 🧐 How it works
 1. List up binaries except the following cases.    
     1-0. Symbolic link files and FIFO files.    
-    1-1. The file extension is in ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
-                                   'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
-    1-2. The file type is in ['data','timezone data', 'apple binary property list']    
+    1-1. The file extension is ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
+                                'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
+    1-2. The file type is ['data','timezone data', 'apple binary property list']    
     1-3. The directory is ['.git']    
 2. Check "Exclude".     
     - binary is ['fosslight_bin', 'fosslight_bin.exe']     
