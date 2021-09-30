@@ -58,10 +58,10 @@ $ fosslight_binary [option] <arg>
 2. Check "Exclude".     
     - binary is ['fosslight_bin', 'fosslight_bin.exe']     
     - directory is ["test", "tests", "doc", "docs"]     
-3. With the -a option, output as binary only when the relevant information is included in the file command result.      
-4. Extract checksum and tlsh for each binary.     
-5. Load OSS information from Binary DB.      
-6. Create output files.     
+3. With the -a option, output as binary only when the result of “file” command includes target architecture (ex. x86-64, ARM, MIPS, Mach-O)      
+5. Extract checksum and tlsh for each binary.     
+6. Load OSS information from Binary DB.      
+7. Create output files.     
 
 ## 📁 Result
 
