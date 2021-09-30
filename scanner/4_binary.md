@@ -55,7 +55,7 @@ $ fosslight_binary [option] <arg>
                                 'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
     1-2. The file type is ['data','timezone data', 'apple binary property list']    
     1-3. The directory is ['.git']    
-2. Check "Exclude".     
+2. Check “Exclude” in FOSSLight Report.         
     - binary is ['fosslight_bin', 'fosslight_bin.exe']     
     - directory is ["test", "tests", "doc", "docs"]     
 3. With the -a option, output as binary only when the result of “file” command includes target architecture (ex. x86-64, ARM, MIPS, Mach-O)      
