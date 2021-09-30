@@ -34,18 +34,22 @@ $ pip3 install fosslight_binary
 
 ## 🚀 How to run
 ````
-$ fosslight_binary -p [path_to_analyze]
+$ fosslight_binary [option] <arg>
 ````    
-### About parameters
 
-| Parameter  | Argument | Description |
-| ------------- | ------------- | ------------- |
-| h | None | Print help message. | 
-| p | String | Path to detect binaries. | 
-| o | String | Output directory. | 
-| f | String | Output filename. | 
-| a | String | Target architecture to output. (ex. x86-64, ARM) | 
-| d | String | DB Connection Information. (ex. postgresql://username:password@host:port/database_name) | 
+### About Options
+```` 
+    Mandatory:
+        -p <binary_path>              Path to analyze binaries
+
+    Options:
+        -h                            Print help message
+        -a <target_architecture>      Target Architecture(x86-64, ARM, MIPS, Mach-O, and etc.)
+        -o <output_path>              Path to save output files
+        -f <customized_file_name>     Output file name without file extension(Default: 'binary_[datetime].txt')
+        -d <db_url>                   DB Connection(format :'postgresql://username:password@host:port/database_name')
+```` 
+
 
 ## 🧐 How it works
 1. Extract binaries.    
