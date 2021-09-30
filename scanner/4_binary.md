@@ -49,20 +49,19 @@ $ fosslight_binary [option] <arg>
 
 
 ## 🧐 How it works
-1. Extract binaries.    
-    1-0. Except linked files and FIFO files from binaries.    
-    1-1. Except when the extension is ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
+1. List up binaries except the following cases.    
+    1-0. Linked files and FIFO files from binaries.    
+    1-1. The file extension is in ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
                                    'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
-    1-2. Except when the file type is ['data','timezone data', 'apple binary property list']    
-    1-3. Except when the directory is ['.git']    
-    1-4. Check "Exclude"     
-        - binary is ['fosslight_bin', 'fosslight_bin.exe']     
-        - directory is ["test", "tests", "doc", "docs"]     
-    1-5. With the -a option, output as binary only when the relevant information is included in the file command result.      
-2. Extract checksum and tlsh for each binary.     
-3. Load OSS information from Binary DB.      
-4. Create binary.txt file.          
-5. Create excel & csv file.     
+    1-2. The file type is in ['data','timezone data', 'apple binary property list']    
+    1-3. The directory is ['.git']    
+2. Check "Exclude"     
+    - binary is ['fosslight_bin', 'fosslight_bin.exe']     
+    - directory is ["test", "tests", "doc", "docs"]     
+3. With the -a option, output as binary only when the relevant information is included in the file command result.      
+4. Extract checksum and tlsh for each binary.     
+5. Load OSS information from Binary DB.      
+6. Create output files.     
 
 ## 📁 Result
 
