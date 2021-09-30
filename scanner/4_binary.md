@@ -73,7 +73,8 @@ $ tree
 └── FOSSLight-Report_20210601_201646.xlsx
 
 ```
-- FOSSLight-Report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.
-- FOSSLight-Report_[datetime]_BIN.csv : FOSSLight binary result in csv format. (Except Windows)
-- fosslight_bin_log_[datetime].txt : The execution log.
 - binary_[datetime].txt : The checksum and tlsh values for each binary.
+- fosslight_bin_log_[datetime].txt : The execution log.
+- FOSSLight-Report_[datetime]_BIN.csv : FOSSLight binary result in csv format. (Except Windows)
+- FOSSLight-Report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.
+
