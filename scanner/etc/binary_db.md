@@ -25,7 +25,8 @@ postgres=# CREATE USER bin_analysis_script_user PASSWORD 'script_123' ;
 postgres=# CREATE DATABASE bat OWNER bin_analysis_script_user ENCODING 'utf-8';
 ````
 
-2. Download [fosslight_create.sql][sql_link]
+2. Download [fosslight_create.sql][sql_link] file
+
 [sql_link]: https://github.com/fosslight/fosslight_binary_scanner/blob/main/db/initdb.d/fosslight_create.sql
 
 3. Create a table
