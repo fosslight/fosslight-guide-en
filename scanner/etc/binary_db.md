@@ -26,7 +26,7 @@ postgres=# CREATE DATABASE bat OWNER bin_analysis_script_user ENCODING 'utf-8';
 ````
 
 2. Download [fosslight_create.sql][sql_link]
-[sql_link]: https://www.cyberciti.biz/tips/postgres-allow-remote-access-tcp-connection.html
+[sql_link]: https://github.com/fosslight/fosslight_binary_scanner/blob/main/db/initdb.d/fosslight_create.sql
 
 3. Create a table
 ````
