@@ -6,7 +6,6 @@ title: 🔎 FOSSLight Scanner
 # FOSSLight Scanner
 
 ## Introduction
-<img src="https://github.com/fosslight/ko/raw/main/assets/img/fosslight_scanner.jpg">
 
 FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. Also, it can check whether an open source complies with the copyright/license writing rule.
 
