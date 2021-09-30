@@ -15,11 +15,9 @@ if there is an identical or similar binary from the Binary DB.
 - [Prerequisite](#-prerequisite)
 - [How to install](#-how-to-install)
 - [How to run](#-how-to-run)
+- [How it works](#-how-it-works)
 - [Result](#-result)
 - [Development](#-development)
-- [How it works](#-how-it-works)
-- [How to report issue](#-how-to-report-issue)
-- [License](#-license)
 
 
 ## 📋 Prerequisite
