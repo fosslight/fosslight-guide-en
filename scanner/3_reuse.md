@@ -38,7 +38,7 @@ $ fosslight_reuse lint
 * Required parameter : **Mode**   
 * Optional parameter : **Options**
 
-```bash
+```
 Mode
     lint                  Check REUSE compliance
     report                oss_pkg_info.yaml <-> FOSSLight-Report.xlsx
