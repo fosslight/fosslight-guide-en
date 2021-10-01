@@ -219,7 +219,6 @@ Result
 1. Find a OSS Package Information file.
     OSS Package Information File List  
     * Check if at least one of the following files exists (case-free)   
-    ```
         - oss-pkg-info.yaml
         - oss-pkg-info.yml
         - requirement.txt
@@ -231,7 +230,7 @@ Result
         - Cartfile.resolved
         - oss-package.info 
         - File started with "MODULE_LICENSE_ "   
-    ```
+
 
 2. Run fsfe-reuse lint   
     2-1. When running on a project basis. (without -f parameter)   
