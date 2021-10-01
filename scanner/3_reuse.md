@@ -240,6 +240,7 @@ Result
     - By creating dep5 files, exclude binary or .json, venv */*, node_modules/*,. */* from reuse.   
     - Run fsfe-reuse lint (If the OSS Package Information file exists, the list of missing license files is not printed.)   
     - Rollback dep5-related file creation part.   
+    
     2-2. When executing in file unit (with -f option)   
     - Print the copyright text and license text extraction by file.   
     - However, if the file does not exist or the file is binary or .json, copyright text and license text are not printed.   
