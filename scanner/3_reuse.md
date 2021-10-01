@@ -234,7 +234,7 @@ Result
     ```
 
 2. Run fsfe-reuse lint   
-    2-1. When running on a project basis. (without -f parameter)
+    2-1. When running on a project basis. (without -f parameter)   
     - If there is no ./reuse/dep5 file in the Root Path, it is created.   
     - If it already exists, copy it to bk file and append the default config value to the existing dep file.   
     - By creating dep5 files, exclude binary or .json, venv */*, node_modules/*,. */* from reuse.   
