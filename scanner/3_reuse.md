@@ -252,7 +252,7 @@ Result
 [yml]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml
 [xlsx]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/OSS-Report-Sample_0.xlsx
 
-2. Convert oss-pkg-info.yaml file ↔ FOSSLight Report
+2. Convert oss-pkg-info.yaml file ↔ FOSSLight Report   
     2-1. When running on a project basis. (without -f option)   
     - Convert all files in the path (oss-pkg-info.yaml file ↔ FOSSLight Report)   
     
