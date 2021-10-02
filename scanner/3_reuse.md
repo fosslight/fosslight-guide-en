@@ -7,8 +7,7 @@ title: FOSSLight Reuse
 <img src="https://img.shields.io/pypi/l/fosslight-reuse" alt="License" /> <img src="https://img.shields.io/pypi/v/fosslight_reuse" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_reuse" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_reuse)](https://api.reuse.software/info/github.com/fosslight/fosslight_reuse)
     
 
-[**FOSSLight Reuse**](https://github.com/fosslight/fosslight_reuse) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code.    
-It uses [reuse-tool][ret] to check whether the source code's copyright and license writing rules are complied with.
+[**FOSSLight Reuse**](https://github.com/fosslight/fosslight_reuse) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code using [reuse-tool][ret].
 
 [ret]: https://github.com/fsfe/reuse-tool
 [rule]: https://oss.lge.com/guide/process/osc_process/1-identification/copyright_license_rule.html
@@ -41,7 +40,7 @@ $ fosslight_reuse lint
 ```
 Mode
     lint                  Check REUSE compliance
-    report                oss_pkg_info.yaml <-> FOSSLight-Report.xlsx
+    report                oss_pkg_info.yaml <-> FOSSLight-Report
     add                   Add missing license and copyright
  
 Options:
@@ -61,7 +60,7 @@ Options for only 'add' mode
 (ex3 )$ fosslight_reuse add -p tests/add -c "2019-2021 LG Electronics Inc." -l "LicenseRef-LGE-Proprietary"
 ```
 
-**(Only for windows)** Run using executable file   
+**(Only for Windows)** Run using executable file   
     1. Download fosslight_reuse_windows.exe from FOSSLight Reuse - Release.   
     2. Move the executable file to the path where oss-pkg-info.yaml file or OSS-Report.xlsx is located.   
     3. Double-click the executable file to run it.   
@@ -113,7 +112,7 @@ ex.2 Result
 $ fosslight_reuse report -p /home/test/source
 ```
 
-oss-pkg-info.yaml -> OSS Report(OSS-Report.xlsx) 결과   
+oss-pkg-info.yaml -> OSS Report(OSS-Report.xlsx) Result   
     **_oss-pkg-info.yaml_**   
 ```yaml    
     Open Source Package:
