@@ -69,10 +69,10 @@ Options for only 'add' mode
 ## 📁 Example
 ### lint
 ```
-# Ex.1) Analyze for specific folder
+# ex.1) Analyze for specific folder
 (venv)$ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
 ```
-ex.1 Result
+ > ex.1 Result
 ```bash
     # SUMMARY
     # Open Source Package info: File to which OSS Package information is written.
@@ -87,10 +87,10 @@ ex.1 Result
 ```
 
 ```
-# Ex.2) Analyze for specific files
+# ex.2) Analyze for specific files
 (venv)$ fosslight_reuse lint -p /home/soimkim/test/reuse-example -f "src/load.c,src/dummy.c,src/main.c"
 ```
-ex.2 Result
+ > ex.2 Result
 
 ```bash    
     # src/load.c
@@ -108,11 +108,11 @@ ex.2 Result
 
 ### report
 ```
-# Ex.1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.
+# ex.1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.
 $ fosslight_reuse report -p /home/test/source
 ```
 
-oss-pkg-info.yaml -> OSS Report(OSS-Report.xlsx) Result   
+ > oss-pkg-info.yaml -> OSS Report(OSS-Report.xlsx) Result   
     **_oss-pkg-info.yaml_**   
 ```yaml    
     Open Source Package:
@@ -143,19 +143,19 @@ oss-pkg-info.yaml -> OSS Report(OSS-Report.xlsx) Result
 
 
 ```
-# Ex.2) Conver FOSSLight Report to oss-pkg-info.yaml
+# ex.2) Conver FOSSLight Report to oss-pkg-info.yaml
 $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 ```
 
 ### add
 ```
-# Ex.1) Add copyright and license to file(s) in the input path
+# ex.1) Add copyright and license to file(s) in the input path
 (venv)$ fosslight_reuse add -p tests/add -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
     
-# Ex.2) Add copyright and license to input file(s)
+# ex.2) Add copyright and license to input file(s)
 (venv)$ fosslight_reuse add -f "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
-Result   
+ > Result   
     * Changes in the file - Added copyright or license at the top of the file   
 <table>
 <tr>
