@@ -155,8 +155,8 @@ $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 # Ex.2) Add copyright and license to input file(s)
 (venv)$ fosslight_reuse add -f "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
-Result
-    * Changes in the file - Added copyright or license at the top of the file
+Result   
+    * Changes in the file - Added copyright or license at the top of the file   
 <table>
 <tr>
     <td>Before</td>
