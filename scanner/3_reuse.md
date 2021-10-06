@@ -67,7 +67,7 @@ Options for only 'add' mode
 
 
 ## 📁 Example
-### lint
+### 🏷 lint
 ```
 # ex.1) Analyze for specific folder
 (venv)$ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
@@ -106,48 +106,55 @@ Options for only 'add' mode
     * Copyright: SPDX-FileCopyrightText: 2019 Jane Doe <jane@example.com>
 ```
 
-### report
+### 🏷 report
 ```
 # ex.1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.
 $ fosslight_reuse report -p /home/test/source
 ```
-
- > oss-pkg-info.yaml -> OSS Report(OSS-Report.xlsx) Result   
-    **_oss-pkg-info.yaml_**   
-```yaml    
-    Open Source Package:
-    - name: Apache Commons
-      version: '2.4'
-      source: http://svn.apache.org/repos/asf/commons
-      homepage: https://commons.apache.org
-      license:
-      - Apache-2.0
-    - name: dbus
-      version: 1.10.20
-      source: https://dbus.freedesktop.org/releases/dbus
-      copyright: Copyright (c) 2002-2007, Red Hat, Inc.
-      homepage: https://www.freedesktop.org
-      license:
-      - AFL-2.1
-    - name: mysql-connector-java
-      version: 5.1.38
-      source: https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.38
-      homepage: http://dev.mysql.com/doc/connector-j/en
-      license:
-      - GPL-2.0
 ```
-
-**_FOSS-Report.xlsx_** 
-
-
-
-
-```
-# ex.2) Conver FOSSLight Report to oss-pkg-info.yaml
+# ex.2) Convert FOSSLight Report to oss-pkg-info.yaml
 $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 ```
 
-### add
+ > Result of oss-pkg-info.yaml <-> OSS Report(OSS-Report.xlsx)    
+ 
+ 
+▪️ **_oss-pkg-info.yaml_**   
+```yaml    
+Open Source Software Package:
+    - name: glibc
+      version: 2.3
+      source: https://github.com/fsfe/glibc
+      license:
+      - GPL-3.0
+      - LGPL-2.1
+      file : 
+      - a.c
+      - b.c
+    - name : dbus
+      version : 1.3
+      source : https://github.com/fsfe/dbus
+      license : GPL-2.0
+      file : src/*
+      copyright : |
+        Copyright (c) 2020 Test
+        Copyright (c) 2020 Test
+    - name : reuse-tool
+      source : https://github.com/fsfe/reuse
+      homepage : http://google.com
+      license : MIT
+      copyright: Copyright (c) 2020 Test
+    - name : build-tool
+      source : http://gihub.com/bazel
+      license : Apache-2.0
+      exclude : True
+```
+
+▪️ **_FOSS-Report.xlsx_** 
+![Report_xlsx](images/fosslight_reuse_report.JPG)
+
+
+### 🏷 add
 ```
 # ex.1) Add copyright and license to file(s) in the input path
 (venv)$ fosslight_reuse add -p tests/add -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
@@ -155,37 +162,13 @@ $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 # ex.2) Add copyright and license to input file(s)
 (venv)$ fosslight_reuse add -f "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
- > Result   
-    * Changes in the file - Added copyright or license at the top of the file   
-<table>
-<tr>
-    <td>Before</td>
-    <td>After</td>
-</tr>
-<tr>
-<td>
+ > Result  
 
- <pre lang="python">
-  x = 1
-  y = "FOSSLight"
-  z = sum(x, 1)
+  ▪️  **Changes in the file - Added copyright or license at the top of the file**  
 
-  </pre>
-</td>
-<td>
-  <pre lang="python">
-# SPDX-FileCopyrightText: Copyright 2019-2021 LG Electronics Inc.
-#
-# SPDX-License-Identifier: GPL-3.0-only   
-
-
-  x = 1
-  y = "FOSSLight"
-  z = sum(x, 1)
-</pre>
-</td>
-</tr>
-</table>    
+|Before          |After          |
+|:---------------|:--------------|
+|![Before](images/fosslight_reuse_add_test.JPG)|![After](images/fosslight_reuse_add_test_result.JPG)|  
 
 ```bash    
     # File list that have both license and copyright : 3 / 7
@@ -214,7 +197,7 @@ $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 
 
 ## 🚀 How it works
-### lint
+### 🏷 lint
 1. Find a OSS Package Information file.
     OSS Package Information File List  
     * Check if at least one of the following files exists (case-free)   
@@ -244,7 +227,7 @@ $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
     - However, if the file does not exist or the file is binary or .json, copyright text and license text are not printed.   
 3. Print the execution result and save it in xml format.   
 
-### report
+### 🏷 report
 1. Check if there is an OSS Package Information or FOSSLight Report file.
     * file example : [oss-pkg-info.yaml][yml], [FOSSLight-Report.xlsx][xlsx]
 
@@ -260,7 +243,7 @@ $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
     - However, if an output file name is specified with -o, a result file is created with that name.
     
 
-### add
+### 🏷 add
 1. Confirm to add copyright and license to missing file   
 2. Add copyright and license to missing file(s) using -c and -l option   
     - Print file list that both has copyright and license(excluded from Adding)   
