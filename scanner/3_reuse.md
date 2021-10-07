@@ -196,7 +196,7 @@ Open Source Software Package:
 ```
 
 
-## 🚀 How it works
+## 🔍 How it works
 ### 🏷 lint
 1. Find a OSS Package Information file.
     OSS Package Information File List  
