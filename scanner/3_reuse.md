@@ -62,7 +62,7 @@ Options for only 'add' mode
 
 **(Only for Windows)** Run using executable file   
     1. Download fosslight_reuse_windows.exe from [FOSSLight Reuse](https://github.com/fosslight/fosslight_reuse) - Release.   
-    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) is located.   
+    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
     3. Double-click the executable file to run it.   
 
 
