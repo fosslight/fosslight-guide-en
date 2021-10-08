@@ -17,7 +17,7 @@ title: FOSSLight Reuse
 2. `report` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
      - It converts oss-pkg-info.yaml to SRC Sheet of FOSSLight Report or    
      - BIN (Android) and BOM Sheet of FOSSLight Report to oss-pkg-info.yaml.
-3. `add` --- Add copyright and icense to missing file(s)
+3. `add` --- Add copyright and license to source code which is missing copyright and license
 
 ## 🎉 How to install
 
@@ -57,12 +57,12 @@ Options for only 'add' mode
 ```
 (ex1) $ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
 (ex2) $ fosslight_reuse report -p /home/test/source
-(ex3 )$ fosslight_reuse add -p tests/add -c "2019-2021 LG Electronics Inc." -l "LicenseRef-LGE-Proprietary"
+(ex3 )$ fosslight_reuse add -p tests/add -c "2019-2021 LG Electronics Inc." -l "MIT"
 ```
 
 **(Only for Windows)** Run using executable file   
-    1. Download fosslight_reuse_windows.exe from FOSSLight Reuse - Release.   
-    2. Move the executable file to the path where oss-pkg-info.yaml file or OSS-Report.xlsx is located.   
+    1. Download fosslight_reuse_windows.exe from [FOSSLight Reuse](https://github.com/fosslight/fosslight_reuse) - Release.   
+    2. Move the executable file to the path where oss-pkg-info.yaml file or FOSSLight-OSS-Report.xlsx is located.   
     3. Double-click the executable file to run it.   
 
 
@@ -112,7 +112,7 @@ Options for only 'add' mode
 
 ### 🏷 report
 ```
-# ex.1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.
+# ex.1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path(/home/test/source) recursively.
 $ fosslight_reuse report -p /home/test/source
 ```
 ```
@@ -120,7 +120,7 @@ $ fosslight_reuse report -p /home/test/source
 $ fosslight_reuse report -f src/FOSSLight-Report.xlsx
 ```
 
- > Result of oss-pkg-info.yaml <-> OSS Report(OSS-Report.xlsx)    
+ > Result of oss-pkg-info.yaml <-> FOSSLight-Report.xlsx   
  
  
 ▪️ **_oss-pkg-info.yaml_**   
