@@ -72,7 +72,8 @@ Options for only 'add' mode
 # ex.1) Analyze for specific folder
 (venv)$ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
 ```
- > ex.1 Result
+ > ex.1 Result  
+
 ```bash
     # SUMMARY
     # Open Source Package info: File to which OSS Package information is written.
@@ -104,7 +105,10 @@ Options for only 'add' mode
     # src/main.c
     * License: GPL-3.0-or-later
     * Copyright: SPDX-FileCopyrightText: 2019 Jane Doe <jane@example.com>
-```
+```  
+▪️ **Demo**     
+![demo_lint](images/lint.gif)   
+
 
 ### 🏷 report
 ```
@@ -153,6 +157,9 @@ Open Source Software Package:
 ▪️ **_FOSS-Report.xlsx_** 
 ![Report_xlsx](images/fosslight_reuse_report.JPG)
 
+▪️ **Demo**     
+![demo_lint](images/report.gif)   
+
 
 ### 🏷 add
 ```
@@ -194,6 +201,8 @@ Open Source Software Package:
     * Your input Copyright : Copyright 2019-2021 LG Electronics Inc.
     Successfully changed header of tests/add_result/test_no_copyright.py
 ```
+▪️ **Demo**   
+![demo_lint](images/add.gif)   
 
 
 ## 🔍 How it works
