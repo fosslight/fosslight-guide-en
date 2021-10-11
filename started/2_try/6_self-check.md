@@ -37,10 +37,10 @@ Self-Check can be done through the following procedure.
 ### 3. Check OSS and License information
 ![oss_table](../images/6_self_oss_table.png)
 #### Warning Messages
-- Unconfirmed open source : Displayed when the same OSS Name is not registered in the OSC System.
-- Unconfirmed version : Displayed when there is the same OSS Name in the OSC System, but the same version is not registered.
+- Unconfirmed open source : Displayed when the same OSS Name is not registered in FOSSLight.
+- Unconfirmed version : Displayed when there is the same OSS Name in FOSSLight, but the same version is not registered.
 - This field is required : Displayed when license information is not entered. (Not required for Self-Check.)
-- Non-included license : Displayed when the same OSS Name and OSS Version are registered in the OSC system, but different from the existing registered license.
+- Non-included license : Displayed when the same OSS Name and OSS Version are registered in FOSSLight, but different from the existing registered license.
 
 #### OSS and License information
 If you click the icon in the column below, detailed information of registered OSS, detailed information about the license, and guide for the corresponding license are provided.
@@ -62,7 +62,7 @@ However, even for registered OSS, User Guide may not be provided.
 - Confirmation with an export file (.xlsx) : An Excel file containing a list of all described OSS and vulnerability information is downloaded.
 - Detailed information related to Vulnerability can be found in [Vulnerability](7_vulnerability.md).
 ```
-1. Check in OSC System UI
+1. Check in FOSSLight UI
 ![self_pop](../images/6_self_pop.png)
 When you click the Vulnerability icon, the vulnerability information of the corresponding OSS Name and OSS Version is provided in a pop-up window.
 
