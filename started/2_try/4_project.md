@@ -125,7 +125,7 @@ Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
 
 ### 3. Packaging
 ```note
-- In the packaging stage, if an open source that is obligated to disclose the source code is used, source codes to be disclosed are collected (OSS Package) and registered in the OSC System.
+- In the packaging stage, if an open source that is obligated to disclose the source code is used, source codes to be disclosed are collected (OSS Package) and registered in FOSSLight.
 - OSS notice is automatically generated when the packaging step is confirmed. If you need to change the contents of the OSS notice, you can modify it on the Notice tab.
 - Click the button in the Packaging column of the Project List to enter.
 ```
