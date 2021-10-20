@@ -14,7 +14,7 @@ title: FOSSLight Reuse
 
 ##  Functions
 1. `lint` --- Check whether the [source code's copyright and license writing rules][rule] are complied with.    
-2. `report` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
+2. `convert` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
      - It converts oss-pkg-info.yaml to SRC Sheet of FOSSLight Report or    
      - BIN (Android) and BOM Sheet of FOSSLight Report to oss-pkg-info.yaml.
 3. `add` --- Add copyright and license to source code which is missing copyright and license
@@ -40,7 +40,7 @@ $ fosslight_reuse lint
 ```
 Mode
     lint                  Check REUSE compliance
-    report                oss_pkg_info.yaml <-> FOSSLight-Report
+    convert               Convert oss_pkg_info.yaml <-> FOSSLight-Report
     add                   Add missing license and copyright
  
 Options:
@@ -56,13 +56,13 @@ Options for only 'add' mode
 ```
 ```
 (ex1) $ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
-(ex2) $ fosslight_reuse report -p /home/test/source
+(ex2) $ fosslight_reuse convert -p /home/test/source
 (ex3 )$ fosslight_reuse add -p tests/add -c "2019-2021 LG Electronics Inc." -l "MIT"
 ```
 
 **(Only for Windows)** Run using executable file   
     1. Download fosslight_reuse_windows.exe from [FOSSLight Reuse](https://github.com/fosslight/fosslight_reuse) - Release.   
-    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
+    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
     3. Double-click the executable file to run it.   
 
 
@@ -110,14 +110,14 @@ Options for only 'add' mode
 ![demo_lint](images/lint.gif)   
 
 
-### 🏷 report
+### 🏷 convert
 ```
 # ex.1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path(/home/test/source) recursively.
-$ fosslight_reuse report -p /home/test/source
+$ fosslight_reuse convert -p /home/test/source
 ```
 ```
 # ex.2) Convert FOSSLight Report to oss-pkg-info.yaml
-$ fosslight_reuse report -f src/FOSSLight-Report.xlsx
+$ fosslight_reuse convert -f src/FOSSLight-Report.xlsx
 ```
 
  > Result of oss-pkg-info.yaml <-> FOSSLight-Report.xlsx   
@@ -236,12 +236,12 @@ Open Source Software Package:
     - However, if the file does not exist or the file is binary or .json, copyright text and license text are not printed.   
 3. Print the execution result and save it in xml format.   
 
-### 🏷 report
+### 🏷 convert
 1. Check if there is an OSS Package Information or FOSSLight Report file.
     * file example : [oss-pkg-info.yaml][yml], [FOSSLight-Report.xlsx][xlsx]
 
-[yml]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/oss-pkg-info.yaml
-[xlsx]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/report/OSS-Report-Sample_0.xlsx
+[yml]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml
+[xlsx]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/OSS-Report-Sample_0.xlsx
 
 2. Convert oss-pkg-info.yaml file ↔ FOSSLight Report   
     2-1. When running on a project basis. (without -f option)   
