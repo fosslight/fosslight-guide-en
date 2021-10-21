@@ -45,7 +45,8 @@ After executing ScanCode, the source code scanner, print the FOSSLight Report.
 | h | None | Print help message. | 
 | p | String | Path to detect source. | 
 | j | None | As an output, the result of executing ScanCode in json format other than FOSSLight Report is additionally generated. | 
-| o | String | Output file name without file extension. | 
+| o | String | Output path (If you want to generate the specific file name, add the output path with file name.) | 
+| f | String | Output file format (excel, csv, opossum) (default: excel and csv (window : excel only) | 
 | m | None | Print the Matched text for each license on a separate sheet. | 
 
 Ex. Print result to FOSSLight Report and json file
@@ -60,7 +61,8 @@ Converts the result of executing ScanCode in json format into FOSSLight Report f
 | ------------- | ------------- | ------------- |
 | h | None | Print help message. | 
 | p | String | Path of ScanCode json files. | 
-| o | String | Output file name without file extension. | 
+| o | String | Output path (If you want to generate the specific file name, add the output path with file name.) | 
+| f | String | Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)| 
 | m | None | Print the Matched text for each license on a separate sheet. | 
 
 Ex. Converting scancode json result to FOSSLight report
@@ -76,10 +78,11 @@ $ tree
 ├── FOSSLight-Report_2021-05-03_00-39-49_SRC.csv
 ├── FOSSLight-Report_2021-05-03_00-39-49.xlsx
 ├── scancode_2021-05-03_00-39-49.json
-└── fosslight_src_log_2021-05-03_00-39-49.txt
-
+├── fosslight_src_log_2021-05-03_00-39-49.txt
+└── Opossum_input_2021-05-03_00-39-49.txt
 ```
 - FOSSLight-Report_[datetime].xlsx : FOSSLight Source Scanner result in spreadsheet format.
 - FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Source Scanner result in csv format. (Except Windows)
 - fosslight_src_log_[datetime].txt : The execution log.
 - scancode_[datetime].json : The ScanCode result in case of -j option.
+- Opossum_input_[datetime].json : FOSSLight Source Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)

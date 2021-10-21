@@ -228,7 +228,8 @@ $ fosslight_dependency
 | ------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
 | -m     | npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage | (optional) <br> package manager for your project                                            |
 | -p     | (path)                                           | (optional) <br> input directory                                                             |
-| -o     | (path)                                           | (optional) <br> output file directory                                                       |
+| -o     | (path)                                           | (optional) <br> output file directory (If you want to generate the specific file name, add the output path with file name.)     |
+| f | String | Output file format (excel, csv, opossum) (default: excel and csv (window : excel only) | 
 | -a     | conda example: 'conda activate (venv name)'      | (pypi only required) <br> virtual environment activate command                              |
 | -d     | conda example: 'conda deactivate'                | (pypi only required) <br> virtual environment deactivate command                            |
 | -c     | (customized output directory name)               | (gradle, maven only optional) <br> customized build output directory name (default: target) |
@@ -252,8 +253,18 @@ In other words, the input directory('-p' option) should be designated as the top
 
 
 ## 📁 Result
-
-FOSSLight Dependency Scanner creates the result file that has xlsx extension (Microsoft Excel file).
+```
+$ tree
+.
+├── FOSSLight-Report_2021-05-03_00-39-49_SRC.csv
+├── FOSSLight-Report_2021-05-03_00-39-49.xlsx
+├── fosslight_dependency_log_2021-05-03_00-39-49.txt
+└── Opossum_input_2021-05-03_00-39-49.txt
+```
+- FOSSLight-Report_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
+- FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Dependency Scanner result in csv format.
+- fosslight_dependency_log_[datetime].txt: The execution log.
+- Opossum_input_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
 
 It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
 For a unique OSS name, OSS name is printed such as (package_manager):(oss name) or (group id):(artifact id).
