@@ -82,7 +82,7 @@ $ tree
 └── Opossum_input_2021-05-03_00-39-49.txt
 ```
 - FOSSLight-Report_[datetime].xlsx : FOSSLight Source Scanner result in spreadsheet format.
-- FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Source Scanner result in csv format. (Except Windows)
+- FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Source Scanner result in csv format.
 - fosslight_src_log_[datetime].txt : The execution log.
 - scancode_[datetime].json : The ScanCode result in case of -j option.
 - Opossum_input_[datetime].json : FOSSLight Source Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)

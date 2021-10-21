@@ -41,8 +41,8 @@ $ fosslight_binary [option] <arg>
     Options:
         -h                            Print help message
         -a <target_architecture>      Target Architecture(x86-64, ARM, MIPS, Mach-O, and etc.)
-        -o <output_path>              Path to save output files
-        -f <customized_file_name>     Output file name without file extension(Default: 'binary_[datetime].txt')
+        -o <output_path>              Path to save output files (If you want to generate the specific file name, add the output path with file name.)
+        -f <format>                   Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)
         -d <db_url>                   DB Connection(format :'postgresql://username:password@host:port/database_name')
 ```` 
 
@@ -70,11 +70,13 @@ $ tree
 ├── binary_20210601_201646.txt
 ├── fosslight_bin_log_20210601_201646.txt
 ├── FOSSLight-Report_20210601_201646_BIN.csv
-└── FOSSLight-Report_20210601_201646.xlsx
+├── FOSSLight-Report_20210601_201646.xlsx
+└── Opossum_input_20210601_201646.xlsx
 
 ```
 - binary_[datetime].txt : The checksum and tlsh values for each binary.
 - fosslight_bin_log_[datetime].txt : The execution log.
-- FOSSLight-Report_[datetime]_BIN.csv : FOSSLight binary result in csv format. (Except Windows)
+- FOSSLight-Report_[datetime]_BIN.csv : FOSSLight binary result in csv format.
 - FOSSLight-Report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.
+- Opossum_input_[datetime].json : FOSSLight binary Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
 
