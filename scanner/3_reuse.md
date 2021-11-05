@@ -12,6 +12,9 @@ title: FOSSLight Reuse
 [ret]: https://github.com/fsfe/reuse-tool
 [rule]: https://oss.lge.com/guide/process/osc_process/1-identification/copyright_license_rule.html
 
+**Github Repository** : [https://github.com/fosslight/fosslight_reuse]()  
+**License** : [GPL-3.0-only](https://github.com/fosslight/fosslight_reuse/blob/main/LICENSE)
+
 ##  Functions
 1. `lint` --- Check whether the [source code's copyright and license writing rules][rule] are complied with.    
 2. `convert` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.

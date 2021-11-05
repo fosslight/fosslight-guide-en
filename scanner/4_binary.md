@@ -7,21 +7,22 @@ published: true
 
 [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.
 
-## Contents
+**Github Repository** : [https://github.com/fosslight/fosslight_binary_scanner]()  
+**License** : [Apache-2.0](https://github.com/fosslight/fosslight_binary_scanner/blob/main/LICENSE)
 
+## Contents
 - [Prerequisite](#-prerequisite)
 - [How to install](#-how-to-install)
 - [How to run](#-how-to-run)
-- [How it works](#-how-it-works)
 - [Result](#-result)
+- [How it works](#-how-it-works)
 
 
 ## 📋 Prerequisite
-- FOSSLight Binary Scanner needs a Python 3.6+.    
-- To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
+FOSSLight Binary Scanner needs a Python 3.6+.    
+To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 
 ## 🎉 How to install
-
 It can be installed using pip3. It is recommended to install it in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
 
 ```
@@ -33,7 +34,7 @@ $ pip3 install fosslight_binary
 $ fosslight_binary [option] <arg>
 ````    
 
-### About Options
+### Options
 ```` 
     Mandatory:
         -p <binary_path>              Path to analyze binaries
@@ -44,23 +45,7 @@ $ fosslight_binary [option] <arg>
         -o <output_path>              Path to save output files (If you want to generate the specific file name, add the output path with file name.)
         -f <format>                   Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)
         -d <db_url>                   DB Connection(format :'postgresql://username:password@host:port/database_name')
-```` 
-
-
-## 🧐 How it works
-1. List up binaries except the following cases.    
-    1-0. Symbolic link files and FIFO files.    
-    1-1. The file extension is ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
-                                'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
-    1-2. The file type is ['data','timezone data', 'apple binary property list']    
-    1-3. The directory is ['.git']    
-2. Check “Exclude” in FOSSLight Report.         
-    - binary is ['fosslight_bin', 'fosslight_bin.exe']     
-    - directory is ["test", "tests", "doc", "docs"]     
-3. With the -a option, output as binary only when the result of “file” command includes target architecture (ex. x86-64, ARM, MIPS, Mach-O)      
-5. Extract checksum and tlsh for each binary.     
-6. Load OSS information from Binary DB.      
-7. Create output files.     
+````    
 
 ## 📁 Result
 
@@ -80,3 +65,17 @@ $ tree
 - FOSSLight-Report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.
 - Opossum_input_[datetime].json : FOSSLight binary Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
 
+## 🧐 How it works
+1. List up binaries except the following cases.    
+    1-0. Symbolic link files and FIFO files.    
+    1-1. The file extension is ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
+                                'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
+    1-2. The file type is ['data','timezone data', 'apple binary property list']    
+    1-3. The directory is ['.git']    
+2. Check “Exclude” in FOSSLight Report.         
+    - binary is ['fosslight_bin', 'fosslight_bin.exe']     
+    - directory is ["test", "tests", "doc", "docs"]     
+3. With the -a option, output as binary only when the result of “file” command includes target architecture (ex. x86-64, ARM, MIPS, Mach-O)      
+5. Extract checksum and tlsh for each binary.     
+6. Load OSS information from Binary DB.      
+7. Create output files.  

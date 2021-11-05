@@ -9,7 +9,10 @@ published: true
 
 [sc]: https://github.com/nexB/scancode-toolkit
 
-## User Guide
+**Github Repository** : [https://github.com/fosslight/fosslight_source_scanner]()  
+**License** : [Apache-2.0](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE)
+
+## Contents
   - [Prerequisite](#-prerequisite)
   - [How to install](#-how-to-install)
   - [How to run](#-how-to-run)
@@ -19,53 +22,63 @@ published: true
 
 
 ## 📋 Prerequisite
-
 FOSSLight Source Scanner needs a Python 3.6+.    
 For windows, you need to install [Microsoft Visual C++ Build Tools][ms_build].
 
 [ms_build]: https://visualstudio.microsoft.com/vs/older-downloads/
 
 ## 🎉 How to install
-
 It can be installed using pip3. It is recommended to install it in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
-
 ```
 $ pip3 install fosslight_source
 ```
 
 ## 🚀 How to run
-
-There are two commands for FOSSLight Source Scanner. 
-
 ### 1. fosslight_source
 After executing ScanCode, the source code scanner, print the FOSSLight Report.
+````
+$ fosslight_source [option] <arg>
+````  
+#### Options
+```
+  Mandatory
+    -p <source_path>               Path to analyze source
 
-| Parameter  | Argument | Description |
-| ------------- | ------------- | ------------- |
-| h | None | Print help message. | 
-| p | String | Path to detect source. | 
-| j | None | As an output, the result of executing ScanCode in json format other than FOSSLight Report is additionally generated. | 
-| o | String | Output path (If you want to generate the specific file name, add the output path with file name.) | 
-| f | String | Output file format (excel, csv, opossum) (default: excel and csv (window : excel only) | 
-| m | None | Print the Matched text for each license on a separate sheet. | 
+  Optional
+    -h                             Print help message
+    -j                             Generate additional result of executing ScanCode in json format
+    -m                             Print the Matched text for each license on a separate sheet
+    -o <output_path>               Output path
+                                    (If you want to generate the specific file name, add the output path with file name.)
+    -f <format>                    Output file format (excel, csv, opossum)
 
-Ex. Print result to FOSSLight Report and json file
+```
+#### Example
+Print result to FOSSLight Report and json file
 ```
 $ fosslight_source -p /home/source_path -j
 ```
 
 ### 2. fosslight_convert
 Converts the result of executing ScanCode in json format into FOSSLight Report format.  
+````
+$ fosslight_convert [option] <arg>
+```` 
+#### Options
+```
+  Mandatory
+    -p <path_dir>                  Path of ScanCode json files
 
-| Parameter  | Argument | Description |
-| ------------- | ------------- | ------------- |
-| h | None | Print help message. | 
-| p | String | Path of ScanCode json files. | 
-| o | String | Output path (If you want to generate the specific file name, add the output path with file name.) | 
-| f | String | Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)| 
-| m | None | Print the Matched text for each license on a separate sheet. | 
+  Optional
+      -h                             Print help message
+      -m                             Print the Matched text for each license on a separate sheet
+      -o <output_path>               Output path
+                                      (If you want to generate the specific file name, add the output path with file name.)
+      -f <format>                    Output file format (excel, csv, opossum)
 
-Ex. Converting scancode json result to FOSSLight report
+```
+#### Example
+Converting scancode json result to FOSSLight report
 ```
 $ fosslight_convert -p /home/jsonfile_dir
 ```
