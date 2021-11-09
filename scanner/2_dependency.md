@@ -272,7 +272,7 @@ $ tree
 ├── FOSSLight-Report_2021-05-03_00-39-49_SRC.csv
 ├── FOSSLight-Report_2021-05-03_00-39-49.xlsx
 ├── fosslight_dependency_log_2021-05-03_00-39-49.txt
-└── Opossum_input_2021-05-03_00-39-49.txt
+└── Opossum_input_2021-05-03_00-39-49.json
 ```
 - FOSSLight-Report_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
 - FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Dependency Scanner result in csv format.
