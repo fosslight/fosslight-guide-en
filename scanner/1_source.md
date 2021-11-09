@@ -92,7 +92,7 @@ $ tree
 ├── FOSSLight-Report_2021-05-03_00-39-49.xlsx
 ├── scancode_2021-05-03_00-39-49.json
 ├── fosslight_src_log_2021-05-03_00-39-49.txt
-└── Opossum_input_2021-05-03_00-39-49.txt
+└── Opossum_input_2021-05-03_00-39-49.json
 ```
 - FOSSLight-Report_[datetime].xlsx : FOSSLight Source Scanner result in spreadsheet format.
 - FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Source Scanner result in csv format.

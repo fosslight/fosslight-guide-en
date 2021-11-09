@@ -56,7 +56,7 @@ $ tree
 ├── fosslight_bin_log_20210601_201646.txt
 ├── FOSSLight-Report_20210601_201646_BIN.csv
 ├── FOSSLight-Report_20210601_201646.xlsx
-└── Opossum_input_20210601_201646.xlsx
+└── Opossum_input_20210601_201646.json
 
 ```
 - binary_[datetime].txt : The checksum and tlsh values for each binary.
