@@ -55,26 +55,31 @@ FOSSLight Scanner can perform an analysis for open source compliance at once. It
   </div>
 </div>
 
-## Description
+## Scanner Projects
 
-FOSSLight Scanner Projects **inherit** other open source projects.
+#### 1. [**FOSSLight Reuse**](1_reuse.md)
+- FOSSLight Reuse is a tool that can be used to comply with the copyright/license writing rules in the source code.
+- It checks reuse compliance by using the **[reuse-tool](https://github.com/fsfe/reuse-tool)**.
 
-- [**FOSSLight Source Scanner**](1_source.md) can scan using the **[scancode-toolkit](https://github.com/nexB/scancode-toolkit)**.
-- [**FOSSLight Dependency Scanner**](2_dependency.md) can analyze the dependency using the following open source software.
+#### 2. [**FOSSLight Source Scanner**](2_source.md)
+- FOSSLight Source Scanner uses ScanCode, a source code scanner, to detect the copyright and license phrases contained in the file.
+- It can scan using the **[scancode-toolkit](https://github.com/nexB/scancode-toolkit)**.
+
+#### 3. [**FOSSLight Dependency Scanner**](3_dependency.md)
+- FOSSLight Dependency Scanner is the tool that supports the analysis of dependencies for multiple package managers.
+- It can analyze the dependency using the following open source software.
   - NPM : **[NPM License Checker](https://github.com/davglass/license-checker)**
   - Pypi : **[pip-licenses](https://github.com/raimon49/pip-licenses)**
   - Gradle : **[License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)**
   - Maven : **[license-maven-plugin](https://github.com/mojohaus/license-maven-plugin)**
   - Pub : **[flutter_oss_licenses](https://github.com/espresso3389/flutter_oss_licenses)**
-- [**FOSSLight Reuse**](3_reuse.md) checks reuse compliance by using the **[reuse-tool](https://github.com/fsfe/reuse-tool)**.
 
-## Scanner Projects
+#### 4. [**FOSSLight Binary Scanner**](4_binary.md)
+- FOSSLight Binary Scanner searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.
 
-- [**FOSSLight Source Scanner**](1_source.md) (License : [Apache-2.0](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE))
-- [**FOSSLight Dependency Scanner**](2_dependency.md) (License : [Apache-2.0](https://github.com/fosslight/fosslight_dependency_scanner/blob/main/LICENSE))
-- [**FOSSLight Binary Scanner**](4_binary.md) (License : [Apache-2.0](https://github.com/fosslight/fosslight_binary_scanner/blob/main/LICENSE))
-- [**FOSSLight Reuse**](3_reuse.md) (License : [GPL-3.0-only](https://github.com/fosslight/fosslight_reuse/blob/main/LICENSE))
-- [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner) (License : [Apache-2.0](https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE))
+#### 5. [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner)
+- FOSSLight Scanner performs open source analysis after downloading the source or with the local source path. 
+- It can analyze the open source to use FOSSLight Source Scanner, FOSSLight Dependency Scanner and FOSSLight Binary Scanner.
   
      
       
