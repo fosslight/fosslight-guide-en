@@ -2,6 +2,6 @@
 sort: 2
 published: true
 ---
-# FOSSLight Getting Started
+# FOSSLight Hub Getting Started
 
 {% include list.liquid all=true %}

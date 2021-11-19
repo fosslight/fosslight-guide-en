@@ -4,7 +4,7 @@ published: true
 ---
 # System
 ```note
-(Admin Only) Check the FOSSLight log or change the operation data.
+(Admin Only) Check the FOSSLight Hub log or change the operation data.
 ```
 
 ## Code Management

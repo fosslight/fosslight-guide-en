@@ -4,12 +4,12 @@ published: true
 ---
 # Configuration
 ```note
-(Admin Only) Change the setting values ​​for FOSSLight.
+(Admin Only) Change the setting values ​​for FOSSLight Hub.
 ```
 ![config](../images/8-3_configuration.png)
 
 ## Authentication using LDAP
-FOSSLight uses JNDI to support user password authentication using LDAP in an environment where LDAP such as Active Directory can be used.
+FOSSLight Hub uses JNDI to support user password authentication using LDAP in an environment where LDAP such as Active Directory can be used.
 - Provider Url : Set the LDAP server information in the format ldap://&lt;AD_SERVER_IP&gt;:&lt;LDAP_PORT&gt;. (javax.naming.Context.PROVIDER_URL)
 
 ## SMTP Setting

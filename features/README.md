@@ -2,9 +2,9 @@
 sort: 4
 published: true
 ---
-# FOSSLight Advanced
+# FOSSLight Hub Advanced
 ```note
-You can check out the useful advanced features of FOSSLight.
+You can check out the useful advanced features of FOSSLight Hub.
 ```
 
 ## Development environment

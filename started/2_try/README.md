@@ -2,10 +2,10 @@
 sort: 1
 published: true
 ---
-# FOSSLight Menu
+# FOSSLight Hub Menu
 
 ```note
-FOSSLight's menu-specific functions.
+FOSSLight Hub's menu-specific functions.
 ```
 ## [Sign In & Sign Up](1_sign.md)
 Sign In & Sign Up.

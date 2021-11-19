@@ -20,16 +20,16 @@ Create a Self-Check and check OSS (Open Source Software) information.
     ![new](images/2_self_add.png)
     1. Click the + button at the top left of the OSS Table.
     2. Enter information (OSS Name, OSS Version, License) in the added row.
-        - If you enter the OSS Name and OSS Version, the following pop-up appears if the information is stored in FOSSLight. At this time, if you click OK, the information stored in FOSSLight (License, Download location) is automatically loaded.
+        - If you enter the OSS Name and OSS Version, the following pop-up appears if the information is stored in FOSSLight Hub. At this time, if you click OK, the information stored in FOSSLight Hub (License, Download location) is automatically loaded.
         ![new](images/2_self_auto.png)
     3. You can add a row by clicking the + button at the top left of the OSS Table.
     4. Click Save.
 3. Click the Check OSS Name button.
 ![new](images/2_self_check_ossname.png)
-Based on the created Download location, it is automatically changed to the OSS Name stored in FOSSLight.
+Based on the created Download location, it is automatically changed to the OSS Name stored in FOSSLight Hub.
 - A list of OSS to be automatically converted is displayed in the pop-up.
     - Change OSS Name button : The OSS Name of the OSS Table is changed for the checked row.
-    - Add Nickname button : OSS Name written in OSS Table as Nickname is added to OSS stored in FOSSLight for the checked row.
+    - Add Nickname button : OSS Name written in OSS Table as Nickname is added to OSS stored in FOSSLight Hub for the checked row.
 
 ## 3. Check OSS information
 ![new](images/2_self_save.png)

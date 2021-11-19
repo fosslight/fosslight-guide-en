@@ -125,7 +125,7 @@ Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
 
 ### 3. Packaging
 ```note
-- In the packaging stage, if an open source that is obligated to disclose the source code is used, source codes to be disclosed are collected (OSS Package) and registered in FOSSLight.
+- In the packaging stage, if an open source that is obligated to disclose the source code is used, source codes to be disclosed are collected (OSS Package) and registered in FOSSLight Hub.
 - OSS notice is automatically generated when the packaging step is confirmed. If you need to change the contents of the OSS notice, you can modify it on the Notice tab.
 - Click the button in the Packaging column of the Project List to enter.
 ```
@@ -164,10 +164,10 @@ OSS Notice is automatically generated based on Identification > BOM tab. At this
 
 ## ⭐ Tips for Project
 ### Check OSS Name button (SRC, BIN Tab)
-It automatically changes to the OSS Name stored in FOSSLight based on the Download location written in the OSS Table.
+It automatically changes to the OSS Name stored in FOSSLight Hub based on the Download location written in the OSS Table.
 - A list of OSS to be automatically converted is displayed in the pop-up.
     - Change OSS Name button : The OSS Name of the OSS Table is changed for the checked row.
-    - (Admin Only) Add Nickname button : OSS Name written in OSS Table is added as Nickname to OSS stored in FOSSLight for the checked row.
+    - (Admin Only) Add Nickname button : OSS Name written in OSS Table is added as Nickname to OSS stored in FOSSLight Hub for the checked row.
 
 ### <a name="comment"></a> Leave a Comment
 - If you click the Comment Edit button at the top right of each tab, you can leave a comment and send the comment to the reviewer, watcher, or creator by e-mail.
@@ -190,4 +190,4 @@ It automatically changes to the OSS Name stored in FOSSLight based on the Downlo
 |Specify OSS Name or put 1 license in a row|OSS Name is-or blank, and multiple licenses are written in one row. If the OSS Name is-or blank, separate the row for each license and write it.|
 |The address should be started with www|The address format is not correct.|
 |Formatting error|Contains a newline character. If you need to write multiple lines, please add a row to write it.|
-|Not the same as property|The URL entered is different from the URL of the corresponding OSS registered in FOSSLight.|
+|Not the same as property|The URL entered is different from the URL of the corresponding OSS registered in FOSSLight Hub.|
