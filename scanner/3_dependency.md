@@ -22,7 +22,7 @@ title: FOSSLight Dependency Scanner
 </details>
 {::options parse_block_html="false" /}
 
-**Github Repository** : [https://github.com/fosslight/fosslight_dependency_scanner]()  
+**Github Repository** : [https://github.com/fosslight/fosslight_dependency_scanner](https://github.com/fosslight/fosslight_dependency_scanner)  
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_dependency_scanner/blob/main/LICENSE)
 
 ## Contents
