@@ -5,10 +5,11 @@ published: true
 
 <img src="https://img.shields.io/pypi/l/fosslight_source" alt="FOSSLight Source is released under the Apache-2.0 License." /> <img src="https://img.shields.io/pypi/v/fosslight_source" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_source" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_source_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_source_scanner)
 
-[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses source code scanners, [ScanCode][sc], to detect the copyright and license phrases contained in the file and [SCANOSS][scanoss], to detect the OSS name, OSS version and Download Location. Some files (ex- build script), binary files, directory and files in specific directories (ex-test) are excluded from the result. And removes words such as "-only" and "-old-style" from the license name to be printed. The output result is generated in spreadsheet format.
+[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses source code scanners, [ScanCode][sc] and [SCANOSS][scanoss]. [ScanCode][sc] detects copyright and license phrases contained in the file and [SCANOSS][scanoss] searches OSS Name, OSS Version, download location, copyright and license information from [OSSKB][osskb]. Some files (ex- build script), binary files, directory and files in specific directories (ex-test) are excluded from the result. And removes words such as "-only" and "-old-style" from the license name to be printed. The output result is generated in spreadsheet format.
 
 [sc]: https://github.com/nexB/scancode-toolkit
 [scanoss]: https://github.com/scanoss/scanoss.py
+[osskb]: https://osskb.org/
 
 **Github Repository** : [https://github.com/fosslight/fosslight_source_scanner]()  
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE)
