@@ -76,7 +76,7 @@ FOSSLight Scanner can perform an analysis for open source compliance at once. It
 
 #### 4. [**FOSSLight Binary Scanner**](4_binary.md)
 - FOSSLight Binary Scanner searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.
-- It can analyze the OSS info. in '.jar' file by using **[Dependency-check-py](https://github.com/jhermann/dependency-check-py).
+- It can analyze the open source info. in '.jar' file by using **[Dependency-check-py](https://github.com/jhermann/dependency-check-py).
 
 #### 5. [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner)
 - FOSSLight Scanner performs open source analysis after downloading the source or with the local source path. 
