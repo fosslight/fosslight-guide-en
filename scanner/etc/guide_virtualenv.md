@@ -13,9 +13,11 @@ Guides how to set up virtualenv environment to run Python Package.
 ## 💻 <a name="python"></a>Install Python, python-dev
 
 - Refer to the [Installation Guide][install] for how to install Python.
-- Install python-dev according to the python version you are using.
-    - ex. In case of python 3.6,
-      `sudo apt-get install python3.6-dev`
+- Install python-dev, python-distutils according to the python version you are using.
+  ```
+  $ sudo apt-get install python3.6-distutils
+  $ sudo apt-get install python3.6-dev
+  ```
 
 [install]: https://realpython.com/installing-python
 
