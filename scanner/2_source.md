@@ -52,13 +52,15 @@ $ fosslight_source [option] <arg>
     -j                             Generate raw result of scanners in json format
     -m                             Print the Matched text for each license on a separate sheet (Scancode Only)
     -o <output_path>               Output path
-                                    (If you want to generate the specific file name, add the output path with file name.)
+                                   (If you want to generate the specific file name, add the output path with file name.)
     -f <format>                    Output file format (excel, csv, opossum)
     -s <scanner>                   Select which scanner to be run (scancode, scanoss, all)
 
 ```
+If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS) will be run and the result will be merged.
+
 #### Example
-Print result to FOSSLight Report and json file
+Print result to FOSSLight Report and results of ScanCode and SCANOSS in json file.
 ```
 $ fosslight_source -p /home/source_path -j
 ```
@@ -74,11 +76,11 @@ $ fosslight_convert [option] <arg>
     -p <path_dir>                  Path of ScanCode json files
 
   Optional
-      -h                             Print help message
-      -m                             Print the Matched text for each license on a separate sheet
-      -o <output_path>               Output path
-                                      (If you want to generate the specific file name, add the output path with file name.)
-      -f <format>                    Output file format (excel, csv, opossum)
+    -h                             Print help message
+    -m                             Print the Matched text for each license on a separate sheet
+    -o <output_path>               Output path
+                                   (If you want to generate the specific file name, add the output path with file name.)
+    -f <format>                    Output file format (excel, csv, opossum)
 
 ```
 #### Example
