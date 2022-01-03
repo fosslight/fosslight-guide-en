@@ -63,7 +63,7 @@ FOSSLight Scanner can perform an analysis for open source compliance at once. It
 
 #### 2. [**FOSSLight Source Scanner**](2_source.md)
 - FOSSLight Source Scanner uses ScanCode, a source code scanner, to detect the copyright and license phrases contained in the file.
-- It can scan using the **[scancode-toolkit](https://github.com/nexB/scancode-toolkit)**.
+- It can scan the source code by using the **[scancode-toolkit](https://github.com/nexB/scancode-toolkit)**.
 
 #### 3. [**FOSSLight Dependency Scanner**](3_dependency.md)
 - FOSSLight Dependency Scanner is the tool that supports the analysis of dependencies for multiple package managers.
@@ -76,6 +76,7 @@ FOSSLight Scanner can perform an analysis for open source compliance at once. It
 
 #### 4. [**FOSSLight Binary Scanner**](4_binary.md)
 - FOSSLight Binary Scanner searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.
+- It can analyze the OSS info. in '.jar' file by using **[Dependency-check-py](https://github.com/jhermann/dependency-check-py).
 
 #### 5. [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner)
 - FOSSLight Scanner performs open source analysis after downloading the source or with the local source path. 
