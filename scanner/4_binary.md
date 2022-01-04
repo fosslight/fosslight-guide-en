@@ -42,7 +42,6 @@ $ fosslight_binary [option] <arg>
 
     Options:
         -h                            Print help message
-        -a <target_architecture>      Target Architecture(x86-64, ARM, MIPS, Mach-O, and etc.)
         -o <output_path>              Path to save output files (If you want to generate the specific file name, add the output path with file name.)
         -f <format>                   Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)
         -d <db_url>                   DB Connection(format :'postgresql://username:password@host:port/database_name')
@@ -76,7 +75,6 @@ $ tree
 2. Check “Exclude” in FOSSLight Report.         
     - binary is ['fosslight_bin', 'fosslight_bin.exe']     
     - directory is ["test", "tests", "doc", "docs"]     
-3. With the -a option, output as binary only when the result of “file” command includes target architecture (ex. x86-64, ARM, MIPS, Mach-O)      
-5. Extract checksum and tlsh for each binary.     
-6. Load OSS information from Binary DB.      
-7. Create output files.  
+3. Extract checksum and tlsh for each binary.     
+4. Load OSS information from Binary DB.      
+5. Create output files.  
