@@ -5,8 +5,9 @@ published: true
 
 <img src="https://img.shields.io/pypi/l/fosslight_binary" alt="FOSSLight Binary is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_binary" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_binary" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_binary_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_binary_scanner)
 
-[**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.
-
+[**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.   
+It can analyze the open source info. in '.jar' file by using [**Dependency-check-py**](https://github.com/jhermann/dependency-check-py).   
+   
 **Github Repository** : [https://github.com/fosslight/fosslight_binary_scanner]()  
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_binary_scanner/blob/main/LICENSE)
 
