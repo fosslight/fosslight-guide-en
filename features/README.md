@@ -12,3 +12,6 @@ You can check out the useful advanced features of FOSSLight Hub.
 
 ## Add-ons
 - [REST API](2_rest_api.md)
+
+## Maintenance
+- [Maintenance Tips](3_maintenance.md)
