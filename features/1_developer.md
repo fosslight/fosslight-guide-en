@@ -20,26 +20,6 @@ Build and run using Docker.
 docker-compose up --build
 ```
 
-### Set up the mail server
-[docker-mailserver]: https://github.com/docker-mailserver/docker-mailserver
-
-1. Go to Configuration menu.
-2. Check the SMTP Setting check box.
-3. Enter the mail server information and save.
-```
-Mail Server : fosslight_mail
-Email Address : no-reply@fosslight.org
-Port : 587
-Encoding : UTF-8
-Username : no-reply@fosslight.org
-Password : fosslight
-```
-
-4. Restart Web server.
-```
-docker-compose restart fosslight_web
-```
-
 ## How to install - 2
 ### Requirements
 - Java 1.8 or higher
@@ -148,3 +128,26 @@ $ ./gradlew clean build && java -jar build/libs/FOSSLight-1.0.0.war
     -  id : admin, pswd : admin
 
 [local]: http://localhost:8180
+
+## Detailed settings
+### Set up the mail server
+1. Go to Configuration menu.
+2. Check the SMTP Setting check box.
+3. Enter the mail server information and save.     
+ex) In case of running mail service with docker-compose     
+    ```
+    Mail Server : fosslight_mail
+    Email Address : no-reply@fosslight.org
+    Port : 587
+    Encoding : UTF-8
+    Username : no-reply@fosslight.org
+    Password : fosslight
+    ```
+
+4. Restart Web server.
+```
+docker-compose restart fosslight_web
+```
+
+### Download NVD Data
+Set to download NVD data from 2002 data only once for the first time after server setting. : [Download NVD Data](https://fosslight.org/fosslight-guide-en/features/3_maintenance.html#download-nvd-data-from-2002)
