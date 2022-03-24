@@ -35,9 +35,6 @@ It can be installed using pip3. It is recommended to install it in the [python 3
 ```
 $ pip3 install fosslight_source
 ```
-```warning
-If you are using python 3.6 and you wish to use scanoss feature, you'll need to install ['scanoss'](https://pypi.org/project/scanoss/) and ['dataclasses'](https://pypi.org/project/dataclasses/) seperately.
-```
 
 ## 🚀 How to run
 ### 1. fosslight_source
