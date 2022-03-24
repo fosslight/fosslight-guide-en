@@ -177,7 +177,7 @@ Open Source Software Package:
 ### 🔖 add mode
 **1) Add copyright and license to file(s) in the input path**
 ```
-(venv)$ fosslight_reuse add -p tests/add -c "Copyright 2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+(venv)$ fosslight_reuse add -p tests/add -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
 
 **2) Add copyright and license to input file(s)**
