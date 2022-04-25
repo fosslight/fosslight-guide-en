@@ -26,17 +26,23 @@ To use the function to extract OSS information (OSS Name, OSS Version, License) 
 [**Java**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
 
 ## 🎉 How to install
-It can be installed using pip3. It is recommended to install it in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
-
+### Method 1. Download the executable file.
+Download the executable file suitable for the OS. : https://github.com/fosslight/fosslight_binary_scanner/releases
+### Method 2. Install fosslight_binary based on Python environment.
+It can be installed using pip3. 
+1. [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment setting.
+2. Install the Python package fosslight_binary.
 ```
 $ pip3 install fosslight_binary
 ```
 
 ## 🚀 How to run
+### Method 1. If you run it as an executable on windows.
+After placing the fosslight_bin_windows.exe file in the path to be analyzed binary, double-click to run it.
+### Method 2. When executing with command.
 ````
 $ fosslight_binary [option] <arg>
 ````    
-
 ### Options
 ```` 
     Mandatory:
