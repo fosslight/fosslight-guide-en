@@ -119,5 +119,5 @@ $docker build -t fosslight_source .
 2. Run with the image you built.      
 ex. Output: /Users/fosslight_source_scanner/test_output, Path to be analyzed: tests/test_files
 ```
-$docker run -it -v /Users/fosslight_source_scanner/test_output:/app/output fosslight -p tests/test_files -o output
+$docker run -it -v /Users/fosslight_source_scanner/test_output:/app/output fosslight_source -p tests/test_files -o output
 ```
