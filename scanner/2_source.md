@@ -50,7 +50,7 @@ $ fosslight_source [option] <arg>
   Optional
     -h                             Print help message
     -j                             Generate raw result of scanners in json format
-    -m                             Print the Matched text for each license on a separate sheet (Scancode Only)
+    -m                             Print additional information for scan result on separate sheets
     -o <output_path>               Output path
                                    (If you want to generate the specific file name, add the output path with file name.)
     -f <format>                    Output file format (excel, csv, opossum)
