@@ -237,6 +237,8 @@ $ fosslight_dependency [option] <arg>
             -o <output_path>                Output path
                                              (If you want to generate the specific file name, add the output path with file name.)
             -f <format>                     Output file format (excel, csv, opossum)
+            --direct                        Print the direct/transitive dependency type in comment.
+                                             Choice 'Ture' or 'False'. (default:True)
 
         Required only for pypi
             -a <activate_cmd>               Virtual environment activate command (ex, 'conda activate (venv name)')
@@ -247,7 +249,7 @@ $ fosslight_dependency [option] <arg>
 
         Optional only for gradle, maven
             -c <dir_name>                   Enter the customized build output directory name
-                                              (default name : 'build' for gradle, 'target' for maven)
+                                             (default name : 'build' for gradle, 'target' for maven)
 
         Optional only for android
             -n <app_name>                   Enter the application directory name where the plugin output file is located
