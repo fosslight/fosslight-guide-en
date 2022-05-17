@@ -237,8 +237,8 @@ $ fosslight_dependency [option] <arg>
             -o <output_path>                Output path
                                              (If you want to generate the specific file name, add the output path with file name.)
             -f <format>                     Output file format (excel, csv, opossum)
-            --direct                        Print the direct/transitive dependency type in comment.
-                                             Choice 'Ture' or 'False'. (default:True)
+            --direct <true/false>           Print the direct/transitive dependency type in comment.
+                                             Choose 'True' or 'False'. (default:True)
 
         Required only for pypi
             -a <activate_cmd>               Virtual environment activate command (ex, 'conda activate (venv name)')
