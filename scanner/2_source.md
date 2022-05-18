@@ -26,8 +26,9 @@ published: true
 
 ## 📋 Prerequisite
 FOSSLight Source Scanner needs a Python 3.6+.    
-To use SCANOSS feature, Python 3.7+ is recommended.
-⚠️For windows and mac m1, installation is not possible. In this case, it is recommended to install and use by [using Docker](#-how-to-install-and-run-using-docker).
+To use SCANOSS feature, Python 3.7+ is recommended.    
+       
+⚠️For **windows** and **mac m1**, installation is not possible. In this case, it is recommended to install and use by [using Docker](#-how-to-install-and-run-using-docker).
 
 ## 🎉 How to install
 It can be installed using pip3. It is recommended to install it in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
