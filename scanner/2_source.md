@@ -21,14 +21,13 @@ published: true
     - [1. fosslight_source](#1-fosslight_source)
     - [2. fosslight_convert](#2-fosslight_convert)
   - [Result](#-result)
+  - [Using docker](#-how-to-install-and-run-using-docker)
 
 
 ## 📋 Prerequisite
 FOSSLight Source Scanner needs a Python 3.6+.    
-For windows, you need to install [Microsoft Visual C++ Build Tools][ms_build].
 To use SCANOSS feature, Python 3.7+ is recommended.
-
-[ms_build]: https://visualstudio.microsoft.com/vs/older-downloads/
+⚠️For windows and mac m1, installation is not possible. In this case, it is recommended to install and use by [using Docker](#-how-to-install-and-run-using-docker).
 
 ## 🎉 How to install
 It can be installed using pip3. It is recommended to install it in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
