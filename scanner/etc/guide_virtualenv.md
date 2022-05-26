@@ -15,8 +15,7 @@ Guides how to set up virtualenv environment to run Python Package.
 - Refer to the [Installation Guide][install] for how to install Python.
 - Install python-dev, python-distutils according to the python version you are using.
   ```
-  $ sudo apt-get install python3.6-distutils
-  $ sudo apt-get install python3.6-dev
+  $ sudo apt-get install python3.7 python3-pip python3.7-dev python3.7-distutils
   ```
 
 [install]: https://realpython.com/installing-python
@@ -26,7 +25,7 @@ Guides how to set up virtualenv environment to run Python Package.
 See the [Python virtaulenv page][venv] for details.
 ```
 $ pip3 install virtualenv
-$ virtualenv -p /usr/bin/python3.6 venv
+$ virtualenv -p /usr/bin/python3.7 venv
 $ source venv/bin/activate
 ```
 
