@@ -22,7 +22,7 @@ docker-compose up --build
 
 ## How to install - 2
 ### Requirements
-- Java 1.8 or higher
+- Java 11 or higher
 - MariaDB (10.0 or higher) or MySql (5.6 or higher)
 - Memory : 8GB+
 
