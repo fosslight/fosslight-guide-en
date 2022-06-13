@@ -3,12 +3,22 @@ published: true
 ---
 # Virtualenv setting guide
 
-Guides how to set up virtualenv environment to run Python Package.
+Guides how to set up virtualenv environment to run FOSSLight Scanner as Python Package.
 
 ## Contents
+- [Install additial packages](#pre)
 - [Install Python and python-dev](#python)
 - [Set up virtualenv](#virtualenv)
 - [Virtualenv command](#command)
+
+
+## 📋 <a name="pre"></a>Prerequisite
+In case of macOS, install additional packages.
+```
+brew install openssl
+brew install libmagic
+brew install postgresql
+```
 
 ## 💻 <a name="python"></a>Install Python, python-dev
 
@@ -19,6 +29,7 @@ Guides how to set up virtualenv environment to run Python Package.
   ```
 
 [install]: https://realpython.com/installing-python
+
 
 ## 📋 <a name="virtualenv"></a>Create and activate virtualenv
 
