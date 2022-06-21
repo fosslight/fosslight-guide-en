@@ -58,7 +58,7 @@ Mode
 Options:
     -h                    Print help message
     -p <path>             Path to check
-    -f <file1,file2,..>   List of files to check
+    -f <format>           Output file format (yaml, xml, html)
     -o <file_name>        Output file name
     -n                    Don't exclude venv*, node_modules, and .*/ from the analysis
  
@@ -77,38 +77,63 @@ Options for only 'add' mode
 ### 🔖 lint mode
 **1) Analyze for specific folder**
 ```
-(venv)$ fosslight_reuse lint -p /home/test/reuse-example -o result.xml
+(venv)$ fosslight_reuse lint -p /home/tests -o result.yaml
 ```
 - Result  
     <pre>
-    # SUMMARY
-    # Open Source Package info: File to which OSS Package information is written.
-    # Used licenses: License detected in the path.
-    # Files with copyright information: Number of files with copyright / Total number of files.
-    # Files with license information: Number of files with license / Total number of files.
-
-    * Open Source Package info: /home/test/reuse-example/oss-package.info
-    * Used licenses: CC-BY-4.0, CC0-1.0, GPL-3.0-or-later
-    * Files with copyright information: 6 / 7
-    * Files with license information: 6 / 7 </pre>
+    Checking copyright/license writing rules:
+        Compliant: Not OK
+        Files without copyright:
+        - add/test_no_copyright.py
+        Files without license:
+        - add/test_no_license.py
+        Files without license and copyright: N/A
+        Summary:
+          Detected Licenses:
+          - '-'
+          - GPL-3.0-only
+          - MIT
+          Files without copyright / total: 1 / 14
+          Files without license / total: 1 / 14
+          Open Source Package File:
+          - convert/oss-pkg-info.yaml
+          - add/oss-pkg-info.yaml
+        Tool Info:
+          Analyze path: tests
+          OS: Linux 4.15.0-144-generic
+          Python version: 3
+          fosslight_reuse version: fosslight_reuse v2.2.0 </pre>
 
 **2) Analyze for specific files**
 ```
-(venv)$ fosslight_reuse lint -p /home/soimkim/test/reuse-example -f "src/load.c,src/dummy.c,src/main.c"
+(venv)$ fosslight_reuse lint -p "src/file1.py,src/file2.py"
 ```
 - Result
     <pre>
-        # src/load.c
-        * License:
-        * Copyright: SPDX-FileCopyrightText: 2019 Jane Doe <jane@example.com>
-        
-        # src/dummy.c
-        * License:
-        * Copyright:
-        
-        # src/main.c
-        * License: GPL-3.0-or-later
-        * Copyright: SPDX-FileCopyrightText: 2019 Jane Doe <jane@example.com> </pre>
+      # src/file1.py
+      * License: 
+      * Copyright: 
+
+      # src/file2.py
+      * License: GPL-3.0-only
+      * Copyright: Copyright (c) 2022 LG Electronics Inc.
+
+      Checking copyright/license writing rules:
+        Compliant: Not OK
+        Files without copyright: N/A
+        Files without license: N/A
+        Files without license and copyright:
+        - src/fosslight_reuse/_fosslight_reuse.py
+        Summary:
+          Detected Licenses: N/A
+          Files without copyright / total: 1 / 2
+          Files without license / total: 1 / 2
+          Open Source Package File: []
+        Tool Info:
+          Analyze path: /home/jaekwonbang/tests
+          OS: Linux 4.15.0-144-generic
+          Python version: 3
+          fosslight_reuse version: fosslight_reuse v2.2.0  </pre>
 
 <details>
     <summary markdown="span" style="font-weight:bold">Demo Video (lint)</summary>
@@ -119,12 +144,12 @@ Options for only 'add' mode
 ### 🔖 convert mode
 **1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.**
 ```
-$ fosslight_reuse convert -p /home/test/source
+$ fosslight_reuse convert -p test/src/
 ```
 
 **2) Convert FOSSLight Report to oss-pkg-info.yaml**
 ```
-$ fosslight_reuse convert -f src/FOSSLight-Report.xlsx
+$ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
 ```
 
 **3) Result file example**
@@ -182,7 +207,7 @@ Open Source Software Package:
 
 **2) Add copyright and license to input file(s)**
 ```
-(venv)$ fosslight_reuse add -f "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+(venv)$ fosslight_reuse add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
 
 **3) Result**
