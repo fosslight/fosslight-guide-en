@@ -275,14 +275,14 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
     </details>
 
 2. Run fsfe-reuse lint   
-    2-1. When running on a project basis. (without -f parameter)   
+    2-1. When running on a project basis.      
     - If there is no ./reuse/dep5 file in the Root Path, it is created.   
     - If it already exists, copy it to bk file and append the default config value to the existing dep file.   
     - By creating dep5 files, exclude binary or .json, venv */*, node_modules/*,. */* from reuse.   
     - Run fsfe-reuse lint (If the OSS Package Information file exists, the list of missing license files is not printed.)   
     - Recover to existing dep5-related file if it originally existed, delete if it doesn't exist.
     
-    2-2. When executing in file unit (with -f option)   
+    2-2. When executing in file unit       
     - Print the copyright text and license text extraction by file.   
     - However, if the file does not exist or the file is binary or .json, copyright text and license text are not printed.   
 3. Print the execution result and save it in xml format.   
@@ -295,10 +295,10 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
 [xlsx]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/OSS-Report-Sample_0.xlsx
 
 2. Convert oss-pkg-info.yaml file ↔ FOSSLight Report   
-    2-1. When running on a project basis. (without -f option)   
+    2-1. When running on a project basis.      
     - Convert all files in the path (oss-pkg-info.yaml file ↔ FOSSLight Report)   
     
-    2-2. When running in file unit (with -f option)
+    2-2. When running in file unit    
     - Convert the input file (oss-pkg-info.yaml ↔ FOSSLight-Report.xlsx)
     - However, if an output file name is specified with -o, a result file is created with that name.
     
