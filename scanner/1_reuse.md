@@ -144,7 +144,7 @@ Options for only 'add' mode
 ### 🔖 convert mode
 **1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.**
 ```
-$ fosslight_reuse convert -p tests/convert/
+$ fosslight_reuse convert -p tests/
 ```
 
 **2) Convert FOSSLight Report to oss-pkg-info.yaml**
@@ -161,8 +161,8 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
     glibc:
     - version: '2.3'
       source name or path:
-      - tests/convert/b.c
-      - tests/convert/a.c
+      - tests/b.c
+      - tests/a.c
       license:
       - GPL-3.0
       - LGPL-2.1
@@ -170,7 +170,7 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
     dbus:
     - version: '1.3'
       source name or path:
-      - tests/convert/src/*
+      - tests/src/*
       license:
       - GPL-2.0
       download location: https://github.com/fsfe/dbus
@@ -178,7 +178,7 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
     reuse-tool:
     - version: ''
       source name or path:
-      - tests/convert/
+      - tests/
       license:
       - MIT
       download location: https://github.com/fsfe/reuse
@@ -187,7 +187,7 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
     build-tool:
     - version: ''
       source name or path:
-      - tests/convert/
+      - tests/
       license:
       - Apache-2.0
       download location: http://gihub.com/bazel
