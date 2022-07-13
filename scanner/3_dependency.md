@@ -171,7 +171,7 @@ $ mvnw license:aggregate-download-licenses
 
 <details>
 <summary markdown="span">**Prerequisite for Pub**</summary>
-> You can skip this prerequisite step if you can run 'flutter pub' command in the environment for FOSSLight Dependency Scanner.
+> If the 'flutter pub' command is not available in the environment where FOSSLight Dependency Scanner is running, please perform the following steps in advance in the environment where 'flutter pub' is available.
 1. Add flutter_oss_licenses (2.0.1) to dev_dependencies in the pubspec.yaml file. (optional)
 ```
 dev_dependencies:
