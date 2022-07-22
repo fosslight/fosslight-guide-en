@@ -57,8 +57,8 @@ FOSSLight Scanner can perform an analysis for open source compliance at once. It
 
 ## Scanner Projects
 
-#### 1. [**FOSSLight Reuse**](1_reuse.md)
-- FOSSLight Reuse is a tool that can be used to comply with the copyright/license writing rules in the source code.
+#### 1. [**FOSSLight Prechecker**](1_prechecker.md)
+- FOSSLight Prechecker is a tool that can be used to comply with the copyright/license writing rules in the source code.
 - It checks reuse compliance by using the **[reuse-tool](https://github.com/fsfe/reuse-tool)**.
 
 #### 2. [**FOSSLight Source Scanner**](2_source.md)
