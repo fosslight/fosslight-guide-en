@@ -1,19 +1,19 @@
 ---
 published: true
-title: FOSSLight Reuse
+title: FOSSLight Prechecker
 ---
-# FOSSLight Reuse
+# FOSSLight Prechecker
 
-<img src="https://img.shields.io/pypi/l/fosslight-reuse" alt="License" /> <img src="https://img.shields.io/pypi/v/fosslight_reuse" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_reuse" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_reuse)](https://api.reuse.software/info/github.com/fosslight/fosslight_reuse)
+<img src="https://img.shields.io/pypi/l/fosslight-prechecker" alt="License" /> <img src="https://img.shields.io/pypi/v/fosslight_prechecker" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_prechecker" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_prechecker)](https://api.reuse.software/info/github.com/fosslight/fosslight_prechecker)
     
 
-[**FOSSLight Reuse**](https://github.com/fosslight/fosslight_reuse) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code using [reuse-tool][ret].
+[**FOSSLight Prechecker**](https://github.com/fosslight/fosslight_prechecker) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code using [reuse-tool][ret].
 
 [ret]: https://github.com/fsfe/reuse-tool
 [rule]: https://oss.lge.com/guide/process/osc_process/1-identification/copyright_license_rule.html
 
-**Github Repository** : [https://github.com/fosslight/fosslight_reuse]()  
-**License** : [GPL-3.0-only](https://github.com/fosslight/fosslight_reuse/blob/main/LICENSE)
+**Github Repository** : [https://github.com/fosslight/fosslight_prechecker]()  
+**License** : [GPL-3.0-only](https://github.com/fosslight/fosslight_prechecker/blob/main/LICENSE)
 
 ## Contents
 - [Prerequisite](#-prerequisite)
@@ -23,26 +23,26 @@ title: FOSSLight Reuse
 - [How it works](#-how-it-works)
 
 ## 📋 Prerequisite
-[**FOSSLight Reuse**](https://github.com/fosslight/fosslight_reuse) needs a Python 3.6+.   
+[**FOSSLight Prechecker**](https://github.com/fosslight/fosslight_prechecker) needs a Python 3.6+.   
 
 ## 🎉 How to install
 It can be installed using pip3.     
 It is recommended to install it in the [python 3.6 + virtualenv](https://fosslight.org/fosslight-guide-en/scanner/etc/guide_virtualenv.html) environment.
 
 ```
-$ pip3 install fosslight_reuse
+$ pip3 install fosslight_prechecker
 ```
 
 ## 🚀 How to run
-FOSSLight Reuse has 3 modes as following:
+FOSSLight Prechecker has 3 modes as following:
 1. `lint` --- Check whether the [source code's copyright and license writing rules][rule] are complied with.    
-2. `convert` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
+2. `convert` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
      - It converts oss-pkg-info.yaml to SRC Sheet of FOSSLight Report or    
      - BIN (Android) and BOM Sheet of FOSSLight Report to oss-pkg-info.yaml.
 3. `add` --- Add copyright and license to source code which is missing copyright and license
 
 ``` 
-fosslight_reuse [Mode] [option1] <arg1> [option2] <arg2>...
+fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
 ```
 
 ### How to run by mode & Parameters
@@ -68,8 +68,8 @@ Options for only 'add' mode
 ```
 
 **(Only for Windows)** Run using executable file   
-    1. Download fosslight_reuse_windows.exe from [FOSSLight Reuse](https://github.com/fosslight/fosslight_reuse) - Release.   
-    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
+    1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker](https://github.com/fosslight/fosslight_prechecker) - Release.   
+    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
     3. Double-click the executable file to run it.   
 
 
@@ -77,7 +77,7 @@ Options for only 'add' mode
 ### 🔖 lint mode
 **1) Analyze for specific folder**
 ```
-(venv)$ fosslight_reuse lint -p /home/tests -o result.yaml
+(venv)$ fosslight_prechecker lint -p /home/tests -o result.yaml
 ```
 - Result  
     <pre>
@@ -102,11 +102,11 @@ Options for only 'add' mode
           Analyze path: tests
           OS: Linux 4.15.0-144-generic
           Python version: 3
-          fosslight_reuse version: fosslight_reuse v2.2.0 </pre>
+          fosslight_prechecker version: fosslight_prechecker v2.2.0 </pre>
 
 **2) Analyze for specific files**
 ```
-(venv)$ fosslight_reuse lint -p "src/file1.py,src/file2.py"
+(venv)$ fosslight_prechecker lint -p "src/file1.py,src/file2.py"
 ```
 - Result
     <pre>
@@ -123,7 +123,7 @@ Options for only 'add' mode
         Files without copyright: N/A
         Files without license: N/A
         Files without license and copyright:
-        - src/fosslight_reuse/_fosslight_reuse.py
+        - src/fosslight_prechecker/_precheck.py
         Summary:
           Detected Licenses: N/A
           Files without copyright / total: 1 / 2
@@ -133,7 +133,7 @@ Options for only 'add' mode
           Analyze path: /home/jaekwonbang/tests
           OS: Linux 4.15.0-144-generic
           Python version: 3
-          fosslight_reuse version: fosslight_reuse v2.2.0  </pre>
+          fosslight_prechecker version: fosslight_prechecker v2.2.0  </pre>
 
 <details>
     <summary markdown="span" style="font-weight:bold">Demo Video (lint)</summary>
@@ -144,12 +144,12 @@ Options for only 'add' mode
 ### 🔖 convert mode
 **1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.**
 ```
-$ fosslight_reuse convert -p tests/
+$ fosslight_prechecker convert -p tests/
 ```
 
 **2) Convert FOSSLight Report to oss-pkg-info.yaml**
 ```
-$ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
+$ fosslight_prechecker convert -p src/FOSSLight-Report.xlsx
 ```
 
 **3) Result file example**
@@ -209,12 +209,12 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
 ### 🔖 add mode
 **1) Add copyright and license to file(s) in the input path**
 ```
-(venv)$ fosslight_reuse add -p tests/add -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+(venv)$ fosslight_prechecker add -p tests/add -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
 
 **2) Add copyright and license to input file(s)**
 ```
-(venv)$ fosslight_reuse add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+(venv)$ fosslight_prechecker add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
 ```
 
 **3) Result**
@@ -291,8 +291,8 @@ $ fosslight_reuse convert -p src/FOSSLight-Report.xlsx
 1. Check if there is an OSS Package Information or FOSSLight Report file.
     * file example : [oss-pkg-info.yaml][yml], [FOSSLight-Report.xlsx][xlsx]
 
-[yml]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/oss-pkg-info.yaml
-[xlsx]: https://github.com/fosslight/fosslight_reuse/blob/main/tests/convert/OSS-Report-Sample_0.xlsx
+[yml]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml
+[xlsx]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/OSS-Report-Sample_0.xlsx
 
 2. Convert oss-pkg-info.yaml file ↔ FOSSLight Report   
     2-1. When running on a project basis.      
