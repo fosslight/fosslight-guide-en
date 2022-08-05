@@ -44,10 +44,8 @@ $ fosslight_source [option] <arg>
 ````  
 #### Options
 ```
-  Mandatory
-    -p <source_path>               Path to analyze source
-
   Optional
+    -p <source_path>               Path to analyze source (Default: current directory)
     -h                             Print help message
     -j                             Generate raw result of scanners in json format
     -m                             Print additional information for scan result on separate sheets
@@ -72,10 +70,8 @@ $ fosslight_convert [option] <arg>
 ```` 
 #### Options
 ```
-  Mandatory
-    -p <path_dir>                  Path of ScanCode json files
-
   Optional
+    -p <path_dir>                  Path of ScanCode json files (Default: current directory)
     -h                             Print help message
     -m                             Print the Matched text for each license on a separate sheet
     -o <output_path>               Output path
