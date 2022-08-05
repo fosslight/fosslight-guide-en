@@ -45,10 +45,8 @@ $ fosslight_binary [option] <arg>
 ````    
 ### Options
 ```` 
-    Mandatory:
-        -p <binary_path>              Path to analyze binaries
-
     Options:
+        -p <binary_path>              Path to analyze binaries (Default: current directory)
         -h                            Print help message
         -o <output_path>              Path to save output files (If you want to generate the specific file name, add the output path with file name.)
         -f <format>                   Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)
@@ -84,6 +82,7 @@ $ tree
 2. Check “Exclude” in FOSSLight Report.         
     - binary is ['fosslight_bin', 'fosslight_bin.exe']     
     - directory is ["test", "tests", "doc", "docs"]     
+    - directory is a hidden directory (directory name starts with .)
 3. Extract checksum and tlsh for each binary.     
 4. Load OSS information from Binary DB.      
 5. Create output files.  
