@@ -121,11 +121,9 @@ $ conda create --name {venv name}
 $ conda activate {venv name}
 ```
 
-2. Install the dependencies in the virtual environment.
-```
-// If you install the dependencies with requirements.txt...
-$ pip install -r requirements.txt
-```
+2. Install the packages that you use in the virtual environment.
+3. You can add activate, deactivate command with '-a', '-d' option to run FOSSLight Dependency Scanner.
+
 </details>
 
 <details>
@@ -247,12 +245,12 @@ $ fosslight_dependency [option] <arg>
             --direct <true/false>           Print the direct/transitive dependency type in comment.
                                              Choose 'True' or 'False'. (default:True)
 
-        Required only for pypi
-            -a <activate_cmd>               Virtual environment activate command (ex, 'conda activate (venv name)')
-            -d <deactivate_cmd>             Virtual environment deactivate command (ex, 'conda deactivate')
-
         Required only for swift, carthage
             -t <token>                      Enter the github personal access token.
+
+        Optional only for pypi
+            -a <activate_cmd>               Virtual environment activate command (ex, 'conda activate (venv name)')
+            -d <deactivate_cmd>             Virtual environment deactivate command (ex, 'conda deactivate')
 
         Optional only for gradle, maven
             -c <dir_name>                   Enter the customized build output directory name
