@@ -40,7 +40,7 @@ $ virtualenv -p /usr/bin/python3.7 venv
 $ source venv/bin/activate
 ```
 
-[venv]: https://docs.python.org/3.6/library/venv.html
+[venv]: https://docs.python.org/3.7/library/venv.html
 
 ## ⌨️ <a name="command"></a>Virtualenv commands
 

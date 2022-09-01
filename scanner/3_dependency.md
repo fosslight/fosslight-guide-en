@@ -114,7 +114,7 @@ $ gradlew generateLicenseTxt
 1. Create and activate the virtual environment
 ```
 // virtualenv example
-$ virtualenv -p /usr/bin/python3.6 venv
+$ virtualenv -p /usr/bin/python3.7 venv
 $ source venv/bin/activate
 // conda example
 $ conda create --name {venv name}
@@ -219,7 +219,7 @@ FOSSLight Dependency Scanner only supports for go modules. It automatically exec
 
 ## 🎉 How to install
 FOSSLight Dependency Scanner can be installed using pip3.    
-It is recommended to install in the [python 3.6 + virtualenv](etc/guide_virtualenv.md) environment.
+It is recommended to install in the [python 3.7 + virtualenv](etc/guide_virtualenv.md) environment.
 
 ```
 $ pip install fosslight-dependency

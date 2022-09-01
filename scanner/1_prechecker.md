@@ -23,11 +23,11 @@ title: FOSSLight Prechecker
 - [How it works](#-how-it-works)
 
 ## 📋 Prerequisite
-[**FOSSLight Prechecker**](https://github.com/fosslight/fosslight_prechecker) needs a Python 3.6+.   
+[**FOSSLight Prechecker**](https://github.com/fosslight/fosslight_prechecker) needs a Python 3.7+.   
 
 ## 🎉 How to install
 It can be installed using pip3.     
-It is recommended to install it in the [python 3.6 + virtualenv](https://fosslight.org/fosslight-guide-en/scanner/etc/guide_virtualenv.html) environment.
+It is recommended to install it in the [python 3.7 + virtualenv](https://fosslight.org/fosslight-guide-en/scanner/etc/guide_virtualenv.html) environment.
 
 ```
 $ pip3 install fosslight_prechecker
