@@ -6,7 +6,7 @@ This is a template used by FOSSLight and FOSSLight Scanner, and is a document wr
 
 ## Form
 
-v1.0 : [FOSSLight-Report.xlsx](https://github.com/fosslight/fosslight/raw/main/src/main/resources/template/ProjectReport.xlsx)
+v1.0 : [fosslight_report.xlsx](https://github.com/fosslight/fosslight/raw/main/src/main/resources/template/ProjectReport.xlsx)
 
 ## Description by Sheet
 
