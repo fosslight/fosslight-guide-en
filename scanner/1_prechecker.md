@@ -285,7 +285,7 @@ $ fosslight_prechecker convert -p tests/
 1. Check if there is an OSS Package Information or FOSSLight Report file.
     * file example : [sbom-info.yaml][sbom_info], [oss-pkg-info.yaml][oss_pkg_info]
 
-sbom_info: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml    
+[sbom_info]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml    
 [oss_pkg_info]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml    
 
 2. Convert sbom-info.yaml or oss-pkg-info.yaml file to FOSSLight Report   
