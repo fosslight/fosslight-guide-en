@@ -36,7 +36,7 @@ $ pip3 install fosslight_prechecker
 ## 🚀 How to run
 FOSSLight Prechecker has 3 modes as following:
 1. `lint` --- Check whether the [source code's copyright and license writing rules][rule] are complied with.    
-2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md).
+2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [fosslight_report.xlsx](../learn/2_fosslight_report.md).
      - It converts yaml file to SRC Sheet of FOSSLight Report     
 3. `add` --- Add copyright and license to source code which is missing copyright and license
 
