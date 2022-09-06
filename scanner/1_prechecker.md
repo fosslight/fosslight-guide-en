@@ -36,9 +36,8 @@ $ pip3 install fosslight_prechecker
 ## 🚀 How to run
 FOSSLight Prechecker has 3 modes as following:
 1. `lint` --- Check whether the [source code's copyright and license writing rules][rule] are complied with.    
-2. `convert` --- Convert [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
+2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [FOSSLight-Report.xlsx](../learn/2_fosslight_report.md) and vice versa.
      - It converts oss-pkg-info.yaml to SRC Sheet of FOSSLight Report or    
-     - BIN (Android) and BOM Sheet of FOSSLight Report to oss-pkg-info.yaml.
 3. `add` --- Add copyright and license to source code which is missing copyright and license
 
 ``` 
@@ -52,7 +51,7 @@ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
 ```
 Mode
     lint                  Check REUSE compliance
-    convert               Convert oss_pkg_info.yaml <-> FOSSLight-Report
+    convert               Convert oss_pkg_info.yaml -> FOSSLight-Report
     add                   Add missing license and copyright
  
 Options:
@@ -69,7 +68,7 @@ Options for only 'add' mode
 
 **(Only for Windows)** Run using executable file   
     1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker](https://github.com/fosslight/fosslight_prechecker) - Release.   
-    2. Move the executable file to the path where [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
+    2. Move the executable file to the path where [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) file or [FOSSLight-OSS-Report.xlsx](../learn/2_fosslight_report.md) file is located.   
     3. Double-click the executable file to run it.   
 
 
@@ -147,12 +146,7 @@ Options for only 'add' mode
 $ fosslight_prechecker convert -p tests/
 ```
 
-**2) Convert FOSSLight Report to oss-pkg-info.yaml**
-```
-$ fosslight_prechecker convert -p src/FOSSLight-Report.xlsx
-```
-
-**3) Result file example**
+**2) Result file example**
 
 {::options parse_block_html="true" /}
 > <details>
@@ -260,8 +254,8 @@ $ fosslight_prechecker convert -p src/FOSSLight-Report.xlsx
     <details>
     <summary markdown="span">Check if at least one of the following files exists (case-free)</summary>
     <ul>
-    <li>oss-pkg-info.yaml</li>
-    <li>oss-pkg-info.yml</li>
+    <li>sbom-info.yaml (or .yml)</li>
+    <li>oss-pkg-info.yaml (or .yml)</li>
     <li>requirement.txt</li>
     <li>requirements.txt</li>
     <li>package.json</li>
@@ -289,17 +283,17 @@ $ fosslight_prechecker convert -p src/FOSSLight-Report.xlsx
 
 ### 🔖 convert mode
 1. Check if there is an OSS Package Information or FOSSLight Report file.
-    * file example : [oss-pkg-info.yaml][yml], [FOSSLight-Report.xlsx][xlsx]
+    * file example : [sbom-info.yaml][sbom_info], [oss-pkg-info.yaml][oss_pkg_info]
 
-[yml]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml
-[xlsx]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/OSS-Report-Sample_0.xlsx
+sbom_info: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml    
+[oss_pkg_info]: https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml    
 
-2. Convert oss-pkg-info.yaml file ↔ FOSSLight Report   
+2. Convert sbom-info.yaml or oss-pkg-info.yaml file to FOSSLight Report   
     2-1. When running on a project basis.      
-    - Convert all files in the path (oss-pkg-info.yaml file ↔ FOSSLight Report)   
+    - Convert all files in the path (oss-pkg-info.yaml file -> FOSSLight Report)    
     
     2-2. When running in file unit    
-    - Convert the input file (oss-pkg-info.yaml ↔ FOSSLight-Report.xlsx)
+    - Convert the input yaml file    
     - However, if an output file name is specified with -o, a result file is created with that name.
     
 
