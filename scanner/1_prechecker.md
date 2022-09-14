@@ -189,7 +189,7 @@ $ fosslight_prechecker convert -p tests/
 ```
 > </details>
 > <details>
-> <summary markdown="span">FOSSLight-Report.xlsx</summary>
+> <summary markdown="span">fosslight_report.xlsx</summary>
 <img src="images/fosslight_reuse_report.JPG" alt="FOSSLight Report">
 > </details>
 
