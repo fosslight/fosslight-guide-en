@@ -141,7 +141,7 @@ Options for only 'add' mode
 
 
 ### 🔖 convert mode
-**1) Convert all oss-pkg-info.yaml or oss-pkg-info.yml in the path recursively.**
+**1) Convert all sbom-info.yaml or oss-pkg-info.yaml in the path recursively.**
 ```
 $ fosslight_prechecker convert -p tests/
 ```
