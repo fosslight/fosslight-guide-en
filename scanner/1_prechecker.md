@@ -290,7 +290,7 @@ $ fosslight_prechecker convert -p tests/
 
 2. Convert sbom-info.yaml or oss-pkg-info.yaml file to FOSSLight Report   
     2-1. When running on a project basis.      
-    - Convert all files in the path (oss-pkg-info.yaml file -> FOSSLight Report)    
+    - Convert all files in the path (oss-pkg-info.yaml file -> fosslight_report.xlsx)    
     
     2-2. When running in file unit    
     - Convert the input yaml file    
