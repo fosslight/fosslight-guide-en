@@ -51,7 +51,7 @@ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
 ```
 Mode
     lint                  Check REUSE compliance
-    convert               Convert oss_pkg_info.yaml -> FOSSLight-Report
+    convert               Convert oss_pkg_info.yaml -> fosslight_report.xlsx
     add                   Add missing license and copyright
  
 Options:
