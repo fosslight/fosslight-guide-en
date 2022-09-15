@@ -285,15 +285,13 @@ The manifest file of each package manager is as follows:
 ```
 $ tree
 .
-├── FOSSLight-Report_2021-05-03_00-39-49_SRC.csv
-├── FOSSLight-Report_2021-05-03_00-39-49.xlsx
-├── fosslight_dependency_log_2021-05-03_00-39-49.txt
-└── Opossum_input_2021-05-03_00-39-49.json
+├── fosslight_report_210503_0039.xlsx
+├── fosslight_dep_log_210503_0039.txt
+└── fosslight_opossum_210503_0039.json
 ```
-- FOSSLight-Report_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
-- FOSSLight-Report_[datetime]_[sheet_name].csv : FOSSLight Dependency Scanner result in csv format.
-- fosslight_dependency_log_[datetime].txt: The execution log.
-- Opossum_input_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
+- fosslight_report_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
+- fosslight_dep_log_[datetime].txt: The execution log.
+- fosslight_opossum_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
 
 ### Result Contents
 It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
