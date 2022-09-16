@@ -1,4 +1,9 @@
-# Create a Self-Check
+---
+published: true
+title: Self-Check
+---
+
+# Self-Check Tutorial
 ```note
 Create a Self-Check and check OSS (Open Source Software) information.
 1. Create a Self-Check

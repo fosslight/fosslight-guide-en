@@ -1,94 +1,25 @@
 # FOSSLight
-To develop and distribute software containing open source software, you need to follow the OSC(Open Source Compliance) process. FOSSLight system is an integrated system that can process three steps of the OSC process sequentially.
 
-## Features
-<div class="flex-container">
-  <div class="flex-contents">
-    <div>
-      <div id="feature_title">
-        Compliance Workflow
-      </div>
-      <div id="feature_img">
-        <img src="https://img.icons8.com/pastel-glyph/50/000000/workflow-cycle--v1.png"/>
-      </div>
-      <div id="feature_content">
-       It can process the open source compliance workflow.
-      </div>
-    </div>
-  </div>
+FOSSLight project consists of [FOSSLight Hub](#fosslight-hub), an integrated system that can manage all about open source, and [FOSSLight Scanner](#fosslight-scanner) that can analyze the open source.
 
-  <div class="flex-contents">
-    <div>
-      <div id="feature_title">
-        Compliance Hub
-      </div>
-      <div id="feature_img">
-        <img src="https://img.icons8.com/wired/64/000000/hub.png"/>
-      </div>
-      <div id="feature_content">
-        You can manage everything about open source compliance such as license, oss, vulnerability and others.
-      </div>
-    </div>
-  </div>
+## FOSSLight Hub
+[FOSSLight Hub](https://github.com/fosslight/fosslight) is not only an integrated system that manages open source and licenses and processes sequentially open source compliance process, but also an all-in-one system that can manage security vulnerabilities, supply chain management, software BOM(Bill of Materials) and everything related to open source.    
+This guide page describes the basic usage and tutorial of FOSSLight Hub and advanced features such as how to set up the development environment and maintenance tips. You can refer the [FOSSLight Hub contents](about) page.
 
-  <div class="flex-contents">
-    <div>
-      <div id="feature_title">
-        Scalability
-      </div>
-      <div id="feature_img">
-        <img src="https://img.icons8.com/wired/64/000000/plugin.png"/>
-      </div>
-      <div id="feature_content">
-        It can be used with additional features (including FOSSLight scanner or other plugins).
-      </div>
-    </div>
-  </div>
-</div>
+## FOSSLight Scanner
+[FOSSLight Scanner](scanner) is composed of four scanners: Prechecker, Dependency Scanner, Source Scanner, and Binary Scanner. FOSSLight Scanner can be used to generate integrated results of the four scanners.
+![](about/images/fosslight_scanner.png)
 
-## Function
+Please refer the guide on how to install and use each scanner on the FOSSLight Scanner sub-guide page.
 
-<div class="person-container">
-  <div class="persons js-dropdown-items">
-    <div class="person js-dropdown-item">
-      <div class="avatar"><img src="about/images/process4.png" alt="" title="Title 1"></div>
-      <div class="fullname">Project</div>
-      <div class="js-description">
-        <p>OSC process management for each project</p>
-      </div>
-    </div>
-    <div class="person js-dropdown-item">
-      <div class="avatar"><img src="about/images/data3.png" alt="" title="Title 2"></div>
-      <div class="fullname">License / OSS</div>
-      <div class="js-description">
-        <p>Open Source License / OSS information</p>
-      </div>
-    </div>
-    <div class="person js-dropdown-item">
-      <div class="avatar"><img src="about/images/lock2.png" alt="" title="Title 3"></div>
-      <div class="fullname">Vulnerability</div>
-      <div class="js-description">
-        <p>Open source vulnerability and monitoring by project</p>
-      </div>
-    </div>   
-    <div class="person js-dropdown-item">
-      <div class="avatar"><img src="about/images/3rdparty3.png" alt="" title="Title 3"></div>
-      <div class="fullname">3rd Party</div>
-      <div class="js-description">
-        <p>OSS management by software obtained from 3rd party</p>
-      </div>
-    </div> 
-        <div class="person js-dropdown-item">
-      <div class="avatar"><img src="about/images/check3.png" alt="" title="Title 3"></div>
-      <div class="fullname">Self-Check</div>
-      <div class="js-description">
-        <p>Pre-check function such as license for OSS to be reviewed, vulnerability, etc.</p>
-      </div>
-    </div> 
-  </div>
-</div>
+#### FOSSLight Prechecker
+[FOSSLight Prechecker](scanner/1_prechecker.md) is a tool that checks whether copyright and license rules are complied with in the source code and helps you easily add copyright and license information. The more you use it, the more you can prevent unnecessary open source scanning. For example, if you manage to clearly write the copyright and license information in the source code and open source code using FOSSLight Prechecker from the beginning of development, you can identify the open source without additional scanning.
 
-## License
-FOSSLight is released under the Open Source License [AGPL-3.0][agpl].
+#### FOSSLight Source Scanner
+[FOSSLight Source Scanner](scanner/2_source.md) is a source code scanning tool. It uses ScanCode to detect copyright and license phrases by searching source code strings and also  uses scanoss to support code snippet scanning.
 
-[agpl]: https://github.com/fosslight/fosslight/blob/main/LICENSE
+#### FOSSLight Dependency Scanner
+[FOSSLight Dependency Scanner](scanner/3_dependency.md) is a tool that extracts open source information through analyzing dependencies on multiple package managers. It can generate report files with open source information. This tool performs to analyze the dependencies recursively, so all open source information can be extracted compared to the other dependency scanner tool that only analyzes primary dependencies.
+
+#### FOSSLight Binary Scanner
+[FOSSLight Binary Scanner](scanner/4_binary.md) is a tool that finds binary files and extracts the binary file list, and automatically outputs open source information if there is open source information of the detected binary in the database. Since this is not a method of analyzing the binary itself, please note that performance of binary analysis increases when there is a lot of database information.

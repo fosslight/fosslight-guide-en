@@ -1,4 +1,9 @@
-# Create a Project
+---
+published: true
+title: Project
+---
+
+# Project Tutorial
 ```note
 Create a project and perform the OSC (Open Source Compliance) process.
 1. Project creation

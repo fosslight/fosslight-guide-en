@@ -5,83 +5,128 @@ title: 🔎 FOSSLight Scanner
 ---
 # FOSSLight Scanner
 
-## Introduction
+<a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" />
 
 FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. Also, it can check whether an open source complies with the copyright/license writing rule.
+<br />
+It can analyze the open source and check the copyright/license writing rule with the following scanners:
 
-## Features
+1. [FOSSLight Prechecker](1_prechecker.md) : Check whether the source code's copyright and license writing rules are complied with and generate open source analysis result.
+2. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
+3. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
+4. [FOSSLight Binary Scanner](4_binary.md) :  Analyze the binaries and generate open source analysis result.
+<br />
 
-<div class="flex-container">
-  <div class="flex-contents">
-    <div>
-      <div id="feature_title">
-        Inclusive Scanning
-      </div>
-      <div id="feature_img">
-        <img src="https://img.icons8.com/dotty/80/000000/check-all.png"/>
-      </div>
-      <div id="feature_content">
-        It can detect source code, binary as well as dependency.
-      </div>
-    </div>
-  </div>
+**Github Repository** : [https://github.com/fosslight/fosslight_scanner]()  
+**License** : [Apache-2.0](https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE)
 
-  <div class="flex-contents">
-    <div>
-      <div id="feature_title">
-        Integrated One
-      </div>
-      <div id="feature_img">
-        <img src="https://img.icons8.com/wired/64/000000/workspace-one.png"/>
-      </div>
-      <div id="feature_content">
-        It can work from one command line through a single integrated package.
-      </div>
-    </div>
-  </div>
+## Contents
+- [📋 Prerequisite](#-prerequisite)
+- [🎉 How to install](#-how-to-install)
+- [🚀 How to run](#-how-to-run)
+- [📁 Result](#-result)
+- [🐳 Using Docker](#-how-to-install-and-run-using-docker)
 
-  <div class="flex-contents">
-    <div>
-      <div id="feature_title">
-        Independent Module
-      </div>
-      <div id="feature_img">
-        <img src="https://img.icons8.com/dotty/80/000000/module.png"/>
-      </div>
-      <div id="feature_content">
-        The scanner module can be used independently and lightly.
-      </div>
-    </div>
-  </div>
-</div>
+## 📋 Prerequisite
+FOSSLight Scanner needs a Python 3.7+.    
+To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 
-## Scanner Projects
+## 🎉 How to install
+It can be installed using pip3. It is recommended to install it in the [python 3.7 + virtualenv](etc/guide_virtualenv.md) environment.
+```
+$ pip3 install fosslight_scanner
+```
 
-#### 1. [**FOSSLight Prechecker**](1_prechecker.md)
-- FOSSLight Prechecker is a tool that can be used to comply with the copyright/license writing rules in the source code.
-- It checks reuse compliance by using the **[reuse-tool](https://github.com/fsfe/reuse-tool)**.
+## 🚀 How to run
+### How to run by mode & Parameters
+```
+$ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
+```
+```
+ Parameters:
+    Mode
+        source                  Run FOSSLight Source
+        dependency              Run FOSSLight Dependency
+        binary                  Run FOSSLight Binary
+        prechecker              Run FOSSLight Prechecker
+        all                     Run all scanners
+        compare                 Compare two FOSSLight reports
+ 
+    Options:
+        -h                      Print help message
+        -p <path>               Path to analyze (ex, -p {input_path})
+                                 * Compare mode input file: Two FOSSLight reports (supports excel, yaml)
+                                   (ex, -p {before_name}.xlsx {after_name}.xlsx)
+        -w <link>               Link to be analyzed can be downloaded by wget or git clone
+        -f <format>             FOSSLight Report file format (excel, yaml)
+                                 * Compare mode result file: supports excel, json, yaml, html
+        -o <output>             Output directory or file
+        -c <number>             Number of processes to analyze source
+        -r                      Keep raw data
+        -t                      Hide the progress bar
+        -v                      Print FOSSLight Scanner version
+ 
+    Options for only 'all' or 'bin' mode
+        -u <db_url>             DB Connection(format :'postgresql://username:password@host:port/database_name')
+ 
+    Options for only 'all' or 'dependency' mode
+        -d <dependency_argument>        Additional arguments for running dependency analysis
+```
+- Enter the -d option only when argument input is required when running FOSSLight Dependency. : [Refer FOSSLight Dependency guide](3_dependency.md)
 
-#### 2. [**FOSSLight Source Scanner**](2_source.md)
-- FOSSLight Source Scanner uses ScanCode, a source code scanner, to detect the copyright and license phrases contained in the file.
-- It can scan the source code by using the **[scancode-toolkit](https://github.com/nexB/scancode-toolkit)** and **[scanoss.py](https://github.com/scanoss/scanoss.py)**.
+#### Ex.1 Local Source Analysis
+```
+fosslight all -p /home/source_path
+```
 
-#### 3. [**FOSSLight Dependency Scanner**](3_dependency.md)
-- FOSSLight Dependency Scanner is the tool that supports the analysis of dependencies for multiple package managers.
-- It can analyze the dependency using the following open source software.
-  - NPM : **[NPM License Checker](https://github.com/davglass/license-checker)**
-  - Pypi : **[pip-licenses](https://github.com/raimon49/pip-licenses)**
-  - Gradle : **[License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)**
-  - Maven : **[license-maven-plugin](https://github.com/mojohaus/license-maven-plugin)**
-  - Pub : **[flutter_oss_licenses](https://github.com/espresso3389/flutter_oss_licenses)**
+#### Ex.2 Download Link and analyze
+```
+fosslight all -o test_result_wget -w "https://github.com/LGE-OSS/example.git"
+```
 
-#### 4. [**FOSSLight Binary Scanner**](4_binary.md)
-- FOSSLight Binary Scanner searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.
-- It can analyze the open source info. in '.jar' file by using **[Dependency-check-py](https://github.com/jhermann/dependency-check-py)**.
+#### Ex.3 Compare the BOM of two FOSSLight reports with yaml or excel format and check the oss status (change/add/delete).
+```
+fosslight compare -p FOSSLight_before_proj.yaml FOSSLight_after_proj.yaml -o test_result
+```
 
-#### 5. [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner)
-- FOSSLight Scanner performs open source analysis after downloading the source or with the local source path. 
-- It can analyze the open source to use FOSSLight Source Scanner, FOSSLight Dependency Scanner and FOSSLight Binary Scanner.
-  
-     
-      
-<div class="right"><a href="https://icons8.com/icon">&lt;Icons by Icons8&gt;</a></div>
+## 📁 Result
+### Result for the mode that analyze the open source (all, source, dependency, binary)
+```
+test_result/
+├── fosslight_binary_220214_1824.txt
+├── fosslight_log
+│   └── fosslight_log_220214_1824.txt
+├── fosslight_lint_220214_1824.yaml
+├── fosslight_report_220214_1824.xlsx
+└── fosslight_raw_data
+    ├── fosslight_src_220214_1824.xlsx
+    ├── fosslight_bin_220214_1824.xlsx
+    └── fosslight_dep_220214_1824.xlsx
+```
+- fosslight_lint_(datetime).yaml : yaml file created as a result of running FOSSLight Prechecker.
+- fosslight_binary_(datetime).txt : FOSSLight Binary result and checksum and tlsh values for each binary are extracted.
+- fosslight_report_(datetime).xlsx : FOSSLight Report format file in which source code analysis, binary analysis, and dependency analysis results are written.
+- fosslight_raw_data directory: The folder where the analysis result raw data file is created (with -r option)
+  - fosslight_src_(datetime).xlsx : FOSSLight Report of FOSSLight Source Scanner
+  - fosslight_dep_(datetime).xlsx : FOSSLight Report of FOSSLight Dependency Scanner
+  - fosslight_bin_(datetime).xlsx : FOSSLight Report of FOSSLight Binary Scanner
+
+### Result for compare mode
+```
+test_result/
+├── fosslight_log
+│   └── fosslight_log_20220817_114259.txt
+└── fosslight_compare_20220817_114259.xlsx
+```
+- fosslight_compare_(datetime).xlsx : Two BOM comparison results in the form of (add/delete/change) table.
+
+## 🐳 How to install and run using Docker
+1. Build image using Dockerfile.
+```
+$docker build -t fosslight .
+```
+2. Run with the image you built.      
+ex. Output: /Users/fosslight_scanner/test_output, Path to be analyzed: tests/test_files
+```
+$docker run -it -v /Users/fosslight_scanner/test_output:/app/output fosslight -p tests/test_files -o output
+```

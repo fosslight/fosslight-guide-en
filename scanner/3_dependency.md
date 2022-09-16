@@ -286,11 +286,11 @@ The manifest file of each package manager is as follows:
 $ tree
 .
 ├── fosslight_report_210503_0039.xlsx
-├── fosslight_dep_log_210503_0039.txt
+├── fosslight_log_210503_0039.txt
 └── fosslight_opossum_210503_0039.json
 ```
 - fosslight_report_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
-- fosslight_dep_log_[datetime].txt: The execution log.
+- fosslight_log_[datetime].txt: The execution log.
 - fosslight_opossum_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
 
 ### Result Contents
