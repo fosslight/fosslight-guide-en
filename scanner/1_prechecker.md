@@ -12,7 +12,7 @@ title: FOSSLight Prechecker
 [ret]: https://github.com/fsfe/reuse-tool
 [rule]: https://oss.lge.com/guide/process/osc_process/1-identification/copyright_license_rule.html
 
-**Github Repository** : [https://github.com/fosslight/fosslight_prechecker]()  
+**Github Repository** : [https://github.com/fosslight/fosslight_prechecker](https://github.com/fosslight/fosslight_prechecker)  
 **License** : [GPL-3.0-only](https://github.com/fosslight/fosslight_prechecker/blob/main/LICENSE)
 
 ## Contents
