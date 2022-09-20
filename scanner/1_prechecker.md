@@ -67,7 +67,7 @@ Options for only 'add' mode
 ```
 
 **(Only for Windows)** Run using executable file   
-    1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker](https://github.com/fosslight/fosslight_prechecker) - Release.   
+    1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases).   
     2. Move the executable file to the path where [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) file is located.   
     3. Double-click the executable file to run it.   
 
