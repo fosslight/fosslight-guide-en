@@ -11,7 +11,7 @@ published: true
 [scanoss]: https://github.com/scanoss/scanoss.py
 [osskb]: https://osskb.org/
 
-**Github Repository** : [https://github.com/fosslight/fosslight_source_scanner]()  
+**Github Repository** : [https://github.com/fosslight/fosslight_source_scanner](https://github.com/fosslight/fosslight_source_scanner)    
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE)
 
 ## Contents
