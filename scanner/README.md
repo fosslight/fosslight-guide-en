@@ -7,9 +7,9 @@ title: 🔎 FOSSLight Scanner
 
 <a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" />
 
-FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. Also, it can check whether an open source complies with the copyright/license writing rule.
-<br />
-It can analyze the open source and check the copyright/license writing rule with the following scanners:
+FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. Also, it can check whether the copyright/license writing rules in the source code are complied with.  <br/>
+
+It works using the following scanners:
 
 1. [FOSSLight Prechecker](1_prechecker.md) : Check whether the source code's copyright and license writing rules are complied with and generate open source analysis result.
 2. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
