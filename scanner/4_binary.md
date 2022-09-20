@@ -8,7 +8,7 @@ published: true
 [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.   
 It can analyze the open source info. in '.jar' file by using [**Dependency-check-py**](https://github.com/jhermann/dependency-check-py).   
    
-**Github Repository** : [https://github.com/fosslight/fosslight_binary_scanner]()  
+**Github Repository** : [https://github.com/fosslight/fosslight_binary_scanner](https://github.com/fosslight/fosslight_binary_scanner)    
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_binary_scanner/blob/main/LICENSE)
 
 ## Contents
