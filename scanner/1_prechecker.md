@@ -10,7 +10,7 @@ title: FOSSLight Prechecker
 [**FOSSLight Prechecker**](https://github.com/fosslight/fosslight_prechecker) is a tool that can be used to comply with the [copyright/license writing rules][rule] in the source code using [reuse-tool][ret].
 
 [ret]: https://github.com/fsfe/reuse-tool
-[rule]: https://oss.lge.com/guide/process/osc_process/1-identification/copyright_license_rule.html
+[rule]: https://opensource.lge.com/guide/19     
 
 **Github Repository** : [https://github.com/fosslight/fosslight_prechecker](https://github.com/fosslight/fosslight_prechecker)  
 **License** : [GPL-3.0-only](https://github.com/fosslight/fosslight_prechecker/blob/main/LICENSE)
