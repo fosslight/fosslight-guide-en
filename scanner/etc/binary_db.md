@@ -12,7 +12,7 @@ To extract OSS information (OSS Name, OSS Version, License) from Database, you n
 1. Install [PostgreSQL][PostgreSQL]
 2. How to edit configuration file for remote access : [reference link][ref_link]
 
-[PostgreSQL]: https://github.com/fosslight/fosslight_binary/blob/main/LICENSE
+[PostgreSQL]: https://www.postgresql.org/download/    
 [ref_link]: https://www.cyberciti.biz/tips/postgres-allow-remote-access-tcp-connection.html
 
 
