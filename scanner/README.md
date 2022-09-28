@@ -1,7 +1,7 @@
 ---
 sort: 5
 published: true
-title: 🔎 FOSSLight Scanner
+title: 🚩FOSSLight Scanner
 ---
 # FOSSLight Scanner
 

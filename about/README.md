@@ -1,7 +1,7 @@
 ---
 sort: 1
 published: true
-title: 🔎 FOSSLight Hub
+title: 🚩FOSSLight Hub
 ---
 # Contents
 Guide contents for FOSSLight Hub.
