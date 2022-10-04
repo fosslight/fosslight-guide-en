@@ -20,6 +20,7 @@ title: FOSSLight Dependency Scanner
 - [Swift](https://swift.org/package-manager/) (Swift)
 - [Carthage](https://github.com/Carthage/Carthage) (Carthage)
 - [Go](https://pkg.go.dev/) (Go)
+- [Nuget](https://www.nuget.org/) (.NET)
 </details>
 {::options parse_block_html="false" /}
 
@@ -214,6 +215,14 @@ Please refer the [github docs guide to create a token](https://docs.github.com/e
 FOSSLight Dependency Scanner only supports for go modules. It automatically executes the 'go list -m all' command to obtain a list of dependencies, and then collects the open source software information such as license and repository. Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
 ```
 </details>
+
+<details>
+<summary markdown="span">**Prerequisite for Nuget**</summary>
+```tip
+FOSSLight Dependency Scanner checks the package list through the packages.config file or obj/project.assets.json file in case of PackageReference, and then prints the OSS information of dependencies such as license and repository through nuget api.
+ Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
+```
+</details>
 {::options parse_block_html="false" /}
 
 
@@ -237,7 +246,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the fosslight_dependency.
             -m <package_manager>            Enter the package manager.
-                                             (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go)
+                                             (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
                                              (If you want to generate the specific file name, add the output path with file name.)
@@ -266,7 +275,7 @@ When you run the FOSSLight Dependency Scanner, the input path('-p' option) shoul
 The manifest file of each package manager is as follows:
 ```
   - Npm : package.json
-  - Pypi : requirements.txt
+  - Pypi : requirements.txt / setup.py
   - Maven : pom.xml
   - Gradle (Android) : build.gradle
   - Pub : pubspec.yaml
@@ -274,6 +283,7 @@ The manifest file of each package manager is as follows:
   - Swift : Package.resolved
   - Carthage : Cartfile.resolved
   - Go : go.mod
+  - Nuget : packages.config / {project name}.csproj
 ```
 
 - Swift package manager
@@ -307,6 +317,7 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Swift                      | swift:(oss name)     | repositoryURL in Package.resolved                                                                   | repositoryURL in Package.resolved                            |
 | Carthage                      | carthage:(oss name)     | github repository in Cartfile.resolved                                                                   | github repository in Cartfile.resolved                            |
 | Go                      | go:(oss name)     | pkg.go.dev/(oss name)@(oss version)                                                                   | repository in pkg.go.dev/(oss name)@(oss version)                        |
+| Nuget                      | nuget:(oss name)     | Priority1. repository in nuget.org/packages/(oss name)/(oss version) <br> Priority2. projectUrl in nuget.org/packages/(oss name)/(oss version) <br> Priority3. nuget.org/packages/(oss name)/(oss version)  | nuget.org/packages/(oss name) |
 
 ```warning
 The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
