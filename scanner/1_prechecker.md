@@ -263,6 +263,11 @@ $ fosslight_prechecker convert -p tests/
     <li>build.gradle</li>
     <li>Podfile.lock</li>
     <li>Cartfile.resolved</li>
+    <li>pubspec.yaml</li>
+    <li>Package.resolved</li>
+    <li>go.mod</li>
+    <li>packages.config</li>
+    <li>package.assets.json</li>
     <li>oss-package.info </li>
     <li>File started with "MODULE_LICENSE_ "</li>
     </ul>
