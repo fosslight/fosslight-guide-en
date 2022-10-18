@@ -151,6 +151,7 @@ $ fosslight_prechecker convert -p tests/
 {::options parse_block_html="true" /}
 > <details>
 > <summary markdown="span">oss-pkg-info.yaml</summary>
+> When writing a path in the yaml file, use double quotation marks("") to start with special characters ({, }, [, ], &, *, #, ?, |, -, <, >, =, !, @).
 ```yaml    
     glibc:
     - version: '2.3'
