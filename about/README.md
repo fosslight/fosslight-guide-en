@@ -29,6 +29,6 @@ Guide contents for FOSSLight Hub.
 - [Maintenance](../features/3_maintenance.md)
 
 ## License
-FOSSLight is released under the Open Source License [AGPL-3.0][agpl].
+[FOSSLight Hub](https://github.com/fosslight/fosslight) is released under the Open Source License [AGPL-3.0][agpl].
 
 [agpl]: https://github.com/fosslight/fosslight/blob/main/LICENSE
