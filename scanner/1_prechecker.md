@@ -69,13 +69,14 @@ Options for only 'add' mode
 ```
 
 **(Only for Windows)** Run using executable file   
-    1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases).    
-    2. Two methods is available    
-    a. Move the executable to the desired path and double-click to run it    
-        * Run only Lint mode, which is the default mode    
-    b. Run as command    
-        * Run fosslight_prechecker.exe file according to 'How to Run by Mode and Parameters' in the path where the file is located    
-            * ex) fosslight_prechecker.exe lint -p src/    
+1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases).    
+2. Two methods is available    
+2-1. Move the executable to the desired path and double-click to run it    
+    * Run only Lint mode, which is the default mode    
+2.2. Run as command    
+    * Run 'cmd'    
+    * Run fosslight_prechecker.exe file according to 'How to Run by Mode and Parameters' in the path where the file is located    
+        * ex) fosslight_prechecker.exe lint -p src/    
 
 ## 📁 Result
 ### 🔖 lint mode
