@@ -28,11 +28,16 @@ title: FOSSLight Dependency Scanner
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_dependency_scanner/blob/main/LICENSE)
 
 ## Contents
-  - [Prerequisite](#-prerequisite)
-  - [How to install](#-how-to-install)
-  - [How to run](#-how-to-run)
-  - [Result](#-result)
-  - [How it works](#-how-it-works)
+- [FOSSLight Dependency Scanner](#fosslight-dependency-scanner)
+  - [Contents](#contents)
+  - [📋 Prerequisite](#-prerequisite)
+  - [🎉 How to install](#-how-to-install)
+  - [🚀 How to run](#-how-to-run)
+    - [Options](#options)
+    - [Tips to run](#tips-to-run)
+  - [📁 Result](#-result)
+    - [Result Contents](#result-contents)
+  - [🧐 How it works](#-how-it-works)
 
 
 ## 📋 Prerequisite
@@ -65,14 +70,13 @@ $ npm install
 1. Add the License Gradle Plugin in build.gradle file.
 ```
 plugins {
-    id 'com.github.hierynomus.license' version '0.15.0'
+    id 'com.github.hierynomus.license' version '0.16.1' // If the gradle version is 6.x or lower, then add the '0.15.0' version instead of '0.16.1'.
 }
 downloadLicenses {
     includeProjectDependencies = true
-    dependencyConfiguration = 'runtimeClasspath'
+    dependencyConfiguration = 'runtimeClasspath' // If the gradle version is 4.6 or lower, then add the 'runtime' instead of 'runtimeClasspath'.
 }
 ```
- > If the gradle version is 4.6 or lower, then add the 'runtime' instead of 'runtimeClasspath' in the dependencyConfiguration.
 
 2. Run the 'downloadLicenses' task.
 ```
