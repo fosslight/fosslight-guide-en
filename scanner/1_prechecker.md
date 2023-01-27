@@ -146,11 +146,11 @@ Depending on the format, the resulting output could be different. (Default forma
 
 <ul>
     <li>Compliant : lint Whether the result is Compliant (OK or Not OK)</il>
-    <li>Files without copyright**: A list of files without copyright</il>
-    <li>Files without license**: A list of files without a license</il>
+    <li>Files without copyright: A list of files without copyright</il>
+    <li>Files without license: A list of files without a license</il>
     <li>Files without license and copyright: A list of files without both copyright and licenses</il>
     <li>Summary</il>
-        <li>Detected Licenses : Detected License in source code</il>
+        <li><li>Detected Licenses : Detected License in source code</il></il>
         <li>Files without copyright / total : Number of files without copyright / Total number of files</il>
         <li>The number of files excludes the following items:</il>
             <li> A file with no code in it</il>
