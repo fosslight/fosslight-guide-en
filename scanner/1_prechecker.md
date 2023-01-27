@@ -166,7 +166,7 @@ Depending on the format, the resulting output could be different. (Default forma
 		 - **OS**: OS version with FOSSLight Prechecker running
 		 - **Python version**: Python ver.
 		 - **fosslight_prechecker version**: FOSSLight Prechecker ver.     
-
+</details>
 	
 <details>
     <summary markdown="span" style="font-weight:bold">Demo Video (lint)</summary>
