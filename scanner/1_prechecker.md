@@ -142,7 +142,6 @@ Options for only 'add' mode
 
 <details>
 <summary markdown="span">Contents of result</summary>
-<pre>
     Depending on the format, the resulting output could be different. (Default format: yaml)
 
     * Compliant : lint Whether the result is Compliant (OK or Not OK)
@@ -166,7 +165,6 @@ Options for only 'add' mode
             * OS: OS version with FOSSLight Prechecker running
             * Python version : Python ver.
             * fosslight_prechecker version : FOSSLight Prechecker ver.
-</pre>
 </details>
 
 <details>
