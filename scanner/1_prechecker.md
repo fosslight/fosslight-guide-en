@@ -142,11 +142,12 @@ Options for only 'add' mode
 
 <details>
 <summary markdown="span">Contents of result</summary>
-    Depending on the format, the resulting output could be different. (Default format: yaml)
+    Depending on the format, the resulting output could be different. (Default format: yaml)     
 
-    * Compliant : lint Whether the result is Compliant (OK or Not OK)
-    * Files without copyright: A list of files without copyright
-    * Files without license: A list of files without a license
+    
+    **Compliant** : lint Whether the result is Compliant (OK or Not OK)
+    **Files without copyright**: A list of files without copyright
+    **Files without license**: A list of files without a license
     * Files without license and copyright: A list of files without both copyright and licenses
     * Summary
         * Detected Licenses : Detected License in source code
