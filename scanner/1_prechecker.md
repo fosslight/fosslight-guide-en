@@ -142,30 +142,30 @@ Options for only 'add' mode
 
 <details>
 <summary markdown="span">Contents of result</summary>
-    Depending on the format, the resulting output could be different. (Default format: yaml)     
+Depending on the format, the resulting output could be different. (Default format: yaml)     
 
-    
-    **Compliant** : lint Whether the result is Compliant (OK or Not OK)
-    **Files without copyright**: A list of files without copyright
-    **Files without license**: A list of files without a license
-    * Files without license and copyright: A list of files without both copyright and licenses
-    * Summary
-        * Detected Licenses : Detected License in source code
-        * Files without copyright / total : Number of files without copyright / Total number of files
-            * The number of files excludes the following items:
-                * A file with no code in it.
-                * Files defined in .gitignore
-                * Untracked files based on git repo
-                * Deliverables of FOSSLight
-                * Exclude path in sbom-info.yaml / oss-pkg-info.yaml 
-        * Files without license / total : Number of files without license / Total number of files
-        * Files without copyright / total : Number of files without copyright / Total number of files
-        * Open Source Package File : A list of sbom-info*.yaml or oss-pkg-info*.yaml files
-        * Tool Info
-            * Analysis path : Path conducted by analysis
-            * OS: OS version with FOSSLight Prechecker running
-            * Python version : Python ver.
-            * fosslight_prechecker version : FOSSLight Prechecker ver.
+<ul>
+    <li>Compliant : lint Whether the result is Compliant (OK or Not OK)</il>
+    <li>Files without copyright**: A list of files without copyright</il>
+    <li>Files without license**: A list of files without a license</il>
+    <li>Files without license and copyright: A list of files without both copyright and licenses</il>
+    <li>Summary</il>
+        <li>Detected Licenses : Detected License in source code</il>
+        <li>Files without copyright / total : Number of files without copyright / Total number of files</il>
+        <li>The number of files excludes the following items:</il>
+            <li> A file with no code in it</il>
+            <li> Files defined in .gitignore</il>
+            <li> Untracked files based on git repo</il>
+            <li> Deliverables of FOSSLight</il>
+            <li> Exclude path in sbom-info.yaml / oss-pkg-info.yaml</il>
+    <li>Files without license / total : Number of files without license / Total number of files</il>
+    <li>Files without copyright / total : Number of files without copyright / Total number of files</il>
+    <li>Open Source Package File : A list of sbom-info*.yaml or oss-pkg-info*.yaml files</il>
+    <li>Tool Info</il>
+        <li> Analysis path : Path conducted by analysis</il>
+        <li> OS: OS version with FOSSLight Prechecker running</il>
+        <li> Python version : Python ver.</il>
+        <li> fosslight_prechecker version : FOSSLight Prechecker ver.</il>
 </details>
 
 <details>
