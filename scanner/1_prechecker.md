@@ -141,9 +141,40 @@ Options for only 'add' mode
           fosslight_prechecker version: fosslight_prechecker v2.2.0  </pre>
 
 <details>
+<summary markdown="span">Contents of result</summary>
+<pre>
+    Depending on the format, the resulting output could be different. (Default format: yaml)
+
+    * Compliant : lint Whether the result is Compliant (OK or Not OK)
+    * Files without copyright: A list of files without copyright
+    * Files without license: A list of files without a license
+    * Files without license and copyright: A list of files without both copyright and licenses
+    * Summary
+        * Detected Licenses : Detected License in source code
+        * Files without copyright / total : Number of files without copyright / Total number of files
+            * The number of files excludes the following items:
+                * A file with no code in it.
+                * Files defined in .gitignore
+                * Untracked files based on git repo
+                * Deliverables of FOSSLight
+                * Exclude path in sbom-info.yaml / oss-pkg-info.yaml 
+        * Files without license / total : Number of files without license / Total number of files
+        * Files without copyright / total : Number of files without copyright / Total number of files
+        * Open Source Package File : A list of sbom-info*.yaml or oss-pkg-info*.yaml files
+        * Tool Info
+            * Analysis path : Path conducted by analysis
+            * OS: OS version with FOSSLight Prechecker running
+            * Python version : Python ver.
+            * fosslight_prechecker version : FOSSLight Prechecker ver.
+</pre>
+</details>
+
+<details>
     <summary markdown="span" style="font-weight:bold">Demo Video (lint)</summary>
     <img src="images/lint.gif" alt="demo video for lint mode">
 </details>
+
+
 
 
 ### 🔖 convert mode
