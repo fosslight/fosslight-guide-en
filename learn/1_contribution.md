@@ -58,4 +58,4 @@ git commit -s -m "Write the commit message"
 - [GitHub Help](https://help.github.com)
 
 ### FOSSLight Guide's License
-All contents written in the [FOSSLight Guide page](https://fosslight.org/fosslight-guide-en) is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0) License.
+Except as otherwise noted, the content of [FOSSLight Guide page](https://fosslight.org/fosslight-guide-en) is licensed under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0) and sample code is licensed under the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html). 
