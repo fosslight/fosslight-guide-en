@@ -142,7 +142,7 @@ Options for only 'add' mode
 
 
 <details>
-<summary markdown="span">Contents of result</summary>
+<summary markdown="span">Contents of result</summary>      
 Depending on the format, the resulting output could be different. (Default format: yaml)     
 
  - **Compliant**: lint Whether the result is Compliant (OK or Not OK)
