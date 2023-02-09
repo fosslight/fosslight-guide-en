@@ -14,7 +14,8 @@ It works using the following scanners:
 1. [FOSSLight Prechecker](1_prechecker.md) : Check whether the source code's copyright and license writing rules are complied with.
 2. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
 3. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
-4. [FOSSLight Binary Scanner](4_binary.md) :  Analyze the binaries and generate open source analysis result.
+4. [FOSSLight Binary Scanner](4_binary.md) : Analyze the binaries and generate open source analysis result.
+5. [FOSSLight Yocto Scanner](5_yocto.md) : Analyze open source for yocto-based projects.
 <br />
 
 **Github Repository** : [https://github.com/fosslight/fosslight_scanner]()  
