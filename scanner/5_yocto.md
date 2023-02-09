@@ -103,7 +103,9 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
         -f <format>                    Output file format (excel, csv, opossum)
     ``` 
 After placing the fosslight_bin_windows.exe file in the path to be analyzed binary, double-click to run it.
+
 ### Method 2. How to run using meta-doubleopen
+
 ---
 When building based on Yocto Project, OSS information about the package included in the rootfs image is extracted as spdx.json using [meta-doubleopen](http://collab.lge.com/main/display/FOSS/%5Bopenembedded-core%5D+meta-doubleopen) and converted into OSS Report format using FOSSLight Yocto.
 - Output per sheet:
