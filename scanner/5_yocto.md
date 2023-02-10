@@ -56,7 +56,7 @@ Convert the results extracted with [bom.bbclass](https://github.com/fosslight/fo
     
     INHERIT += "bom"
     ```
-2. Create a bom.bbclass file in meta/classes.
+2. Copy a [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) file in meta/classes.
     - If meta/classes does not exist, download bom.bbclass to the classes folder of the meta layer included in the build.
         ```
         poky/meta/classes$ wget -O bom.bbclass "https://github.com/fosslight/fosslight_yocto_scanner/raw/main/files_for_preparation/bom.bbclass"
