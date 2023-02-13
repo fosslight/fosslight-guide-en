@@ -7,7 +7,7 @@ published: true
 
 [**FOSSLight Yocto Scanner**](https://github.com/fosslight/fosslight_yocto_scanner) is a Python script that outputs OSS information about the package included in the rootfs image in OSS Report format when building based on Yocto Project.
 - How to print OSS information: Prints the OSS information (OSS Name, OSS Version, LICENSE, Download location) defined in the recipe.
-- ⚠️**For images (ex- kernel, boot loader) mounted on target other than the rootfs image, the script does not print.** Therefore, for this, the user must manually add OSS information to the OSS Report.  
+- ⚠️**For images (ex- kernel, boot loader) mounted on target other than the rootfs image, the script does not print.** Therefore, for this, the user must manually add OSS information to the FOSS Report.  
    
 **Github Repository** : [https://github.com/fosslight/fosslight_yocto_scanner](https://github.com/fosslight/fosslight_yocto_scanner)    
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/LICENSE)
@@ -39,7 +39,7 @@ $ pip3 install fosslight_yocto
 ### Method 1. How to run using bom.bbclass
 
 ---
-Convert the results extracted with [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) to OSS Report using FOSSLight Yocto.
+Convert the results extracted with [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) to FOSS Report using FOSSLight Yocto.
 - Output per sheet:
     - SRC Sheet : Extract installed package list and print OSS information.
     - BIN Sheet : fter extracting the binary from the folder where the rootfs image was extracted, print the OSS information for each binary.
@@ -75,7 +75,7 @@ Convert the results extracted with [bom.bbclass](https://github.com/fosslight/fo
         ```
         poky/build $ bitbake <image>
         ```
-4. ${TOPDIR}/에 bom.json 파일과 buildhistory 폴더가 생성됩니다.
+4. In the ${TOPDIR}/, bom.json file and buildhistory folder are created.
 
 #### Run the fosslight_yocto
 ```
@@ -107,7 +107,7 @@ After placing the fosslight_bin_windows.exe file in the path to be analyzed bina
 ### Method 2. How to run using meta-doubleopen
 
 ---
-When building based on Yocto Project, OSS information about the package included in the rootfs image is extracted as spdx.json using [meta-doubleopen](http://collab.lge.com/main/display/FOSS/%5Bopenembedded-core%5D+meta-doubleopen) and converted into OSS Report format using FOSSLight Yocto.
+When building based on Yocto Project, OSS information about the package included in the rootfs image is extracted as spdx.json using [meta-doubleopen](https://github.com/doubleopen-project/meta-doubleopen) and converted into OSS Report format using FOSSLight Yocto.
 - Output per sheet:
     - SRC_distributed: Packages included in rootfs image.
     - SRC_recipe: Recipes included in build.
@@ -118,7 +118,8 @@ When building based on Yocto Project, OSS information about the package included
 ---
 
 #### Build with meta-doubleopen
-[meta-doubleopen](http://collab.lge.com/main/display/FOSS/%5Bopenembedded-core%5D+meta-doubleopen)을 이용하여 이미지에 대한 spdx.json 파일을 생성합니다.
+Create a spdx.json file for the image using[meta-doubleopen](https://github.com/doubleopen-project/meta-doubleopen)
+
 
 #### Run the fosslight_doubleopen
 ```
