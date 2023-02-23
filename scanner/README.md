@@ -16,17 +16,12 @@ It works using the following scanners:
 3. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
 4. [FOSSLight Binary Scanner](4_binary.md) : Analyze the binaries and generate open source analysis result.
 5. [FOSSLight Yocto Scanner](5_yocto.md) : Analyze open source for yocto-based projects.
+6. [FOSSLight Android Scanner](6_android.md) : Analyze open source for android-based projects.
 <br />
 
 **Github Repository** : [https://github.com/fosslight/fosslight_scanner]()  
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE)
 
-## Contents
-- [📋 Prerequisite](#-prerequisite)
-- [🎉 How to install](#-how-to-install)
-- [🚀 How to run](#-how-to-run)
-- [📁 Result](#-result)
-- [🐳 Using Docker](#-how-to-install-and-run-using-docker)
 
 ## 📋 Prerequisite
 1. FOSSLight Scanner needs a Python 3.7+.    
