@@ -102,20 +102,20 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 
 ## 🚗 Add-ons
 ---
-하기 옵션을 통해 부가 기능을 활용할 수 있습니다.
-- Option: -p : Packaging 파일에 포함되지 않아야 하는 파일 확인
-- Option: -f : Source Code Path를 찾지 못하는 binary에 대하여 Find Command 실행 결과 출력
-- Option: -i : Android reference 의 repository기준으로 OSS Name 자동 출력 끄기
-- Option: -r : 특정 binary를 FOSSLight Report에서 중복 제거. Android native와 vendor가 분리되어 build되는 구조에서 사용하는 옵션으로 중복으로 포함되는 Binary를 제거합니다. vendor에 대한 FOSSLight Android 실행시 -r 옵션으로 android native 결과 생성되는 result_*.txt 파일을 parameter로 추가합니다.
-- Option: -m : License가 빈칸인 부분에 대해 자동으로 Source path 내 Source code 분석(소스 파일 내 License text 기반 License 검출)을 실행하여 License 값을 채워줍니다. (그러나 분석에 시간이 오래 걸립니다. Android native에서 44개 Path기준 약 35분 소요)
+Additional functions are available through the options.
+- Option: -p : Check files that should not be included in the Packaging file.
+- Option: -f : Print result of Find Command for binary that can not find Source Code Path.
+- Option: -i : Turn off OSS Name auto-completion
+- Option: -r : Deduplicate the binary.
+- Option: -m : Extract the license by analyzing the source code.
 
 ---
 
-### -p: Packaging 파일에 포함되지 않아야 하는 파일 확인
-공개할 Source Code 취합시, 포함되지 말아야 하는 파일 이름, 확장자, 디렉토리를 체크합니다.      
+### -p: Check files that should not be included in the Packaging file.
+Check the file names, file extensions, and paths that should not be included when packaging source code to be disclosed.               
 
-사전 준비      
-- Packaging Config File : 체크할 항목을 json 형식의 pkgConfig.json 파일 이름으로 생성합니다.
+Prerequisite     
+- Packaging Config File : Create a pkgConfig.json file as json format for checking files.
 
 Example : pkgConfig.json
 
@@ -136,16 +136,16 @@ Example : pkgConfig.json
     }
 ```
 
-- Prohibited_File_Names : 검출하려는 파일 이름 
-- Prohibited_File_Extensions : 검출하려는 파일 확장자 
-- Prohibited_Path : 검출할 파일 디렉토리
-- 공개할 소스 코드를 취합한 디렉토리 위치 혹은 압축 파일 확인 
-  - 공개할 소스 코드 취합한 디렉토리나 압축 파일 내 압축된 파일이 있을 경우, 압축을 해제하여 검색합니다. 
-  - 압축 해제 지원 확장자 : tar, tar.gz, zip
+- Prohibited_File_Names : File name to be detected. 
+- Prohibited_File_Extensions : File extension to be detected. 
+- Prohibited_Path :File path to be detected.
+- A path or compressed file containing the source code to be disclosed. 
+  - If there is a compressed file in the path or compressed file that contains the source code to be released, decompress it and search it.
+  - File extensions that support decompression : tar, tar.gz, zip
 
-**실행 방법**
-1. Packaging Config File을 pkgConfig.json 파일명(json 형식)으로 준비합니다.
-2. -p 옵션을 추가하여 실행합니다. (-p : 공개할 소스 코드를 취합한 Path 혹은 압축 파일)
+**How to run**
+1. Place the Packaging config file (pkgConfig.json).
+2. Run the fosslight_android with -p option. (-p : A path or compressed file containing the source code to be disclosed)
     ```
     (venv)$ fosslight_android -p [A path or compressed file containing the source code to be disclosed]
      
@@ -153,10 +153,10 @@ Example : pkgConfig.json
     (venv)$ fosslight_android -p /home/test/sourceCodeToBeDisclosed.tar.gz
     ```
 
-3. 결과 확인 
-검출된 항목별로 추출된 목록을 보여줍니다.        
+3. Result 
+The extracted list is displayed for each detected item.        
        
-결과 example :       
+Example :       
 
 ```
     (venv)$ fosslight_android  -p /home/test/sourceCodeToBeDisclosed.tar.gz
@@ -173,15 +173,15 @@ Example : pkgConfig.json
     4. Fail to read : 0
 ```
    
-- Prohibited file names : 공개할 소스 코드 중 파일명에 pkgConfig.json의 Prohibited_File_Names 값을 포함하는 경우 출력합니다.
-- Prohibited file extension : 공개할 소스 코드 중 파일 확장자가 pkgConfig.json의 Prohibited_File_Extensions 값인 경우 출력합니다.
-- Prohibited Path : 공개할 소스 코드 중 파일 Path 중 pkgConfig.json의 Prohibited_Path 값을 포함하는 경우 출력합니다.
-   - Fail to read : 압축 해제에 실패한 파일 목록을 출력합니다.
+- Prohibited file names : If the file name of the source code to be disclosed contains the value of Prohibited_File_Names in pkgConfig.json.
+- Prohibited file extension :  If the file extension of the source code to be disclosed contains the value of Prohibited_File_Extensions in pkgConfig.json.
+- Prohibited Path :If the file path of the source code to be disclosed contains the value of Prohibited_Path in pkgConfig.json.
+- Fail to read : Prints a list of files that failed to decompress.
 
-### -f: Source Code Path를 찾지 못하는 binary에 대하여 Find Command 실행 결과 출력
-Source Code Path를 찾지 못하는 Binary에 대하여 Android의 Source Path내 폴더 (out directory, .으로 시작하는 숨김 directory 제외)별로 Find Command 실행 결과를 출력합니다.     
+### -f: Print result of Find Command for binary that can not find Source Code Path.
+Print the result of executing Find Command for each folder (excluding out directory, hidden directories starting with '.') in Android's Source Path for Binary that can not find Source Code Path.     
 
-1. -f 옵션을 추가하여 실행합니다.
+1. Run the fosslight_android with -f.
     ```commandline
     (venv)$ fosslight_android  -s [android source path] -a [build log file name] -f
      
@@ -189,21 +189,21 @@ Source Code Path를 찾지 못하는 Binary에 대하여 Android의 Source Path�
     (venv)$ fosslight_android  -s /home/soim/android/source -a android.log -f
     ```
 
-2. 결과 확인        
-Source Code Path를 찾지 못하는 Binary별 Find command 실행 결과는 'FIND_RESULT_OF_BINARIES.txt' 파일로 생성됩니다.
-단, Source Code Path를 찾지 못하는 Binary가 없을 경우 해당 파일은 생성되지 않습니다.
+2. Result           
+The result of executing the Find command for each binary that can not find the Source Code Path is generated as a 'FIND_RESULT_OF_BINARIES.txt' file.
+However, if there is no binary that can not find the source code path, 'FIND_RESULT_OF_BINARIES.txt' will not be created.
 
-### -i: OSS Name 자동 완성 기능 끄기
-FOSSLight Android는 Binary DB에서 OSS 정보를 찾을 수 없는 경우이거나 OSS Name이 "Android Open Source Project"인 경우, Source Code Path를 기준으로 [Android Native](https://android.googlesource.com/platform)에 있는 저장소라면 OSS Name을 자동으로 출력해줍니다.      
-OSS Name 자동 완성 기능을 끄고자 할 경우 선택합니다.      
+### -i: Turn off OSS Name auto-completion
+If OSS information is not found in Binary DB or OSS Name is [Android Native](https://android.googlesource.com/platform), OSS Name is automatically printed if it is a repository in Android Reference based on Source Code Path.       
+To turn off this automatic OSS name output, add the i option.     
 
-### -r: 특정 binary를 FOSSLight Report에서 중복 제거
-하나의 Model에 탑재하는 Android native와 vendor가 분리된 output으로 생성되는 경우에 한하여 활용합니다.        
-- vendor에 대한 FOSSLight Android 실행시 -r 옵션을 이용하여 Android native에도 포함되는 binary를 중복 제거합니다.
-- 중복 제거 조건 : Binary name이 같고 checksum이 같거나, Binary name이 같고 TLSH 값 차이가 120이하인 경우
-- 중복 제거된 binary는 REMOVED_BIN_BY_DUPLICATION.txt에 출력됩니다.
+### -r: Deduplicate the binary.
+It is used only when Android native and vendor mounted on one model are created as separate outputs.
+When running FOSSLight Android for vendor, use the -r option to deduplicate the binary in Android native.        
+- Conditions to remove duplicates: Binary name is the same and checksum is the same OR Binary name is the same and TLSH value difference is less than 120
+- Deduplicated binaries are output to REMOVED_BIN_BY_DUPLICATION.txt.
 
-1. -r 옵션을 추가하여 실행합니다. 
+1. Run the fosslight_android with -r. 
     ```commandline
     (venv)$ fosslight_android -s [vendor_source_path] -a [android_build_log_file] -r [android_native_result.txt]
      
@@ -211,14 +211,14 @@ OSS Name 자동 완성 기능을 끄고자 할 경우 선택합니다.
     (venv)$ fosslight_android -s [vendor_source_path] -a android.log -r android_native_result.txt
     ```
 
-2. 결과 확인         
-android_native_result.txt와 중복된 binary는 FOSSLight-Report.xlsx에서 제거되고, REMOVED_BIN_BY_DUPLICATION.txt에 출력됩니다.
+2. Result         
+Binaries duplicated with android_native_result.txt are removed from FOSSLight-Report.xlsx and output to REMOVED_BIN_BY_DUPLICATION.txt.
 
 
-### -m: 소스 코드 분석하여 License 출력
-License 정보를 못 찾은 경우에 한하여 FOSSLight Source를 이용하여 Source code를 분석한 결과를 License란에 출력합니다.        
+### -m: Extract the license by analyzing the source code.
+Only for binary that could not extract license, license by source code is extracted using FOSSLight Source, and the result is output in license column of FOSSLight Report.        
 
-1. -m 옵션을 추가합니다.
+1. Run the fosslight_android with -m.
     ```commandline
     (venv)$ fosslight_android -s [vendor_source_path] -a [android_build_log_file] -m
      
@@ -226,6 +226,6 @@ License 정보를 못 찾은 경우에 한하여 FOSSLight Source를 이용하�
     (venv)$ fosslight_android -s [vendor_source_path] -a android.log -m
     ```
 
-2. 결과 확인         
-FOSSLight Report의 License column에 분석한 결과가 채워집니다.              
-추가로 source_analyzed_[datetime] 폴더에 소스 코드별 분석한 결과가 생성됩니다.       
+2. Result            
+The analysis results are printed in the license column of the FOSSLight Report.        
+Additionally, analysis results by source code are created in the source_analyzed_[datetime] folder.      
