@@ -7,6 +7,7 @@ For improvements or bugs, please report by creating an issue in Git repository. 
 - [FOSSLight Source Scanner](https://github.com/fosslight/fosslight_source_scanner/issues)
 - [FOSSLight Binary Scanner](https://github.com/fosslight/fosslight_binary_scanner/issues)
 - [FOSSLight Yocto Scanner](https://github.com/fosslight/fosslight_yocto_scanner/issues)
+- [FOSSLight Android Scanner](https://github.com/fosslight/fosslight_android_scanner/issues)
 - [FOSSLight Prechecker](https://github.com/fosslight/fosslight_prechecker/issues)
 - [FOSSLight Guide](https://github.com/fosslight/fosslight-guide-en/issues)
 
