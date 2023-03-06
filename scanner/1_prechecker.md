@@ -164,6 +164,7 @@ Depending on the format, the resulting output could be different. (Default forma
 ><details>
 ><summary markdown="span" style="font-weight:bold">When calculating the number of files, excluded the following items</summary>
 >	
+> - Hidden file
 > - A file with no code in it
 > - Files defined in .gitignore
 > - Untracked files based on git repo
