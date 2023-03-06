@@ -152,12 +152,6 @@ Depending on the format, the resulting output could be different. (Default forma
  - **Summary**
 	 - **Detected Licenses**: Detected License in source code
 	 - **Files without copyright / total:** Number of files without copyright / Total number of files
-		 - The number of files excludes the following items:
-			 - A file with no code in it
-			 - Files defined in .gitignore
-			 - Untracked files based on git repo
-			 - Deliverables of FOSSLight
-			 - Exclude path in sbom-info.yaml / oss-pkg-info.yaml
 	 - **Files without license / total**: Number of files without license / Total number of files
 	 - **Files without copyright / total**: Number of files without copyright / Total number of files
 	 - **Open Source Package File**: A list of sbom-info*.yaml or oss-pkg-info*.yaml files
@@ -166,6 +160,16 @@ Depending on the format, the resulting output could be different. (Default forma
 		 - **OS**: OS version with FOSSLight Prechecker running
 		 - **Python version**: Python ver.
 		 - **fosslight_prechecker version**: FOSSLight Prechecker ver.     
+
+><details>
+><summary markdown="span" style="font-weight:bold">When calculating the number of files, excluded the following items</summary>
+>	
+> - A file with no code in it
+> - Files defined in .gitignore
+> - Untracked files based on git repo
+> - Deliverables of FOSSLight
+> - Exclude path in sbom-info.yaml / oss-pkg-info.yaml	
+> </details>
 </details>
 {::options parse_block_html="false" /}
 	
