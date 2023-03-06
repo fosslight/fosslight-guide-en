@@ -140,7 +140,7 @@ Options for only 'add' mode
           Python version: 3
           fosslight_prechecker version: fosslight_prechecker v2.2.0  </pre>
 
-
+{::options parse_block_html="true" /}
 <details>
 <summary markdown="span">Contents of result</summary>      
 Depending on the format, the resulting output could be different. (Default format: yaml)     
@@ -167,6 +167,7 @@ Depending on the format, the resulting output could be different. (Default forma
 		 - **Python version**: Python ver.
 		 - **fosslight_prechecker version**: FOSSLight Prechecker ver.     
 </details>
+{::options parse_block_html="false" /}
 	
 <details>
     <summary markdown="span" style="font-weight:bold">Demo Video (lint)</summary>
