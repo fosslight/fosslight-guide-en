@@ -21,6 +21,7 @@ title: FOSSLight Dependency Scanner
 - [Carthage](https://github.com/Carthage/Carthage) (Carthage)
 - [Go](https://pkg.go.dev/) (Go)
 - [Nuget](https://www.nuget.org/) (.NET)
+- [Helm](https://helm.sh/) (Kubernetes)
 </details>
 {::options parse_block_html="false" /}
 
@@ -227,6 +228,14 @@ FOSSLight Dependency Scanner checks the package list through the packages.config
  Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
 ```
 </details>
+
+<details>
+<summary markdown="span">**Prerequisite for Helm**</summary>
+```tip
+FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Chart.yaml and 'helm dependency build' command.
+Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
+```
+</details>
 {::options parse_block_html="false" /}
 
 
@@ -250,7 +259,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the fosslight_dependency.
             -m <package_manager>            Enter the package manager.
-                                             (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget)
+                                             (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget, helm)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
                                              (If you want to generate the specific file name, add the output path with file name.)
@@ -288,6 +297,7 @@ The manifest file of each package manager is as follows:
   - Carthage : Cartfile.resolved
   - Go : go.mod
   - Nuget : packages.config / {project name}.csproj
+  - Helm : Chart.yaml
 ```
 
 - Swift package manager
@@ -299,13 +309,13 @@ The manifest file of each package manager is as follows:
 ```
 $ tree
 .
-├── fosslight_report_210503_0039.xlsx
-├── fosslight_log_210503_0039.txt
-└── fosslight_opossum_210503_0039.json
+├── fosslight_report_dep_210503_0039.xlsx
+├── fosslight_log_dep_210503_0039.txt
+└── fosslight_opossum_dep_210503_0039.json
 ```
-- fosslight_report_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
-- fosslight_log_[datetime].txt: The execution log.
-- fosslight_opossum_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
+- fosslight_report_dep_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
+- fosslight_log_dep_[datetime].txt: The execution log.
+- fosslight_opossum_dep_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
 
 ### Result Contents
 It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
@@ -322,9 +332,11 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Carthage                      | carthage:(oss name)     | github repository in Cartfile.resolved                                                                   | github repository in Cartfile.resolved                            |
 | Go                      | go:(oss name)     | pkg.go.dev/(oss name)@(oss version)                                                                   | repository in pkg.go.dev/(oss name)@(oss version)                        |
 | Nuget                      | nuget:(oss name)     | Priority1. repository in nuget.org/packages/(oss name)/(oss version) <br> Priority2. projectUrl in nuget.org/packages/(oss name)/(oss version) <br> Priority3. nuget.org/packages/(oss name)/(oss version)  | nuget.org/packages/(oss name) |
+| Helm                        | helm:(oss name)     | first url of sources in (Chart.yaml)                                                                   | home in (Chart.yaml)                           |
 
 ```warning
-The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
+- The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
+- For Helm, the dependencies of each dependency are not currently supported. And it obtains the OSS information of each dependency from the Chart.yaml file information in the .tgz file downloaded in the charts/ directory after executing the 'helm dependency build' command. Therefore, if information such as License or Homepage is missing in Chart.yaml, the information cannot be obtained, so the user needs to manually check and supplement it.
 ```
 
 ## 🧐 How it works
