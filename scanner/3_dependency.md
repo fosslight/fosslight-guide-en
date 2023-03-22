@@ -184,7 +184,8 @@ dev_dependencies:
 2. Run flutter_oss_licenses with below command. (optional)
 ```
 $ flutter pub get
-$ flutter pub deps --no-dev > tmp_no_deps_result.txt
+$ flutter pub deps --json > tmp_deps.json
+$ flutter pub deps --no-dev -s compact > tmp_no_dev_deps.txt
 $ flutter pub run flutter_oss_licenses:generate.dart -o tmp_flutter_oss_licenses.json --json
 ```
 3. Run FOSSLight Dependency Scanner in the path where the file generated in the result of step 2 exists.
