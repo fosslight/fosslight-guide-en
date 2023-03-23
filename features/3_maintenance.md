@@ -25,7 +25,24 @@ $ mysql -ufosslight -pfosslight fosslight < fosslight_backup.sql
 
 ## Upgrading the DB version
 How to upgrade DB version using [MyBatis Migrations](https://mybatis.org/migrations/migrate.html) (Version upgrade script is provided starting from v1.4.9)
-1. Export the fosslight/migration/mybatis-migrations-3.3.11 folder to MIGRATIONS_HOME.
+
+1. Modify DB connection information in migration/migration/environments/development.properties file.
+    ```
+    $ cd migration/migration
+    $ cat environments/development.properties
+    ## Base time zone to ensure times are consistent across machines
+    time_zone=GMT+0:00
+
+    ## The character set that scripts are encoded with
+    # script_char_set=UTF-8
+
+    ## JDBC connection properties.
+    driver=org.mariadb.jdbc.Driver
+    url=jdbc:mysql://localhost:3306/fosslight
+    username=fosslight
+    password=fosslight
+    ```
+2. Export the fosslight/migration/mybatis-migrations-3.3.11 folder to MIGRATIONS_HOME.
     ```
     $ cd fosslight
     $ pwd
@@ -34,7 +51,7 @@ How to upgrade DB version using [MyBatis Migrations](https://mybatis.org/migrati
     $ export MIGRATIONS=$MIGRATIONS_HOME/bin
     $ export PATH=$MIGRATIONS:$PATH
     ```
-2. Upgrade after checking the migrate status.
+3. Upgrade after checking the migrate status.
     ```
     $ cd /home/test/fosslight/migration/migration
     $ migrate status
