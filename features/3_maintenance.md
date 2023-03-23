@@ -23,6 +23,60 @@ mysql -u[id] -p[password] [database_name] < [backup_file_name].sql
 $ mysql -ufosslight -pfosslight fosslight < fosslight_backup.sql
 ```
 
+## Upgrading the DB version
+How to upgrade DB version using MyBatis Migrations (Version upgrade script is provided starting from v1.4.9)
+1. Export the fosslight/migration/mybatis-migrations-3.3.11 folder to MIGRATIONS_HOME.
+    ```
+    $ cd fosslight
+    $ pwd
+    $ /home/test/fosslight
+    $ export MIGRATIONS_HOME=/home/test/fosslight/migration/mybatis-migrations-3.3.11
+    $ export MIGRATIONS=$MIGRATIONS_HOME/bin
+    $ export PATH=$MIGRATIONS:$PATH
+    ```
+2. Upgrade after checking the migrate status.
+    ```
+    $ cd /home/test/fosslight/migration/migration
+    $ migrate status
+    ------------------------------------------------------------------------
+    -- MyBatis Migrations - status
+    ------------------------------------------------------------------------
+    ID             Applied At          Description
+    ================================================================================
+    20230322085317    ...pending...    create changelog
+    20230322091138    ...pending...    update v1.4.9
+    20230322092534    ...pending...    update v1.5.0
+
+    ------------------------------------------------------------------------
+    -- MyBatis Migrations SUCCESS
+    -- Total time: 0s
+    -- Finished at: Wed Mar 22 20:12:07 KST 2023
+    -- Final Memory: 7M/500M
+
+    $ migrate up
+    ```
+4. Check if the version up has been applied.
+    ```
+    $ migrate status
+    ------------------------------------------------------------------------
+    -- MyBatis Migrations - status
+    ------------------------------------------------------------------------
+    ID             Applied At          Description
+    ================================================================================
+    20230322085317 2023-03-22 20:12:35 create changelog
+    20230322091138 2023-03-22 20:12:35 update v1.4.9
+    20230322092534 2023-03-22 20:12:36 update v1.5.0
+
+    ------------------------------------------------------------------------
+    -- MyBatis Migrations SUCCESS
+    -- Total time: 0s
+    -- Finished at: Wed Mar 22 20:12:39 KST 2023
+    -- Final Memory: 7M/500M
+    ------------------------------------------------------------------------
+
+    ```
+
+
 ## Download NVD Data from 2002
 FOSSLight Hub downloads [NVD Data Feeds](https://nvd.nist.gov/vuln/data-feeds) provided from NVD(NATIONAL VULNERABILITY DATABASE) once a day and stores them in the database, and the stored NVD data is viewed in the [Vulnerability List](../started/2_try/7_vulnerability.md).    
 At this time, when downloading NVD data from 2002 data, set as follows.      
