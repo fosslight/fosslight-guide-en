@@ -93,6 +93,28 @@ How to upgrade DB version using [MyBatis Migrations](https://mybatis.org/migrati
 
     ```
 
+✏️Note. How to apply only a specific version: Enter the `migrate version [ID]`.
+- ex. If v1.4.9 is already applied and you want to apply only v1.5.0
+    ```
+    $ cd /home/test/fosslight/migration/migration
+    $ migrate status
+    ------------------------------------------------------------------------
+    -- MyBatis Migrations - status
+    ------------------------------------------------------------------------
+    ID             Applied At          Description
+    ================================================================================
+    20230322085317    2023-03-22 20:12:35    create changelog
+    20230322091138    2023-03-22 20:12:35    update v1.4.9
+    20230322092534    ...pending...          update v1.5.0
+
+    ------------------------------------------------------------------------
+    -- MyBatis Migrations SUCCESS
+    -- Total time: 0s
+    -- Finished at: Wed Mar 22 20:12:07 KST 2023
+    -- Final Memory: 7M/500M
+
+    $ migrate version 20230322092534
+    ```
 
 ## Download NVD Data from 2002
 FOSSLight Hub downloads [NVD Data Feeds](https://nvd.nist.gov/vuln/data-feeds) provided from NVD(NATIONAL VULNERABILITY DATABASE) once a day and stores them in the database, and the stored NVD data is viewed in the [Vulnerability List](../started/2_try/7_vulnerability.md).    
