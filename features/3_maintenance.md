@@ -24,7 +24,7 @@ $ mysql -ufosslight -pfosslight fosslight < fosslight_backup.sql
 ```
 
 ## Upgrading the DB version
-How to upgrade DB version using MyBatis Migrations (Version upgrade script is provided starting from v1.4.9)
+How to upgrade DB version using [MyBatis Migrations](https://mybatis.org/migrations/migrate.html) (Version upgrade script is provided starting from v1.4.9)
 1. Export the fosslight/migration/mybatis-migrations-3.3.11 folder to MIGRATIONS_HOME.
     ```
     $ cd fosslight
