@@ -39,6 +39,7 @@ title: FOSSLight Dependency Scanner
   - [📁 Result](#-result)
     - [Result Contents](#result-contents)
   - [🧐 How it works](#-how-it-works)
+  - [👀 Package Support Level](#-package-support-level)
 
 
 ## 📋 Prerequisite
@@ -353,3 +354,113 @@ Each package manager uses the results of the following software:
 - Android(gradle) : [android-dependency-scanning](https://github.com/fosslight/android-dependency-scanning)
 
 Because we utilizes the different open source software to analyze the dependencies of each package manager, you need to set up the **Prerequisite** steps according to package manager to analyze.
+
+## 👀 Package Support Level
+<table>
+<thead>
+  <tr>
+    <th>Language/<br>Project</th>
+    <th>Package Manager</th>
+    <th>Manifest file</th>
+    <th>Direct dependencies</th>
+    <th>Transitive dependencies</th>
+    <th>Relationship of dependencies<br>(Dependencies of each dependency)</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Javascript</td>
+    <td>Npm</td>
+    <td>package.json</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Java</td>
+    <td>Gradle</td>
+    <td>build.gradle</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Maven</td>
+    <td>pom.xml</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Java (Android)</td>
+    <td>Gradle</td>
+    <td>build.gradle</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td rowspan="2">ObjC, Swift (iOS)</td>
+    <td>Cocoapods</td>
+    <td>Podfile.lock</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Carthage</td>
+    <td>Cartfile.resolved</td>
+    <td>O</td>
+    <td>O</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>Swift (iOS)</td>
+    <td>Swift</td>
+    <td>Package.resolved</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Dart, Flutter</td>
+    <td>Pub</td>
+    <td>pubspec.yaml</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Go</td>
+    <td>Go</td>
+    <td>go.mod</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Python</td>
+    <td>Pip</td>
+    <td>requirements.txt, setup.py</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>.NET</td>
+    <td>Nuget</td>
+    <td>packages.config, obj/project.assets.json</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Kubernetes</td>
+    <td>Helm</td>
+    <td>Chart.yaml</td>
+    <td>O</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+</tbody>
+</table>
