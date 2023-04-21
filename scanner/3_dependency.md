@@ -261,7 +261,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the fosslight_dependency.
             -m <package_manager>            Enter the package manager.
-                                             (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget, helm)
+                                             (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
                                              (If you want to generate the specific file name, add the output path with file name.)
