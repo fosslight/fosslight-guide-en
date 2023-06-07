@@ -24,7 +24,7 @@ $ mysql -ufosslight -pfosslight fosslight < fosslight_backup.sql
 ```
 
 ## Upgrading the DB version
-How to upgrade DB version using [MyBatis Migrations](https://mybatis.org/migrations/migrate.html) (It is provided from the version that migrates from v1.5.0 to 1.5.1.)
+How to upgrade DB version using [MyBatis Migrations](https://mybatis.org/migrations/migrate.html) (It is provided from the version that migrates from v1.5.0 to 1.6.0.)
 
 1. Modify DB connection information in migration/migration/environments/development.properties file.
     ```
