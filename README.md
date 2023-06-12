@@ -13,7 +13,7 @@ This guide page describes the basic usage and tutorial of FOSSLight Hub and adva
 Please refer the guide on how to install and use each scanner on the FOSSLight Scanner sub-guide page.
 
 #### FOSSLight Prechecker
-[FOSSLight Prechecker](scanner/1_prechecker.md) is a tool that checks whether copyright and license rules are complied with in the source code and helps you easily add copyright and license information. The more you use it, the more you can prevent unnecessary open source scanning. For example, if you manage to clearly write the copyright and license information in the source code and open source code using FOSSLight Prechecker from the beginning of development, you can identify the open source without additional scanning.
+[FOSSLight Prechecker](scanner/1_prechecker.md) is a tool that checks whether copyright and license rules are complied with in the source code and helps you easily add copyright and license information. The more you use it, the more you can prevent unnecessary open source scanning. For example, if you manage to clearly write the copyright, license, and download location information in the source code and open source code using FOSSLight Prechecker from the beginning of development, you can identify the open source without additional scanning.
 
 #### FOSSLight Source Scanner
 [FOSSLight Source Scanner](scanner/2_source.md) is a source code scanning tool. It uses ScanCode to detect copyright and license phrases by searching source code strings and also  uses scanoss to support code snippet scanning.
