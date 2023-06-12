@@ -38,7 +38,10 @@ FOSSLight Prechecker has 3 modes as following:
 1. `lint` --- (Default) Check whether the [source code's copyright and license writing rules][rule] are complied with.    
 2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [fosslight_report.xlsx](../learn/2_fosslight_report.md).
      - It converts yaml file to SRC Sheet of FOSSLight Report     
-3. `add` --- Add copyright and license to source code which is missing copyright and license
+3. `add` --- Add copyright, license and download location. Also, download the text license file that written in sbom-info.yaml or oss-pkg-info.yaml.
+     - copyright and license : Add to missing file(s)    
+     - download location : Add to all files in input path or file(s)
+
 
 ``` 
 fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
@@ -66,6 +69,7 @@ Options:
 Options for only 'add' mode
     -l <license>          License name(SPDX format) to add
     -c <copyright>        Copyright to add(ex, 2015-2021 LG Electronics Inc.)
+    -u <dl_location>	  Download location to add(ex, https://www.testurl.com)
 ```
 
 **(Only for Windows)** Run using executable file   
@@ -246,12 +250,12 @@ $ fosslight_prechecker convert -p tests/
 ### 🔖 add mode
 **1) Add copyright and license to file(s) in the input path**
 ```
-(venv)$ fosslight_prechecker add -p tests/add -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+(venv)$ fosslight_prechecker add -p tests/add -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only" -u "https://www.testurl.com"
 ```
 
 **2) Add copyright and license to input file(s)**
 ```
-(venv)$ fosslight_prechecker add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only"
+(venv)$ fosslight_prechecker add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only" -u "https://www.testurl.com"
 ```
 
 **3) Result**
@@ -259,7 +263,7 @@ $ fosslight_prechecker convert -p tests/
 
 |Before          |After          |
 |:---------------|:--------------|
-|![Before](images/fosslight_reuse_add_test.JPG)|![After](images/fosslight_reuse_add_test_result.JPG)|  
+|![Before](images/fosslight_reuse_add_test.JPG)|![After](images/fosslight_prechecker_add_test_result.JPG)|  
 
 ```bash    
     # File list that have both license and copyright : 3 / 7
@@ -284,6 +288,13 @@ $ fosslight_prechecker convert -p tests/
     * test_no_copyright.py
     * Your input Copyright : Copyright 2019-2021 LG Electronics Inc.
     Successfully changed header of tests/add_result/test_no_copyright.py
+	
+    # Adding Download Location into your files
+    * Your input DownloadLocation : https://www.testurl.com
+    Successfully changed header of tests/add_result/test_no_copyright.py
+    Successfully changed header of tests/add_result/test_no_license.py
+    Successfully changed header of tests/add_result/test_both_have_1.py
+    Successfully changed header of tests/add_result/test_both_have_2.py
 ```
 
 <details>
@@ -350,3 +361,4 @@ $ fosslight_prechecker convert -p tests/
 2. Add copyright and license to missing file(s) using -c and -l option   
     - Print file list that both has copyright and license(excluded from Adding)   
     - Add input copyright and license to missing file(s) using -c and -l option   
+    - Add donwload location to file(s) in input path or file using -u option    
