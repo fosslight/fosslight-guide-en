@@ -47,11 +47,17 @@ $ fosslight_binary [option] <arg>
 ### Options
 ```` 
     Options:
-        -p <binary_path>              Path to analyze binaries (Default: current directory)
-        -h                            Print help message
-        -o <output_path>              Path to save output files (If you want to generate the specific file name, add the output path with file name.)
-        -f <format>                   Output file format (excel, csv, opossum) (default: excel and csv (window : excel only)
-        -d <db_url>                   DB Connection(format :'postgresql://username:password@host:port/database_name')
+        -p <binary_path>                    Path to analyze binaries (Default: current directory)
+        -h                                  Print help message
+        -v                                  Print FOSSLight Binary Scanner version
+        -s                                  Extract only the binary list in simple mode
+        -o <output_path>                    Output path
+                                            (If you want to generate the specific file name, add the output path with file name.)
+        -f <format>                         Output file format (excel, csv, opossum, yaml)
+        -d <db_url>                         DB Connection(format :'postgresql://username:password@host:port/database_name')
+        --notice                            Print the open source license notice text.
+        --no_correction                     Enter if you don't want to correct OSS information with sbom-info.yaml
+        --correct_fpath <path>              Path to the sbom-info.yaml file
 ````    
 
 ## 📁 Result

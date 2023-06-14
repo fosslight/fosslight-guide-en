@@ -40,34 +40,37 @@ $ pip3 install fosslight_scanner
 $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
 ```
 ```
- Parameters:
-    Mode
-        source                  Run FOSSLight Source
-        dependency              Run FOSSLight Dependency
-        binary                  Run FOSSLight Binary
-        prechecker              Run FOSSLight Prechecker
-        all                     Run all scanners
-        compare                 Compare two FOSSLight reports
- 
-    Options:
-        -h                      Print help message
-        -p <path>               Path to analyze (ex, -p {input_path})
-                                 * Compare mode input file: Two FOSSLight reports (supports excel, yaml)
-                                   (ex, -p {before_name}.xlsx {after_name}.xlsx)
-        -w <link>               Link to be analyzed can be downloaded by wget or git clone
-        -f <format>             FOSSLight Report file format (excel, yaml)
-                                 * Compare mode result file: supports excel, json, yaml, html
-        -o <output>             Output directory or file
-        -c <number>             Number of processes to analyze source
-        -r                      Keep raw data
-        -t                      Hide the progress bar
-        -v                      Print FOSSLight Scanner version
- 
-    Options for only 'all' or 'bin' mode
-        -u <db_url>             DB Connection(format :'postgresql://username:password@host:port/database_name')
- 
-    Options for only 'all' or 'dependency' mode
-        -d <dependency_argument>        Additional arguments for running dependency analysis
+     Parameters:
+        Mode
+            all                     Run all scanners(Default)
+            source                  Run FOSSLight Source Scanner
+            dependency              Run FOSSLight Dependency Scanner
+            binary                  Run FOSSLight Binary Scanner
+            prechecker              Run FOSSLight Prechecker
+            compare                 Compare two FOSSLight reports
+
+        Options:
+            -h                      Print help message
+            -p <path>               Path to analyze (ex, -p {input_path})
+                                     * Compare mode input file: Two FOSSLight reports (supports excel, yaml)
+                                       (ex, -p {before_name}.xlsx {after_name}.xlsx)
+            -w <link>               Link to be analyzed can be downloaded by wget or git clone
+            -f <format>             FOSSLight Report file format (excel, yaml)
+                                     * Compare mode result file: supports excel, json, yaml, html
+            -o <output>             Output directory or file
+            -c <number>             Number of processes to analyze source
+            -r                      Keep raw data
+            -t                      Hide the progress bar
+            -v                      Print FOSSLight Scanner version
+            --no_correction         Enter if you don't want to correct OSS information with sbom-info.yaml
+                                     * Correction mode only supported xlsx format.
+            --correct_fpath <path>  Path to the sbom-info.yaml file
+
+        Options for only 'all' or 'bin' mode
+            -u <db_url>             DB Connection(format :'postgresql://username:password@host:port/database_name')
+
+        Options for only 'all' or 'dependency' mode
+            -d <dependency_argument>        Additional arguments for running dependency analysis
 ```
 - Enter the -d option only when argument input is required when running FOSSLight Dependency. : [Refer FOSSLight Dependency guide](3_dependency.md)
 
