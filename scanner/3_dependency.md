@@ -259,30 +259,31 @@ $ fosslight_dependency [option] <arg>
 ```
         Optional
             -h                              Print help message.
-            -v                              Print the version of the fosslight_dependency.
+            -v                              Print the version of the script.
             -m <package_manager>            Enter the package manager.
-                                             (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget, helm)
+                                                (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget, helm)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
-                                             (If you want to generate the specific file name, add the output path with file name.)
-            -f <format>                     Output file format (excel, csv, opossum)
-            --direct <true/false>           Print the direct/transitive dependency type in comment.
-                                             Choose 'True' or 'False'. (default:True)
+                                                (If you want to generate the specific file name, add the output path with file name.)
+            -f <format>                     Output file format (excel, csv, opossum, yaml, spdx-tag, spdx-yaml, spdx-json, spdx-xml)
+            --direct                        Print the direct/transitive dependency type in comment.
+                                                Choice 'True' or 'False'. (default:True)
+            --notice                        Print the open source license notice text.
 
         Required only for swift, carthage
             -t <token>                      Enter the github personal access token.
 
         Optional only for pypi
-            -a <activate_cmd>               Virtual environment activate command (ex, 'conda activate (venv name)')
-            -d <deactivate_cmd>             Virtual environment deactivate command (ex, 'conda deactivate')
+            -a <activate_cmd>               Virtual environment activate command(ex, 'conda activate (venv name)')
+            -d <deactivate_cmd>             Virtual environment deactivate command(ex, 'conda deactivate')
 
         Optional only for gradle, maven
             -c <dir_name>                   Enter the customized build output directory name
-                                             (default name : 'build' for gradle, 'target' for maven)
+                                                -Default name : 'build' for gradle, 'target' for maven
 
         Optional only for android
-            -n <app_name>                   Enter the application directory name where the plugin output file is located
-                                             (default: app)
+            -n <app_name>                   Enter the application directory name where the plugin output file is located(default: app)
+
 ```
 
 ### Tips to run
