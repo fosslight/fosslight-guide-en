@@ -258,7 +258,7 @@ $ fosslight_prechecker convert -p tests/
 (venv)$ fosslight_prechecker add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2019-2021 LG Electronics Inc." -l "GPL-3.0-only" -u "https://www.testurl.com"
 ```
 
-**3) Result**
+**3) Result**    
 ▪️ Changes in the file - Added copyright or license at the top of the file
 
 |Before          |After          |
