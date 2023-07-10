@@ -14,7 +14,7 @@ title: FOSSLight Dependency Scanner
 - [Gradle](https://gradle.org/) (Java/Android)
 - [Maven](http://maven.apache.org/) (Java)
 - [NPM](https://www.npmjs.com/) (Node.js)
-- [PIP](https://pip.pypa.io/) (Python)
+- [PyPi](https://pip.pypa.io/) (Python)
 - [Pub](https://pub.dev/) (Dart with flutter)
 - [Cocoapods](https://cocoapods.org/) (Swift/Obj-C)
 - [Swift](https://swift.org/package-manager/) (Swift)
@@ -261,7 +261,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the script.
             -m <package_manager>            Enter the package manager.
-                                                (npm, maven, gradle, pip, pub, cocoapods, android, swift, carthage, go, nuget, helm)
+                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)
@@ -327,7 +327,7 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Package manager                | OSS Name                 | Download Location                                                                                  | Homepage                                            |
 | ------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | Npm                            | npm:(oss name)           | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)/v/(oss version) | npmjs.com/package/(oss name)                        |
-| Pip                            | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
+| Pypi                            | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
 | Maven<br>& Gradle<br>& Android | (group_id):(artifact_id) | mvnrepository.com/artifact/(group id)/(artifact id)/(version)                                      | mvnrepository.com/artifact/(group id)/(artifact id) |
 | Pub                            | pub:(oss name)           | pub.dev/packages/(oss name)/versions/(version)                                                     | homepage in (pub information)                       |
 | Cocoapods                      | cocoapods:(oss name)     | source in (pod spec information)                                                                   | cocoapods.org/pods/(oss name)                            |
@@ -441,7 +441,7 @@ Because we utilizes the different open source software to analyze the dependenci
   </tr>
   <tr>
     <td>Python</td>
-    <td>Pip</td>
+    <td>Pypi</td>
     <td>requirements.txt, setup.py</td>
     <td>O</td>
     <td>O</td>
