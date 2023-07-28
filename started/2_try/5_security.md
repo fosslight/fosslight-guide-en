@@ -24,7 +24,7 @@ You can check the vulnerability of the written OSS version on the Security tab.
 ![prj](../images/4_project_security1.png)
 
 ## Reflect on resolution of vulnerabilities with the Identification
-When checking the vulnerability score in the SRC, BIN and BOM tabs in the Identification step,
+When checking the vulnerability score in the tabs of identification,
 you can check the max score except for the CVE ID that changed the value of the vulnerability resolution to 'Fixed' in the Security tab.
-If you click vulnerability icon on the SRC, BIN and BOM tabs, the CVE ID which has the resolution of 'Fixed' in the entire CVE ID list window for the corresponding OSS name and version is deactivated as follows.  
+If you click vulnerability icon on the tabs of identification, the CVE ID which has the resolution of 'Fixed' in the entire CVE ID list window for the corresponding OSS name and version is deactivated as follows.  
 ![prj](../images/4_project_security2.png)
