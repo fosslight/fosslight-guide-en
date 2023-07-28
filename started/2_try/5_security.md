@@ -4,8 +4,8 @@ published: true
 ---
 # Security
 ```note
-You can check the vulnerability information by each CVE ID of OSS lists whose vulnerability score is higher than a reference score based on the BOM tab of the Identification step and manage it.
-- The reference score of vulnerability score can be changed into Code Management > 760 (Security Vulnerability Score).
+You can check the vulnerability information by each CVE ID of OSS whose vulnerability score is higher than a reference score based on the BOM tab of the Identification step and manage it.
+- The reference vulnerability score can be set at Code Management > 760 (Security Vulnerability Score).
 ```
 
 ## Column information
@@ -18,8 +18,8 @@ You can check the vulnerability information by each CVE ID of OSS lists whose vu
 
 ### If OSS version is not written
 - The Security tab does not display a full list of CVE IDs, as it is difficult to determine the exact vulnerability of CVE ID that is not written to the OSS version.
-- When the pop-up screen as shown below appears when entering the Security tab, check the OSS list that version has not been written,
-enter the OSS version used for OSS in the Identification tab, and then save and merge in the BOM tab.
+- When the pop-up screen as shown below appears when entering the Security tab, check the OSS list whose version has not been written,
+Enter the OSS version used for OSS in the Identification tab, and then save and merge in the BOM tab.
 You can check the vulnerability of the written OSS version on the Security tab.  
 ![prj](../images/4_project_security1.png)
 
