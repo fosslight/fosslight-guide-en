@@ -36,11 +36,15 @@ TOKEN must be issued to call REST API.
 | API  | Response format | Description |
 | ------------- | ------------- | ------------- |
 |/api/v1/create_project|	JSON|Create a Project and the generated project's ID is returned.|
+|/api/v1/model_search| JOSN| Get the Model List for the Project. (Maximum number of Return Items: 1000) <br>  - Project ID, Category, Model, Name, Release Date|
+|/api/v1/model_update|  JSON| Update model information in Project's Basic Information and Distribution tab with model information string list. <br>  - Model information String list (format . MODEL_NAME\|Category\|Release Date) <br>  - ex) MODEL_NAME\|ETC > Etc\|20220428|
+|/api/v1/model_update_upload_file	|JSON| Update model information in Project's Basic Information and Distribution tab with excel file of model list. <br>  - Excel file of model list : Project > Basic Information tab > Click Download button.|
 |/api/v1/oss_report_bin	|-	|Upload FOSSLight Report to BIN Tab. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name : "BIN")|
 |/api/v1/oss_report_src|	-	|Upload FOSSLight Report to SRC Tab. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name : "SRC")|
 |/api/v1/package_upload|-	|Upload the Packaging file to the Packaging tab. If packaging files have already been uploaded, an additional packaging file is uploaded. Packaging file upload result will be sent by mail.|
-|/api/v1/prj_bom_compare|	JSON	|Compare the OSS Name, OSS Version, and License of the two projects' BOM.
-|/api/v1/prj_bom_export	|File	|Download the result file exported from the BOM of the project.
+|/api/v1/prj_bom_compare|	JSON	|Compare the OSS Name, OSS Version, and License of the two projects' BOM.|
+|/api/v1/prj_bom_export	|File	|Download the result file exported from the BOM of the project.|
+|/api/v1/prj_bom_export_json|JSON |Returns the result exported from the project's BOM in json format.|
 |/api/v1/prj_search	| JSON |Get project information.|
 
 4\. Check Vulnerability information
