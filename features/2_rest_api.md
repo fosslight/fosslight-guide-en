@@ -68,6 +68,21 @@ TOKEN must be issued to call REST API.
 | ------------- | ------------- | ------------- |
 |/api/v1/code_search|	JSON	|Search the list of values of the parameters to be used when searching for Project, 3rd Party, and creating a project. |
 
+7\. Error Code
+
+| Return Code  | Description | Error Message |
+| ------------- | ------------- | ------------- |
+|200|User does not exist.|User does not exist.|
+|210|There is an error in the TOKEN value.|There is an error in the TOKEN value.|
+|310|The parameter is invalid.|The parameter is invalid.|
+|320|The number of project and self-check creations has been exceeded. (Up to 3 creations per day using API)|The number of projects and self-checks that can be created has been exceeded. (Up to 3 per day)|
+|330|When registering files such as OSS Report, an error occurred during validation check for the created data.|There is an error in the data written in the file.|
+|400|Files to upload (ex-OSS Report, NOTICE, result.txt, Packaging files) are missing.|The file to upload is missing.|
+|410|It is the case that the size of OSS Report and Packaging file is exceeded. (Maximum Size: OSS Report -5MB, Packaging file- 4GB)|File size exceeded. (Max size: 5MB for oss report, 4GB for packaging file)|
+|420|The registered files are extensions that are not supported.|The registered files are extensions that are not supported.
+|430|The tab you are trying to upload is not active. Please check the Distribution type and the tab to upload. |The tab you are trying to upload is not active.|
+|500|You do not have permission. (ex: When a non-public project is viewed by a user other than a Watcher or Creator) |You do not have permission.|
+|999|Unknown Error.  |Unknown error.|
 
 ## REST API Sample
 Example of searching project information of user and admin accounts using prj_search
