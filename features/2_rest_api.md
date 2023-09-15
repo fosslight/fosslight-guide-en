@@ -30,6 +30,7 @@ TOKEN must be issued to call REST API.
 | API  | Response format | Description |
 | ------------- | ------------- | ------------- |
 |/api/v1/partner_search|	JSON	|Get 3rd party information. |
+|/api/v1/partner_watcher_add|-|Add watcher of 3rd Party project.|
 
 3\. Check project information, upload FOSSLight Report/Packaging, export/comparison of BOM.
 
@@ -46,6 +47,7 @@ TOKEN must be issued to call REST API.
 |/api/v1/prj_bom_export	|File	|Download the result file exported from the BOM of the project.|
 |/api/v1/prj_bom_export_json|JSON |Returns the result exported from the project's BOM in json format.|
 |/api/v1/prj_search	| JSON |Get project information.|
+|/api/v1/prj_watcher_add|-|Add watcher of project.|
 
 4\. Check Vulnerability information
 
@@ -61,6 +63,7 @@ TOKEN must be issued to call REST API.
 |/api/v1/create_selfcheck|	JSON	|Create a Self-Check Project and the generated Self-Check's ID is returned.|
 |/api/v1/oss_report_selfcheck|	-	|Upload FOSSLight Report to Self-Check. If data already exists in the OSS Table, the FOSSLight Report uploaded after reset. (Loaded Sheet Name : "Self-Check")|
 |/api/v1/export_selfcheck|	File	|Download the result file exported from the Self-Check project.|
+|/api/v1/selfcheck_watcher_add|-|Add watcher of Self-Check project.|
 
 6\. Check the value of the code used when using API
 
