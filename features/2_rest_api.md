@@ -81,6 +81,8 @@ TOKEN must be issued to call REST API.
 |410|It is the case that the size of OSS Report and Packaging file is exceeded. (Maximum Size: OSS Report -5MB, Packaging file- 4GB)|File size exceeded. (Max size: 5MB for oss report, 4GB for packaging file)|
 |420|The registered files are extensions that are not supported.|The registered files are extensions that are not supported.
 |430|The tab you are trying to upload is not active. Please check the Distribution type and the tab to upload. |The tab you are trying to upload is not active.|
+|440|When there is no Sheet name to load|The [Sheet_name] sheet name cannot be found|
+|440|When there are no rows to load in the uploaded file|There is no data to load.|
 |500|You do not have permission. (ex: When a non-public project is viewed by a user other than a Watcher or Creator) |You do not have permission.|
 |999|Unknown Error.  |Unknown error.|
 
