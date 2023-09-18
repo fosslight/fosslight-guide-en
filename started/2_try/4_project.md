@@ -78,7 +78,23 @@ You can call up the 3rd Party Software information by selecting one of the follo
 1. 3rd Party Search : Search and load 3rd Party Software with Status : Confirm in the 3rd Party List menu.
 2. Project Search : Load the 3rd Party tab of another project.
 
-#### 2-2. SRC Tab
+#### 2-2. DEP Tab
+![prj](../images/4_project_dep.png)
+*DEP tab creation Process*
+- When OSS is included through package manager : Write OSS information of each dependencies -> Save
+- When OSS is not included through package manager : Check Not Applicable → Save
+
+*How to write OSS information of each dependencies* 
+- Written by hand in the OSS Table
+    - Click the + button at the top left of the OSS Table to enter the OSS information.
+- How to batch load OSS information
+    1. Upload the FOSSLight Report with the OSS List created in the Upload Analysis Result column.
+        - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
+    2. Project Search : Loads the DEP tab of another project.
+- How to write automatically OSS information with scanner
+    - You can automatically generate a report with OSS information written through the [FOSSLight Dependency Scanner](../../scanner/3_dependency.md).
+
+#### 2-3. SRC Tab
 ![prj](../images/4_project_src.png)
 *SRC tab creation process*  
 - When OSS by source code is included : Write OSS information by source code -> Save
@@ -92,7 +108,7 @@ You can call up the 3rd Party Software information by selecting one of the follo
         - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
     2. Project Search : Loads the SRC tab of another project.
 
-#### 2-3. BIN Tab
+#### 2-4. BIN Tab
 ![prj](../images/4_project_bin.png)
 *BIN tab creation process*  
 - When binary is included : Write OSS information for each binary -> Save
@@ -106,13 +122,13 @@ You can call up the 3rd Party Software information by selecting one of the follo
         - The loadable FOSSLight Report form can be downloaded by clicking the "Export" button in the upper right corner.
     2. Project Search : Load the BIN tab of another project.
 
-#### 2-1. BOM Tab
-Merge the list of OSS written in 3rd Party, SRC, BIN tab and request review.
+#### 2-5. BOM Tab
+Merge the list of OSS written in 3rd Party, DEP, SRC, BIN tab and request review.
 ![prj](../images/4_project_bom.png)
 
 ##### How to request a review
 1. Click the "Merge And Save" button.
-    - Collect OSS List created in 3rd Party, SRC, BIN tab.
+    - Collect OSS List created in 3rd Party, DEP, SRC, BIN tab.
 2. [Review items by warning message](#warning)  
 3. Click the Request Review button to request a review.
     - However, if there is a red warning message, you cannot request a review.
