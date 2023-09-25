@@ -19,14 +19,14 @@ published: true
 
 
 ## 📋 Prerequisite
-FOSSLight Android Scanner needs a Python 3.7+.    
+FOSSLight Android Scanner needs a Python 3.8+.    
 To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 
 [**Java**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
 
 ## 🎉 How to install
 It can be installed using pip3. 
-1. [python 3.7 + virtualenv](etc/guide_virtualenv.md) environment setting.
+1. [python 3.8 + virtualenv](etc/guide_virtualenv.md) environment setting.
 2. Install the Python package fosslight_android.
 ```
 $ pip3 install fosslight_android
