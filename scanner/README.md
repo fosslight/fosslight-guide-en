@@ -24,12 +24,12 @@ It works using the following scanners:
 
 
 ## 📋 Prerequisite
-1. FOSSLight Scanner needs a Python 3.7+.    
+1. FOSSLight Scanner needs a Python 3.8+.    
 2. To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 3. (Only for windows) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables packages and Build Tools.
 
 ## 🎉 How to install
-It can be installed using pip3. It is recommended to install it in the [python 3.7 + virtualenv](etc/guide_virtualenv.md) environment.
+It can be installed using pip3. It is recommended to install it in the [python 3.8 + virtualenv](etc/guide_virtualenv.md) environment.
 ```
 $ pip3 install fosslight_scanner
 ```
