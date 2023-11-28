@@ -6,7 +6,7 @@ This is a template used by FOSSLight and FOSSLight Scanner, and is a document wr
 
 ## Form
 
-v1.0 : [fosslight_report.xlsx](https://github.com/fosslight/fosslight/raw/main/src/main/resources/template/ProjectReport.xlsx)
+v2.0 : [fosslight_report.xlsx](https://github.com/fosslight/fosslight/blob/main/src/main/resources/template/ProjectReport.xlsx)
 
 ## Description by Sheet
 
@@ -27,6 +27,11 @@ The OSS Checklist obtained should be registered in the [3rd Party](../started/2_
 If you export the FOSSLight report from the FOSSLight, the contents registered in the 3rd Party tab will be filled in the "3rd party" sheet. Therefore, do not fill in the "3rd party" sheet manually.       
 
 ![info](./images/3rd_party.png)
+
+
+### DEP Sheet
+Update the result of dependency analysis.
+- If you use [FOSSLight Dependency Scanner](https://github.com/fosslight/fosslight_dependency_scanner), you can automatically generate the result of dependency analysis.
 
 
 ### SRC Sheet
