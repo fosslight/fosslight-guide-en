@@ -7,16 +7,15 @@ title: 🚩FOSSLight Scanner
 
 <a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" />
 
-FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. Also, it can check whether the copyright/license writing rules in the source code are followed.  <br/>
+FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. <br/>
 
 It works using the following scanners:
 
-1. [FOSSLight Prechecker](1_prechecker.md) : Check whether the source code's copyright and license writing rules are complied with.
-2. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
-3. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
-4. [FOSSLight Binary Scanner](4_binary.md) : Analyze the binaries and generate open source analysis result.
-5. [FOSSLight Yocto Scanner](5_yocto.md) : Analyze open source for yocto-based projects.
-6. [FOSSLight Android Scanner](6_android.md) : Analyze open source for android-based projects.
+1. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
+2. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
+3. [FOSSLight Binary Scanner](4_binary.md) : Analyze the binaries and generate open source analysis result.
+4. [FOSSLight Yocto Scanner](5_yocto.md) : Analyze open source for yocto-based projects.
+5. [FOSSLight Android Scanner](6_android.md) : Analyze open source for android-based projects.
 <br />
 
 **Github Repository** : [https://github.com/fosslight/fosslight_scanner]()  
@@ -46,7 +45,6 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
             source                  Run FOSSLight Source Scanner
             dependency              Run FOSSLight Dependency Scanner
             binary                  Run FOSSLight Binary Scanner
-            prechecker              Run FOSSLight Prechecker
             compare                 Compare two FOSSLight reports
 
         Options:
@@ -96,14 +94,12 @@ test_result/
 ├── fosslight_binary_220214_1824.txt
 ├── fosslight_log
 │   └── fosslight_log_220214_1824.txt
-├── fosslight_lint_220214_1824.yaml
 ├── fosslight_report_220214_1824.xlsx
 └── fosslight_raw_data
     ├── fosslight_src_220214_1824.xlsx
     ├── fosslight_bin_220214_1824.xlsx
     └── fosslight_dep_220214_1824.xlsx
 ```
-- fosslight_lint_(datetime).yaml : yaml file created as a result of running FOSSLight Prechecker.
 - fosslight_binary_(datetime).txt : FOSSLight Binary result and checksum and tlsh values for each binary are extracted.
 - fosslight_report_(datetime).xlsx : FOSSLight Report format file in which source code analysis, binary analysis, and dependency analysis results are written.
 - fosslight_raw_data directory: The folder where the analysis result raw data file is created (with -r option)
