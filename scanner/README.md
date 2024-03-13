@@ -14,8 +14,6 @@ It works using the following scanners:
 1. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
 2. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
 3. [FOSSLight Binary Scanner](4_binary.md) : Analyze the binaries and generate open source analysis result.
-4. [FOSSLight Yocto Scanner](5_yocto.md) : Analyze open source for yocto-based projects.
-5. [FOSSLight Android Scanner](6_android.md) : Analyze open source for android-based projects.
 <br />
 
 **Github Repository** : [https://github.com/fosslight/fosslight_scanner]()  
