@@ -442,7 +442,7 @@ Because we utilizes the different open source software to analyze the dependenci
   <tr>
     <td>Python</td>
     <td>Pypi</td>
-    <td>requirements.txt, setup.py</td>
+    <td>requirements.txt, setup.py, pyproject.toml</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
