@@ -115,10 +115,15 @@ $ gradlew generateLicenseTxt
 <summary markdown="span">**Prerequisite for Pypi**</summary>
 ```tip
 - You can run this tool with virtual environment for separating the project dependencies from system global dependencies.
-- If the 'requirements.txt' file is located in the input path, FOSSLight Dependency Scanner can automatically install and analyze the dependencies. So you can skip the prerequisite for Pypi.
+- If the 'requirements.txt' file is located in the input path, FOSSLight Dependency Scanner can automatically install and analyze the dependencies. So you can skip from the prerequisite step2 for Pypi.
 ```
 
-1. Create and activate the virtual environment
+1. python3-venv를 설치합니다.
+```
+$ sudo apt-get install python3-venv
+```
+
+2. Create and activate the virtual environment
 ```
 // virtualenv example
 $ virtualenv -p /usr/bin/python3.7 venv
