@@ -22,6 +22,7 @@ title: FOSSLight Dependency Scanner
 - [Go](https://pkg.go.dev/) (Go)
 - [Nuget](https://www.nuget.org/) (.NET)
 - [Helm](https://helm.sh/) (Kubernetes)
+- [Unity](https://unity.com/) (Unity)
 </details>
 {::options parse_block_html="false" /}
 
@@ -243,6 +244,13 @@ FOSSLight Dependency Scanner checks the package list and OSS information such as
 Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
 ```
 </details>
+
+<details>
+<summary markdown="span">**Prerequisite for Unity**</summary>
+```tip
+FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Library/PackageManager/ProjectCache file and each package directory within the Library/PackageCache directory. Therefore, you can execute the 'fosslight_dependency' command in an environment where the files exist.
+```
+</details>
 {::options parse_block_html="false" /}
 
 
@@ -266,7 +274,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the script.
             -m <package_manager>            Enter the package manager.
-                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm)
+                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)
@@ -296,7 +304,7 @@ When you run the FOSSLight Dependency Scanner, the input path('-p' option) shoul
 The manifest file of each package manager is as follows:
 ```
   - Npm : package.json
-  - Pypi : requirements.txt / setup.py
+  - Pypi : requirements.txt / setup.py / pyproject.toml
   - Maven : pom.xml
   - Gradle (Android) : build.gradle
   - Pub : pubspec.yaml
@@ -306,12 +314,14 @@ The manifest file of each package manager is as follows:
   - Go : go.mod
   - Nuget : packages.config / {project name}.csproj
   - Helm : Chart.yaml
+  - Unity : Library/PackageManager/ProjectCache
 ```
 
 - Swift package manager
   - Exceptionally, you can run "fosslight_dependency -m swift -t {token} command in the path where {Projectname}.xcodeproj file is located.
   - Then it can find the 'Package.resolved' file in {Projectname}.xcodeproj/project.xcworkspace/xcshareddata/swiftpm and run automatically.
-
+- Unity
+  - You can run "fosslight_dependency -m unity" command in the path where 'Library' folder is located.
 
 ## 📁 Result
 ```
@@ -324,6 +334,7 @@ $ tree
 - fosslight_report_dep_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
 - fosslight_log_dep_[datetime].txt: The execution log.
 - fosslight_opossum_dep_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
+- third_party_notice.txt : Created only when running with Unity, and collects and prints the third party notice for each package.
 
 ### Result Contents
 It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
@@ -332,15 +343,16 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Package manager                | OSS Name                 | Download Location                                                                                  | Homepage                                            |
 | ------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | Npm                            | npm:(oss name)           | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)/v/(oss version) | npmjs.com/package/(oss name)                        |
-| Pypi                            | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
+| Pypi                           | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
 | Maven<br>& Gradle<br>& Android | (group_id):(artifact_id) | mvnrepository.com/artifact/(group id)/(artifact id)/(version)                                      | mvnrepository.com/artifact/(group id)/(artifact id) |
 | Pub                            | pub:(oss name)           | pub.dev/packages/(oss name)/versions/(version)                                                     | homepage in (pub information)                       |
-| Cocoapods                      | cocoapods:(oss name)     | source in (pod spec information)                                                                   | cocoapods.org/pods/(oss name)                            |
-| Swift                      | swift:(oss name)     | repositoryURL in Package.resolved                                                                   | repositoryURL in Package.resolved                            |
-| Carthage                      | carthage:(oss name)     | github repository in Cartfile.resolved                                                                   | github repository in Cartfile.resolved                            |
-| Go                      | go:(oss name)     | pkg.go.dev/(oss name)@(oss version)                                                                   | repository in pkg.go.dev/(oss name)@(oss version)                        |
-| Nuget                      | nuget:(oss name)     | Priority1. repository in nuget.org/packages/(oss name)/(oss version) <br> Priority2. projectUrl in nuget.org/packages/(oss name)/(oss version) <br> Priority3. nuget.org/packages/(oss name)/(oss version)  | nuget.org/packages/(oss name) |
-| Helm                        | helm:(oss name)     | first url of sources in (Chart.yaml)                                                                   | home in (Chart.yaml)                           |
+| Cocoapods                      | cocoapods:(oss name)     | source in (pod spec information)                                                                   | cocoapods.org/pods/(oss name)                       |
+| Swift                          | swift:(oss name)         | repositoryURL in Package.resolved                                                                  | repositoryURL in Package.resolved                   |
+| Carthage                       | carthage:(oss name)      | github repository in Cartfile.resolved                                                             | github repository in Cartfile.resolved              |
+| Go                             | go:(oss name)            | pkg.go.dev/(oss name)@(oss version)                                                                | repository in pkg.go.dev/(oss name)@(oss version)   |
+| Nuget                          | nuget:(oss name)         | Priority1. repository in nuget.org/packages/(oss name)/(oss version) <br> Priority2. projectUrl in nuget.org/packages/(oss name)/(oss version) <br> Priority3. nuget.org/packages/(oss name)/(oss version)  | nuget.org/packages/(oss name) |
+| Helm                           | helm:(oss name)          | first url of sources in (Chart.yaml)                                                               | home in (Chart.yaml)                                |
+| Unity                          | (oss name)               | url in repository in ProjectCache                                                                  | url in repository in ProjectCache                   |
 
 ```warning
 - The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
@@ -466,6 +478,14 @@ Because we utilizes the different open source software to analyze the dependenci
     <td>Chart.yaml</td>
     <td>O</td>
     <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>Unity</td>
+    <td>Unity</td>
+    <td>Library/PackageManager/ProjectCache</td>
+    <td>O</td>
+    <td>O</td>
     <td>X</td>
   </tr>
 </tbody>
