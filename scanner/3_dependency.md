@@ -89,6 +89,9 @@ $ gradlew downloadLicenses
 
 <details>
 <summary markdown="span">**Prerequisite for Android (gradle)**</summary>
+```tip
+If there is a 'gradlew' executable and a 'build.gradle' file in the input directory, FOSSLight Dependency Scanner will automatically add and execute the android-dependency-scanning plugin. So you can skip the prerequisites below.
+```
 1. Add the android-dependency-scanning Plugin in build.gradle file.
 ```
 buildscript {
@@ -317,6 +320,8 @@ The manifest file of each package manager is as follows:
   - Unity : Library/PackageManager/ProjectCache
 ```
 
+- Android (gradle)
+  - If the module name is not the default 'app', you must run it by specifying the module name with the '-n' option. (fosslight_dependency -n {module_name})
 - Swift package manager
   - Exceptionally, you can run "fosslight_dependency -m swift -t {token} command in the path where {Projectname}.xcodeproj file is located.
   - Then it can find the 'Package.resolved' file in {Projectname}.xcodeproj/project.xcworkspace/xcshareddata/swiftpm and run automatically.
