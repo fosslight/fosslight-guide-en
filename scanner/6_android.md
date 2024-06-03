@@ -99,8 +99,8 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 | License          | Print license from 1. Binary DB 2. "MODULE_LICENSE_xxxxxx" in Source Path 3. {MODULE_NAME}.meta_lic.|
 | Need Check       | If O, review is required                                                                        |
 | Comment          | Shows what needs to be reviewed.                                                                 |
-| TLSH             | Print TLSH value of the binary.                                                            |
-| Checksum         | Print Cheucksum value of the binary.                                                           |
+| (TLSH)           | Print TLSH value of the binary.                                                            |
+| (SHA1)           | Print Cheucksum value of the binary.                                                           |
 
 ## 🚗 Add-ons
 ---
