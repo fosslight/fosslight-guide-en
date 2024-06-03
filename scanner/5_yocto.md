@@ -135,13 +135,11 @@ $ source venv/bin/activate
 ```
 $ tree
 .
-├── fosslight_yocto_220904_0912.txt
 ├── fosslight_log_220904_0912.txt
 ├── fosslight_report_220904_0912.xlsx
 └── fosslight_opossum_220904_0912.json
 
 ```
-- fosslight_yocto_[datetime].txt : The checksum and tlsh values for each binary.
 - fosslight_log_[datetime].txt : The execution log.
 - fosslight_report_[datetime].xlsx : FOSSLight Yocto result in FOSSLight Report format.    
    - The checksum and tlsh values for each binary are hidden by default and written within FOSSLight-Report.    
