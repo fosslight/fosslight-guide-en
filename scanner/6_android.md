@@ -84,8 +84,8 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
     ``` 
 
 ## 📁 Result
-- fosslight_report_[datetime].xlsx : This is a report outputting OSS information for each binary detected in the output.        
-- fosslight_binary_android_[datetime].txt : fosslight_binary.txt is a file that outputs the OSS-Report file in text format and additionally outputs TLSH and checksum values for each binary.    
+- fosslight_report_[datetime].xlsx : This is a report outputting OSS information for each binary detected in the output.
+    - The checksum and tlsh values for each binary are hidden by default and written within FOSSLight-Report.    
 - fosslight_log_[datetime].txt : Execution log is output.      
 - REMOVED_BIN_BY_DUPLICATION_[datetime].txt : This is a list deduplicated from FOSSLight Report because there are two or more files with the same binary name and checksum in the output path.
 
@@ -99,6 +99,8 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 | License          | Print license from 1. Binary DB 2. "MODULE_LICENSE_xxxxxx" in Source Path 3. {MODULE_NAME}.meta_lic.|
 | Need Check       | If O, review is required                                                                        |
 | Comment          | Shows what needs to be reviewed.                                                                 |
+| TLSH             | Print TLSH value of the binary.                                                            |
+| Checksum         | Print Cheucksum value of the binary.                                                           |
 
 ## 🚗 Add-ons
 ---
