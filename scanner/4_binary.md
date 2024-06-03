@@ -65,16 +65,15 @@ $ fosslight_binary [option] <arg>
 ```
 $ tree
 .
-├── fosslight_binary_220904_0912.txt
 ├── fosslight_log_220904_0912.txt
 ├── fosslight_report_220904_0912.xlsx
 └── fosslight_opossum_220904_0912.json
 
 ```
-- fosslight_binary_[datetime].txt : The checksum and tlsh values for each binary.
 - fosslight_log_[datetime].txt : The execution log.
 - fosslight_report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.    
-   - If analyzing jar files, 'Vernerability Link' Column is added to FOSSLight-Report_[datetime].xlsx file.    
+   - If analyzing jar files, 'Vernerability Link' Column is added to FOSSLight-Report_[datetime].xlsx file.
+   - The checksum and tlsh values for each binary are hidden by default and written within FOSSLight-Report.   
 - fosslight_opossum_[datetime].json : FOSSLight binary Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
 
 ## 🧐 How it works
