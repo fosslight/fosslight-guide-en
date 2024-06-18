@@ -142,5 +142,5 @@ $ tree
 ```
 - fosslight_log_[datetime].txt : The execution log.
 - fosslight_report_[datetime].xlsx : FOSSLight Yocto result in FOSSLight Report format.    
-   - The checksum and tlsh values for each binary are hidden by default and written within FOSSLight-Report.    
+   - The Checksum and TLSH values for each binary are hidden by default and written within FOSSLight Report.    
 - fosslight_opossum_[datetime].json : FOSSLight Yocto Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
