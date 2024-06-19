@@ -186,19 +186,15 @@ $ mvnw license:aggregate-download-licenses
 <details>
 <summary markdown="span">**Prerequisite for Pub**</summary>
 > If the 'flutter pub' command is not available in the environment where FOSSLight Dependency Scanner is running, please perform the following steps in advance in the environment where 'flutter pub' is available.
-1. Add flutter_oss_licenses (2.0.1) to dev_dependencies in the pubspec.yaml file. (optional)
+1. Run flutter_oss_licenses with below command. (optional)
 ```
-dev_dependencies:
-  flutter_oss_licenses: ^2.0.1
-```
-2. Run flutter_oss_licenses with below command. (optional)
-```
+$ flutter pub add dev:flutter_oss_licenses:'^2.0.1'
 $ flutter pub get
 $ flutter pub deps --json > tmp_deps.json
 $ flutter pub deps --no-dev -s compact > tmp_no_dev_deps.txt
 $ flutter pub run flutter_oss_licenses:generate.dart -o tmp_flutter_oss_licenses.json --json
 ```
-3. Run FOSSLight Dependency Scanner in the path where the file generated in the result of step 2 exists.
+2. Run FOSSLight Dependency Scanner in the path where the file generated in the result of step 1 exists.
 </details>
 
 <details>
