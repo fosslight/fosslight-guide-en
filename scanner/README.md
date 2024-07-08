@@ -85,6 +85,16 @@ fosslight all -o test_result_wget -w "https://github.com/LGE-OSS/example.git"
 fosslight compare -p FOSSLight_before_proj.yaml FOSSLight_after_proj.yaml -o test_result
 ```
 
+### How to call execution parameters as json
+1. Write and save the values ​​for each execution parameter as a json file in [setting.json](https://github.com/fosslight/fosslight_scanner/blob/main/tests/setting.json) format.
+2. When running, call setting.json with -s.
+```
+fosslight -s setting.json
+```
+🛈 The value called during execution takes precedence over the parameters written in the json file.
+ex. When called with '-f yaml -s setting.json', the output file is in yaml format.
+
+
 ## 📁 Result
 ### Result for the mode that analyze the open source (all, source, dependency, binary)
 ```
