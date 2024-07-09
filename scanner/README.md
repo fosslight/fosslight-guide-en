@@ -115,6 +115,14 @@ test_result/
   - fosslight_dep_(datetime).xlsx : FOSSLight Report of FOSSLight Dependency Scanner
   - fosslight_bin_(datetime).xlsx : FOSSLight Report of FOSSLight Binary Scanner
 
+#### fosslight_report_(datetime).xlsx 
+1. Exclude: Checked Row
+    test(s), doc(s), hidden files or folders are checked as Exclude.
+2. When sbom-info.yaml is loaded, the loaded data is appended and the analysis results for duplicate files are excluded.
+3. Comment :      
+   Add/Loaded by ** : Row loaded from **      
+   Excluded by ** : Row excluded due to **            
+   
 ### Result for compare mode
 ```
 test_result/
