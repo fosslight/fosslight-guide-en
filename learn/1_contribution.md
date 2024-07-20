@@ -3,6 +3,7 @@
 ## Report an issue
 For improvements or bugs, please report by creating an issue in Git repository. The issue report is very helpful in upgrading the FOSSLight.
 - [FOSSLight Hub](https://github.com/fosslight/fosslight/issues)
+- [FOSSLight Scanner](https://github.com/fosslight/fosslight_scanner/issues)
 - [FOSSLight Dependency Scanner](https://github.com/fosslight/fosslight_dependency_scanner/issues)
 - [FOSSLight Source Scanner](https://github.com/fosslight/fosslight_source_scanner/issues)
 - [FOSSLight Binary Scanner](https://github.com/fosslight/fosslight_binary_scanner/issues)
