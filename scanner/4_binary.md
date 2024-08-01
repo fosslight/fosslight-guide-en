@@ -78,15 +78,23 @@ $ tree
 
 ## 🧐 How it works
 1. List up binaries except the following cases.    
-    1-0. Symbolic link files and FIFO files.    
-    1-1. The file extension is ['png', 'gif', 'jpg', 'bmp', 'jpeg', 'qm', 'xlsx', 'pdf', 'ico', 'pptx', 'jfif', 'docx',
-                                'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist']            
-    1-2. The file type is ['data','timezone data', 'apple binary property list']    
-    1-3. The directory is ['.git']    
-2. Check “Exclude” in FOSSLight Report.         
-    - binary is ['fosslight_bin', 'fosslight_bin.exe']     
-    - directory is ["test", "tests", "doc", "docs"]     
-    - directory is a hidden directory (directory name starts with .)
+
+    |Excepted items         | Description                                                                                                                       |    
+   |------------------------|-----------------------------------------------------------------------------------------------------------------------------------|    
+   |symbolic link, FIFO file| Unable to read as file open.   It causes the FOSSLight Binary Scanner to stop when checking for file type or binary.              |    
+   |Non-Binary file extensions | 'qm', 'xlsx', 'pdf', 'pptx', 'jfif', 'docx', 'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist', 'dat', 'json', 'js' etc|    
+   |Specific File Type         | Files that begin with 'data', 'timezone data', and 'applebinary property list'                                                 |    
+   |Specific Path             | '.git'                                                                                                                          |
+
+2. Check “Exclude” in FOSSLight Report.
+     
+   |Exclude itmes                                                          |Description                                         |
+   |----------------------------------------------------------------------|-----------------------------------------------------|
+   |Binary included in ['fosslight_bin', 'fosslight_bin.exe']             | -                                                  |
+   |Path included in ["test", "test", "doc", "doc", "docs", "intermediates"] folder | Output only the results of the source code or binary included in the actual distribution  |
+   |Hidden folder (folders that begin with '.')                           | -                                                   |               
+   |Specific files extension                                              | Not final build output (ex, '.class')               |
+
 3. Extract checksum and tlsh for each binary.     
 4. Load OSS information from Binary DB.      
 5. Create output files.  
