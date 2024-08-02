@@ -79,7 +79,7 @@ $ tree
 ## 🧐 How it works
 1. List up binaries except the following cases.    
 
-    |Excepted items         | Description                                                                                                                       |    
+    |Excepted case         | Description                                                                                                                       |    
    |------------------------|-----------------------------------------------------------------------------------------------------------------------------------|    
    |symbolic link, FIFO file| Unable to read as file open.   It causes the FOSSLight Binary Scanner to stop when checking for file type or binary.              |    
    |Non-Binary file extensions | 'qm', 'xlsx', 'pdf', 'pptx', 'jfif', 'docx', 'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist', 'dat', 'json', 'js' etc|    
@@ -88,7 +88,7 @@ $ tree
 
 2. Check “Exclude” in FOSSLight Report.
      
-   |Exclude itmes                                                          |Description                                         |
+   |Exclude case                                                          |Description                                         |
    |----------------------------------------------------------------------|-----------------------------------------------------|
    |Binary included in ['fosslight_bin', 'fosslight_bin.exe']             | -                                                  |
    |Path included in ["test", "test", "doc", "doc", "docs", "intermediates"] folder | Output only the results of the source code or binary included in the actual distribution  |
