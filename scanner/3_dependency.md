@@ -343,12 +343,13 @@ $ tree
 
 ### Graph Network Creation Result
 ``` bash
-# $ fosslight_dependency -p /project/path --graph-path ~/temp/graph.pdf
+# $ fosslight_dependency -p /project/path --graph-path ~/temp/graph.png --graph-size 1000 1000
 $ cd ~/temp
 $ tree
 .
-└── graph.pdf
+└── graph.png
 ```
+![graph network result image](images/fosslight_depenency_graph.png)
 - Saved an image of the dependency graph using the Depends On section from the fosslight_report_dep_[datetime].xlsx file
 
 ### Result Contents
