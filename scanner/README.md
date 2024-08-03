@@ -99,17 +99,15 @@ ex. When called with '-f yaml -s setting.json', the output file is in yaml forma
 ### Result for the mode that analyze the open source (all, source, dependency, binary)
 ```
 test_result/
-├── fosslight_binary_220214_1824.txt
 ├── fosslight_log
 │   └── fosslight_log_220214_1824.txt
-├── fosslight_report_220214_1824.xlsx
-└── fosslight_raw_data
+├── fosslight_report_all_220214_1824.xlsx
+└── fosslight_raw_data (with -r option)
     ├── fosslight_src_220214_1824.xlsx
     ├── fosslight_bin_220214_1824.xlsx
     └── fosslight_dep_220214_1824.xlsx
 ```
-- fosslight_binary_(datetime).txt : FOSSLight Binary result and checksum and tlsh values for each binary are extracted.
-- fosslight_report_(datetime).xlsx : FOSSLight Report format file in which source code analysis, binary analysis, and dependency analysis results are written.
+- fosslight_report_all_(datetime).xlsx : FOSSLight Report format file in which source code analysis, binary analysis, and dependency analysis results are written.
 - fosslight_raw_data directory: The folder where the analysis result raw data file is created (with -r option)
   - fosslight_src_(datetime).xlsx : FOSSLight Report of FOSSLight Source Scanner
   - fosslight_dep_(datetime).xlsx : FOSSLight Report of FOSSLight Dependency Scanner
@@ -118,7 +116,7 @@ test_result/
 #### fosslight_report_(datetime).xlsx 
 1. Exclude: Checked Row
     test(s), doc(s), hidden files or folders are checked as Exclude.
-2. When sbom-info.yaml is loaded, the loaded data is appended and the analysis results for duplicate files are excluded.
+2. When sbom-info.yaml is loaded, the loaded data is appended and the analysis results for duplicate files checked as Exclude.
 3. Comment :      
    Add/Loaded by ** : Row loaded from **      
    Excluded by ** : Row excluded due to **            
