@@ -72,8 +72,8 @@ $ tree
 ```
 - fosslight_log_[datetime].txt : The execution log.
 - fosslight_report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.    
-   - If analyzing jar files, 'Vernerability Link' Column is added to FOSSLight-Report_[datetime].xlsx file.
-   - The checksum and tlsh values for each binary are hidden by default and written within FOSSLight Report.   
+   - If analyzing jar files, 'Vulnerability Link' Column is added to FOSSLight-Report_[datetime].xlsx file.
+   - The checksum and tlsh values for each binary are hidden by default.   
 - fosslight_opossum_[datetime].json : FOSSLight binary Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
 
 ## 🧐 How it works
@@ -83,8 +83,8 @@ $ tree
    |------------------------|-----------------------------------------------------------------------------------------------------------------------------------|    
    |symbolic link, FIFO file| Unable to read as file open.   It causes the FOSSLight Binary Scanner to stop when checking for file type or binary.              |    
    |Non-Binary file extensions | 'qm', 'xlsx', 'pdf', 'pptx', 'jfif', 'docx', 'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist', 'dat', 'json', 'js' etc|    
-   |Specific File Type         | Files that begin with 'data', 'timezone data', and 'applebinary property list'                                                 |    
-   |Specific Path             | '.git'                                                                                                                          |
+   |Specific file type         | Files that begin with 'data', 'timezone data', and 'applebinary property list'                                                 |    
+   |Specific path             | '.git'                                                                                                                          |
 
 2. Check “Exclude” in FOSSLight Report.
      
@@ -93,7 +93,7 @@ $ tree
    |Binary included in ['fosslight_bin', 'fosslight_bin.exe']             | -                                                  |
    |Path included in ["test", "test", "doc", "doc", "docs", "intermediates"] folder | Output only the results of the source code or binary included in the actual distribution  |
    |Hidden folder (folders that begin with '.')                           | -                                                   |               
-   |Specific files extension                                              | Not final build output (ex, '.class')               |
+   |Specific file extensions                                              | Not final build output (ex, '.class')               |
 
 3. Extract checksum and tlsh for each binary.     
 4. Load OSS information from Binary DB.      
