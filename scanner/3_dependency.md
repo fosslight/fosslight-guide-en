@@ -349,7 +349,8 @@ $ tree
 .
 └── graph.png
 ```
-![graph network result image](images/fosslight_depenency_graph.png)
+
+<img src="images/fosslight_depenency_graph.png" width="400">
 - Saved an image of the dependency graph using the Depends On section from the fosslight_report_dep_[datetime].xlsx file
 
 ### Result Contents
