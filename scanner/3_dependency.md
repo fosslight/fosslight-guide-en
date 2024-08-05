@@ -278,6 +278,10 @@ $ fosslight_dependency [option] <arg>
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)
             -f <format>                     Output file format (excel, csv, opossum, yaml, spdx-tag, spdx-yaml, spdx-json, spdx-xml)
+            --graph-path <save_path>        Enter the path where the graph image will be saved
+                                                (ex. /your/directory/path/filename.{pdf, jpg, png}) (recommend pdf extension)
+            --graph-size <width> <height>   Enter the size of the graph image (The size unit is pixels)
+                                                --graph-path option is required
             --direct                        Print the direct/transitive dependency type in comment.
                                                 Choice 'True' or 'False'. (default:True)
             --notice                        Print the open source license notice text.
@@ -336,6 +340,17 @@ $ tree
 - fosslight_log_dep_[datetime].txt: The execution log.
 - fosslight_opossum_dep_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
 - third_party_notice.txt : Created only when running with Unity, and collects and prints the third party notice for each package.
+
+### Graph Network Creation Result
+``` bash
+# $ fosslight_dependency -p /project/path --graph-path ~/temp/graph.png --graph-size 1000 1000
+$ cd ~/temp
+$ tree
+.
+└── graph.png
+```
+![graph network result image](images/fosslight_depenency_graph.png)
+- Saved an image of the dependency graph using the Depends On section from the fosslight_report_dep_[datetime].xlsx file
 
 ### Result Contents
 It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
