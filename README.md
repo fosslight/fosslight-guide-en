@@ -8,8 +8,9 @@ This guide page describes the basic usage and tutorial of FOSSLight Hub and adva
 
 ## FOSSLight Scanner
 [FOSSLight Scanner](scanner) is composed of four scanners: Prechecker, Dependency Scanner, Source Scanner, and Binary Scanner. FOSSLight Scanner can be used to generate integrated results of the four scanners.
-![](about/images/fosslight_scanner.png)
-
+<br/><br/>
+![](about/images/fosslight_scanner_overview.png){: width="80%" .center}
+<br/>
 Please refer the guide on how to install and use each scanner on the FOSSLight Scanner sub-guide page.
 
 #### FOSSLight Prechecker
