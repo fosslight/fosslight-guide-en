@@ -58,6 +58,9 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
             -r                      Keep raw data
             -t                      Hide the progress bar
             -v                      Print FOSSLight Scanner version
+            -s <path>               Path to apply setting from file (check format with 'setting.json' in this repository)
+                                     * Direct cli flags have higher priority than setting file
+                                    (ex, '-f yaml -s setting.json' - result file extension is .yaml)
             --no_correction         Enter if you don't want to correct OSS information with sbom-info.yaml
                                      * Correction mode only supported xlsx format.
             --correct_fpath <path>  Path to the sbom-info.yaml file
