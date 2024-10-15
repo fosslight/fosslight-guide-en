@@ -61,6 +61,7 @@ Options:
     -h                    Print help message
     -v                    Print FOSSLight Prechecker version
     -p <path>             Path to check
+    -e <path>             Path to exclude from checking(only work with 'lint' mode)
     -f <format>           Output file format (yaml, xml, html)
     -o <file_name>        Output file name
     -n                    Don't exclude venv*, node_modules, and .*/ from the analysis
