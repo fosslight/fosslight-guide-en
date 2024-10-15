@@ -51,6 +51,7 @@ $ fosslight_binary [option] <arg>
         -h                                  Print help message
         -v                                  Print FOSSLight Binary Scanner version
         -s                                  Extract only the binary list in simple mode
+        -e <path>                           Path to exclude from analysis (files and directories)
         -o <output_path>                    Output path
                                             (If you want to generate the specific file name, add the output path with file name.)
         -f <format>                         Output file format (excel, csv, opossum, yaml)
