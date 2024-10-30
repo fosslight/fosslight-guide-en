@@ -123,7 +123,7 @@ $ gradlew generateLicenseTxt
 - If the 'requirements.txt' file is located in the input path, FOSSLight Dependency Scanner can automatically install and analyze the dependencies. So you can skip from the prerequisite step2 for Pypi.
 ```
 
-1. python3-venv를 설치합니다.
+1. Install python3-venv.
 ```
 $ sudo apt-get install python3-venv
 ```
