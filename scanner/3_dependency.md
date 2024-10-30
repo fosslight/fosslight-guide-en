@@ -23,6 +23,7 @@ title: FOSSLight Dependency Scanner
 - [Nuget](https://www.nuget.org/) (.NET)
 - [Helm](https://helm.sh/) (Kubernetes)
 - [Unity](https://unity.com/) (Unity)
+- [Cargo](https://crates.io/) (Rust)
 </details>
 {::options parse_block_html="false" /}
 
@@ -250,6 +251,14 @@ Therefore, you can execute the 'fosslight_dependency' command directly without p
 FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Library/PackageManager/ProjectCache file and each package directory within the Library/PackageCache directory. Therefore, you can execute the 'fosslight_dependency' command in an environment where the files exist.
 ```
 </details>
+
+<details>
+<summary markdown="span">**Prerequisite for Cargo**</summary>
+```tip
+FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Cargo.toml and 'cargo metadata' command.
+Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
+```
+</details>
 {::options parse_block_html="false" /}
 
 
@@ -273,7 +282,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the script.
             -m <package_manager>            Enter the package manager.
-                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity)
+                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo)
             -p <input_path>                 Enter the path where the script will be run.
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)
@@ -318,6 +327,7 @@ The manifest file of each package manager is as follows:
   - Nuget : packages.config / {project name}.csproj
   - Helm : Chart.yaml
   - Unity : Library/PackageManager/ProjectCache
+  - Cargo : Cargo.toml
 ```
 
 - Android (gradle)
@@ -370,6 +380,7 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Nuget                          | nuget:(oss name)         | Priority1. repository in nuget.org/packages/(oss name)/(oss version) <br> Priority2. projectUrl in nuget.org/packages/(oss name)/(oss version) <br> Priority3. nuget.org/packages/(oss name)/(oss version)  | nuget.org/packages/(oss name) |
 | Helm                           | helm:(oss name)          | first url of sources in (Chart.yaml)                                                               | home in (Chart.yaml)                                |
 | Unity                          | (oss name)               | url in repository in ProjectCache                                                                  | url in repository in ProjectCache                   |
+| Cargo                          | cargo:(oss name)         | repository of the package in the result file for 'cargo metadata'                                  | crates.io/crates/(oss name)                         |                 
 
 ```warning
 - The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
@@ -505,5 +516,13 @@ Because we utilizes the different open source software to analyze the dependenci
     <td>O</td>
     <td>X</td>
   </tr>
+  <tr>
+    <td>Rust</td>
+    <td>Cargo</td>
+    <td>Cargo.toml</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>  
 </tbody>
 </table>
