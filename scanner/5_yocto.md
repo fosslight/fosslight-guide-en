@@ -85,7 +85,7 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
 - Options
     ```
     Mandatory
-        -p <path>              Path of buildhistory/package
+        -p <path>                      Path of buildhistory/package
         -b <file_with_path>            bom.json
         -i <file_with_path>            installed-package-names.txt
         -ip <file_with_path>           installed-packages.txt
