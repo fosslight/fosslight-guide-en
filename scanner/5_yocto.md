@@ -95,13 +95,13 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
         -v                             Print FOSSLight yocto version
         -y <file_with_path>            oss-pkg-info.yaml
         -a <path>                      Path to analyze the binaries
-        -n                             Print result in BIN(Android) format
-        -d                             Change license to declared license
+        -n                             Print result in BIN(Android) format        
         -s                             Analyze source code for unconfirmed Open Source
         -c                             Analyze all the source code
         -e                             Compress all the source code
         -o <path>                      Output Path
         -f <format>                    Output file format (excel, csv, opossum)
+        -pr                            Print all data of bom.json
     ``` 
 After placing the fosslight_bin_windows.exe file in the path to be analyzed binary, double-click to run it.
 
