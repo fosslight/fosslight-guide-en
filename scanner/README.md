@@ -50,9 +50,10 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
             -p <path>               Path to analyze (ex, -p {input_path})
                                      * Compare mode input file: Two FOSSLight reports (supports excel, yaml)
                                        (ex, -p {before_name}.xlsx {after_name}.xlsx)
-            -w <link>               Link to be analyzed can be downloaded by wget or git clone
-            -f <format>             FOSSLight Report file format (excel, yaml)
+            -w <link>               Link to be analyzed can be downloaded by wget or git clone            
+            -f <formats> [<format> ...]     FOSSLight Report file format (excel, csv, opossum, yaml, spdx-tag, spdx-yaml, spdx-json, spdx-xml)
                                      * Compare mode result file: supports excel, json, yaml, html
+                                     * Multiple formats can be specified separated by space.
             -e <path>               Path to exclude from analysis (ex, -e {dir} {file})
             -o <output>             Output directory or file
             -c <number>             Number of processes to analyze source
