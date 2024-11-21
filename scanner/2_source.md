@@ -46,7 +46,7 @@ $ fosslight_source [option] <arg>
       -h                     Print help message
       -v                     Print FOSSLight Source Scanner version
       -m                     Print additional information for scan result on separate sheets
-      -e <path>              Path to exclude from analysis (file and directory, pattern matchin is available)
+      -e <path>              Path to exclude from analysis (file and directory, pattern matching is available)
       -o <output_path>       Output path (Path or file name)
       -f <format>            Output file format (excel, csv, opossum, yaml)
   Options only for FOSSLight Source Scanner
