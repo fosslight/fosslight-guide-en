@@ -46,7 +46,7 @@ $ fosslight_source [option] <arg>
       -h                     Print help message
       -v                     Print FOSSLight Source Scanner version
       -m                     Print additional information for scan result on separate sheets
-      -e <path>              Path to exclude from analysis (file and directory)
+      -e <path>              Path to exclude from analysis (file and directory, pattern matchin is available)
       -o <output_path>       Output path (Path or file name)
       -f <format>            Output file format (excel, csv, opossum, yaml)
   Options only for FOSSLight Source Scanner
@@ -57,7 +57,8 @@ $ fosslight_source [option] <arg>
       --no_correction        Enter if you don't want to correct OSS information with sbom-info.yaml
       --correct_fpath <path> Path to the sbom-info.yaml file
 ```
-If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS) will be run and the result will be merged.
+- If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS) will be run and the result will be merged.
+- 📃 [Pattern matchin guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
 
 #### Example
 Print result to FOSSLight Report and results of ScanCode and SCANOSS in json file.
