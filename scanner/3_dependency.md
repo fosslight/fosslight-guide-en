@@ -284,7 +284,7 @@ $ fosslight_dependency [option] <arg>
             -m <package_manager>            Enter the package manager.
                                                 (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo)
             -p <input_path>                 Enter the path where the script will be run.
-            -e <exclude_path>               Enter the path where the analysis will not be performed.
+            -e <exclude_path>               Enter the path where the analysis will not be performed. (Pattern matching available)
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)            
             -f <format> [<format> ...]      Output formats (excel, csv, opossum, yaml, spdx-tag, spdx-yaml, spdx-json, spdx-xml)
@@ -312,6 +312,7 @@ $ fosslight_dependency [option] <arg>
             -n <app_name>                   Enter the application directory name where the plugin output file is located(default: app)
 
 ```
+- 📃 [Pattern 매칭 가이드](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
 
 ### Tips to run
 When you run the FOSSLight Dependency Scanner, the input path('-p' option) should be designated as the top directory of the project where the package manager's manifest file exists as above.
