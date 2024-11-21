@@ -72,7 +72,7 @@ Options for only 'add' mode
     -c <copyright>        Copyright to add(ex, 2015-2021 LG Electronics Inc.)
     -u <dl_location>	  Download location to add(ex, https://www.testurl.com)
 ```
-- 📃 Pattern matching : https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching
+- 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
 
 **(Only for Windows)** Run using executable file   
 1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases).    
