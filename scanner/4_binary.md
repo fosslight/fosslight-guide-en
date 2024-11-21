@@ -51,7 +51,7 @@ $ fosslight_binary [option] <arg>
         -h                                  Print help message
         -v                                  Print FOSSLight Binary Scanner version
         -s                                  Extract only the binary list in simple mode
-        -e <path>                           Path to exclude from analysis (files and directories)
+        -e <path>                           Path to exclude from analysis (files and directories, pattern matching is available)
         -o <output_path>                    Output path
                                             (If you want to generate the specific file name, add the output path with file name.)        
         -f <format> [<format> ...]          Output file formats (excel, csv, opossum, yaml)
@@ -61,7 +61,8 @@ $ fosslight_binary [option] <arg>
         --no_correction                     Enter if you don't want to correct OSS information with sbom-info.yaml
         --correct_fpath <path>              Path to the sbom-info.yaml file
 ````    
-
+- 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+  
 ## 📁 Result
 
 ```
