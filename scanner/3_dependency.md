@@ -284,7 +284,7 @@ $ fosslight_dependency [option] <arg>
             -m <package_manager>            Enter the package manager.
                                                 (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo)
             -p <input_path>                 Enter the path where the script will be run.
-            -e <exclude_path>               Enter the path where the analysis will not be performed. (Pattern matching available)
+            -e <exclude_path>               Enter the path where the analysis will not be performed. (Pattern matching is available)
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)            
             -f <format> [<format> ...]      Output formats (excel, csv, opossum, yaml, spdx-tag, spdx-yaml, spdx-json, spdx-xml)
