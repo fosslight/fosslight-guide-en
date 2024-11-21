@@ -61,7 +61,7 @@ Options:
     -h                    Print help message
     -v                    Print FOSSLight Prechecker version
     -p <path>             Path to check
-    -e <path>             Path to exclude from checking(only work with 'lint' mode)
+    -e <path>             Path to exclude from checking(only work with 'lint' mode, Pattern matchin is available)
     -f <format>           Output file format (yaml, xml, html)
     -o <file_name>        Output file name
     -n                    Don't exclude venv*, node_modules, and .*/ from the analysis
@@ -72,6 +72,7 @@ Options for only 'add' mode
     -c <copyright>        Copyright to add(ex, 2015-2021 LG Electronics Inc.)
     -u <dl_location>	  Download location to add(ex, https://www.testurl.com)
 ```
+- 📃 Pattern matching : https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching
 
 **(Only for Windows)** Run using executable file   
 1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases).    
