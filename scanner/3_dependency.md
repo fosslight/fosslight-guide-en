@@ -312,7 +312,7 @@ $ fosslight_dependency [option] <arg>
             -n <app_name>                   Enter the application directory name where the plugin output file is located(default: app)
 
 ```
-- 📃 [Pattern 매칭 가이드](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+- 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
 
 ### Tips to run
 When you run the FOSSLight Dependency Scanner, the input path('-p' option) should be designated as the top directory of the project where the package manager's manifest file exists as above.
