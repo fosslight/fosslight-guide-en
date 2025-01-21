@@ -18,8 +18,6 @@ published: true
   - [Prerequisite](#-prerequisite)
   - [How to install](#-how-to-install)
   - [How to run](#-how-to-run)
-    - [1. fosslight_source](#1-fosslight_source)
-    - [2. fosslight_convert](#2-fosslight_convert)
   - [Result](#-result)
 
 
@@ -34,7 +32,6 @@ $ pip3 install fosslight_source
 ```
 
 ## 🚀 How to run
-### 1. fosslight_source
 After executing ScanCode, the source code scanner, print the FOSSLight Report.
 ````
 $ fosslight_source [option] <arg>
