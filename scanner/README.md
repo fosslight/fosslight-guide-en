@@ -138,12 +138,22 @@ test_result/
 - fosslight_compare_(datetime).xlsx : Two BOM comparison results in the form of (add/delete/change) table.
 
 ## 🐳 How to install and run using Docker
-1. Build image using Dockerfile.
-```
-$docker build -t fosslight .
-```
+> [!NOTE]  
+> When running with Docker, only the FOSSLight Source/Binary Scanner works. The FOSSLight Dependency Scanner does not work.
+
+1. Download the FOSSLight Scanner Docker image
+   
+    Option 1. Download fosslight scanner from DockerHub.
+    ```
+    $ docker pull fosslight/fosslight_scanner
+    ```
+    Option 2. Build image using [Dockerfile](https://github.com/fosslight/fosslight_scanner/blob/main/Dockerfile) (If your OS is not supported in option 1)
+    ```
+    $ docker build -t fosslight_scanner .
+    ```
+
 2. Run with the image you built.      
-ex. Output: /Users/fosslight_scanner/test_output, Path to be analyzed: tests/test_files
+ex. Output: /Users/git/temp/output, Path to be analyzed: /Users/git/temp/dir_to_analyze
 ```
-$docker run -it -v /Users/fosslight_scanner/test_output:/app/output fosslight -p tests/test_files -o output
+$ docker run -it -v /Users/git/temp/dir_to_analyze:/app/dir_to_analyze -v /Users/git/temp/output:/app/output fosslight_scanner -p dir_to_analyze -o output
 ```
