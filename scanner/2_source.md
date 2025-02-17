@@ -32,7 +32,7 @@ $ pip3 install fosslight_source
 ```
 
 ## 🚀 How to run
-After executing ScanCode, the source code scanner, print the FOSSLight Report.
+After the source code scanning print the FOSSLight Report.
 ````
 $ fosslight_source [option] <arg>
 ````  
