@@ -67,7 +67,7 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 ```
 
 - Options
-    ```
+    ```   
         Mandatory
             -s <android_source_path>       Path to analyze
             -a <build_log_file_name>       The file must be located in the android source path.
@@ -91,29 +91,109 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 - fosslight_log_[datetime].txt : Execution log is output.      
 - REMOVED_BIN_BY_DUPLICATION_[datetime].txt : This is a list deduplicated from FOSSLight Report because there are two or more files with the same binary name and checksum in the output path.
 
-| Column           | Description                                                                                   |
+
+| Column           | Description                                                                                            |
 |:-----------------|:----------------------------------------------------------------------------------------------|
 | Binary Name      | Binary, library, APK, and font files in the root file system.                                |  
 | Source Code Path | Path information of source code that creates the binary (LOCAL_PATH)                                                |  
-| NOTICE.html      | Indicates whether binary information is displayed in NOTICE.html. If binary using open source, NOTICE.html value must be ok.                  |
-| OSS Name         | Print the information of matching binary from Binary DB or Android repositories.    |
-| OSS Version      | Print the information of matching binary from Binary DB.                                |
-| License          | Print license from 1. Binary DB 2. "MODULE_LICENSE_xxxxxx" in Source Path 3. {MODULE_NAME}.meta_lic.|
-| Need Check       | If O, review is required                                                                        |
-| Comment          | Shows what needs to be reviewed.                                                                 |
+| NOTICE.html      | Displays whether Binary information is shown in the NOTICE file. If it is a Binary where Open Source has been used, it should be "ok." |
+|                  | - ok: The NOTICE file exists in the Source Path, and the final output NOTICE (e.g., NOTICE.html) includes the Binary. |
+|                  | - ok(NA): The NOTICE file does not exist in the Source Path, but the final output NOTICE (e.g., NOTICE.html) includes the Binary. |
+|                  | - nok: The NOTICE file does not exist in the Source Path, and the final output NOTICE (e.g., NOTICE.html) does not include the Binary. |
+|                  | - nok(NA): Even though the NOTICE file exists in the Source Path, the final output NOTICE (e.g., NOTICE.html) does not include the Binary. |
+|                  | - CANNOT_FIND_NOTICE_HTML: The NOTICE.html file cannot be found. (In this case, when running the script, you must provide the NOTICE.html file path as a parameter using -n [NOTICE.html_path].) |
+| OSS Name         | Retrieves and displays the information of the Binary matched from the LGE Binary DB.     |
+| OSS Version      | Retrieves and displays the information of the Binary matched from the LGE Binary DB.                               |
+| License          | Displays the Open Source License extracted from the following information:    |
+|                  | - Information about the Binary matched from the LGE Binary DB. |
+|                  | - Reads and displays licenses specified in files like "MODULE_LICENSE_xxxxxx" within the Source Code Path. |
+|                  | - Information found in {MODULE_NAME}.meta_lic from the output. |
+| Need Check       | If O, review is required                                                                           |
+| Comment          | Outputs items that require review: |
+|                  | - Fill in [Column Name]: Displays columns that need to be filled in. |
+|                  | Example: Fill in OSS Name: The 'OSS Name' column requires the name of the OSS used. |
+|                  | - Add NOTICE to path: Since there is no NOTICE file in the Source Code Path, a NOTICE file must be added to the Source Code Path of the corresponding binary. |
+|                  | However, if it is difficult to add a NOTICE file to the Source Code Path or if adding the NOTICE file does not include it in the final NOTICE for the target, the project should be reviewed via FOSSLight Hub. Afterward, download the NOTICE that needs to be added using the Supplement NOTICE.html feature, and supplement it using the method under Android Model OSS Notice > "Add separately created NOTICE to OSS Notice."|
 | (TLSH)           | Print TLSH value of the binary.                                                            |
-| (SHA1)           | Print Cheucksum value of the binary.                                                           |
+| (SHA1)           | Print Cheucksum value of the binary.    |
+
+
 
 ## 🚗 Add-ons
 ---
-Additional functions are available through the options.
-- Option: -p : Check files that should not be included in the Packaging file.
-- Option: -f : Print result of Find Command for binary that can not find Source Code Path.
-- Option: -i : Turn off OSS Name auto-completion
-- Option: -r : Deduplicate the binary.
-- Option: -m : Extract the license by analyzing the source code.
-
+The following options enable the use of additional features.
+- Option: -b, -n, -c: Verifies whether the Binary name is included in the NOTICE.html.
+- Option: -p : Checks for files that should not be included in the packaging file.
+- Option: -f : Outputs the results of the find command for binaries whose Source Code Path could not be located.
+- Option: -t : Aggregates NOTICE files for binaries that have NOTICE files in the Source Code Path but are not included in the NOTICE.html.
+- Option: -i : Disables the automatic output of OSS Name based on the Android reference repository.
+- Option: -d : Splits the needtoadd-notice.html file by each Binary.
+- Option: -r : Removes duplicates of specific binaries in the FOSSLight Report. This option is used in scenarios where Android native and vendor are built separately, to eliminate duplicated binaries. When running FOSSLight Android for the vendor, use the -r option and provide the result_*.txt file generated from the Android native as a parameter.
+- Option: -m : Automatically analyzes Source Code within the Source Path to detect Licenses (based on License texts found in source files) and populates empty License fields. (Note: This process can be time-consuming. For Android native with 44 Paths, the analysis takes approximately 35 minutes.)
 ---
+
+
+
+
+### -b, -n, -c: Verifying Whether Binary Names Are Included in NOTICE.html
+(1) If OSS is used (when the NOTICE.html column is ok or ok(NA))
+If the value of the NOTICE.html column in the OSS Report BIN (Android) sheet is ok or ok(NA), the name of the corresponding binary must be included in the NOTICE.html.
+
+**How to run**
+    - To verify whether the binary name is included in NOTICE.html, follow these steps:
+    - Filter the values ok and ok(NA) from the NOTICE.html column.
+    - Select all entries in the Binary Name column and copy them.
+    - Create a file named binary.txt in a Linux environment using the vi editor:
+    ```
+    (venv)$ vi binary.txt
+    ```
+    - Paste the copied content from step 2 into binary.txt, and save the file.
+    - Place the NOTICE.html file in the same directory as binary.txt:
+    ```
+    (venv)$ ls
+    binary.txt  NOTICE.html
+    ```
+    - Use the -c option to extract results. Since this is for checking the ok status, set the parameter of the -c option to ok:
+    ```
+    (command)
+    (venv)$ fosslight_android -b [binary.txt] -n [NOTICE.html] -c [ok|nok]
+      
+    (ex)
+    (venv)$ fosslight_android -b binary.txt -n NOTICE.html -c ok
+    ```
+        - If there are multiple NOTICE files, separate them with commas (,).
+          Example: If the NOTICE files are NOTICE.xml, NOTICE_VENDOR.xml, NOTICE_PRODUCT.xml, and NOTICE_PRODUCT_SERVICES.xml:
+           ```
+           (venv)$ fosslight_android -b binary.txt -n NOTICE.xml,NOTICE_VENDOR.xml,NOTICE_PRODUCT.xml,NOTICE_PRODUCT_SERVICES.xml  -c ok
+           ```
+  - Check which binaries are not included in NOTICE.html:
+      - Open the result.txt file to view the list of binaries marked as nok.
+      - These binaries are marked as ok or ok(NA) in the NOTICE.html column of the OSS Report but are not included in the NOTICE.html.
+      - (Warning) All binaries with ok or ok(NA) in NOTICE.html must be included in the NOTICE.html. Therefore, the result.txt file should not list any binaries as nok.
+
+  
+(2) If OSS is not used (when the NOTICE.html column is nok or nok(NA))
+
+For binaries explicitly marked as not using OSS, their names must not be included in the NOTICE.html.
+Follow the steps below to verify whether the binary names are incorrectly included in the NOTICE.html.
+
+**How to run**
+
+1.Filter the values nok and nok(NA) from the NOTICE.html column.
+2. Refer to steps 2 to 5 in section (1) above. Use nok as the parameter for the -c option since this is checking for nok entries.
+   ```
+   (command)
+   (venv)$ fosslight_android -b [binary.txt] -n [NOTICE.html] -c [ok|nok]
+  
+   (ex)
+   (venv)$ fosslight_android -b binary.txt -n NOTICE.html -c nok
+   ```
+3. Check the results to see which binaries are included in the NOTICE.html:
+    - Open the result.txt file to identify binaries that are incorrectly included in the NOTICE.html.
+    - These are binaries that have been marked as not using OSS in the OSS Report but are still included in the NOTICE.html.
+    - (Warning) For binaries explicitly marked as nok or nok(NA) in the NOTICE.html column, their names should not appear in the NOTICE.html. Therefore, there should be no binaries marked as ok in the result.txt file.
+
+
 
 ### -p: Check files that should not be included in the Packaging file.
 Check the file names, file extensions, and paths that should not be included when packaging source code to be disclosed.               
@@ -185,6 +265,7 @@ Example :
 ### -f: Print result of Find Command for binary that can not find Source Code Path.
 Print the result of executing Find Command for each folder (excluding out directory, hidden directories starting with '.') in Android's Source Path for Binary that can not find Source Code Path.     
 
+**How to run**
 1. Run the fosslight_android with -f.
     ```commandline
     (venv)$ fosslight_android  -s [android source path] -a [build log file name] -f
@@ -201,12 +282,32 @@ However, if there is no binary that can not find the source code path, 'FIND_RES
 If OSS information is not found in Binary DB or OSS Name is [Android Native](https://android.googlesource.com/platform), OSS Name is automatically printed if it is a repository in Android Reference based on Source Code Path.       
 To turn off this automatic OSS name output, add the i option.     
 
+
+**How to run**
+1. Run the command with the -i option:
+    ```commandline
+    (venv)$ fosslight_android -s [android source path] -a [build log file name] -i
+ 
+    ex
+    (venv)$ fosslight_android -s /home/soim/android/source -a android.log -i
+    ```
+
+2. Review the results        
+- Generated File Name: RESULT_COMPARE_I_OPTION.xlsx
+- Contents of Result File:
+    - Sheet "Ref_with_i_option": Analysis results from FOSSLight Android with the -i option enabled, using the Android reference source.
+    - Sheet "Ref_without_i_option": Analysis results from FOSSLight Android without the -i option, using the Android reference source.
+
+
+
 ### -r: Deduplicate the binary.
 It is used only when Android native and vendor mounted on one model are created as separate outputs.
 When running FOSSLight Android for vendor, use the -r option to deduplicate the binary in Android native.        
 - Conditions to remove duplicates: Binary name is the same and checksum is the same OR Binary name is the same and TLSH value difference is less than 120
 - Deduplicated binaries are output to REMOVED_BIN_BY_DUPLICATION.txt.
 
+
+**How to run**
 1. Run the fosslight_android with -r. 
     ```commandline
     (venv)$ fosslight_android -s [vendor_source_path] -a [android_build_log_file] -r [android_native_result.txt]
@@ -222,6 +323,8 @@ Binaries duplicated with android_native_result.txt are removed from FOSSLight-Re
 ### -m: Extract the license by analyzing the source code.
 Only for binary that could not extract license, license by source code is extracted using FOSSLight Source, and the result is output in license column of FOSSLight Report.        
 
+
+**How to run**
 1. Run the fosslight_android with -m.
     ```commandline
     (venv)$ fosslight_android -s [vendor_source_path] -a [android_build_log_file] -m
