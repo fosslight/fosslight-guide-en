@@ -38,7 +38,7 @@ Android Build
 Build in user mode to get the output (out directory) and build log (android.log). You must first run make clean to get the full build log.
 
 ```
-(Android native source build 예)
+(Android native source build example)
 $ source ./build/envsetup.sh
 $ make clean
 $ lunch aosp_hammerhead-user
@@ -133,30 +133,32 @@ The following options enable the use of additional features.
 - Option: -d : Splits the needtoadd-notice.html file by each Binary.
 - Option: -r : Removes duplicates of specific binaries in the FOSSLight Report. This option is used in scenarios where Android native and vendor are built separately, to eliminate duplicated binaries. When running FOSSLight Android for the vendor, use the -r option and provide the result_*.txt file generated from the Android native as a parameter.
 - Option: -m : Automatically analyzes Source Code within the Source Path to detect Licenses (based on License texts found in source files) and populates empty License fields. (Note: This process can be time-consuming. For Android native with 44 Paths, the analysis takes approximately 35 minutes.)
+
 ---
 
 
 
 
 ### -b, -n, -c: Verifying Whether Binary Names Are Included in NOTICE.html
-(1) If OSS is used (when the NOTICE.html column is ok or ok(NA))
+#### (1) If OSS is used (when the NOTICE.html column is ok or ok(NA))
+
 If the value of the NOTICE.html column in the OSS Report BIN (Android) sheet is ok or ok(NA), the name of the corresponding binary must be included in the NOTICE.html.
 
-**How to run**
-    - To verify whether the binary name is included in NOTICE.html, follow these steps:
-    - Filter the values ok and ok(NA) from the NOTICE.html column.
-    - Select all entries in the Binary Name column and copy them.
-    - Create a file named binary.txt in a Linux environment using the vi editor:
+#### How to run
+To verify whether the binary name is included in NOTICE.html, follow these steps:
+1. Filter the values ok and ok(NA) from the NOTICE.html column.
+2. Select all entries in the Binary Name column and copy them.
+3. Create a file named binary.txt in a Linux environment using the vi editor:
     ```
     (venv)$ vi binary.txt
     ```
-    - Paste the copied content from step 2 into binary.txt, and save the file.
-    - Place the NOTICE.html file in the same directory as binary.txt:
+4. Paste the copied content from step 2 into binary.txt, and save the file.
+5. Place the NOTICE.html file in the same directory as binary.txt:
     ```
     (venv)$ ls
     binary.txt  NOTICE.html
     ```
-    - Use the -c option to extract results. Since this is for checking the ok status, set the parameter of the -c option to ok:
+6. Use the -c option to extract results. Since this is for checking the ok status, set the parameter of the -c option to ok:
     ```
     (command)
     (venv)$ fosslight_android -b [binary.txt] -n [NOTICE.html] -c [ok|nok]
@@ -164,25 +166,26 @@ If the value of the NOTICE.html column in the OSS Report BIN (Android) sheet is 
     (ex)
     (venv)$ fosslight_android -b binary.txt -n NOTICE.html -c ok
     ```
-        - If there are multiple NOTICE files, separate them with commas (,).
-          Example: If the NOTICE files are NOTICE.xml, NOTICE_VENDOR.xml, NOTICE_PRODUCT.xml, and NOTICE_PRODUCT_SERVICES.xml:
-           ```
-           (venv)$ fosslight_android -b binary.txt -n NOTICE.xml,NOTICE_VENDOR.xml,NOTICE_PRODUCT.xml,NOTICE_PRODUCT_SERVICES.xml  -c ok
-           ```
-  - Check which binaries are not included in NOTICE.html:
-      - Open the result.txt file to view the list of binaries marked as nok.
-      - These binaries are marked as ok or ok(NA) in the NOTICE.html column of the OSS Report but are not included in the NOTICE.html.
-      - (Warning) All binaries with ok or ok(NA) in NOTICE.html must be included in the NOTICE.html. Therefore, the result.txt file should not list any binaries as nok.
+7. If there are multiple NOTICE files, separate them with commas (,).
+    Example: If the NOTICE files are NOTICE.xml, NOTICE_VENDOR.xml, NOTICE_PRODUCT.xml, and NOTICE_PRODUCT_SERVICES.xml:
 
+    ```
+    (venv)$ fosslight_android -b binary.txt -n NOTICE.xml,NOTICE_VENDOR.xml,NOTICE_PRODUCT.xml,NOTICE_PRODUCT_SERVICES.xml  -c ok
+    ```
+
+8. Check which binaries are not included in NOTICE.html:
+    - Open the result.txt file to view the list of binaries marked as nok.
+    - These binaries are marked as ok or ok(NA) in the NOTICE.html column of the OSS Report but are not included in the NOTICE.html.
+    - (Warning) All binaries with ok or ok(NA) in NOTICE.html must be included in the NOTICE.html. Therefore, the result.txt file should not list any binaries as nok.
+<br>
   
-(2) If OSS is not used (when the NOTICE.html column is nok or nok(NA))
+#### (2) If OSS is not used (when the NOTICE.html column is nok or nok(NA))
 
 For binaries explicitly marked as not using OSS, their names must not be included in the NOTICE.html.
 Follow the steps below to verify whether the binary names are incorrectly included in the NOTICE.html.
 
-**How to run**
-
-1.Filter the values nok and nok(NA) from the NOTICE.html column.
+#### How to run
+1. Filter the values nok and nok(NA) from the NOTICE.html column.
 2. Refer to steps 2 to 5 in section (1) above. Use nok as the parameter for the -c option since this is checking for nok entries.
    ```
    (command)
@@ -195,42 +198,44 @@ Follow the steps below to verify whether the binary names are incorrectly includ
     - Open the result.txt file to identify binaries that are incorrectly included in the NOTICE.html.
     - These are binaries that have been marked as not using OSS in the OSS Report but are still included in the NOTICE.html.
     - (Warning) For binaries explicitly marked as nok or nok(NA) in the NOTICE.html column, their names should not appear in the NOTICE.html. Therefore, there should be no binaries marked as ok in the result.txt file.
-
+<br>
+<br>
 
 
 ### -p: Check files that should not be included in the Packaging file.
 Check the file names, file extensions, and paths that should not be included when packaging source code to be disclosed.               
 
-Prerequisite     
-- Packaging Config File : Create a pkgConfig.json file as json format for checking files.
+#### Prerequisite     
+1. Packaging Config File : Create a pkgConfig.json file as json format for checking files.
 
-Example : pkgConfig.json
+    Example : pkgConfig.json
 
-```
-    {
-       "Prohibited_File_Names":[
-          "key_file",
-          "confidential_key"
-       ],
-       "Prohibited_File_Extensions":[
-          "exe",
-          "jar"
-       ],
-       "Prohibited_Path":[
-          "confidential",
-          ".git"
-       ]
-    }
-```
+    ```
+        {
+        "Prohibited_File_Names":[
+            "key_file",
+            "confidential_key"
+        ],
+        "Prohibited_File_Extensions":[
+            "exe",
+            "jar"
+        ],
+        "Prohibited_Path":[
+            "confidential",
+            ".git"
+        ]
+        }
+    ```
 
-- Prohibited_File_Names : File name to be detected. 
-- Prohibited_File_Extensions : File extension to be detected. 
-- Prohibited_Path :File path to be detected.
-- A path or compressed file containing the source code to be disclosed. 
-  - If there is a compressed file in the path or compressed file that contains the source code to be released, decompress it and search it.
-  - File extensions that support decompression : tar, tar.gz, zip
+2. Itemized Description: If there is more than one item to write for each category, separate them with a comma (',').
+    - Prohibited_File_Names : File name to be detected. 
+    - Prohibited_File_Extensions : File extension to be detected. 
+    - Prohibited_Path :File path to be detected.
+3. A path or compressed file containing the source code to be disclosed. 
+    - If there is a compressed file in the path or compressed file that contains the source code to be released, decompress it and search it.
+    - File extensions that support decompression : tar, tar.gz, zip
 
-**How to run**
+#### How to run
 1. Place the Packaging config file (pkgConfig.json).
 2. Run the fosslight_android with -p option. (-p : A path or compressed file containing the source code to be disclosed)
     ```
@@ -240,35 +245,38 @@ Example : pkgConfig.json
     (venv)$ fosslight_android -p /home/test/sourceCodeToBeDisclosed.tar.gz
     ```
 
-3. Result 
-The extracted list is displayed for each detected item.        
-       
-Example :       
+#### Result 
+1. The extracted list is displayed for each detected item.               
+2. Example :       
 
-```
-    (venv)$ fosslight_android  -p /home/test/sourceCodeToBeDisclosed.tar.gz
-    1. Prohibited file names : 1
-    sourceCode/executable/LgeOscClient/confidential_key
-    2. Prohibited file extension : 4
-    sourceCode/executable/Report_Jenkins_ubuntu.exe
-    sourceCode/executable/ReportTool_v3.03_181128U.jar
-    sourceCode/executable/Protex_Create_Upload_Analyze_v3.03_181128U.jar
-    sourceCode/executable/ReportTool_CLI_v3.03_181128U.jar
-    3. Prohibited Path : 2
-    sourceCode/.git
-    sourceCode/executable/LgeOscClient/confidential
-    4. Fail to read : 0
-```
+    ```
+        (venv)$ fosslight_android  -p /home/test/sourceCodeToBeDisclosed.tar.gz
+        1. Prohibited file names : 1
+        sourceCode/executable/LgeOscClient/confidential_key
+        2. Prohibited file extension : 4
+        sourceCode/executable/Report_Jenkins_ubuntu.exe
+        sourceCode/executable/ReportTool_v3.03_181128U.jar
+        sourceCode/executable/Protex_Create_Upload_Analyze_v3.03_181128U.jar
+        sourceCode/executable/ReportTool_CLI_v3.03_181128U.jar
+        3. Prohibited Path : 2
+        sourceCode/.git
+        sourceCode/executable/LgeOscClient/confidential
+        4. Fail to read : 0
+    ```
    
-- Prohibited file names : If the file name of the source code to be disclosed contains the value of Prohibited_File_Names in pkgConfig.json.
-- Prohibited file extension :  If the file extension of the source code to be disclosed contains the value of Prohibited_File_Extensions in pkgConfig.json.
-- Prohibited Path :If the file path of the source code to be disclosed contains the value of Prohibited_Path in pkgConfig.json.
-- Fail to read : Prints a list of files that failed to decompress.
+    - Prohibited file names : If the file name of the source code to be disclosed contains the value of Prohibited_File_Names in pkgConfig.json.
+    - Prohibited file extension :  If the file extension of the source code to be disclosed contains the value of Prohibited_File_Extensions in pkgConfig.json.
+    - Prohibited Path :If the file path of the source code to be disclosed contains the value of Prohibited_Path in pkgConfig.json.
+    - Fail to read : Prints a list of files that failed to decompress.
+<br>
+<br>
+
+
 
 ### -f: Print result of Find Command for binary that can not find Source Code Path.
 Print the result of executing Find Command for each folder (excluding out directory, hidden directories starting with '.') in Android's Source Path for Binary that can not find Source Code Path.     
 
-**How to run**
+#### How to run
 1. Run the fosslight_android with -f.
     ```commandline
     (venv)$ fosslight_android  -s [android source path] -a [build log file name] -f
@@ -277,16 +285,19 @@ Print the result of executing Find Command for each folder (excluding out direct
     (venv)$ fosslight_android  -s /home/soim/android/source -a android.log -f
     ```
 
-2. Result           
-The result of executing the Find command for each binary that can not find the Source Code Path is generated as a 'FIND_RESULT_OF_BINARIES.txt' file.
-However, if there is no binary that can not find the source code path, 'FIND_RESULT_OF_BINARIES.txt' will not be created.
+#### Result           
+1. The result of executing the Find command for each binary that can not find the Source Code Path is generated as a 'FIND_RESULT_OF_BINARIES.txt' file.
+2. However, if there is no binary that can not find the source code path, 'FIND_RESULT_OF_BINARIES.txt' will not be created.
+<br>
+<br>
+
 
 ### -i: Turn off OSS Name auto-completion
 If OSS information is not found in Binary DB or OSS Name is [Android Native](https://android.googlesource.com/platform), OSS Name is automatically printed if it is a repository in Android Reference based on Source Code Path.       
 To turn off this automatic OSS name output, add the i option.     
 
 
-**How to run**
+#### How to run
 1. Run the command with the -i option:
     ```commandline
     (venv)$ fosslight_android -s [android source path] -a [build log file name] -i
@@ -295,22 +306,25 @@ To turn off this automatic OSS name output, add the i option.
     (venv)$ fosslight_android -s /home/soim/android/source -a android.log -i
     ```
 
-2. Review the results        
-- Generated File Name: RESULT_COMPARE_I_OPTION.xlsx
-- Contents of Result File:
-    - Sheet "Ref_with_i_option": Analysis results from FOSSLight Android with the -i option enabled, using the Android reference source.
-    - Sheet "Ref_without_i_option": Analysis results from FOSSLight Android without the -i option, using the Android reference source.
+#### Review the results        
+1. Generated File Name: RESULT_COMPARE_I_OPTION.xlsx
+2. Contents of Result File:
+   - Sheet "Ref_with_i_option": Analysis results from FOSSLight Android with the -i option enabled, using the Android reference source.
+   - Sheet "Ref_without_i_option": Analysis results from FOSSLight Android without the -i option, using the Android reference source.
+
+<br>
+<br>
 
 
 
 ### -r: Deduplicate the binary.
 It is used only when Android native and vendor mounted on one model are created as separate outputs.
 When running FOSSLight Android for vendor, use the -r option to deduplicate the binary in Android native.        
-- Conditions to remove duplicates: Binary name is the same and checksum is the same OR Binary name is the same and TLSH value difference is less than 120
-- Deduplicated binaries are output to REMOVED_BIN_BY_DUPLICATION.txt.
+    - Conditions to remove duplicates: Binary name is the same and checksum is the same OR Binary name is the same and TLSH value difference is less than 120
+    - Deduplicated binaries are output to REMOVED_BIN_BY_DUPLICATION.txt.
 
 
-**How to run**
+#### How to run
 1. Run the fosslight_android with -r. 
     ```commandline
     (venv)$ fosslight_android -s [vendor_source_path] -a [android_build_log_file] -r [android_native_result.txt]
@@ -319,15 +333,16 @@ When running FOSSLight Android for vendor, use the -r option to deduplicate the 
     (venv)$ fosslight_android -s [vendor_source_path] -a android.log -r android_native_result.txt
     ```
 
-2. Result         
-Binaries duplicated with android_native_result.txt are removed from FOSSLight-Report.xlsx and output to REMOVED_BIN_BY_DUPLICATION.txt.
-
+#### Result         
+1. Binaries duplicated with android_native_result.txt are removed from FOSSLight-Report.xlsx and output to REMOVED_BIN_BY_DUPLICATION.txt.
+<br>
+<br>
 
 ### -m: Extract the license by analyzing the source code.
 Only for binary that could not extract license, license by source code is extracted using FOSSLight Source, and the result is output in license column of FOSSLight Report.        
 
 
-**How to run**
+#### How to run
 1. Run the fosslight_android with -m.
     ```commandline
     (venv)$ fosslight_android -s [vendor_source_path] -a [android_build_log_file] -m
@@ -336,6 +351,6 @@ Only for binary that could not extract license, license by source code is extrac
     (venv)$ fosslight_android -s [vendor_source_path] -a android.log -m
     ```
 
-2. Result            
-The analysis results are printed in the license column of the FOSSLight Report.        
-Additionally, analysis results by source code are created in the source_analyzed_[datetime] folder.      
+#### Result            
+1. The analysis results are printed in the license column of the FOSSLight Report.        
+2. Additionally, analysis results by source code are created in the source_analyzed_[datetime] folder.      
