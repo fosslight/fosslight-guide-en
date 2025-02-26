@@ -75,7 +75,7 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
         Optional
             -h                             Print help message
             -m                             Analyze the source code for the path where the license could not be found.
-            -e <path1> <path2..>           Path to exclude from source analysis.(Pattern matching is available)
+            -e <path1> <path2..>           Path to exclude from source analysis.
             -p                             Check files that should not be included in the Packaging file.
             -f                             Print result of Find Command for binary that can not find Source Code Path.
             -t                             Collect NOTICE for binaries that are not added to NOTICE.html.
@@ -83,7 +83,7 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
             -i                             Disable the function to automatically convert OSS names based on AOSP.
             -r <result.txt>                result.txt file with a list of binaries to remove.
     ```
-    - 📃 [Pattern mathcing guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+    
 
 ## 📁 Result
 - fosslight_report_[datetime].xlsx : This is a report outputting OSS information for each binary detected in the output.
