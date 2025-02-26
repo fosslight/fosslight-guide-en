@@ -99,24 +99,12 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 |:-----------------|:----------------------------------------------------------------------------------------------|
 | Binary Name      | Binary, library, APK, and font files in the root file system.                                |  
 | Source Code Path | Path information of source code that creates the binary (LOCAL_PATH)                                                |  
-| Notice           | Displays whether Binary information is shown in the NOTICE file. If it is a Binary where Open Source has been used, it should be "ok." 
-|                   - ok: The NOTICE file exists in the Source Path, and the final output NOTICE (e.g., NOTICE.html) includes the Binary. 
-|                   - ok(NA): The NOTICE file does not exist in the Source Path, but the final output NOTICE (e.g., NOTICE.html) includes the Binary. 
-|                   - nok: The NOTICE file does not exist in the Source Path, and the final output NOTICE (e.g., NOTICE.html) does not include the Binary. 
-|                   - nok(NA): Even though the NOTICE file exists in the Source Path, the final output NOTICE (e.g., NOTICE.html) does not include the Binary. 
-|                   - CANNOT_FIND_NOTICE_HTML: The NOTICE.html file cannot be found. (In this case, when running the script, you must provide the NOTICE.html file path as a parameter using -n [NOTICE.html_path].) |
+| Notice           | Displays whether Binary information is shown in the NOTICE file. If it is a Binary where Open Source has been used, it should be "ok."<br>&ensp;&ensp;- ok: The NOTICE file exists in the Source Path, and the final output NOTICE (e.g., NOTICE.html) includes the Binary. <br>&ensp;&ensp;- ok(NA): The NOTICE file does not exist in the Source Path, but the final output NOTICE (e.g., NOTICE.html) includes the Binary. <br>&ensp;&ensp;- nok: The NOTICE file does not exist in the Source Path, and the final output NOTICE (e.g., NOTICE.html) does not include the Binary.<br>&ensp;&ensp;- nok(NA): Even though the NOTICE file exists in the Source Path, the final output NOTICE (e.g., NOTICE.html) does not include the Binary.<br>&ensp;&ensp;- CANNOT_FIND_NOTICE_HTML: The NOTICE.html file cannot be found. (In this case, when running the script, you must provide the NOTICE.html file path as a parameter using -n [NOTICE.html_path].) |
 | OSS Name         | Retrieves and displays the information of the Binary matched from the LGE Binary DB.     |
 | OSS Version      | Retrieves and displays the information of the Binary matched from the LGE Binary DB.                               |
-| License          | Displays the Open Source License extracted from the following information:    |
-|                  | - Information about the Binary matched from the LGE Binary DB. |
-|                  | - Reads and displays licenses specified in files like "MODULE_LICENSE_xxxxxx" within the Source Code Path. |
-|                  | - Information found in {MODULE_NAME}.meta_lic from the output. |
+| License          | Displays the Open Source License extracted from the following information:<br>&ensp;&ensp;- Information about the Binary matched from the LGE Binary DB."<br>&ensp;&ensp;- Reads and displays licenses specified in files like "MODULE_LICENSE_xxxxxx" within the Source Code Path."<br>&ensp;&ensp;- Information found in {MODULE_NAME}.meta_lic from the output. |
 | Need Check       | If O, review is required                                                                           |
-| Comment          | Outputs items that require review: |
-|                  | - Fill in [Column Name]: Displays columns that need to be filled in. |
-|                  | Example: Fill in OSS Name: The 'OSS Name' column requires the name of the OSS used. |
-|                  | - Add NOTICE to path: Since there is no NOTICE file in the Source Code Path, a NOTICE file must be added to the Source Code Path of the corresponding binary. |
-|                  | However, if it is difficult to add a NOTICE file to the Source Code Path or if adding the NOTICE file does not include it in the final NOTICE for the target, the project should be reviewed via FOSSLight Hub. Afterward, download the NOTICE that needs to be added using the Supplement NOTICE.html feature, and supplement it using the method under Android Model OSS Notice > "Add separately created NOTICE to OSS Notice."|
+| Comment          | Outputs items that require review:<br>&ensp;&ensp;- Fill in [Column Name]: Displays columns that need to be filled in.<br>Example: Fill in OSS Name: The 'OSS Name' column requires the name of the OSS used.<br>&ensp;&ensp;- Add NOTICE to path: Since there is no NOTICE file in the Source Code Path, a NOTICE file must be added to the Source Code Path of the corresponding binary.<br>However, if it is difficult to add a NOTICE file to the Source Code Path or if adding the NOTICE file does not include it in the final NOTICE for the target, the project should be reviewed via FOSSLight Hub. Afterward, download the NOTICE that needs to be added using the Supplement NOTICE.html feature, and supplement it using the method under Android Model OSS Notice > "Add separately created NOTICE to OSS Notice."|
 | (TLSH)           | Print TLSH value of the binary.                                                            |
 | (SHA1)           | Print Cheucksum value of the binary.    |
 
