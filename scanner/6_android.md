@@ -99,12 +99,12 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 |:-----------------|:----------------------------------------------------------------------------------------------|
 | Binary Name      | Binary, library, APK, and font files in the root file system.                                |  
 | Source Code Path | Path information of source code that creates the binary (LOCAL_PATH)                                                |  
-| NOTICE.html      | Displays whether Binary information is shown in the NOTICE file. If it is a Binary where Open Source has been used, it should be "ok." |
-|                  | - ok: The NOTICE file exists in the Source Path, and the final output NOTICE (e.g., NOTICE.html) includes the Binary. |
-|                  | - ok(NA): The NOTICE file does not exist in the Source Path, but the final output NOTICE (e.g., NOTICE.html) includes the Binary. |
-|                  | - nok: The NOTICE file does not exist in the Source Path, and the final output NOTICE (e.g., NOTICE.html) does not include the Binary. |
-|                  | - nok(NA): Even though the NOTICE file exists in the Source Path, the final output NOTICE (e.g., NOTICE.html) does not include the Binary. |
-|                  | - CANNOT_FIND_NOTICE_HTML: The NOTICE.html file cannot be found. (In this case, when running the script, you must provide the NOTICE.html file path as a parameter using -n [NOTICE.html_path].) |
+| Notice           | Displays whether Binary information is shown in the NOTICE file. If it is a Binary where Open Source has been used, it should be "ok." 
+|                   - ok: The NOTICE file exists in the Source Path, and the final output NOTICE (e.g., NOTICE.html) includes the Binary. 
+|                   - ok(NA): The NOTICE file does not exist in the Source Path, but the final output NOTICE (e.g., NOTICE.html) includes the Binary. 
+|                   - nok: The NOTICE file does not exist in the Source Path, and the final output NOTICE (e.g., NOTICE.html) does not include the Binary. 
+|                   - nok(NA): Even though the NOTICE file exists in the Source Path, the final output NOTICE (e.g., NOTICE.html) does not include the Binary. 
+|                   - CANNOT_FIND_NOTICE_HTML: The NOTICE.html file cannot be found. (In this case, when running the script, you must provide the NOTICE.html file path as a parameter using -n [NOTICE.html_path].) |
 | OSS Name         | Retrieves and displays the information of the Binary matched from the LGE Binary DB.     |
 | OSS Version      | Retrieves and displays the information of the Binary matched from the LGE Binary DB.                               |
 | License          | Displays the Open Source License extracted from the following information:    |
