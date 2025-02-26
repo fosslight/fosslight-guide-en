@@ -128,13 +128,13 @@ The following options enable the use of additional features.
 
 
 ### -b, -n, -c: Verifying Whether Binary Names Are Included in NOTICE.html
-#### (1) If OSS is used (when the NOTICE.html column is ok or ok(NA))
+#### (1) If OSS is used (when the Notice column is ok or ok(NA))
 
-If the value of the NOTICE.html column in the OSS Report BIN (Android) sheet is ok or ok(NA), the name of the corresponding binary must be included in the NOTICE.html.
+If the value of the Notice column in the OSS Report BIN (Android) sheet is ok or ok(NA), the name of the corresponding binary must be included in the NOTICE.html.
 
 #### How to run
 To verify whether the binary name is included in NOTICE.html, follow these steps:
-1. Filter the values ok and ok(NA) from the NOTICE.html column.
+1. Filter the values ok and ok(NA) from the Notice column.
 2. Select all entries in the Binary Name column and copy them.
 3. Create a file named binary.txt in a Linux environment using the vi editor:
     ```
@@ -163,17 +163,17 @@ To verify whether the binary name is included in NOTICE.html, follow these steps
 
 8. Check which binaries are not included in NOTICE.html:
     - Open the result.txt file to view the list of binaries marked as nok.
-    - These binaries are marked as ok or ok(NA) in the NOTICE.html column of the OSS Report but are not included in the NOTICE.html.
+    - These binaries are marked as ok or ok(NA) in the Notice column of the OSS Report but are not included in the NOTICE.html.
     - (Warning) All binaries with ok or ok(NA) in NOTICE.html must be included in the NOTICE.html. Therefore, the result.txt file should not list any binaries as nok.
 <br>
   
-#### (2) If OSS is not used (when the NOTICE.html column is nok or nok(NA))
+#### (2) If OSS is not used (when the Notice column is nok or nok(NA))
 
 For binaries explicitly marked as not using OSS, their names must not be included in the NOTICE.html.
 Follow the steps below to verify whether the binary names are incorrectly included in the NOTICE.html.
 
 #### How to run
-1. Filter the values nok and nok(NA) from the NOTICE.html column.
+1. Filter the values nok and nok(NA) from the Notice column.
 2. Refer to steps 2 to 5 in section (1) above. Use nok as the parameter for the -c option since this is checking for nok entries.
    ```
    (command)
@@ -185,7 +185,7 @@ Follow the steps below to verify whether the binary names are incorrectly includ
 3. Check the results to see which binaries are included in the NOTICE.html:
     - Open the result.txt file to identify binaries that are incorrectly included in the NOTICE.html.
     - These are binaries that have been marked as not using OSS in the OSS Report but are still included in the NOTICE.html.
-    - (Warning) For binaries explicitly marked as nok or nok(NA) in the NOTICE.html column, their names should not appear in the NOTICE.html. Therefore, there should be no binaries marked as ok in the result.txt file.
+    - (Warning) For binaries explicitly marked as nok or nok(NA) in the Notice column, their names should not appear in the NOTICE.html. Therefore, there should be no binaries marked as ok in the result.txt file.
 <br>
 <br>
 
