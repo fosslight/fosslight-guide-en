@@ -98,7 +98,7 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
         -n                             Print result in BIN(Android) format        
         -s                             Analyze source code for unconfirmed Open Source
         -c                             Analyze all the source code
-        -e                             Compress all the source code
+        -e <path>                      Top build output path with bom.json to compress all the source code (ex. /data001/projectA/build)
         -o <path>                      Output Path
         -f <format>                    Output file format (excel, csv, opossum)
         -pr                            Print all data of bom.json
