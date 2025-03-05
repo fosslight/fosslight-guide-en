@@ -78,8 +78,6 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
             -e <path1> <path2..>           Path to exclude from source analysis.
             -p                             Check files that should not be included in the Packaging file.
             -f                             Print result of Find Command for binary that can not find Source Code Path.
-            -t                             Collect NOTICE for binaries that are not added to NOTICE.html.
-            -d                             Divide needtoadd-notice.html by binary.
             -i                             Disable the function to automatically convert OSS names based on AOSP.
             -r <result.txt>                result.txt file with a list of binaries to remove.
     ```
@@ -113,81 +111,20 @@ Run the FOSSLight Android. (At this time, the build output (/out directory) and 
 ## 🚗 Add-ons
 ---
 The following options enable the use of additional features.
-- Option: -b, -n, -c: Verifies whether the Binary name is included in the NOTICE.html.
 - Option: -p : Checks for files that should not be included in the packaging file.
 - Option: -f : Outputs the results of the find command for binaries whose Source Code Path could not be located.
-- Option: -t : Aggregates NOTICE files for binaries that have NOTICE files in the Source Code Path but are not included in the NOTICE.html.
 - Option: -i : Disables the automatic output of OSS Name based on the Android reference repository.
-- Option: -d : Splits the needtoadd-notice.html file by each Binary.
 - Option: -r : Removes duplicates of specific binaries in the FOSSLight Report. This option is used in scenarios where Android native and vendor are built separately, to eliminate duplicated binaries. When running FOSSLight Android for the vendor, use the -r option and provide the result_*.txt file generated from the Android native as a parameter.
 - Option: -m : Automatically analyzes Source Code within the Source Path to detect Licenses (based on License texts found in source files) and populates empty License fields. (Note: This process can be time-consuming. For Android native with 44 Paths, the analysis takes approximately 35 minutes.)
 
 ---
 
-
-
-
-### -b, -n, -c: Verifying Whether Binary Names Are Included in NOTICE.html
-#### (1) If OSS is used (when the Notice column is ok or ok(NA))
-
-If the value of the Notice column in the OSS Report BIN (Android) sheet is ok or ok(NA), the name of the corresponding binary must be included in the NOTICE.html.
-
-#### How to run
-To verify whether the binary name is included in NOTICE.html, follow these steps:
-1. Filter the values ok and ok(NA) from the Notice column.
-2. Select all entries in the Binary Name column and copy them.
-3. Create a file named binary.txt in a Linux environment using the vi editor:
-    ```
-    (venv)$ vi binary.txt
-    ```
-4. Paste the copied content from step 2 into binary.txt, and save the file.
-5. Place the NOTICE.html file in the same directory as binary.txt:
-    ```
-    (venv)$ ls
-    binary.txt  NOTICE.html
-    ```
-6. Use the -c option to extract results. Since this is for checking the ok status, set the parameter of the -c option to ok:
-    ```
-    (command)
-    (venv)$ fosslight_android -b [binary.txt] -n [NOTICE.html] -c [ok|nok]
-      
-    (ex)
-    (venv)$ fosslight_android -b binary.txt -n NOTICE.html -c ok
-    ```
-7. If there are multiple NOTICE files, separate them with commas (,).
-    Example: If the NOTICE files are NOTICE.xml, NOTICE_VENDOR.xml, NOTICE_PRODUCT.xml, and NOTICE_PRODUCT_SERVICES.xml:
-
-    ```
-    (venv)$ fosslight_android -b binary.txt -n NOTICE.xml,NOTICE_VENDOR.xml,NOTICE_PRODUCT.xml,NOTICE_PRODUCT_SERVICES.xml  -c ok
-    ```
-
-8. Check which binaries are not included in NOTICE.html:
-    - Open the result.txt file to view the list of binaries marked as nok.
-    - These binaries are marked as ok or ok(NA) in the Notice column of the OSS Report but are not included in the NOTICE.html.
-    - (Warning) All binaries with ok or ok(NA) in NOTICE.html must be included in the NOTICE.html. Therefore, the result.txt file should not list any binaries as nok.
-<br>
-  
-#### (2) If OSS is not used (when the Notice column is nok or nok(NA))
-
-For binaries explicitly marked as not using OSS, their names must not be included in the NOTICE.html.
-Follow the steps below to verify whether the binary names are incorrectly included in the NOTICE.html.
-
-#### How to run
-1. Filter the values nok and nok(NA) from the Notice column.
-2. Refer to steps 2 to 5 in section (1) above. Use nok as the parameter for the -c option since this is checking for nok entries.
-   ```
-   (command)
-   (venv)$ fosslight_android -b [binary.txt] -n [NOTICE.html] -c [ok|nok]
-  
-   (ex)
-   (venv)$ fosslight_android -b binary.txt -n NOTICE.html -c nok
-   ```
-3. Check the results to see which binaries are included in the NOTICE.html:
-    - Open the result.txt file to identify binaries that are incorrectly included in the NOTICE.html.
-    - These are binaries that have been marked as not using OSS in the OSS Report but are still included in the NOTICE.html.
-    - (Warning) For binaries explicitly marked as nok or nok(NA) in the Notice column, their names should not appear in the NOTICE.html. Therefore, there should be no binaries marked as ok in the result.txt file.
 <br>
 <br>
+
+
+
+
 
 
 ### -p: Check files that should not be included in the Packaging file.
