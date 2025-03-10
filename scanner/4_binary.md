@@ -27,7 +27,7 @@ To use the function to extract OSS information (OSS Name, OSS Version, License) 
 
 ## 🎉 How to install
 ### Method 1. Download the executable file.
-Download the executable file suitable for the OS. : [https://github.com/fosslight/fosslight_binary_scanner/releases]()
+Download the executable file suitable for the OS. : [Releases](https://github.com/fosslight/fosslight_binary_scanner/releases)
 ### Method 2. Install fosslight_binary based on Python environment.
 It can be installed using pip3. 
 0. (Only for windows) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables packages and Build Tools.
