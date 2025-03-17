@@ -38,10 +38,10 @@ FOSSLight Prechecker has 3 modes as following:
 1. `lint` --- (Default) Check whether the [source code's copyright and license writing rules][rule] are complied with.    
 2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [fosslight_report.xlsx](../learn/2_fosslight_report.md).
      - It converts yaml file to SRC Sheet of FOSSLight Report     
-3. `add` --- Add copyright, license and download location. Also, download the text license file that written in sbom-info.yaml or oss-pkg-info.yaml.
+3. `add` --- Add copyright, license and download location.
      - copyright and license : Add to missing file(s)    
      - download location : Add to all files in input path or file(s)
-
+4. `download` ---  Download the text license file that written in sbom-info.yaml or oss-pkg-info.yaml.
 
 ``` 
 fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
@@ -56,6 +56,7 @@ Mode
     lint                  (Default) Check whether the copyright and license writing rules are complied with
     convert               Convert sbom-info.yaml or oss_pkg_info.yaml -> fosslight_report.xlsx
     add                   Add missing license and copyright
+    download		  Download the license text of the license specified in sbom-info.yaml 
  
 Options:
     -h                    Print help message
