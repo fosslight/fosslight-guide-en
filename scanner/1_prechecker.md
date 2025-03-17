@@ -71,6 +71,9 @@ Options for only 'add' mode
     -l <license>          License name(SPDX format) to add
     -c <copyright>        Copyright to add(ex, 2015-2021 LG Electronics Inc.)
     -u <dl_location>	  Download location to add(ex, https://www.testurl.com)
+
+Option for 'download' mode
+    -l <license>	  License to be representative license name(SPDX format)
 ```
 - 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
 
@@ -304,6 +307,17 @@ $ fosslight_prechecker convert -p tests/
     <img src="images/add.gif" alt="demo video for add mode">
 </details>
 
+### 🔖 download mode
+**1) Download a license written in som-info.yaml as a text file**
+```
+(venv)$ fosslight_prechecker download -p tests/src
+```
+
+**2) Download a license written in som-info.yaml into a text file + Example of creating a representative license file**
+```
+(venv)$ fosslight_prechecker download -p tests/src -l "Apache-2.0"
+```
+
 ## 🔍 How it works
 ### 🔖 lint mode
 1. Find a OSS Package Information file.
@@ -364,3 +378,10 @@ $ fosslight_prechecker convert -p tests/
     - Print file list that both has copyright and license(excluded from Adding)   
     - Add input copyright and license to missing file(s) using -c and -l option   
     - Add donwload location to file(s) in input path or file using -u option    
+
+
+### 🔖 download mode
+1. Find the sbom-info.yaml in the path and download the written license in the yaml file as a each text file
+2. Download with a representative license when using the -l option
+    -  If a representative license file (LICENSE, LICENSE.txt, etc.) already exists, do not create a representative license file
+    -  If a representative license file does not exist, create the license text file as a LICENSE file
