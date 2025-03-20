@@ -14,6 +14,7 @@ title: FOSSLight Dependency Scanner
 - [Gradle](https://gradle.org/) (Java/Android)
 - [Maven](http://maven.apache.org/) (Java)
 - [NPM](https://www.npmjs.com/) (Node.js)
+- [PNPM](https://pnpm.io/) (Node.js)
 - [PyPi](https://pip.pypa.io/) (Python)
 - [Pub](https://pub.dev/) (Dart with flutter)
 - [Cocoapods](https://cocoapods.org/) (Swift/Obj-C)
@@ -67,6 +68,14 @@ $ npm install
  > It can be skipped if the project meets any of the following cases.
  > - If the 'package.json' file exists in the input directory, it will be executed automatically by FOSSLight Dependency Scanner. So you can skip it.
  > - If the 'node_modules' directory already exists, you can run FOSSLight Dependency Scanner by setting the input directory to the path where node_modules is located.
+</details>
+
+<details>
+<summary markdown="span">**Prerequisite for Pnpm**</summary>
+```tip
+FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the 'pnpm install' and 'pnpm ls' command.
+Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
+```
 </details>
 
 <details>
@@ -282,7 +291,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the script.
             -m <package_manager>            Enter the package manager.
-                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo)
+                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo, pnpm)
             -p <input_path>                 Enter the path where the script will be run.
             -e <exclude_path>               Enter the path where the analysis will not be performed. (Pattern matching is available)
             -o <output_path>                Output path
@@ -319,6 +328,7 @@ When you run the FOSSLight Dependency Scanner, the input path('-p' option) shoul
 The manifest file of each package manager is as follows:
 ```
   - Npm : package.json
+  - Pnpm : pnpm-lock.yaml
   - Pypi : requirements.txt / setup.py / pyproject.toml
   - Maven : pom.xml
   - Gradle (Android) : build.gradle
@@ -372,7 +382,7 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 
 | Package manager                | OSS Name                 | Download Location                                                                                  | Homepage                                            |
 | ------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Npm                            | npm:(oss name)           | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)/v/(oss version) | npmjs.com/package/(oss name)                        |
+| Npm, Pnpm                      | npm:(oss name)           | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)/v/(oss version) | npmjs.com/package/(oss name)                        |
 | Pypi                           | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
 | Maven<br>& Gradle<br>& Android | (group_id):(artifact_id) | mvnrepository.com/artifact/(group id)/(artifact id)/(version)                                      | mvnrepository.com/artifact/(group id)/(artifact id) |
 | Pub                            | pub:(oss name)           | pub.dev/packages/(oss name)/versions/(version)                                                     | homepage in (pub information)                       |
@@ -383,7 +393,8 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 | Nuget                          | nuget:(oss name)         | Priority1. repository in nuget.org/packages/(oss name)/(oss version) <br> Priority2. projectUrl in nuget.org/packages/(oss name)/(oss version) <br> Priority3. nuget.org/packages/(oss name)/(oss version)  | nuget.org/packages/(oss name) |
 | Helm                           | helm:(oss name)          | first url of sources in (Chart.yaml)                                                               | home in (Chart.yaml)                                |
 | Unity                          | (oss name)               | url in repository in ProjectCache                                                                  | url in repository in ProjectCache                   |
-| Cargo                          | cargo:(oss name)         | repository of the package in the result file for 'cargo metadata'                                  | crates.io/crates/(oss name)                         |                 
+| Cargo                          | cargo:(oss name)         | repository of the package in the result file for 'cargo metadata'                                  | crates.io/crates/(oss name)                        |
+
 
 ```warning
 - The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
@@ -418,9 +429,16 @@ Because we utilizes the different open source software to analyze the dependenci
 </thead>
 <tbody>
   <tr>
-    <td>Javascript</td>
+    <td rowspan="2">Javascript</td>
     <td>Npm</td>
     <td>package.json</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Pnpm</td>
+    <td>pnpm-lock.yaml</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
