@@ -50,7 +50,7 @@ Because we utilize the different open source software to analyze the dependencie
 
 {::options parse_block_html="true" /}
 <details>
-<summary markdown="span">**Prerequisite for NPM**</summary>
+<summary markdown="span">**Prerequisite for Npm**</summary>
 1. Install the NPM License Checker to analyze the npm dependencies.
 ```
 $ npm install -g license-checker
