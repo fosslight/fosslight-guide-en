@@ -24,7 +24,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
 
 ### Login
 {: .specific-title}
-- You can access it by entering your AD account ID and password at [http://fs.lge.com](http://fs.lge.com)
+- You can access it by entering your AD account ID and password at [http://fs.lge.com](http://fs.lge.com)<br>
 ![log-in](images/7_fl_ss_login.png){: .styled-image width="30%"}  
 
 ### Create a Project 
