@@ -32,7 +32,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
 1. Click the "New Project" button in the upper right corner to create a project. 
 ![New Project](images/7_fl_ss_newproject.png){: .styled-image width="80%"}  
 
-2. Enter the contents in"Create a Porject" 
+2. Enter the contents in"Create a Porject".  
 ![Creat a Project](images/7_fl_ss_create_project.png){: .styled-image width="80%"}
     - **Name** :  Enter the Project name.
     - **Inputs** : Select sources to analyze.
