@@ -2,21 +2,21 @@
 published: true
 ---
 
-# (LGE Only) FOSSLight Scanner Service 
+# (Enterprise Only) FOSSLight Scanner Service 
 
 ## Overview
 {: .left-bar-title}
-Source, binary and dependency analysis is performed using [FOSSLight Scanner](https://fosslight.org/fosslight-guide/scanner/)as a web service. Analysis results are generated in the form of a [FOSSLight Report](https://fosslight.org/hub-guide/learn/2_fosslight_report.html).    
+Source, binary and dependency analysis is performed using [FOSSLight Scanner](https://fosslight.org/fosslight-guide-en/scanner/)as a web service. Analysis results are generated in the form of a [FOSSLight Report](https://fosslight.org/hub-guide-en/learn/2_fosslight_report.html).    
 - URL : [http://fs.lge.com](http://fs.lge.com)
 - Supported items
-    - [FOSSLight Source Scanner](https://fosslight.org/fosslight-guide/scanner/2_source.html)
-    - [FOSSLight Binary Scanner](https://fosslight.org/fosslight-guide/scanner/4_binary.html)
-    - [FOSSLight Dependency Scanner](https://4000-hyesung-choi-fosslightorg.bee0.lge.com/scanner/3_dependency.html)
+    - [FOSSLight Source Scanner](https://fosslight.org/fosslight-guide-en/scanner/2_source.html)
+    - [FOSSLight Binary Scanner](https://fosslight.org/fosslight-guide-en/scanner/4_binary.html)
+    - [FOSSLight Dependency Scanner](https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html)
         - Supported : npm, pypi, maven, pub, go, nuget, cargo 
           (Other package managers are currently undergoing verification)  
 - Not supported items
-    - [FOSSLight Android Scanner](https://4000-hyesung-choi-fosslightorg.bee0.lge.com/scanner/6_android.html)
-    - [FOSSLight Yocto Scanner](https://4000-hyesung-choi-fosslightorg.bee0.lge.com/scanner/5_yocto.html)
+    - [FOSSLight Android Scanner](https://fosslight.org/fosslight-guide-en/scanner/6_android.html)
+    - [FOSSLight Yocto Scanner](https://fosslight.org/fosslight-guide-en/scanner/5_yocto.html)
 
 
 ## How to use

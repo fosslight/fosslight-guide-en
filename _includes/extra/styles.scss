@@ -471,9 +471,11 @@ table {
   max-width: 100%;             /* 화면 크기에 맞게 이미지를 크기 조정 */
   height: auto;                /* 비율을 유지하면서 높이 자동 설정 */
   display: block;              /* 블록 요소로 설정하여 새로운 줄에 배치 */
+  float: none; /* <-- 명시적으로 float 제거 */
+  clear: both;
   margin: 0;                   /* 여백을 0으로 설정 */
   margin-right: 20px;          /* 이미지와 텍스트 사이에 간격 추가 */
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border: 2px solid #ddd;      /* 얇은 테두리 추가 */
   border-radius: 8px;          /* 둥근 테두리 */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
