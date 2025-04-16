@@ -25,15 +25,15 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
 ### Login
 {: .specific-title}
 - You can access it by entering your AD account ID and password at [http://fs.lge.com](http://fs.lge.com)<br>
-![log-in](images/7_fl_ss_login.png){: .styled-image width="30%"}  
+![log-in](images/7_fl_ss_login.png){: .styled-image}  
 
 ### Create a Project 
 {: .specific-title} 
-1. Click the "New Project" button in the upper right corner to create a project. 
-![New Project](images/7_fl_ss_newproject.png){: .styled-image width="80%"}  
+1. Click the "New Project" button in the upper right corner to create a project.  
+![New Project](images/7_fl_ss_newproject.png){: .styled-image}  
 
 2. Enter the contents in"Create a Porject".  
-![Creat a Project](images/7_fl_ss_create_project.png){: .styled-image width="80%"}
+![Creat a Project](images/7_fl_ss_create_project.png){: .styled-image}  
     - **Name** :  Enter the Project name.
     - **Inputs** : Select sources to analyze.
         - **Upload files** : Compress and upload files to be analyzed. (Please upload only 1 file.)  
@@ -57,9 +57,9 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
 
 ### Result
 {: .specific-title} 
-![analysis_result](images/7_fl_ss_analysis_result.png){: .styled-image}
+![analysis_result](images/7_fl_ss_analysis_result.png){: .styled-image}  
 1. **Download results** : You can download the analysis result file.
-    - FOSSLight Scanner Result :  This is the file to upload during the FOSSLight Hub [Identification](https://fosslight.org/hub-guide/tutorial/1_project/2_Identification/) process.
-2. **Files** :  This is the file to upload during the FOSSLight Hub
+    - FOSSLight Scanner Result :  This is the file to upload during the FOSSLight Hub[Identification](https://fosslight.org/hub-guide/tutorial/1_project/2_Identification/) process.  
+2. **Files** :  This is the file to upload during the FOSSLight Hub  
 3. **Detected Open Source** : You can check the analysis results as a list. (FOSSLight Dependency results not included)  
-![detected_opensource](images/7_fl_ss_detected_opensource.png){: .styled-image width="80%"}  
+![detected_opensource](images/7_fl_ss_detected_opensource.png){: .styled-image}  
