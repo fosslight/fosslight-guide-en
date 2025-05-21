@@ -31,6 +31,14 @@ It can be installed using pip3. It is recommended to install it in the [python 3
 $ pip3 install fosslight_scanner
 ```
 
+## ⚠️ Installation error case
+If the error "'Cargo, the Rust package manager, is not installed or is not on PATH.' occurs, try to install cargo and rust as described below, and reinstall FOSSLight Scanner.
+```
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+$ export PATH="$HOME/.cargo/bin:$PATH"
+```
+
+
 ## 🚀 How to run
 ### How to run by mode & Parameters
 ```
