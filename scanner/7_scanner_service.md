@@ -12,7 +12,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
     - [FOSSLight Source Scanner](https://fosslight.org/fosslight-guide-en/scanner/2_source.html)
     - [FOSSLight Binary Scanner](https://fosslight.org/fosslight-guide-en/scanner/4_binary.html)
     - [FOSSLight Dependency Scanner](https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html)
-        - Supported : npm, pypi, maven, pub, go, nuget, cargo 
+        - Supported : npm, pypi, maven, pub, go, nuget, cargo, swift, carthage
           (Other package managers are currently undergoing verification)  
 - Not supported items
     - [FOSSLight Android Scanner](https://fosslight.org/fosslight-guide-en/scanner/6_android.html)
