@@ -32,7 +32,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
 1. Click the "New Project" button in the upper right corner to create a project.  
 ![New Project](images/7_fl_ss_newproject.png){: .styled-image}  
 
-2. Enter the contents in"Create a Porject".  
+2. Enter the contents in "Create a Project".  
 ![Creat a Project](images/7_fl_ss_create_project.png){: .styled-image}  
     - **Name** :  Enter the Project name.
     - **Inputs** : Select sources to analyze.
@@ -60,7 +60,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
 {: .specific-title} 
 ![analysis_result](images/7_fl_ss_analysis_result.png){: .styled-image}  
 1. **Download results** : You can download the analysis result file.
-    - FOSSLight Scanner Result :  This is the file to upload during the FOSSLight Hub[Identification](https://fosslight.org/hub-guide/tutorial/1_project/2_Identification/) process.  
+    - FOSSLight Scanner Result :  This is the file to upload during the FOSSLight Hub [Identification](https://fosslight.org/hub-guide/tutorial/1_project/2_Identification/) process.  
 2. **Files** :  This is the file to upload during the FOSSLight Hub (FOSSLight Dependency results not included)  
 3. **Detected Open Source** : You can check the analysis results as a list. (FOSSLight Dependency results not included)  
 ![detected_opensource](images/7_fl_ss_detected_opensource.png){: .styled-image}  
