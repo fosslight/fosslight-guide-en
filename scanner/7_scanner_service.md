@@ -49,7 +49,8 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
     - **Pipeline**
         - scan_all : Analyze source, binary, dependency.
         - source : Analyze only the source code.
-        - binary : Analyze only binary. 
+        - binary : Analyze only binary.
+        - dependency : Analyze only dependency.
     - **Permission**
         - Private : Only the creator can view.
         - Public : Other people can view the project and download analysis results through the link.
