@@ -43,7 +43,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
                     - wget : github.com/LGE-OSS/example/archive/refs/tags/v1.0.0.zip
                     - git clone : github.com/LGE-OSS/example
             - **Private Git** 
-                - **http://** or **https://** : You must enter the user name and PAT value. (The PAT value must not include /.)  
+                - **http://** or **https://** : You must enter the user name and PAT value.
                 - **ssh://** : Copy the provided ssh key value and register it in your private git repository. ⚠️ Please use PAT instead of ssh for github.    
                 ![ssh](images/7_fl_ss_ssh.png){: .styled-image}  
     - **Pipeline**
