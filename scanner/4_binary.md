@@ -20,7 +20,7 @@ It can analyze the open source info. in '.jar' file by using [**Dependency-check
 
 
 ## 📋 Prerequisite
-FOSSLight Binary Scanner needs a Python 3.7+.    
+FOSSLight Binary Scanner needs a Python 3.10+.    
 To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 
 [**Java**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
@@ -31,7 +31,7 @@ Download the executable file suitable for the OS. : [Releases](https://github.co
 ### Method 2. Install fosslight_binary based on Python environment.
 It can be installed using pip3. 
 0. (Only for windows) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables packages and Build Tools.
-1. [python 3.7 + virtualenv](etc/guide_virtualenv.md) environment setting.
+1. [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment setting.
 2. Install the Python package fosslight_binary.
 ```
 $ pip3 install fosslight_binary
