@@ -29,7 +29,7 @@ To use the function to extract OSS information (OSS Name, OSS Version, License) 
 ## 🎉 How to install
 It can be installed using pip3. 
 0. (Only for windows) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables packages and Build Tools.
-1. [python 3.8 + virtualenv](etc/guide_virtualenv.md) environment setting.
+1. [python virtualenv](etc/guide_virtualenv.md) environment setting.
 2. Install the Python package fosslight_yocto.
 ```
 $ pip3 install fosslight_yocto
