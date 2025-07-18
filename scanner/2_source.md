@@ -22,11 +22,11 @@ published: true
 
 
 ## 📋 Prerequisite
-FOSSLight Source Scanner needs a Python 3.8+.    
+FOSSLight Source Scanner needs a Python 3.10+.    
 
 
 ## 🎉 How to install
-It can be installed using pip3. It is recommended to install it in the [python 3.8 + virtualenv](etc/guide_virtualenv.md) environment.
+It can be installed using pip3. It is recommended to install it in the [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment.
 ```
 $ pip3 install fosslight_source
 ```
