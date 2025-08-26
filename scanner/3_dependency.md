@@ -407,7 +407,6 @@ FOSSLight Dependency Scanner utilizes the open source software for analyzing eac
 Each package manager uses the results of the following software:
 
 - NPM : [NPM License Checker](https://github.com/davglass/license-checker)
-- Pypi : [pip-licenses](https://github.com/raimon49/pip-licenses)
 - Gradle : [License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)
 - Maven : [license-maven-plugin](https://github.com/mojohaus/license-maven-plugin)
 - Pub : [flutter_oss_licenses](https://github.com/espresso3389/flutter_oss_licenses)
