@@ -56,11 +56,20 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
         - Public : Other people can view the project and download analysis results through the link.
 
 
-### Result
+### Analysis Result
 {: .specific-title} 
 ![analysis_result](images/7_fl_ss_analysis_result.png){: .styled-image}  
-1. **Download results** : You can download the analysis result file.
-    - FOSSLight Scanner Result :  This is the file to upload during the FOSSLight Hub [Identification](https://fosslight.org/hub-guide/tutorial/1_project/2_Identification/) process.  
-2. **Files** :  This is the file to upload during the FOSSLight Hub (FOSSLight Dependency results not included)  
-3. **Detected Open Source** : You can check the analysis results as a list. (FOSSLight Dependency results not included)  
-![detected_opensource](images/7_fl_ss_detected_opensource.png){: .styled-image}  
+1. **Dependencies**
+    - The number displayed under Dependencies indicates the count of dependency analysis results. Clicking this number allows you to view the list of open source packages detected through dependency analysis.
+    ![dependencies](images/7_fl_ss_dependencies.png){: .styled-image}
+2. **Detected Open Source**
+    - The number displayed under Detected Open Source indicates the count of source and binary analysis results. Clicking this number allows you to view the list of open source detected through source and binary analysis.
+    ![detected_opensource](images/7_fl_ss_detected_opensource.png){: .styled-image}  
+        - When you click on the file name in the Path column, you can view the contents of that file.
+        ![file_viewer](images/7_fl_ss_file_viewer.png){: .styled-image}
+3. **Download results**
+    - You can download the analysis result files.
+        - FOSSLight Scanner Result : This is a report that can be uploaded during the [Identification](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/) process in FOSSLight Hub.
+4. **Files**
+    - You can view the detection results for each analyzed file in File Tree format. (Since these are file-specific detection results, FOSSLight Dependency results are not included)  
+
