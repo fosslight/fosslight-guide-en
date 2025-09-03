@@ -68,7 +68,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
         - When you click on the file name in the Path column, you can view the contents of that file.
         ![file_viewer](images/7_fl_ss_file_viewer.png){: .styled-image}
 3. **Download results**
-    - You can download the analysis result files.
+    - You can download the analysis result file.
         - FOSSLight Scanner Result : This is a report that can be uploaded during the [Identification](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/) process in FOSSLight Hub.
 4. **Files**
     - You can view the detection results for each analyzed file in File Tree format. (Since these are file-specific detection results, FOSSLight Dependency results are not included)  
