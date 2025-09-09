@@ -102,7 +102,8 @@ $ gradlew downloadLicenses
 ```tip
 If there is a 'gradlew' executable and a 'build.gradle' file in the input directory, FOSSLight Dependency Scanner will automatically add and execute the android-dependency-scanning plugin. So you can skip the prerequisites below.
 ```
-1. Add the android-dependency-scanning Plugin in build.gradle file.
+##### java/groovy project
+1. Add the android-dependency-scanning plugin in build.gradle file.
 ```
 buildscript {
     repositories {
@@ -120,6 +121,37 @@ apply plugin: 'org.fosslight'
 ```
 
 3. Run the 'generateLicenseTxt' task.
+```
+$ gradlew generateLicenseTxt
+```
+
+##### kotlin project
+1. Add the android-dependency-scanning plugin in build.gradle.kts file.
+```
+buildscript {
+    dependencies {
+        classpath("org.fosslight:android-dependency-scanning:1.0.0")
+    }
+}
+```
+
+2. Add mavenCentral repository to the pluginManagement repositories section in your settings.gradle.kts file.
+```
+pluginManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+```
+
+3. Add the below line in build.gradle.kts file in the app(your application name, default : app) directory.
+```
+plugins {
+    id("org.fosslight")
+}
+```
+
+4. Run the 'generateLicenseTxt' task.
 ```
 $ gradlew generateLicenseTxt
 ```
