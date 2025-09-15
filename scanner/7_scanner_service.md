@@ -37,6 +37,7 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
     - **Name** :  Enter the Project name.
     - **Inputs** : Select sources to analyze.
         - **Upload files** : Compress and upload files to be analyzed. (Please upload only 1 file.)  
+               ⚠️ You can upload up to 3GB.
         - **Download URLs** :  Enter the source link to be analyzed (link that can be obtained through "wget" or "git clone")    
             - **Public** 
                 - The example of input value
