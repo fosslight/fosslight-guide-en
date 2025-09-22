@@ -15,6 +15,7 @@ title: FOSSLight Dependency Scanner
 - [Maven](http://maven.apache.org/) (Java)
 - [NPM](https://www.npmjs.com/) (Node.js)
 - [PNPM](https://pnpm.io/) (Node.js)
+- [Yarn](https://yarnpkg.com/) (Node.js)
 - [PyPi](https://pip.pypa.io/) (Python)
 - [Pub](https://pub.dev/) (Dart with flutter)
 - [Cocoapods](https://cocoapods.org/) (Swift/Obj-C)
@@ -50,8 +51,8 @@ Because we utilize the different open source software to analyze the dependencie
 
 {::options parse_block_html="true" /}
 <details>
-<summary markdown="span">**Prerequisite for Npm**</summary>
-1. Install the NPM License Checker to analyze the npm dependencies.
+<summary markdown="span">**Prerequisite for Npm or Yarn**</summary>
+1. Install the NPM License Checker to analyze the dependencies.
 ```
 $ npm install -g license-checker
 ```
@@ -361,6 +362,7 @@ The manifest file of each package manager is as follows:
 ```
   - Npm : package.json
   - Pnpm : pnpm-lock.yaml
+  - Yarn : package.json
   - Pypi : requirements.txt / setup.py / pyproject.toml
   - Maven : pom.xml
   - Gradle (Android) : build.gradle
@@ -414,7 +416,7 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 
 | Package manager                | OSS Name                 | Download Location                                                                                  | Homepage                                            |
 | ------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Npm, Pnpm                      | npm:(oss name)           | npmjs.com/package/(oss name)/v/(oss version)                                                       | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)                        |
+| Npm, Pnpm, Yarn                      | npm:(oss name)           | npmjs.com/package/(oss name)/v/(oss version)                                                       | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)                        |
 | Pypi                           | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
 | Maven<br>& Gradle<br>& Android | (group_id):(artifact_id) | mvnrepository.com/artifact/(group id)/(artifact id)/(version)                                      | mvnrepository.com/artifact/(group id)/(artifact id) |
 | Pub                            | pub:(oss name)           | pub.dev/packages/(oss name)/versions/(version)                                                     | homepage in (pub information)                       |
@@ -460,7 +462,7 @@ Because we utilizes the different open source software to analyze the dependenci
 </thead>
 <tbody>
   <tr>
-    <td rowspan="2">Javascript</td>
+    <td rowspan="3">Javascript</td>
     <td>Npm</td>
     <td>package.json</td>
     <td>O</td>
@@ -470,6 +472,13 @@ Because we utilizes the different open source software to analyze the dependenci
   <tr>
     <td>Pnpm</td>
     <td>pnpm-lock.yaml</td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+  </tr>
+  <tr>
+    <td>Yarn</td>
+    <td>package.json</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
