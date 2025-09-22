@@ -324,7 +324,7 @@ $ fosslight_dependency [option] <arg>
             -h                              Print help message.
             -v                              Print the version of the script.
             -m <package_manager>            Enter the package manager.
-                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo, pnpm)
+                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo, pnpm, yarn)
             -p <input_path>                 Enter the path where the script will be run.
             -e <exclude_path>               Enter the path where the analysis will not be performed. (Pattern matching is available)
             -o <output_path>                Output path
