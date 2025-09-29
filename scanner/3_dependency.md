@@ -337,6 +337,7 @@ $ fosslight_dependency [option] <arg>
                                                 --graph-path option is required
             --direct                        Print the direct/transitive dependency type in comment.
                                                 Choice 'True' or 'False'. (default:True)
+            -r                              Recursive mode. Scan all subdirectories for manifest files.
             --notice                        Print the open source license notice text.
 
         Required only for swift, carthage
@@ -357,7 +358,8 @@ $ fosslight_dependency [option] <arg>
 - 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
 
 ### Tips to run
-When you run the FOSSLight Dependency Scanner, the input path('-p' option) should be designated as the top directory of the project where the package manager's manifest file exists as above.
+When running the FOSSLight Dependency Scanner, it sequentially detects package manager manifest files starting from the input path (using the -p option). If a manifest file is detected, the scanner stops searching for additional manifest files in subdirectories and proceeds with dependency analysis.
+(If you want the scanner to analyze dependencies for all manifest files found throughout the entire input path, please run it with the -r option.)
 The manifest file of each package manager is as follows:
 ```
   - Npm : package.json
