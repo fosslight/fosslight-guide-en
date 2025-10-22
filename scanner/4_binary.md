@@ -90,7 +90,7 @@ Specifies the installation path of dependency-check.
 ### 3. DEPENDENCY_CHECK_VERSION
 Stores the version of the currently installed dependency-check.    
 Set after successful installation or version check:
-- Automatically set by code (e.g., for version 12.1.7):
+- Automatically set by code (e.g., for version 12.1.7):    
   os.environ['DEPENDENCY_CHECK_VERSION'] = '12.1.7'
 - Referenced in external scripts:
      - Linux/macOS:
