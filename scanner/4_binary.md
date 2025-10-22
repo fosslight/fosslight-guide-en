@@ -62,6 +62,41 @@ $ fosslight_binary [option] <arg>
         --correct_fpath <path>              Path to the sbom-info.yaml file
 ````    
 - 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+
+## ⚙️ Environment Variables
+You can control the behavior of FOSSLight Binary Scanner by setting the following environment variables.
+
+### 1. FOSSLIGHT_SKIP_AUTO_INSTALL
+Disables automatic download/installation of dependency-check in the execution environment (especially for deployed executables).
+Set to '1' or 'true' to disable auto-install.
+```
+Usage:
+   - Linux/macOS:
+     export FOSSLIGHT_SKIP_AUTO_INSTALL=1
+   - Windows (cmd):
+     set FOSSLIGHT_SKIP_AUTO_INSTALL=1
+   - Windows (PowerShell):
+     $env:FOSSLIGHT_SKIP_AUTO_INSTALL='1'
+```
+
+### 2. DEPENDENCY_CHECK_HOME
+Specifies the installation path of dependency-check.
+- If already installed: path to the dependency-check directory (e.g., .../dependency-check)
+- If newly installed: path is determined as base + 'dependency-check'
+```
+   $ export DEPENDENCY_CHECK_HOME=/path/to/dependency-check
+```
+
+### 3. DEPENDENCY_CHECK_VERSION
+Stores the version of the currently installed dependency-check.
+Set after successful installation or version check:
+- Automatically set by code (e.g., for version 12.1.7):
+  os.environ['DEPENDENCY_CHECK_VERSION'] = '12.1.7'
+- Referenced in external scripts:
+     - Linux/macOS:
+       bash echo $DEPENDENCY_CHECK_VERSION
+     - Windows (cmd):
+       cmd echo %DEPENDENCY_CHECK_VERSION%
   
 ## 📁 Result
 
