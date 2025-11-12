@@ -23,7 +23,7 @@ It can analyze the open source info. in '.jar' file by using [**Dependency-check
 FOSSLight Binary Scanner needs a Python 3.10+.    
 To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 
-[**Java**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
+[**Java 11+**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
 
 ## 🎉 How to install
 ### Method 1. Download the executable file.
