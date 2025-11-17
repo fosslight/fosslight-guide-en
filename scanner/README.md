@@ -148,6 +148,7 @@ This sheet displays information about the executed scanner and its execution env
            - Ex) Analyzed Package manager: pypi (requirements.txt)
        - If package manager analysis fails: Analysis failed Package manager: {package manager} (manifest file) (Check {prerequisite guide URL})
            - Ex) Analysis failed Package manager: npm (package.json) (Check https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html#-prerequisite.)
+
 ##### {SRC/BIN/DEP}\_FL\_{Source/Binary/Dependency} sheet
 You can check which scanner was executed from the sheet name and review the results for each scanner within that sheet.
 1. Exclude: Checked Row
