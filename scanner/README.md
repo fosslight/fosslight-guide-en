@@ -140,14 +140,33 @@ This sheet displays information about the executed scanner and its execution env
 4. Analyzed Path: Displays the analyzed path (either the path entered using the -p option or the default path where the scanner was executed).
 5. Excluded Path: Shows the paths excluded during analysis (entered using the -e option).
 6. Comment: Displays the analysis results for each scanner.
-    - fosslight_source: Displays the total number of analyzed files (Total number of files) and the number of files removed from the analysis results because they belong to excluded paths (Removed files).
-    - fosslight_binary: Shows the total number of analyzed binaries (Total number of binaries) and the total number of analyzed files (Total number of files).
+    - fosslight_source
+       - Display the total number of analyzed files (Total number of files) and the number of files removed from the analysis results because they belong to excluded paths (Removed files).
+       - If no files are detected in the analysis path: add (No file detected.)
+       - If files exist in the analysis path but no open source analysis results are detected: add (No OSS detected.)
+    - fosslight_binary
+        - Display the total number of analyzed binaries and the total number of analyzed files.
+        - If no binaries are detected in the analysis path: add (No binary detected.)
     - fosslight_dependency:
        - If no package manager manifest file is detected: No Package manager detected.
-       - If package manager analysis is successful: Analyzed Package manager: {package manager} (manifest file)
-           - Ex) Analyzed Package manager: pypi (requirements.txt)
-       - If package manager analysis fails: Analysis failed Package manager: {package manager} (manifest file) (Check {prerequisite guide URL})
-           - Ex) Analysis failed Package manager: npm (package.json) (Check https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html#-prerequisite.)
+       - If package manager analysis is successful: Success to anlalyze: -{package manager}: {path of manifest file}: {manifest file}
+           - Ex)
+             ```
+             [fosslight_dependency v4.1.23] Success to analyze:
+               -npm:
+                /home/worker/local/codebase: package.json
+               -nuget:
+                /home/worker/local/codebase: packages.config
+             ```
+       - If package manager analysis fails: Analysis failed Package manager: Fail to analyze: -{package manager}: {path of manifest file}: {manifest file} / Check {prerequisite 가이드 url}
+          - Ex)
+            ```
+            [fosslight_dependency v4.1.23] Fail to analyze:
+              -gradle:
+                /home/worker/local/codebase: build.gradle
+              -android:
+                /home/worker/local/codebase: build.gradle / Check log file(fosslight_log*.txt) and https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html#-prerequisite.
+            ```
 
 ##### {SRC/BIN/DEP}\_FL\_{Source/Binary/Dependency} sheet
 You can check which scanner was executed from the sheet name and review the results for each scanner within that sheet.
