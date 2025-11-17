@@ -132,6 +132,24 @@ test_result/
   - fosslight_bin_(datetime).xlsx : FOSSLight Report of FOSSLight Binary Scanner
 
 #### fosslight_report_(datetime).xlsx 
+##### Scanner Info sheet
+This sheet displays information about the executed scanner and its execution environment.
+1. Tool Information: Shows the name and version of the executed scanner.
+2. Start Time: Displays the start time of the scanner execution.
+3. Python Version: Indicates the Python version used to run the scanner.
+4. Analyzed Path: Displays the analyzed path (either the path entered using the -p option or the default path where the scanner was executed).
+5. Excluded Path: Shows the paths excluded during analysis (entered using the -e option).
+6. Comment: Displays the analysis results for each scanner.
+    - fosslight_source: Displays the total number of analyzed files (Total number of files) and the number of files removed from the analysis results because they belong to excluded paths (Removed files).
+    - fosslight_binary: Shows the total number of analyzed binaries (Total number of binaries) and the total number of analyzed files (Total number of files).
+    - fosslight_dependency:
+       - If no package manager manifest file is detected: No Package manager detected.
+       - If package manager analysis is successful: Analyzed Package manager: {package manager} (manifest file)
+           - Ex) Analyzed Package manager: pypi (requirements.txt)
+       - If package manager analysis fails: Analysis failed Package manager: {package manager} (manifest file) (Check {prerequisite guide URL})
+           - Ex) Analysis failed Package manager: npm (package.json) (Check https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html#-prerequisite.)
+##### {SRC/BIN/DEP}\_FL\_{Source/Binary/Dependency} sheet
+You can check which scanner was executed from the sheet name and review the results for each scanner within that sheet.
 1. Exclude: Checked Row
     test(s), doc(s), hidden files or folders are checked as Exclude.
 2. When sbom-info.yaml is loaded, the loaded data is appended and the analysis results for duplicate files checked as Exclude.
