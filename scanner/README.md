@@ -158,7 +158,7 @@ This sheet displays information about the executed scanner and its execution env
                -nuget:
                 /home/worker/local/codebase: packages.config
              ```
-       - If package manager analysis fails: Analysis failed Package manager: Fail to analyze: -{package manager}: {path of manifest file}: {manifest file} / Check {prerequisite 가이드 url}
+       - If package manager analysis fails: Analysis failed Package manager: Fail to analyze: -{package manager}: {path of manifest file}: {manifest file} / Check {prerequisite guide url}
           - Ex)
             ```
             [fosslight_dependency v4.1.23] Fail to analyze:
