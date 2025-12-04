@@ -55,7 +55,10 @@ $ fosslight_source [option] <arg>
       --correct_fpath <path> Path to the sbom-info.yaml file
 ```
 - If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS) will be run and the result will be merged.
-- 📃 [Pattern matchin guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
+   - ⚠️ Make sure to use double quotes ("") when entering values.
+      - Example) fosslight_binary -e "*.png" "tests/"
+   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
 
 #### Example
 Print result to FOSSLight Report and results of ScanCode and SCANOSS in json file.
