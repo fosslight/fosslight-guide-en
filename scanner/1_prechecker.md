@@ -76,7 +76,10 @@ Options for only 'add' mode
 Option for 'download' mode
     -l <license>	  License to be representative license name(SPDX format)
 ```
-- 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
+   - ⚠️ Make sure to use double quotes ("") when entering values.
+      - Example) fosslight_binary -e "*.png" "tests/"
+   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
 
 **(Only for Windows)** Run using executable file   
 1. Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases).    
