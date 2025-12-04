@@ -63,7 +63,7 @@ $ fosslight_binary [option] <arg>
         --no_correction                     Enter if you don't want to correct OSS information with sbom-info.yaml
         --correct_fpath <path>              Path to the sbom-info.yaml file
 ````    
-- 📃 Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
+- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
    - ⚠️ Make sure to use double quotes ("") when entering values.
       - Example) fosslight_binary -e "*.png" "tests/"
    - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
