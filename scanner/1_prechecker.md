@@ -78,7 +78,7 @@ Option for 'download' mode
 ```
 - Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
    - ⚠️ Make sure to use double quotes ("") when entering values.
-      - Example) fosslight_binary -e "*.png" "tests/"
+      - Example) fosslight_prechecker -e "*.png" "tests/"
    - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
 
 **(Only for Windows)** Run using executable file   
