@@ -355,7 +355,10 @@ $ fosslight_dependency [option] <arg>
             -n <app_name>                   Enter the application directory name where the plugin output file is located(default: app)
 
 ```
-- 📃 [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
+   - ⚠️ Make sure to use double quotes ("") when entering values.
+      - Example) fosslight_binary -e "*.png" "tests/"
+   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
 
 ### Tips to run
 When running the FOSSLight Dependency Scanner, it sequentially detects package manager manifest files starting from the input path (using the -p option). If a manifest file is detected, the scanner stops searching for additional manifest files in subdirectories and proceeds with dependency analysis.
