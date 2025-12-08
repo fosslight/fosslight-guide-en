@@ -613,20 +613,4 @@ Because we utilizes the different open source software to analyze the dependenci
 
 ```tip
 **Internet Access Requirements:** Internet access is required if license information, homepage, or other OSS details cannot be resolved using only local manifest/lock/cache/plugin output files.
-
-**Conditional Notes:**
-- **Go, Nuget**
-  - Internet access is required by default to fetch license/metadata from remote sources.
-- **Swift, Carthage**
-  - Dependency lists can be parsed offline. Internet access is needed when license information must be retrieved from GitHub repositories.
-- **Gradle, Maven, Android**
-  - Initial download/installation of plugins (Gradle: [License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin), Maven: [license-maven-plugin](https://github.com/mojohaus/license-maven-plugin), Android: [android-dependency-scanning](https://github.com/fosslight/android-dependency-scanning)) requires internet access.
-- **Pypi**
-   - Internet access is required for the initial installation of [pipdeptree](https://pypi.org/project/pipdeptree/) if not already installed.
-- **Npm/Pnpm/Yarn**
-  - Initial installation of the analysis tool [license-checker](https://www.npmjs.com/package/license-checker) requires internet access. Offline analysis is possible once installed with node_modules/lock files ready.
-- **Pub**
-  - Initial installation of [flutter_oss_licenses](https://pub.dev/packages/flutter_oss_licenses) requires internet access.
-- **Cocoapods/Helm/Unity/Cargo**
-  - Offline analysis is possible if dependencies are already downloaded and required files exist.
 ```
