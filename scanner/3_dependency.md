@@ -612,8 +612,7 @@ Because we utilizes the different open source software to analyze the dependenci
 </table>
 
 ```tip
-**Internet Access Requirements:**
-- Internet access is required if license information, homepage, or other OSS details cannot be resolved using only local manifest/lock/cache/plugin output files.
+**Internet Access Requirements:** Internet access is required if license information, homepage, or other OSS details cannot be resolved using only local manifest/lock/cache/plugin output files.
 
 **Conditional Notes:**
 - **Go, Nuget**
@@ -628,5 +627,6 @@ Because we utilizes the different open source software to analyze the dependenci
   - Initial installation of the analysis tool [license-checker](https://www.npmjs.com/package/license-checker) requires internet access. Offline analysis is possible once installed with node_modules/lock files ready.
 - **Pub**
   - Initial installation of [flutter_oss_licenses](https://pub.dev/packages/flutter_oss_licenses) requires internet access.
-- **Cocoapods/Helm/Unity/Cargo**: Offline analysis is possible if dependencies are already downloaded and required files exist.
+- **Cocoapods/Helm/Unity/Cargo**
+  - Offline analysis is possible if dependencies are already downloaded and required files exist.
 ```
