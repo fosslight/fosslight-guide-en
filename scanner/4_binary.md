@@ -56,7 +56,8 @@ $ fosslight_binary [option] <arg>
                   				                Example) fosslight_bin -e "test/abc.py" "*.jar" "test/"
         -o <output_path>                    Output path
                                             (If you want to generate the specific file name, add the output path with file name.)        
-        -f <format> [<format> ...]          Output file formats (excel, csv, opossum, yaml)
+        -f <format> [<format> ...]          Output file formats
+                                            (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
                                             Multiple formats can be specified separated by space. 
         -d <db_url>                         DB Connection(format :'postgresql://username:password@host:port/database_name')
         --notice                            Print the open source license notice text.
