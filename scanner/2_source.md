@@ -45,7 +45,9 @@ $ fosslight_source [option] <arg>
       -m                     Print additional information for scan result on separate sheets
       -e <path>              Path to exclude from analysis (file and directory, pattern matching is available)
       -o <output_path>       Output path (Path or file name)
-      -f <format>            Output file format (excel, csv, opossum, yaml)
+      -f <format>            Output file format
+                             (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
+                             Multiple formats can be specified separated by space.
   Options only for FOSSLight Source Scanner
       -s <scanner>           Select which scanner to be run (scancode, scanoss, all)
       -j                     Generate raw result of scanners in json format
