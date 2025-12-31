@@ -62,7 +62,7 @@ Options:
     -h                    Print help message
     -v                    Print FOSSLight Prechecker version
     -p <path>             Path to check
-    -e <path>             Path to exclude from checking(only work with 'lint' mode, Pattern matchin is available)
+    -e <path>             Path to exclude from checking(only work with 'lint' mode, Pattern matching is available)
                            * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
                              Example) fosslight_prechecker -e "dev/" "tests/
     -f <format>           Output file format (yaml, xml, html)
