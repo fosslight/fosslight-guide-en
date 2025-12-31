@@ -65,7 +65,9 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
             -f <formats> [<format> ...]     FOSSLight Report file format (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
                                      * Compare mode result file: supports excel, json, yaml, html
                                      * Multiple formats can be specified separated by space.
-            -e <path>               Path to exclude from analysis (ex, -e {dir} {file})
+            -e <path>               Path to exclude from analysis (files and directories, pattern matching is available)
+                                     * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
+                  				                 Example) fosslight -e "test/abc.py" "*.jar" "test/"
             -o <output>             Output directory or file
             -c <number>             Number of processes to analyze source
             -r                      Keep raw data
@@ -88,6 +90,10 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
 
 ```
 - Enter the -d option only when argument input is required when running FOSSLight Dependency. : [Refer FOSSLight Dependency guide](3_dependency.md)
+- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
+   - ⚠️ Make sure to use double quotes ("") when entering values.
+      - Example) fosslight_binary -e "*.png" "tests/"
+   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
 
 #### Ex.1 Local Source Analysis
 ```
