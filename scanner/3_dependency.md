@@ -326,7 +326,9 @@ $ fosslight_dependency [option] <arg>
             -m <package_manager>            Enter the package manager.
                                                 (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo, pnpm, yarn)
             -p <input_path>                 Enter the path where the script will be run.
-            -e <exclude_path>               Enter the path where the analysis will not be performed. (Pattern matching is available)
+            -e <exclude_path>               Enter the path where the analysis will not be performed.(Files and directories, pattern matching is available)
+                                             * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
+                                               Example) fosslight_source -e "dev/" "tests/
             -o <output_path>                Output path
                                                 (If you want to generate the specific file name, add the output path with file name.)            
             -f <format> [<format> ...]      Output formats
