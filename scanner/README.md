@@ -67,7 +67,7 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
                                      * Multiple formats can be specified separated by space.
             -e <path>               Path to exclude from analysis (files and directories, pattern matching is available)
                                      * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
-                  				                 Example) fosslight -e "test/abc.py" "*.jar" "test/"
+                                       Example) fosslight -e "test/abc.py" "*.jar" "test/"
             -o <output>             Output directory or file
             -c <number>             Number of processes to analyze source
             -r                      Keep raw data
