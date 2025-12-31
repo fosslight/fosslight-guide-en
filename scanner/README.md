@@ -92,7 +92,7 @@ $ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
 - Enter the -d option only when argument input is required when running FOSSLight Dependency. : [Refer FOSSLight Dependency guide](3_dependency.md)
 - Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
    - ⚠️ Make sure to use double quotes ("") when entering values.
-      - Example) fosslight_binary -e "*.png" "tests/"
+      - Example) fosslight -e "dev/abc.py" "tests/"
    - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
 
 #### Ex.1 Local Source Analysis
