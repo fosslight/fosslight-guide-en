@@ -44,6 +44,8 @@ $ fosslight_source [option] <arg>
       -v                     Print FOSSLight Source Scanner version
       -m                     Print additional information for scan result on separate sheets
       -e <path>              Path to exclude from analysis (file and directory, pattern matching is available)
+                              * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
+                  				      Example) fosslight_source -e "dev/" "tests/
       -o <output_path>       Output path (Path or file name)
       -f <format>            Output file format
                              (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
