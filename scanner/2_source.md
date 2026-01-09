@@ -5,7 +5,9 @@ published: true
 
 <img src="https://img.shields.io/pypi/l/fosslight_source" alt="FOSSLight Source is released under the Apache-2.0 License." /> <img src="https://img.shields.io/pypi/v/fosslight_source" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_source" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_source_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_source_scanner)
 
-[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses source code scanners, [ScanCode][sc] and [SCANOSS][scanoss]. [ScanCode][sc] detects copyright and license phrases contained in the file and [SCANOSS][scanoss] searches OSS Name, OSS Version, download location, copyright and license information from [OSSKB][osskb]. Some files (ex- build script), binary files, directory and files in specific directories (ex-test) are excluded from the result. And removes words such as "-only" and "-old-style" from the license name to be printed. The output result is generated in spreadsheet format.
+[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses source code scanners, [ScanCode][sc] and [SCANOSS][scanoss]. [ScanCode][sc] detects copyright and license phrases contained in the file and [SCANOSS][scanoss] searches OSS Name, OSS Version, download location, copyright and license information from [OSSKB][osskb]. 
+It queries the file's origin from the KB server using the file MD5 value and outputs it as Download location.
+Some files (ex- build script), binary files, hidden directory and files in specific directories (ex-test) are excluded from the result. 
 
 [sc]: https://github.com/nexB/scancode-toolkit
 [scanoss]: https://github.com/scanoss/scanoss.py
@@ -51,14 +53,14 @@ $ fosslight_source [option] <arg>
                              (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
                              Multiple formats can be specified separated by space.
   Options only for FOSSLight Source Scanner
-      -s <scanner>           Select which scanner to be run (scancode, scanoss, all)
+      -s <scanner>           Select which scanner to be run (scancode, scanoss, kb, all)
       -j                     Generate raw result of scanners in json format
       -t <float>             Stop scancode scanning if scanning takes longer than a timeout in seconds.
       -c <core>              Select the number of cores to be scanned with ScanCode.
       --no_correction        Enter if you don't want to correct OSS information with sbom-info.yaml
       --correct_fpath <path> Path to the sbom-info.yaml file
 ```
-- If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS) will be run and the result will be merged.
+- If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS, KB) will be run and the result will be merged.
 - Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
    - ⚠️ Make sure to use double quotes ("") when entering values.
       - Example) fosslight_source -e "dev/" "tests/"
