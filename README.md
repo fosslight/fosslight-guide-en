@@ -24,3 +24,9 @@ Please refer the guide on how to install and use each scanner on the FOSSLight S
 
 #### FOSSLight Binary Scanner
 [FOSSLight Binary Scanner](scanner/4_binary.md) is a tool that finds binary files and extracts the binary file list, and automatically outputs open source information if there is open source information of the detected binary in the database. Since this is not a method of analyzing the binary itself, please note that performance of binary analysis increases when there is a lot of database information.
+
+#### FOSSLight Android Scanner
+[FOSSLight Android Scanner](scanner/6_android.md) lists all binaries included in an Android model, checks whether Open Source is used in each binary, and verifies that the necessary OSS notices are properly included in the OSS notice file (e.g., NOTICE.html).
+
+#### FOSSLight Yocto Scanner
+[FOSSLight Yocto Scanner](scanner/5_yocto.md) is a Python script that outputs OSS information in FOSS Report format for packages included in the rootfs image when building based on the Yocto.
