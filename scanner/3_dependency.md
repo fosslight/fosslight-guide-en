@@ -276,6 +276,7 @@ FOSSLight Dependency Scanner only supports for go modules. It automatically exec
 ```tip
 FOSSLight Dependency Scanner checks the package list through the packages.config file or obj/project.assets.json file in case of PackageReference, and then prints the OSS information of dependencies such as license and repository through nuget api.
  Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
+For CPM projects, analysis must be run from the Directory.Packages.props location. If obj/project.assets.json files are missing, the tool automatically runs 'dotnet restore' on .sln or .csproj files found in subdirectories to generate the required files before analyzing dependencies.
 ```
 </details>
 
@@ -379,7 +380,7 @@ The manifest file of each package manager is as follows:
   - Swift : Package.resolved
   - Carthage : Cartfile.resolved
   - Go : go.mod
-  - Nuget : packages.config / {project name}.csproj
+  - Nuget : packages.config / {project name}.csproj / Directory.Packages.props
   - Helm : Chart.yaml
   - Unity : Library/PackageManager/ProjectCache
   - Cargo : Cargo.toml
