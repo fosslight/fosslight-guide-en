@@ -15,11 +15,8 @@ Fill in the results of the Open Source Software analysis for the Project to rele
 ## General Project's Identification Process
 {: .left-bar-title }
 - Fill in **3rd Party, DEP, SRC, BIN.** → Request a review by clicking the **Request** button in the SBOM.  
-        - [**3rd Party**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/1_3rd_Party_Tab.html): Load 3rd party included in the project.  
-        - [**DEP**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/2_DEP_Tab.html): Upload the result of Dependency Analysis.  
-        - [**SRC**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/3_SRC_Tab.html): Upload the result of Source Code Analysis.  
-        - [**BIN**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/4_BIN_Tab.html): Upload the result of Binary Analysis.  
-        - [**SBOM**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/5_SBOM_Tab.html): Combine the OSS List written on the other tab and review the warning message and request a review.  
+        - [**3rd Party, DEP, SRC, BIN**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/1_3rd_DEP_SRC_BIN_Tab.html): Upload analysis report file or load a confirmed 3rd party or project.
+        - [**SBOM**](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/2_SBOM_Tab.html): Combine the OSS List written on the other tab and review the warning message and request a review.  
 
 ## (Enterprise Only) Identification Process for Platform-generated Project
 {: .left-bar-title }

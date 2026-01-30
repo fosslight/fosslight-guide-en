@@ -1,5 +1,5 @@
 ---
-sort: 5
+sort: 2
 published: true
 ---
 
@@ -23,7 +23,7 @@ Merge the OSS list written in 3rd Party, DEP, SRC, and BIN tabs and request to r
 2. [**Check Warning message**](https://fosslight.org/hub-guide/tips/1_common/5_warning_message)  
 3. Request to review by clicking the 'Request' button. 
     - However, if there is a red Warning Message, you cannot request a review.  
-![prj](images/5_bom_tap.png){: .styled-image}   
+![prj](images/2_bom_tap.png){: .styled-image}   
 
 ### (Admin only) Review Process  
 {: .specific-title} 
