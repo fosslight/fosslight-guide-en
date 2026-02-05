@@ -1,5 +1,5 @@
 ---
-sort: 5
+sort: 1
 published: true
 title: 🚩FOSSLight Scanner
 ---
@@ -7,199 +7,279 @@ title: 🚩FOSSLight Scanner
 
 <a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" />
 
-FOSSLight Scanner can perform an analysis for open source compliance at once. It can perform open source analysis of source code, binary and dependency. <br/>
-
-It works using the following scanners:
-
-1. [FOSSLight Source Scanner](2_source.md) : Analyze the source code and generate open source analysis result.
-2. [FOSSLight Dependency Scanner](3_dependency.md) : Analyze the dependencies used through package manager or build system and generate open source analysis result. 
-3. [FOSSLight Binary Scanner](4_binary.md) : Analyze the binaries and generate open source analysis result.
+FOSSLight Scanner is an integrated scanning tool that automatically analyzes open source information contained in dependencies, source code, and binaries. It can analyze not only sources downloadable via Git or wget, but also local source paths, and generates results in FOSSLight Report format (including SBOM).  
 <br />
+FOSSLight Scanner consists of the following 3 scanners, each responsible for different analysis areas.  
 
-**Github Repository** : [https://github.com/fosslight/fosslight_scanner]()  
+1. [FOSSLight Dependency Scanner](1_dependency.md)   
+    A scanner that analyzes dependencies used through package managers or build systems to extract open source information.   
+    It supports various package managers such as npm, pypi, maven, gradle, etc., and analyzes not only direct dependencies but also transitive dependencies that are included as a result.     
+2. [FOSSLight Source Scanner](2_source.md)  
+    Detects open source-related information such as license phrases, copyright strings, and code snippets by analyzing source code.   
+3. [FOSSLight Binary Scanner](3_binary.md)  
+    Performs open source analysis on binary files.   
+    Instead of reverse engineering the binary itself, it collects binary lists and matches them with OSS information in the internal database to identify open source included in the binary.  
+
+**Github Repository** : [https://github.com/fosslight/fosslight_scanner](https://github.com/fosslight/fosslight_scanner)  
 **License** : [Apache-2.0](https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE)
+<br><br>
+
+## Table of Contents
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [How to Run](#how-to-run)
+  - [Results](#results)
+  - [Installation and Execution using Docker](#installation-and-execution-using-docker)
+
+<br><br>
 
 
-## 📋 Prerequisite
-1. FOSSLight Scanner needs a Python 3.10+.    
-2. To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
-3. (Only for windows) Install Microsoft Build Tools (Microsoft Visual C++ 14.0+) from https://visualstudio.microsoft.com/ko/visual-cpp-build-tools/
+## Prerequisites
+{: .left-bar-title}
 
-## 🎉 How to install
-It can be installed using pip3. It is recommended to install it in the [python virtualenv](etc/guide_virtualenv.md) environment.
+1. [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner) runs on Python 3.10 or higher (officially supported versions: 3.10~3.12) and can be installed via pip3 command.    
+2. To analyze Jar files, [**Open Source JDK (Java)**](https://openjdk.java.net) must be installed.  
+3. (For Windows) [Microsoft Build Tools (Microsoft Visual C++ 14.0+)](https://visualstudio.microsoft.com/visual-cpp-build-tools/) must be installed.  
+<br><br>
+
+
+## Installation
+{: .left-bar-title} 
+### Install from Bee (LGE Only)
+{: .specific-title}
+You can install and use FOSSLight Scanner from [Bee](https://docs.bee0.lge.com/docs/dev-tools/fosslight/).  
+
+### Standard Installation Method
+{: .specific-title}   
+FOSSLight Scanner can be installed using pip3.      
+It is recommended to install it in a [python3 virtualenv](etc/guide_virtualenv.md) environment.  
+
 ```
 $ pip3 install fosslight_scanner
 ```
 
-### ⚠️ Installation error case
-If the error "'Cargo, the Rust package manager, is not installed or is not on PATH.' occurs, try to install cargo and rust as described below, and reinstall FOSSLight Scanner.
-#### Linux, MacOS
-```
-$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-$ export PATH="$HOME/.cargo/bin:$PATH"
-```
-#### Windows
+### Installation Error Cases
+{: .specific-title}
+If the error 'Cargo, the Rust package manager, is not installed or is not on PATH.' occurs, install cargo and rust as described below, then reinstall FOSSLight Scanner.
+- Linux, macOS
+  ```
+  $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  $ export PATH="$HOME/.cargo/bin:$PATH"
+  ```
+- Windows :
 Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) and install it.
- 
+<br><br> 
 
-## 🚀 How to run
+## How to Run
+{: .left-bar-title} 
 ### How to run by mode & Parameters
+{: .specific-title}
 ```
-$ fosslight [Mode] [option1] <arg1> [option2] <arg2>...
+    📖 Usage
+    ────────────────────────────────────────────────────────────────────
+    fosslight [mode] [options] <arguments>
+
+    📝 Description
+    ────────────────────────────────────────────────────────────────────
+    FOSSLight Scanner performs comprehensive open source analysis by running
+    multiple modes (Source, Dependency, Binary) together. It can download
+    source code from URLs (git/wget) or analyze local paths, and generates
+    results in OSS Report format.
+
+    📚 Guide: https://fosslight.org/fosslight-guide/scanner/
+
+    🔧 Modes
+    ────────────────────────────────────────────────────────────────────
+    all (default)          Run all modes (Source, Dependency, Binary)
+    source                 Run FOSSLight Source analysis only
+    dependency             Run FOSSLight Dependency analysis only
+    binary                 Run FOSSLight Binary analysis only
+    compare                Compare two FOSSLight reports
+
+    Note: Multiple modes can be specified separated by comma
+          Example: fosslight source,binary -p /path/to/analyze
+
+    ⚙️  General Options
+    ────────────────────────────────────────────────────────────────────
+    -p <path>              Path to analyze
+                           • Compare mode: path to two FOSSLight reports (excel/yaml)
+    -w <url>               URL to download and analyze (git clone or wget)
+    -f <format>            Output format (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
+                           • Compare mode: excel, json, yaml, html
+                           • Multiple formats: ex) -f excel yaml json (separated by space)
+    -e <pattern>           Exclude paths from analysis (files and directories)
+                           ⚠️  IMPORTANT: Always wrap in quotes to avoid shell expansion
+                           Example: fosslight -e "test/" "*.jar"
+    -o <path>              Output directory or file name
+    -c <number>            Number of processes for source analysis
+    -r                     Keep raw data from scanners
+    -t                     Hide progress bar
+    -h                     Show this help message
+    -v                     Show version information
+    -s <path>              Apply settings from JSON file(check format with 'setting.json' in this repository)
+                           Note: CLI flags override settings file
+                           Example: -f yaml -s setting.json → output is .yaml
+    --no_correction        Skip OSS information correction with sbom-info.yaml
+                           (Correction only supports excel format)
+    --correct_fpath <path> Path to sbom-info.yaml file for correction
+    --ui                   Generate UI mode result file
+    --recursive_dep        Recursively analyze dependencies
+
+    🔍 Mode-Specific Options
+    ────────────────────────────────────────────────────────────────────
+    For 'all' or 'binary' mode:
+      -u <db_url>          Database connection string
+                           Format: postgresql://username:password@host:port/database
+
+    For 'all' or 'dependency' mode:
+      -d <args>            Additional arguments for dependency analysis
+
+    💡 Examples
+    ────────────────────────────────────────────────────────────────────
+    # Scan current directory with all scanners
+    fosslight
+
+    # Scan specific path with exclusions
+    fosslight -p /path/to/source -e "test/" "node_modules/" "*.pyc"
+
+    # Generate output in specific format
+    fosslight -p /path/to/source -f yaml
+
+    # Run specific modes only
+    fosslight source,dependency -p /path/to/source
+
+    # Download and analyze from git repository
+    fosslight -w https://github.com/user/repo.git -o result_dir
+
+    # Compare two FOSSLight reports
+    fosslight compare -p report_v1.xlsx report_v2.xlsx -f excel
+
+    # Run with database connection for binary analysis
+    fosslight binary -p /path/to/binary -u "postgresql://user:pass@localhost:5432/sample"
+
 ```
-```
-     Parameters:
-        Mode: Multiple modes can be entered by separating them with , (ex. source,binary)
-            all                     Run all scanners(Default)
-            source                  Run FOSSLight Source Scanner
-            dependency              Run FOSSLight Dependency Scanner
-            binary                  Run FOSSLight Binary Scanner
-            compare                 Compare two FOSSLight reports
+  🛈 The -d option should only be entered when argument input is required when running FOSSLight Dependency. [Reference](1_dependency.md)
 
-        Options:
-            -h                      Print help message
-            -p <path>               Path to analyze (ex, -p {input_path})
-                                     * Compare mode input file: Two FOSSLight reports (supports excel, yaml)
-                                       (ex, -p {before_name}.xlsx {after_name}.xlsx)
-            -w <link>               Link to be analyzed can be downloaded by wget or git clone            
-            -f <formats> [<format> ...]     FOSSLight Report file format (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
-                                     * Compare mode result file: supports excel, json, yaml, html
-                                     * Multiple formats can be specified separated by space.
-            -e <path>               Path to exclude from analysis (files and directories, pattern matching is available)
-                                     * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
-                                       Example) fosslight -e "dev/abc.py" "tests/"
-            -o <output>             Output directory or file
-            -c <number>             Number of processes to analyze source
-            -r                      Keep raw data
-            -t                      Hide the progress bar
-            -v                      Print FOSSLight Scanner version
-            -s <path>               Path to apply setting from file (check format with 'setting.json' in this repository)
-                                     * Direct cli flags have higher priority than setting file
-                                       (ex, '-f yaml -s setting.json' - result file extension is .yaml)
-            --no_correction         Enter if you don't want to correct OSS information with sbom-info.yaml
-                                     * Correction mode only supported xlsx format.
-            --correct_fpath <path>  Path to the sbom-info.yaml file
-            --ui                          Generate UI mode result file
-            --recursive_dep         Recursively analyze dependencies
-
-        Options for only 'all' or 'bin' mode
-            -u <db_url>             DB Connection(format :'postgresql://username:password@host:port/database_name')
-
-        Options for only 'all' or 'dependency' mode
-            -d <dependency_argument>        Additional arguments for running dependency analysis
-
-```
-- Enter the -d option only when argument input is required when running FOSSLight Dependency. : [Refer FOSSLight Dependency guide](3_dependency.md)
-- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
-   - ⚠️ Make sure to use double quotes ("") when entering values.
-      - Example) fosslight -e "dev/abc.py" "tests/"
-   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
-
-#### Ex.1 Local Source Analysis
+- Ex.1 How to analyze a local path  
 ```
 fosslight all -p /home/source_path
 ```
 
-#### Ex.2 Download Link and analyze
+- Ex.2 How to download a link and analyze it    
 ```
 fosslight all -o test_result_wget -w "https://github.com/LGE-OSS/example.git"
 ```
 
-#### Ex.3 Compare the BOM of two FOSSLight reports with yaml or excel format and check the oss status (change/add/delete).
+- Ex.3 How to compare FOSSLight Report BOM results to check changes/additions/deletions  
 ```
 fosslight compare -p FOSSLight_before_proj.yaml FOSSLight_after_proj.yaml -o test_result
 ```
 
 ### How to call execution parameters as json
-1. Write and save the values ​​for each execution parameter as a json file in [setting.json](https://github.com/fosslight/fosslight_scanner/blob/main/tests/setting.json) format.
-2. When running, call setting.json with -s.
+{: .specific-title}
+1. Write and save execution parameter values as a JSON file in [setting.json](https://github.com/fosslight/fosslight_scanner/blob/main/tests/setting.json) format.
+2. When executing, call the created setting.json with -s.
 ```
 fosslight -s setting.json
 ```
-🛈 The value called during execution takes precedence over the parameters written in the json file.
-ex. When called with '-f yaml -s setting.json', the output file is in yaml format.
+🛈 The value called during execution takes precedence over the parameters written in the json file.      
+ex. When called with '-f yaml -s setting.json', the output is in yaml format.
+<br><br>
 
-
-## 📁 Result
-### Result for the mode that analyze the open source (all, source, dependency, binary)
-```
+## Results  
+{: .left-bar-title} 
+### Open Source Analysis Results (all mode)  
+{: .specific-title}
+<pre>
 test_result/
 ├── fosslight_log
-│   └── fosslight_log_220214_1824.txt
-├── fosslight_report_all_220214_1824.xlsx
+│   └── fosslight_log_all_260204_0925.txt
+├── fosslight_report_all_260204_0925.xlsx
 └── fosslight_raw_data (with -r option)
-    ├── fosslight_src_220214_1824.xlsx
-    ├── fosslight_bin_220214_1824.xlsx
-    └── fosslight_dep_220214_1824.xlsx
-```
-- fosslight_report_all_(datetime).xlsx : FOSSLight Report format file in which source code analysis, binary analysis, and dependency analysis results are written.
-- fosslight_raw_data directory: The folder where the analysis result raw data file is created (with -r option)
-  - fosslight_src_(datetime).xlsx : FOSSLight Report of FOSSLight Source Scanner
-  - fosslight_dep_(datetime).xlsx : FOSSLight Report of FOSSLight Dependency Scanner
-  - fosslight_bin_(datetime).xlsx : FOSSLight Report of FOSSLight Binary Scanner
+    ├── fosslight_report_dep_260204_0925.xlsx
+    ├── fosslight_report_src_260204_0925.xlsx
+    └── fosslight_report_bin_260204_0925.xlsx
+</pre>
+- fosslight_report_all_(datetime).xlsx : FOSSLight Report format file containing Source analysis, Binary analysis, and Dependency analysis results
+- fosslight_raw_data directory: Folder where analysis result Raw Data files are created (with -r option)
+  - fosslight_report_dep_(datetime).xlsx : Dependency analysis result file
+  - fosslight_report_src_(datetime).xlsx : Source analysis result file
+  - fosslight_report_bin_(datetime).xlsx : Binary analysis result file
+ 
+### fosslight_report_all_(datetime).xlsx  
+{: .specific-title}
 
-#### fosslight_report_(datetime).xlsx 
-##### Scanner Info sheet
-This sheet displays information about the executed scanner and its execution environment.
-1. Tool Information: Shows the name and version of the executed scanner.
-2. Start Time: Displays the start time of the scanner execution.
-3. Python Version: Indicates the Python version used to run the scanner.
-4. Analyzed Path: Displays the analyzed path (either the path entered using the -p option or the default path where the scanner was executed).
-5. Excluded Path: Shows the paths excluded during analysis (entered using the -e option).
-6. Comment: Displays the analysis results for each scanner.
-    - fosslight_source
-       - Display the total number of analyzed files (Total number of files) and the number of files removed from the analysis results because they belong to excluded paths (Removed files).
-       - If no files are detected in the analysis path: add (No file detected.)
-       - If files exist in the analysis path but no open source analysis results are detected: add (No OSS detected.)
-    - fosslight_binary
-        - Display the total number of analyzed binaries and the total number of analyzed files.
-        - If no binaries are detected in the analysis path: add (No binary detected.)
-    - fosslight_dependency:
-       - If no package manager manifest file is detected: No Package manager detected.
-       - If package manager analysis is successful: Success to anlalyze: -{package manager}: {path of manifest file}: {manifest file}
-           - Ex)
-             ```
-             [fosslight_dependency v4.1.23] Success to analyze:
-               -npm:
-                /home/worker/local/codebase: package.json
-               -nuget:
-                /home/worker/local/codebase: packages.config
-             ```
-       - If package manager analysis fails: Analysis failed Package manager: Fail to analyze: -{package manager}: {path of manifest file}: {manifest file} / Check {prerequisite guide url}
-          - Ex)
-            ```
-            [fosslight_dependency v4.1.23] Fail to analyze:
-              -gradle:
-                /home/worker/local/codebase: build.gradle
-              -android:
-                /home/worker/local/codebase: build.gradle / Check log file(fosslight_log*.txt) and https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html#-prerequisite.
-            ```
+- **Scanner Info sheet**  
+  This sheet displays information about the executed scanners and execution environment.  
+  -  **Tool information** : Shows the name and version of the executed scanner.  
+  -  **Start time** : Displays the start time of scanner execution.  
+  -  **Python version** : Shows the Python version used to run the scanner.   
+  -  **Analyzed path** : Displays the analyzed path (analysis path entered via '-p' option or default path where the scanner was executed)  
+  -  **Excluded path** : Shows paths excluded during analysis (paths entered via '-e' option)  
+  -  **Comment** : Displays analysis results for each scanner.   
+      - **fosslight_dependency**
+          - When package manager manifest file does not exist  
+            <pre>
+            Ex) [fosslight_dependency v4.1.31] No Package manager detected.
+            </pre>
+                
+          - When package manager analysis succeeds  
+            -[Success]  {package manager}:
+              {project path}: {manifest file}
+              <pre>
+              Ex) [fosslight_dependency v4.1.31] Dependency Analysis Summary
+                  - [Success]  pypi:
+                  /home/worker/sample_code/example: requirements.txt
+              </pre>  
 
-##### {SRC/BIN/DEP}\_FL\_{Source/Binary/Dependency} sheet
-You can check which scanner was executed from the sheet name and review the results for each scanner within that sheet.
-1. Exclude: Checked Row
-    test(s), doc(s), hidden files or folders are checked as Exclude.
-2. When sbom-info.yaml is loaded, the loaded data is appended and the analysis results for duplicate files checked as Exclude.
-3. Comment :      
-   Add/Loaded by ** : Row loaded from **      
-   Excluded by ** : Row excluded due to **            
-   
-### Result for compare mode
-```
+          - When package manager analysis fails   
+            -[Fail]  {package manager}:
+              {project path}: {manifest file}
+              If analysis fails, see fosslight_log*.txt and the prerequisite guide: https://fosslight.org/fosslight-guide-en/scanner/1_dependency.html#-prerequisite
+              <pre>
+                Ex) [fosslight_dependency v4.1.31] Dependency Analysis Summary
+                    - [Fail]  yarn:
+                    /home/worker/sample_code/example: package.json
+                    If analysis fails, see fosslight_log*.txt and the prerequisite guide: https://fosslight.org/fosslight-guide-en/scanner/1_dependency.html#-prerequisite
+              </pre>
+      - **fosslight_source**  
+          - Scanned files : Total number of analyzed files  
+          - Detected source : Number of files where open source was detected.  
+            - If no open source is detected, (No OSS detected) is displayed.   
+          - KB Enable/KB Unreachable : Indicates whether KB DB is enabled.    
+          - Mode : Mode used for Source analysis.    
+          
+      - **fosslight_binary**  
+          - Detected binaries: Number of binaries where open source was found.  
+          - Scanned Files : Total number of analyzed files.  
+
+- **DEP_FL_Dependency, SRC_FL_Source, BIN_FL_Binary sheet**   
+  You can identify which scanner was executed from the sheet name and review the results for each scanner in that sheet.
+  - Rows with Exclude column checked  
+    - test(s), doc(s), hidden files or folders are checked as Exclude.    
+    - When sbom-info.yaml is loaded, the loaded data is appended and analysis results for duplicate files are checked as Exclude.
+  - Comment column  
+    - Add/Loaded by ** : Row loaded from **  
+    - Excluded by ** : Row excluded due to **         
+
+### compare mode results
+{: .specific-title}  
+<pre>
 test_result/
 ├── fosslight_log
-│   └── fosslight_log_20220817_114259.txt
-└── fosslight_compare_20220817_114259.xlsx
-```
-- fosslight_compare_(datetime).xlsx : Two BOM comparison results in the form of (add/delete/change) table.
+│   └── fosslight_log_all_260205_1101.txt
+└── fosslight_compare_260205_1101.xlsx
+</pre>
+- fosslight_compare_(datetime).xlsx : File containing comparison results of two SBOMs in add/delete/change table format  
+<br><br>  
 
-## 🐳 How to install and run using Docker
-> [!NOTE]  
-> When running with Docker, only the FOSSLight Source/Binary Scanner works. The FOSSLight Dependency Scanner does not work.
+## Installation and Execution using Docker  
+{: .left-bar-title} 
+> ⚠️ In Docker environment, only FOSSLight Source/Binary Scanner runs, and FOSSLight Dependency Scanner is not supported.
 
-1. Download the FOSSLight Scanner Docker image
+1. Download FOSSLight Scanner Docker image
    
-    Option 1. Download fosslight scanner from DockerHub.
+    Option 1. Download fosslight_scanner from Dockerhub 
     ```
     $ docker pull fosslight/fosslight_scanner
     ```
@@ -207,9 +287,9 @@ test_result/
     ```
     $ docker build -t fosslight_scanner .
     ```
-
-2. Run with the image you built.      
-ex. Output: /Users/git/temp/output, Path to be analyzed: /Users/git/temp/dir_to_analyze
+    
+2. Run with the built image.     
+ex. Output path: /Users/git/temp/output, Analysis path: /Users/git/temp/dir_to_analyze
 ```
 $ docker run -it -v /Users/git/temp/dir_to_analyze:/app/dir_to_analyze -v /Users/git/temp/output:/app/output fosslight_scanner -p dir_to_analyze -o output
 ```
