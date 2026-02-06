@@ -1,7 +1,7 @@
 ---
 sort: 1
 published: true
-title: 🚩FOSSLight Scanner
+title: 📦FOSSLight Scanner (All-in-One)
 ---
 # FOSSLight Scanner
 
