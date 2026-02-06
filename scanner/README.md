@@ -7,7 +7,7 @@ title: 🚩FOSSLight Scanner
 
 <a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" />
 
-FOSSLight Scanner is an integrated scanning tool that automatically analyzes open source information contained in dependencies, source code, and binaries. It can analyze not only sources downloadable via Git or wget, but also local source paths, and generates results in FOSSLight Report format (including SBOM).  
+FOSSLight Scanner is an integrated scanning tool that automatically analyzes open source information contained in dependencies, source code, and binaries. In addition to analyzing sources downloadable via Git or wget, it can also analyze sources provided through a local path, and the results are generated in the FOSSLight Report format, which follows the SBOM standard.  
 <br />
 FOSSLight Scanner consists of the following 3 scanners, each responsible for different analysis areas.  
 
@@ -157,20 +157,18 @@ Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](h
     # Run with database connection for binary analysis
     fosslight binary -p /path/to/binary -u "postgresql://user:pass@localhost:5432/sample"
 
-```
-  🛈 The -d option should only be entered when argument input is required when running FOSSLight Dependency. [Reference](1_dependency.md)
-
+```  
 - Ex.1 How to analyze a local path  
 ```
-fosslight all -p /home/source_path
+fosslight -p /home/source_path
 ```
 
 - Ex.2 How to download a link and analyze it    
 ```
-fosslight all -o test_result_wget -w "https://github.com/LGE-OSS/example.git"
+fosslight -o test_result_wget -w "https://github.com/LGE-OSS/example.git"
 ```
 
-- Ex.3 How to compare FOSSLight Report BOM results to check changes/additions/deletions  
+- Ex.3 How to compare FOSSLight Report SBOM results to check changes/additions/deletions  
 ```
 fosslight compare -p FOSSLight_before_proj.yaml FOSSLight_after_proj.yaml -o test_result
 ```
@@ -245,7 +243,7 @@ test_result/
       - **fosslight_source**  
           - Scanned files : Total number of analyzed files  
           - Detected source : Number of files where open source was detected.  
-            - If no open source is detected, (No OSS detected) is displayed.   
+            - If no open source is detected, it is displayed as ‘Detected source: 0’.     
           - KB Enable/KB Unreachable : Indicates whether KB DB is enabled.    
           - Mode : Mode used for Source analysis.    
           

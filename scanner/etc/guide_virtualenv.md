@@ -15,36 +15,19 @@ A guide for setting up a virtualenv environment to install and run Python packag
 ### 1. Unix-based systems (Ubuntu, macOS)
 {: .specific-title}
 #### 1-1. Ubuntu
-- Example) Installing Python 3.10 (Recommended Python version: 3.10 ~ 3.12)
+Example) Installing Python 3.10 (Recommended Python version: 3.10 ~ 3.12)
   ```
   $ sudo apt-get update
   $ sudo apt-get install python3.10 python3-pip python3.10-dev python3.10-distutils
-  ```
-- How to set default python version (Reference)
-  - When registering multiple Python versions using update-alternatives, the higher the priority value, the more likely it is to be selected as the default Python version.  
-  - If the priority of the newly registered Python version is higher than the existing one, it will be automatically set as the default Python version in auto mode.  
-  - Example) How to set Python 2.7 as the default Python version  
-    ```
-    $ which python
-    /usr/bin/python
-    $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
-    $ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
-    $ sudo update-alternatives --config python
-    ```
+  ```  
 
 #### 1-2. macOS
 ```
 brew install openssl
 brew install libmagic
-brew install postgresql
-```
-- How to change default python3 version (Reference)
-  ```
-  $ which python3
-  $ which python3.10
-  /usr/local/bin/python3.10
-  $ ln -s -f /usr/local/bin/python3.10 /usr/local/bin/python3
-  ```
+brew install postgresql  
+brew install python3 
+```  
 
 ### 2. Windows  
 {: .specific-title}  
