@@ -5,7 +5,7 @@ title: 📦FOSSLight Scanner (All-in-One)
 ---
 # FOSSLight Scanner
 
-<a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" />
+<a href="https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_scanner" alt="FOSSLight Scanner is released under the Apache-2.0." /></a> <a href="https://pypi.org/project/fosslight-scanner/"><img src="https://img.shields.io/pypi/v/fosslight_scanner" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_scanner" /><a href="https://github.com/fosslight/fosslight_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a>
 
 FOSSLight Scanner is an integrated scanning tool that automatically analyzes open source information contained in dependencies, source code, and binaries. In addition to analyzing sources downloadable via Git or wget, it can also analyze sources provided through a local path, and the results are generated in the FOSSLight Report format, which follows the SBOM standard.  
 <br />
@@ -20,8 +20,6 @@ FOSSLight Scanner consists of the following 3 scanners, each responsible for dif
     Performs open source analysis on binary files.   
     Instead of reverse engineering the binary itself, it collects binary lists and matches them with OSS information in the internal database to identify open source included in the binary.  
 
-**Github Repository** : [https://github.com/fosslight/fosslight_scanner](https://github.com/fosslight/fosslight_scanner)  
-**License** : [Apache-2.0](https://github.com/fosslight/fosslight_scanner/blob/main/LICENSE)
 <br><br>
 
 ## Table of Contents
