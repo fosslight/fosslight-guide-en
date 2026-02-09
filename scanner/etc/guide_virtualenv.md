@@ -12,16 +12,16 @@ A guide for setting up a virtualenv environment to install and run Python packag
 
 ## Prerequisites
 {: .left-bar-title}  
-### 1. Unix-based systems (Ubuntu, macOS)
+### 1. Ubuntu  
 {: .specific-title}
-#### 1-1. Ubuntu
 Example) Installing Python 3.10 (Recommended Python version: 3.10 ~ 3.12)
   ```
   $ sudo apt-get update
   $ sudo apt-get install python3.10 python3-pip python3.10-dev python3.10-distutils
   ```  
 
-#### 1-2. macOS
+### 2. macOS
+{: .specific-title}  
 ```
 brew install openssl
 brew install libmagic
@@ -29,7 +29,7 @@ brew install postgresql
 brew install python3 
 ```  
 
-### 2. Windows  
+### 3. Windows  
 {: .specific-title}  
 
 <details>
