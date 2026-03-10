@@ -26,7 +26,7 @@ Hi! I'm really appreciate that you'd like to contribute to this project. Your he
 Here are a few things you can do that will increase the likelihood of your pull request being accepted :
 
 - Keep your change as focused as possible. If there are multiple changes you would like to make that are not dependent upon each other, consider submitting them as separate pull requests.
-- Write a [good commit message](hhttps://www.conventionalcommits.org).
+- Write a [Conventional Commits](hhttps://www.conventionalcommits.org).
 
 Work in Progress pull request are also welcome to get feedback early on, or if there is something blocked you.
 
