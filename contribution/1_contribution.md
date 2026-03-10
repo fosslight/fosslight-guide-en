@@ -26,7 +26,7 @@ Hi! I'm really appreciate that you'd like to contribute to this project. Your he
 Here are a few things you can do that will increase the likelihood of your pull request being accepted :
 
 - Keep your change as focused as possible. If there are multiple changes you would like to make that are not dependent upon each other, consider submitting them as separate pull requests.
-- Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
+- Write a [good commit message](hhttps://www.conventionalcommits.org).
 
 Work in Progress pull request are also welcome to get feedback early on, or if there is something blocked you.
 
@@ -45,7 +45,7 @@ Signed-off-by: Your name <your-id@your-email-domain.com>
 You can add this signoff to your commit automatically with the -s or --signoff flag to git commit. You must use your name and a reachable email address.
 
 ```
-git commit -s -m "Write the commit message"
+git commit -s -m "ci(github action): Write the commit message"
 ```
 
 ### Resources
