@@ -4,9 +4,9 @@ title: "  ㄴ FOSSLight Dependency Scanner"
 ---
 # FOSSLight Dependency Scanner
 
-<img src="https://img.shields.io/pypi/l/fosslight_dependency" alt="License" /> <img src="https://img.shields.io/pypi/v/fosslight_dependency" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_dependency" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_dependency_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_dependency_scanner)
+<a href="https://github.com/fosslight/fosslight_dependency_scanner/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/fosslight_dependency" alt="License" /></a> <a href="https://pypi.org/project/fosslight-dependency/"><img src="https://img.shields.io/pypi/v/fosslight_dependency" alt="Current python package version." /></a> <img src="https://img.shields.io/pypi/pyversions/fosslight_dependency" /> <a href="https://github.com/fosslight/fosslight_dependency_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> <a href="https://api.reuse.software/info/github.com/fosslight/fosslight_dependency_scanner"><img src="https://api.reuse.software/badge/github.com/fosslight/fosslight_dependency_scanner" alt="REUSE status" /></a>
     
-[**FOSSLight Dependency Scanner**](https://github.com/fosslight/fosslight_dependency_scanner) is the tool that supports the analysis of dependencies for multiple package managers. It detects the manifest file of package managers automatically and analyzes the dependencies with using open source tools. Then, it generates the report file that contains OSS information of dependencies.
+[**FOSSLight Dependency Scanner**](https://github.com/fosslight/fosslight_dependency_scanner) is a tool that supports dependency analysis for multiple package managers. It automatically detects manifest files of package managers and analyzes dependencies using open source tools. Then, it generates a report file containing OSS information of dependencies.
 
 {::options parse_block_html="true" /}
 <details>
@@ -28,208 +28,310 @@ title: "  ㄴ FOSSLight Dependency Scanner"
 - [Cargo](https://crates.io/) (Rust)
 </details>
 {::options parse_block_html="false" /}
+<br><br>
 
-**Github Repository** : [https://github.com/fosslight/fosslight_dependency_scanner](https://github.com/fosslight/fosslight_dependency_scanner)  
-**License** : [Apache-2.0](https://github.com/fosslight/fosslight_dependency_scanner/blob/main/LICENSE)
+## Installation
+{: .left-bar-title}  
+### Install from Bee (LGE Only)  
+{: .specific-title}
+You can install and use FOSSLight Scanner from [Bee](https://docs.bee0.lge.com/docs/dev-tools/fosslight/).  
 
-## Contents
-- [FOSSLight Dependency Scanner](#fosslight-dependency-scanner)
-  - [Contents](#contents)
-  - [📋 Prerequisite](#-prerequisite)
-  - [🎉 How to install](#-how-to-install)
-  - [🚀 How to run](#-how-to-run)
-    - [Options](#options)
-    - [Tips to run](#tips-to-run)
-  - [📁 Result](#-result)
-    - [Result Contents](#result-contents)
-  - [🧐 How it works](#-how-it-works)
-  - [👀 Package Support Level](#-package-support-level)
+### General Installation Method  
+{: .specific-title}   
+FOSSLight Scanner can be installed using pip3.      
+It is recommended to install in a [python3 virtualenv](etc/guide_virtualenv.md) environment.  
 
+```
+$ pip3 install fosslight_dependency
+```
+<br><br>
 
-## 📋 Prerequisite
-Because we utilize the different open source software to analyze the dependencies of each package manager, you need to set up the below Prerequisite steps according to package manager to analyze.
+## How to Run and Output  
+{: .left-bar-title} 
+- Please follow the prerequisites and execution methods according to the package manager used in your project.  
+- Dependency analysis must be performed in the same build environment as the package manager used during actual development. (e.g., npm build tools must be installed on the server to perform npm dependency analysis)  
 
 {::options parse_block_html="true" /}
 <details>
-<summary markdown="span">**Prerequisite for Npm or Yarn**</summary>
-1. Install the NPM License Checker to analyze the dependencies.
-```
-$ npm install -g license-checker
-```
- > To install license-checker globally, '-g' option is required. If you do not have 'sudo' access, then you can change default path to install global modules.
-```
-$ npm set prefix ~/.npm
-$ PATH=~/.npm/bin:$PATH
-```
+<summary markdown="span">**[NodeJS] Npm or Yarn**</summary>
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-2. Run the command to install the dependencies. (optional)
-```
-$ npm install
-```
- > It can be skipped if the project meets any of the following cases.
- > - If the 'package.json' file exists in the input directory, it will be executed automatically by FOSSLight Dependency Scanner. So you can skip it.
- > - If the 'node_modules' directory already exists, you can run FOSSLight Dependency Scanner by setting the input directory to the path where node_modules is located.
+<span class="specific-title">Prerequisites</span>
+
+1. Install license-checker.  
+   ```
+   $ npm install -g license-checker
+   ```
+   > ▲ [Note] The '-g' option must be added to install license-checker as a global package.  
+   > This is to prevent the license-checker module and its dependencies from being included in the results and distributed with the target software.  
+   
+   ✓ If you don't have sudo privileges  
+   You can change the default path where global modules are installed.  
+   ```
+   $ npm set prefix ~/.npm
+   $ PATH=~/.npm/bin:$PATH
+   ```
+
+<span class="specific-title">How to Run and Results</span>
+
+1. Run the following command in the directory where package.json exists.  
+   ```
+   $ fosslight_dependency
+   ``` 
+   - If the node_modules directory is already installed, run with the -m option.   
+   - If you want to analyze only production dependencies, the node_modules directory must contain only production packages. (Install with $npm install --production)      
+   ```
+   $ fosslight_dependency -m npm
+   ```
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.   
+   <img src="./images/fl_dep_npm_1.png" alt="npm2">
+ 
+
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Pnpm**</summary>
+<summary markdown="span">**[NodeJS] Pnpm**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
+
+<span class="specific-title">How to Run and Results</span>  
+
+No prerequisites required. You can run it directly.  
+1. Run the following command in the directory where package.json exists.  
+  ```
+  $ fosslight_dependency
+  ```
+
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+   <img src="./images/fl_dep_pnpm_1.png" alt="pnpm">  
+
+
+</div>
+
+</details>
+
+<details>
+<summary markdown="span">**[Java/Kotlin] Gradle**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;" id="prerequisite-for-gradle">
+
+<span class="specific-title">Prerequisites</span>   
+
+1. Add the plugin to the build.gradle file located in the project root directory as follows.  
+   - Java  
+      <pre><code>
+      plugins {
+          id <span style="color:#FFA500;">'com.github.hierynomus.license'</span> version <span style="color:#FFA500;">'0.16.1'</span> <span style="color:#888888;">// For gradle version 6.x or lower, use version '0.15.0' instead.</span>
+      }
+
+      downloadLicenses {
+          includeProjectDependencies = true
+          dependencyConfiguration = <span style="color:#FFA500;">'runtimeClasspath'</span> <span style="color:#888888;">// For gradle version 4.6 or lower, use 'runtime' instead of 'runtimeClasspath'.</span>
+      }
+      </code></pre>  
+
+    - Kotlin  
+      <pre><code>
+      plugins {
+          id(<span style="color:#FFA500;">"com.github.hierynomus.license"</span>) version <span style="color:#FFA500;">"0.16.1"</span>
+      }
+
+      downloadLicenses {
+          includeProjectDependencies = true
+          dependencyConfiguration = <span style="color:#FFA500;">"runtimeClasspath"</span>
+      }
+      </code></pre>  
+
+2. Run the 'downloadLicenses' task of the plugin.  
+  - Linux : In the root directory where build.gradle exists, enter the command as follows.   
+    ```
+    $ ./gradlew downloadLicenses
+    ```    
+  - Windows : How to run in development environment (eclipse)
+      1. Right-click the build.gradle file and click Run As > Gradle build....    
+      <img src="./images/fl_dep_gradle_1.png" alt="gradle1">
+      2. When the "Edit Configuration" window opens, enter 'downloadLicenses' in the "Gradle Tasks" tab and click Run to execute.  
+      <img src="./images/fl_dep_gradle_2.png" alt="gradle2">
+
+3. Verify that dependency-license.json is created in the build/reports/license directory. (The directory where it is created is the same for linux/windows environments)  
+  - If you changed project.buildDir, the result file will be created at {project.buildDir}/reports/license/dependency-license.json, and you must specify the build directory with the -c option when running FOSSLight Dependency Scanner.  
+  ```
+  fosslight_dependency -c {project.buildDir}
+  ```
+
+<span class="specific-title">How to Run and Results</span>   
+1. Linux
+  - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
+    ```
+    $ fosslight_dependency
+    ``` 
+2. Windows  
+  - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
+3. Results
+  - Example of build/reports/license/dependency-license.json
+    ```
+     {
+      "name": "commons-dbcp:commons-dbcp:1.4",
+      "file": "commons-dbcp-1.4.jar",
+      "licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ]
+    },
+    {
+      "name": "com.amazonaws:aws-java-sdk-machinelearning:1.11.41",
+      "file": "aws-java-sdk-machinelearning-1.11.41.jar",
+      "licenses": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://aws.amazon.com/apache2.0"
+        }
+      ]
+    },
+   ```  
+  - 'fosslight_report_dep_[datetime].xlsx' result file in the same directory 
+     <img src="./images/fl_dep_gradle_3.png" alt="gradle1">  
+</div>
+</details>
+
+
+<details>
+<summary markdown="span">**[Java] Android(Gradle)**</summary>
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">
+
+<span class="specific-title">Prerequisites</span>   
+
+1. For Android (gradle), if the gradlew executable file and build.gradle file exist in the input directory, the plugin addition and execution are automatically performed inside FOSSLight Dependency Scanner, so you can proceed directly to the execution method.   
+2. If the Android application project does not have an 'app' (or module name) directory, please refer to the <a href="#prerequisite-for-gradle">Java/Kotlin Gradle guide</a> to perform Dependency analysis.
+
+
+<span class="specific-title">How to Run and Results</span>  
+
+1. Linux
+  - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
+    ```
+    $ fosslight_dependency
+    ``` 
+    - If the application folder name is not 'app', you must specify the application folder name with the -n option.  
+    ```
+    $ fosslight_dependency -m android -n {application_name}
+    ```
+2. Windows  
+  - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
+  - If the application folder name is not 'app', run with the -n option in the command prompt.  
+    ```
+    $ fosslight_dependency.exe -m android -n {application_name}
+    ```
+3. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+   <img src="./images/fl_dep_android_gradle_1.png" alt="android_gradle1">  
+
+</div>
+
+</details>
+
+<details>
+<summary markdown="span">**[Python] Pip**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">
+
 ```tip
-FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the 'pnpm install' and 'pnpm ls' command.
-Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
-```
+- It is recommended to set up a virtual environment to separate the project dependencies from globally installed Python dependencies in the system.
+- If requirements.txt exists in the input path, FOSSLight Dependency Scanner can automatically install dependencies and run the analysis, so you can skip step 2.
+```  
+
+<span class="specific-title">Prerequisites</span>  
+
+1. It is recommended to use a virtual environment to avoid mixing with global Python packages.  
+
+<span class="specific-title">How to Run</span>  
+
+1. Run the following command in the project root directory (e.g., the path where requirements.txt is located).  
+At this time, to prevent debugging packages used during development or globally installed packages from being included in the analysis results,
+requirements.txt should contain only the packages needed for distribution.  
+  - Linux  
+    ```
+    $ fosslight_dependency
+    ``` 
+  -  Windows 
+    ```
+    $ fosslight_dependency.exe
+    ```
+
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+   <img src="./images/fl_dep_pypi_1.png" alt="pypi">
+</div>
 </details>
 
-<details>
-<summary markdown="span">**Prerequisite for Gradle**</summary>
-1. Add the License Gradle Plugin in build.gradle file.
-```
-plugins {
-    id 'com.github.hierynomus.license' version '0.16.1' // If the gradle version is 6.x or lower, then add the '0.15.0' version instead of '0.16.1'.
-}
-downloadLicenses {
-    includeProjectDependencies = true
-    dependencyConfiguration = 'runtimeClasspath' // If the gradle version is 4.6 or lower, then add the 'runtime' instead of 'runtimeClasspath'.
-}
-```
 
-2. Run the 'downloadLicenses' task.
-```
-$ gradlew downloadLicenses
-```
-</details>
 
 <details>
-<summary markdown="span">**Prerequisite for Android (gradle)**</summary>
-```tip
-If there is a 'gradlew' executable and a 'build.gradle' file in the input directory, FOSSLight Dependency Scanner will automatically add and execute the android-dependency-scanning plugin. So you can skip the prerequisites below.
-```
-##### java/groovy project
-1. Add the android-dependency-scanning plugin in build.gradle file.
-```
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'org.fosslight:android-dependency-scanning:1.0.0'
-    }
-}
-```
+<summary markdown="span">**[Java] Maven**</summary>
 
-2. Add the below line in build.gradle file in the app(your application name, default : app) directory. It must be added to the subline of the plugins block (or apply plugin:'com.android.application') to prevent an error from occurring.
-```
-apply plugin: 'org.fosslight'
-```
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-3. Run the 'generateLicenseTxt' task.
-```
-$ gradlew generateLicenseTxt
-```
+<span class="specific-title">Prerequisites</span>   
 
-##### kotlin project
-1. Add the android-dependency-scanning plugin in build.gradle.kts file.
-```
-buildscript {
-    dependencies {
-        classpath("org.fosslight:android-dependency-scanning:1.0.0")
-    }
-}
-```
+1. Maven version 3.5.4 or higher is required.
+2. JAVA environment must be installed. ([Open Source JDK 11 or higher](https://openjdk.java.net) required)   
 
-2. Add mavenCentral repository to the pluginManagement repositories section in your settings.gradle.kts file.
-```
-pluginManagement {
-    repositories {
-        mavenCentral()
-    }
-}
-```
+<span class="specific-title">How to Run and Results</span>   
 
-3. Add the below line in build.gradle.kts file in the app(your application name, default : app) directory.
-```
-plugins {
-    id("org.fosslight")
-}
-```
+1. Linux
+  - Run the following command in the path where pom.xml (Maven's manifest file) exists.  
+    ```
+    $ fosslight_dependency
+    ``` 
+2. Windows  
+  - Place fosslight_dependency.exe in the directory where pom.xml (Maven's manifest file) exists, then double-click to run.  
+3. Results  
+  - Example of target/generated-resources/licenses.xml   
+        <pre style="background-color: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; overflow-x: auto; font-size: 85%; line-height: 1.45;">
+          <code class="language-xml">&lt;licenseSummary&gt;
+                &lt;dependencies&gt;
+                  &lt;dependency&gt;
+                    &lt;groupId&gt;org.apache.maven&lt;/groupId&gt;
+                    &lt;artifactId&gt;maven-settings&lt;/artifactId&gt;
+                    &lt;version&gt;2.0.6&lt;/version&gt;
+                    &lt;licenses&gt;
+                      &lt;license&gt;
+                        &lt;name&gt;The Apache Software License, Version 2.0&lt;/name&gt;
+                        &lt;url&gt;http://www.apache.org/licenses/LICENSE-2.0.txt&lt;/url&gt;
+                        &lt;distribution&gt;repo&lt;/distribution&gt;
+                      &lt;/license&gt;
+                    &lt;/licenses&gt;
+                  &lt;/dependency&gt;
+                &lt;/dependencies&gt;
+              &lt;/licenseSummary&gt;</code>
+        </pre>
+  - 'fosslight_report_dep_[datetime].xlsx' result file in the same directory     
+  <img src="./images/fl_dep_maven_1.png" alt="maven1">   
+  
+> **Note**: When using a separately configured build output directory
+>   - The licenses.xml file will be created under {buildDir}/generated-resources. In this case, you must specify the build output directory with the -o option when running fosslight_dependency.  
+>   ```
+>   $ fosslight_dependency -o customized_output_directory_name  
+>   ```  
 
-4. Run the 'generateLicenseTxt' task.
-```
-$ gradlew generateLicenseTxt
-```
-</details>
-
-<details>
-<summary markdown="span">**Prerequisite for Pypi**</summary>
-```tip
-- You can run this tool with virtual environment for separating the project dependencies from system global dependencies.
-- If the 'requirements.txt' file is located in the input path, FOSSLight Dependency Scanner can automatically install and analyze the dependencies. So you can skip from the prerequisite step2 for Pypi.
-```
-
-1. Install python3-venv.
-```
-$ sudo apt-get install python3-venv
-```
-
-2. Create and activate the virtual environment
-```
-// virtualenv example
-$ virtualenv -p /usr/bin/python3.10 venv
-$ source venv/bin/activate
-// conda example
-$ conda create --name {venv name}
-$ conda activate {venv name}
-```
-
-2. Install the packages that you use in the virtual environment.
-3. You can add activate, deactivate command with '-a', '-d' option to run FOSSLight Dependency Scanner.
+</div>
 
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Maven**</summary>
-```tip
-If the 'pom.xml' is located in the input directory, FOSSLight Dependency Scanner will automatically add and execute the license-maven-plugin. So you can skip the prerequisites below.
-```
-<ol>
-<li>Add the license-maven-plugin into pom.xml file.</li>
-<pre>
-&lt;project&gt;
-  ...
-  &lt;build&gt;
-  ...
-    &lt;plugins&gt;
-    ...
-      &lt;plugin&gt;
-        &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-        &lt;artifactId&gt;license-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;2.0.0&lt;/version&gt;
-        &lt;executions&gt;
-          &lt;execution&gt;
-            &lt;id&gt;aggregate-download-licenses&lt;/id&gt;
-            &lt;goals&gt;
-              &lt;goal&gt;aggregate-download-licenses&lt;/goal&gt;
-            &lt;/goals&gt;
-          &lt;/execution&gt;
-        &lt;/executions&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-    ...
-  &lt;/build&gt;
-  ...
-&lt;/project&gt;
-</pre>
+<summary markdown="span">**[Dart/flutter] Pub**</summary>
 
-<li>Run the license-maven-plugin task.</li>
-<pre>
-$ mvnw license:aggregate-download-licenses
-</pre>
-</ol>
-</details>
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-<details>
-<summary markdown="span">**Prerequisite for Pub**</summary>
-> If the 'flutter pub' command is not available in the environment where FOSSLight Dependency Scanner is running, please perform the following steps in advance in the environment where 'flutter pub' is available.
-1. Run flutter_oss_licenses with below command. (optional)
+<span class="specific-title">Prerequisites</span>  
+> If the flutter pub command is not available in the environment where FOSSLight Dependency Scanner is running, please perform the following steps in advance in an environment where flutter pub is available.
+1. Run flutter_oss_licenses with the following command. (optional)
 ```
 $ flutter pub add dev:flutter_oss_licenses:'^2.0.1'
 $ flutter pub get
@@ -237,177 +339,386 @@ $ flutter pub deps --json > tmp_deps.json
 $ flutter pub deps --no-dev -s compact > tmp_no_dev_deps.txt
 $ flutter pub run flutter_oss_licenses:generate.dart -o tmp_flutter_oss_licenses.json --json
 ```
-2. Run FOSSLight Dependency Scanner in the path where the file generated in the result of step 1 exists.
+2. Run FOSSLight Dependency Scanner in the path where the files generated in step 1 exist.
+
+<span class="specific-title">How to Run and Results</span>   
+1. Linux/MacOS
+  ```
+  $ fosslight_dependency
+  ```
+2. Windows
+  - Double-click fosslight_dependency.exe in the project top directory to run.  
+
+3. Results 
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+  <img src="./images/fl_dep_pub_1.png" alt="pub1">   
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Cocoapods**</summary>
-1. Install the pod package through Podfile.
-```
-$ pod install
-```
+<summary markdown="span">**[Swift/Obj-C] CocoaPods**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">
+
+<span class="specific-title">Prerequisites</span>
+
+1. Linux  
+  - You can analyze CocoaPods dependencies with simple environment setup if you only have Podfile and Podfile.lock.  
+    1. Install Ruby version 2.0 or higher and ubuntu-dev-tools to use gem package manager in Ubuntu  
+    ```
+    # First, check if ruby is installed.
+    $ ruby -v
+    # If not installed, run the following command.
+    $ sudo apt-get install ruby
+    # Install devtools.
+    $ sudo apt-get install ubuntu-dev-tools
+    ```
+    2. Install cocoapods
+    ```
+    # First, check if cocoapods is installed.
+    $ pod --version
+    # If not installed, run the following command.
+    $ sudo gem install cocoapods
+    ```
+    3. Download spec repository and install pod packages  
+    ```
+    $ pod setup
+    # In the top directory of the project where Podfile exists, run the following command to install Pod packages.
+    $ pod install
+    ```
+2. MacOS  
+  - Install Pod packages. 
+  ```
+  # First, check if cocoapods is installed.
+  $ pod --version
+  # If not installed, run the following command.
+  $ sudo gem install cocoapods  
+  # In the top directory of the project where Podfile exists, run the following command to install Pod packages.
+  $ pod install
+  ```
+
+<span class="specific-title">How to Run and Results</span>
+
+1. Run as follows in the directory where Podfile.lock exists.  
+  ```
+  $ fosslight_dependency
+  ```
+2. Results 
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+  <img src="./images/fl_dep_cocoapods_1.png" alt="cocoapods">  
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Swift**</summary>
-1. Create a github personal access token and use it with '-t' option when running the FOSSLight dependency scanner. It needs the Github API to get the license information of the github repository.  
-Please refer the [github docs guide to create a token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+<summary markdown="span">**[Swift] Swift Package Manager**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
+
+<span class="specific-title">Prerequisites</span>  
+
+1. Create a Personal Access Token to query License information from Github repository, then use it with the -t parameter when running FOSSLight Dependency Scanner. Please refer to the [Github docs guide](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for how to create a token.
+
+<span class="specific-title">How to Run and Results</span> 
+
+1. Run the following command in the directory where Package.resolved file is located.  
+  ```
+  $ fosslight_dependency -t <Github_Personal_Access_Token>
+  ```
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+  <img src="./images/fl_dep_swift_1.png" alt="swift">  
+
+> **Execution Tip**  
+>   - You can run it using the following command in the path where {project_name}.xcodeproj file is located.  
+>   ```
+>   $ fosslight_dependency -m swift -t <Github_Personal_Access_Token>
+>   ```  
+>     - In this case, it automatically finds the 'Package.resolved' file in {project_name}.xcodeproj/project.xcworkspace/xcshareddata/swiftpm and runs the program.  
+
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Carthage**</summary>
-1. Create 'Cartfile.resolved' by running the package installation command.
-```
-$ carthage update
-```
-2. Create a github personal access token and use it with '-t' option when running the FOSSLight dependency scanner. It needs the Github API to get the license information of the github repository.  
-Please refer the [github docs guide to create a token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+<summary markdown="span">**[Swift/Obj-C] Carthage**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
+
+<span class="specific-title">Prerequisites</span>  
+
+1. If the Cartfile directory is already created for an already built project, you can run the script immediately without running the carthage update command (which creates the 'Cartfile.resolved' file). 
+  ```
+  $ carthage update  
+  ```  
+2. Create a Personal Access Token to query License information from Github repository, then use it with the -t parameter when running FOSSLight Dependency Scanner. Please refer to the [Github docs guide](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for how to create a token.  
+
+<span class="specific-title">How to Run and Results</span>  
+
+1. Run the following command in the directory where Cartfile.resolved file is located.  
+  ```
+  $ fosslight_dependency -t <Github_Personal_Access_Token>
+  ```  
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+  <img src="./images/fl_dep_carthage_1.png" alt="carthage">  
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Go**</summary>
-```tip
-FOSSLight Dependency Scanner only supports for go modules. It automatically executes the 'go list -m all' command to obtain a list of dependencies, and then collects the open source software information such as license and repository. Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
-```
+<summary markdown="span">**[Go] Go**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
+
+<span class="specific-title">How to Run and Results</span>  
+
+Go is available for v1.14 or higher, and can be run immediately without any prerequisites.  
+
+1. Run the following command in the directory where go.mod (go's manifest file) is located.  
+  ```
+  fosslight_dependency 
+  ```
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+  <img src="./images/fl_dep_go_1.png" alt="go">  
+
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Nuget**</summary>
-```tip
-FOSSLight Dependency Scanner checks the package list through the packages.config file or obj/project.assets.json file in case of PackageReference, and then prints the OSS information of dependencies such as license and repository through nuget api.
- Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
-For CPM projects, analysis must be run from the Directory.Packages.props location. If obj/project.assets.json files are missing, the tool automatically runs 'dotnet restore' on .sln or .csproj files found in subdirectories to generate the required files before analyzing dependencies.
-```
+<summary markdown="span">**[.NET] Nuget**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
+
+<span class="specific-title">How to Run and Results</span>  
+Can be run immediately without prerequisites. 
+
+1. Linux/MacOS
+  ```
+  $ fosslight_dependency  
+  ```  
+2. Windows  
+  1). Download [FOSSLight Dependency Scanner Releases](https://github.com/fosslight/fosslight_dependency_scanner/releases) > Assets > fosslight_dependency_windows.zip and extract it.  
+  2). Place fosslight_dependency.exe in the corresponding path and double-click to run.   
+
+3. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+  <img src="./images/fl_dep_nuget_1.png" alt="nuget">  
+
+
+> **Execution Tip**  
+> 1. CPM project (Central Package Management)
+>  - You must run it from the path where `Directory.Packages.props` file exists.  
+>  - If `obj/project.assets.json` file does not exist, it will find `.csproj` or `.sln` files in subdirectories and automatically run `dotnet restore` to generate `project.assets.json` file before proceeding with analysis.  
+> 2. When copying packages folder to use as reference (project without packages.config) 
+>  - If you copied the packages folder from another project as-is and are using it as a reference, and packages.config file does not exist, create packages.config through the following procedure and then run FOSSLight Dependency Scanner.  
+>  - Procedure to create packages.config
+>     1. Close the project.  
+>     2. If packages.config exists in the project folder, delete it.  
+>     3. Remove all library reference items installed through NuGet from the .csproj file.  
+>     4. If necessary, perform NuGet cache deletion and Solution Clean.  \
+>     5. Reopen the project and verify that all references are removed and packages.config file does not exist.  
+>     6. Then install packages through NuGet again, and a new packages.config will be created and packages will be installed normally.  
+
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Helm**</summary>
-```tip
-FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Chart.yaml and 'helm dependency build' command.
-Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
-```
+<summary markdown="span">**[Kubernetes] Helm**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">
+
+
+
+<span class="specific-title">How to Run and Results</span>  
+
+Can be run immediately without prerequisites.  
+1. Run the following command in the directory where Chart.yaml file is located.  
+  ```
+  $ fosslight_dependency
+  ```
+> FOSSLight Dependency Scanner only works in an environment where the 'helm dependency build' command runs normally to collect OSS information.  
+> If an error occurs during Helm execution, please resolve the error and run the scanner again.   
+
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+   <img src="./images/fl_dep_helm_1.png" alt="helm">  
+
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Unity**</summary>
-```tip
-FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Library/PackageManager/ProjectCache file and each package directory within the Library/PackageCache directory. Therefore, you can execute the 'fosslight_dependency' command in an environment where the files exist.
-```
+<summary markdown="span">**[Unity] Unity Package Manager**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
+
+<span class="specific-title">How to Run and Results</span>  
+
+Can be run immediately without prerequisites.  
+1. Run the following command in the directory where Library folder exists.   
+  ```
+  $ fosslight_dependency 
+  ```
+
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+   <img src="./images/fl_dep_unity_1.png" alt="unity">  
+
+
+</div>
+
 </details>
 
 <details>
-<summary markdown="span">**Prerequisite for Cargo**</summary>
-```tip
-FOSSLight Dependency Scanner checks the package list and OSS information such as license and repository through the Cargo.toml and 'cargo metadata' command.
-Therefore, you can execute the 'fosslight_dependency' command directly without prerequisite step.
-```
+<summary markdown="span">**[Rust] Cargo**</summary>
+
+<div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">    
+
+<span class="specific-title">How to Run and Results</span>  
+
+Can be run immediately without prerequisites. 
+1. Run the following command in the directory where Cargo.toml file exists.  
+  ```
+  $ fosslight_dependency
+  ```
+2. Results  
+ - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
+   <img src="./images/fl_dep_cargo_1.png" alt="cargo">  
+
+
+</div>
+
 </details>
 {::options parse_block_html="false" /}
 
-
-## 🎉 How to install
-FOSSLight Dependency Scanner can be installed using pip3.    
-It is recommended to install in the [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment.
-
-```
-$ pip install fosslight-dependency
-```
-
-## 🚀 How to run
-
-You can run the FOSSLight Dependency Scanner with options based on your package manager.
-```
-$ fosslight_dependency [option] <arg>
-```
 ### Options
+{: .specific-title}
 ```
-        Optional
-            -h                              Print help message.
-            -v                              Print the version of the script.
-            -m <package_manager>            Enter the package manager.
-                                                (npm, maven, gradle, pypi, pub, cocoapods, android, swift, carthage, go, nuget, helm, unity, cargo, pnpm, yarn)
-            -p <input_path>                 Enter the path where the script will be run.
-            -e <exclude_path>               Enter the path where the analysis will not be performed.(Files and directories, pattern matching is available)
-                                             * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
-                                               Example) fosslight_dependency -e "dev/" "tests/
-            -o <output_path>                Output path
-                                                (If you want to generate the specific file name, add the output path with file name.)            
-            -f <format> [<format> ...]      Output formats
-                                               (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
-                                            Multiple formats can be specified separated by space.
-            --graph-path <save_path>        Enter the path where the graph image will be saved
-                                                (ex. /your/directory/path/filename.{pdf, jpg, png}) (recommend pdf extension)
-            --graph-size <width> <height>   Enter the size of the graph image (The size unit is pixels)
-                                                --graph-path option is required
-            --direct                        Print the direct/transitive dependency type in comment.
-                                                Choice 'True' or 'False'. (default:True)
-            -r                              Recursive mode. Scan all subdirectories for manifest files.
-            --notice                        Print the open source license notice text.
+📖 Usage
+    ────────────────────────────────────────────────────────────────────
+    fosslight_dependency [options] <arguments>
 
-        Required only for swift, carthage
-            -t <token>                      Enter the github personal access token.
+    📝 Description
+    ────────────────────────────────────────────────────────────────────
+    FOSSLight Dependency Scanner analyzes dependencies for multiple package
+    managers. It detects manifest files automatically and generates reports
+    containing OSS information of dependencies.
 
-        Optional only for pypi
-            -a <activate_cmd>               Virtual environment activate command(ex, 'conda activate (venv name)')
-            -d <deactivate_cmd>             Virtual environment deactivate command(ex, 'conda deactivate')
+    📚 Guide: https://fosslight.org/fosslight-guide-en/scanner/3_dependency.html
 
-        Optional only for gradle, maven
-            -c <dir_name>                   Enter the customized build output directory name
-                                                -Default name : 'build' for gradle, 'target' for maven
+    📦 Supported Package Managers
+    ────────────────────────────────────────────────────────────────────
+    Gradle, Maven (Java)          │ NPM, PNPM, Yarn (Node.js)
+    PIP (Python)                  │ Pub (Dart/Flutter)
+    Cocoapods, Swift, Carthage    │ Go (Go)
+    Nuget (.NET)                  │ Helm (Kubernetes)
+    Unity (Unity)                 │ Cargo (Rust)
 
-        Optional only for android
-            -n <app_name>                   Enter the application directory name where the plugin output file is located(default: app)
+    ⚙️  General Options
+    ────────────────────────────────────────────────────────────────────
+    -p <path>              Path to analyze (default: current directory)
+    -o <path>              Output file path or directory
+    -f <format>            Output formats: excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml
+    -e <pattern>           Exclude paths from analysis (files and directories)
+                           ⚠️  IMPORTANT: Always wrap in quotes to avoid shell expansion
+                           Example: fosslight_dependency -e "test/" "node_modules/"
+    -h                     Show this help message
+    -v                     Show version information
+
+    🔍 Scanner-Specific Options
+    ────────────────────────────────────────────────────────────────────
+    -m <manager>           Specify package manager (npm, maven, gradle, pypi, pub,
+                           cocoapods, android, swift, carthage, go, nuget, helm,
+                           unity, cargo, pnpm, yarn)
+    -r                     Recursive mode: scan all subdirectories for manifest files
+    --graph-path <path>    Save dependency graph image (pdf, jpg, png) (recommend pdf extension)
+                           Example: fosslight_dependency --graph-path /your/path/filename.[pdf, jpg, png]
+    --graph-format <format> Set graph image format (default: pdf)
+    --graph-size <w> <h>   Set graph image size in pixels (requires --graph-path)
+    --direct <True|False>  Print direct/transitive dependency type
+                           Choose True or False (default: True)
+    --notice               Print the open source license notice text
+
+    🔧 Package Manager Specific Options
+    ────────────────────────────────────────────────────────────────────
+    Swift, Carthage:
+      -t <token>           GitHub personal access token
+
+    Pypi:
+      -a <cmd>             Virtual environment activate command
+                           (ex: 'conda activate myenv')
+      -d <cmd>             Virtual environment deactivate command
+                           (ex: 'conda deactivate')
+
+    Gradle, Maven:
+      -c <dir>             Customized build output directory
+                           (default: 'build' for gradle, 'target' for maven)
+
+    Android:
+      -n <name>            Application directory name (default: app)
+
+    💡 Examples
+    ────────────────────────────────────────────────────────────────────
+    # Scan current directory
+    fosslight_dependency
+
+    # Scan specific path with exclusions
+    fosslight_dependency -p /path/to/project -e "test/" "vendor/"
+
+    # Generate output in specific format
+    fosslight_dependency -f excel -o results/
+
+    # Specify package manager
+    fosslight_dependency -m npm -p /path/to/nodejs/project
+
+    # Recursive scan with all subdirectories
+    fosslight_dependency -r
+
+    # Generate dependency graph
+    fosslight_dependency --graph-path dependency_tree.pdf
 
 ```
-- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
-   - ⚠️ Make sure to use double quotes ("") when entering values.
-      - Example) fosslight_dependency -e "dev/" "tests/"
-   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
+- Pattern matching guide for the -e option [Pattern Matching Guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching)
+   - ⚠️ You must use double quotes ("") when entering values.
+       - Example) fosslight_dependency -e "dev/" "tests/"
+   - ⚠️ File names and extensions are case-sensitive, so enter them exactly as intended.
 
-### Tips to run
-When running the FOSSLight Dependency Scanner, it sequentially detects package manager manifest files starting from the input path (using the -p option). If a manifest file is detected, the scanner stops searching for additional manifest files in subdirectories and proceeds with dependency analysis.
-(If you want the scanner to analyze dependencies for all manifest files found throughout the entire input path, please run it with the -r option.)
-The manifest file of each package manager is as follows:
-```
-  - Npm : package.json
-  - Pnpm : pnpm-lock.yaml
-  - Yarn : package.json
-  - Pypi : requirements.txt / setup.py / pyproject.toml
-  - Maven : pom.xml
-  - Gradle (Android) : build.gradle
-  - Pub : pubspec.yaml
-  - Cocoapods : Podfile
-  - Swift : Package.resolved
-  - Carthage : Cartfile.resolved
-  - Go : go.mod
-  - Nuget : packages.config / {project name}.csproj / Directory.Packages.props
-  - Helm : Chart.yaml
-  - Unity : Library/PackageManager/ProjectCache
-  - Cargo : Cargo.toml
-```
+### Tips to run  
+{: .specific-title}
+- When running FOSSLight Dependency Scanner, it sequentially detects manifest files of package managers from the input path (using the '-p' option), and if a manifest file is detected, it stops detecting manifest files in subdirectories and performs dependency analysis.
+(If you want to perform dependency analysis for all manifest files found in the entire input path, please run with the '-r' option.)
+The manifest files for each package manager are as follows:
 
-- Android (gradle)
-  - If the module name is not the default 'app', you must run it by specifying the module name with the '-n' option. (fosslight_dependency -n {module_name})
-- Swift package manager
-  - Exceptionally, you can run "fosslight_dependency -m swift -t {token} command in the path where {Projectname}.xcodeproj file is located.
-  - Then it can find the 'Package.resolved' file in {Projectname}.xcodeproj/project.xcworkspace/xcshareddata/swiftpm and run automatically.
-- Unity
-  - You can run "fosslight_dependency -m unity" command in the path where 'Library' folder is located.
-
-## 📁 Result
-```
-$ tree
-.
-├── fosslight_report_dep_210503_0039.xlsx
-├── fosslight_log_dep_210503_0039.txt
-└── fosslight_opossum_dep_210503_0039.json
-```
-- fosslight_report_dep_[datetime].xlsx : FOSSLight Dependency Scanner result in spreadsheet format.
-- fosslight_log_dep_[datetime].txt: The execution log.
-- fosslight_opossum_dep_[datetime].json : FOSSLight Dependency Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum)
-- third_party_notice.txt : Created only when running with Unity, and collects and prints the third party notice for each package.
+  ```
+    - Npm : package.json
+    - Pnpm : pnpm-lock.yaml
+    - Yarn : package.json
+    - Pypi : requirements.txt / setup.py / pyproject.toml
+    - Maven : pom.xml
+    - Gradle (Android) : build.gradle
+    - Pub : pubspec.yaml
+    - Cocoapods : Podfile
+    - Swift : Package.resolved
+    - Carthage : Cartfile.resolved
+    - Go : go.mod
+    - Nuget : packages.config / {project name}.csproj / Directory.Packages.props
+    - Helm : Chart.yaml
+    - Unity : Library/PackageManager/ProjectCache
+    - Cargo : Cargo.toml
+  ```
+  
+- Supplementary Output  
+  - fosslight_log_dep_[datetime].txt: File containing execution logs  
+  - fosslight_opossum_dep_[datetime].json : Dependency analysis result available for use in [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum result)  
+  - third_party_notice.txt : Created only when running with Unity, which collects and outputs third party notices for each package
 
 ### Graph Network Creation Result
+{: .specific-title}
 ``` bash
 # $ fosslight_dependency -p /project/path --graph-path ~/temp/graph.png --graph-size 1000 1000
 $ cd ~/temp
@@ -416,16 +727,17 @@ $ tree
 └── graph.png
 ```
 
-<img src="images/fosslight_depenency_graph.png" width="400">
-- Saved an image of the dependency graph using the Depends On section from the fosslight_report_dep_[datetime].xlsx file
+<img src="images/fosslight_depenency_graph.png" width="600">
+- Saves a dependency relationship graph image using the Depends On section from the fosslight_report_dep_[datetime].xlsx file result
 
-### Result Contents
-It prints the OSS information based on manifest file(package.json, pom.xml) of dependencies (including transitive dependencies).
-For a unique OSS name, OSS name is printed such as (package_manager):(oss name) or (group id):(artifact id).
+### Result File Contents
+{: .specific-title}
+The FOSSLight Report result file records OSS information based on manifest files of all analyzed dependencies including transitive dependencies.
+At this time, to write a unique OSS name, the OSS name is recorded in the format of (package manager):(OSS name) or (group id):(artifact id).
 
 | Package manager                | OSS Name                 | Download Location                                                                                  | Homepage                                            |
 | ------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| Npm, Pnpm, Yarn                      | npm:(oss name)           | npmjs.com/package/(oss name)/v/(oss version)                                                       | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)                        |
+| Npm, Pnpm, Yarn                | npm:(oss name)           | npmjs.com/package/(oss name)/v/(oss version)                                                       | Priority1. repository in package.json <br> Priority2. npmjs.com/package/(oss name)  |
 | Pypi                           | pypi:(oss name)          | pypi.org/project/(oss name)/(version)                                                              | homepage in (pip show) information                  |
 | Maven<br>& Gradle<br>& Android | (group_id):(artifact_id) | mvnrepository.com/artifact/(group id)/(artifact id)/(version)                                      | mvnrepository.com/artifact/(group id)/(artifact id) |
 | Pub                            | pub:(oss name)           | pub.dev/packages/(oss name)/versions/(version)                                                     | homepage in (pub information)                       |
@@ -440,12 +752,15 @@ For a unique OSS name, OSS name is printed such as (package_manager):(oss name) 
 
 
 ```warning
-- The printed download location of npm, maven, gradle may be different from the url of actual package if installed through the local path or local repository (not distributed in npmjs.com or mvnrepository).
-- For Helm, the dependencies of each dependency are not currently supported. And it obtains the OSS information of each dependency from the Chart.yaml file information in the .tgz file downloaded in the charts/ directory after executing the 'helm dependency build' command. Therefore, if information such as License or Homepage is missing in Chart.yaml, the information cannot be obtained, so the user needs to manually check and supplement it.
-```
+- For Npm, Maven, and gradle result file contents, if packages are installed through local path or local repository (not distributed on npmjs.com / mvnrepository), the download location may differ from the actual one.
+- Helm can only output dependencies listed in the dependencies section of the root project's Chart.yaml file, and currently does not support outputting dependency items of each dependency. Also, it obtains OSS information of each dependency from the Chart.yaml file information in the .tgz file downloaded in the charts/ directory after executing the 'helm dependency build' command.
+Therefore, if information such as License or Homepage is missing in Chart.yaml, that information cannot be obtained, so users need to manually check and supplement it.
+```  
+<br><br>
 
-## 🧐 How it works
-FOSSLight Dependency Scanner utilizes the open source software for analyzing each package manager dependencies. We choose the open source software for each package manager that shows not only the direct dependencies but also the transitive dependencies including the information of dependencies such as oss name, oss version and license name.
+## How it Works
+{: .left-bar-title} 
+FOSSLight Dependency Scanner utilizes open source software to analyze dependencies for each package manager. We choose open source software for each package manager that shows not only direct dependencies but also transitive dependencies including information such as OSS name, OSS version, and license name.
 
 Each package manager uses the results of the following software:
 
@@ -456,9 +771,11 @@ Each package manager uses the results of the following software:
 - Android(gradle) : [android-dependency-scanning](https://github.com/fosslight/android-dependency-scanning)
 - Pypi : [pipdeptree](https://pypi.org/project/pipdeptree/)
 
-Because we utilizes the different open source software to analyze the dependencies of each package manager, you need to set up the **Prerequisite** steps according to package manager to analyze.
+Because we utilize different open source software to analyze dependencies for each package manager, you need to set up the **Prerequisites** steps according to the package manager to analyze.
 
-## 👀 Package Support Level
+<br><br>
+## Package Support Level
+{: .left-bar-title} 
 <table>
 <thead>
   <tr>
@@ -611,10 +928,10 @@ Because we utilizes the different open source software to analyze the dependenci
     <td>O</td>
     <td>O</td>
     <td>X</td>
-  </tr>  
+  </tr>
 </tbody>
 </table>
 
 ```tip
-**Internet Access Requirements:** Internet access is required if license information, homepage, or other OSS details cannot be resolved using only local manifest/lock/cache/plugin output files.
+**Internet Access Required Criteria**: Internet access is required if license, homepage, or other OSS information cannot be resolved using only local manifest/lock/cache/plugin output files.
 ```

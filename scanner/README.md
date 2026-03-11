@@ -23,6 +23,7 @@ FOSSLight Scanner consists of the following 3 scanners, each responsible for dif
 <br><br>
 
 ## Table of Contents
+{: .left-bar-title} 
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [How to Run](#how-to-run)
