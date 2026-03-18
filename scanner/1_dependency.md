@@ -79,7 +79,7 @@ $ pip3 install fosslight_dependency
    $ fosslight_dependency
    ``` 
    - If the node_modules directory is already installed, run with the -m option.   
-   - If you want to analyze only production dependencies, the node_modules directory must contain only production packages. (Install with $npm install --production)      
+   - If you want to analyze only production dependencies, the node_modules directory must contain only production packages. (Install with $npm install \-\-production)      
    ```
    $ fosslight_dependency -m npm
    ```
@@ -220,13 +220,13 @@ No prerequisites required. You can run it directly.
     ``` 
     - If the application folder name is not 'app', you must specify the application folder name with the -n option.  
     ```
-    $ fosslight_dependency -m android -n {application_name}
+    $ fosslight_dependency -n {application_name}
     ```
 2. Windows  
   - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
   - If the application folder name is not 'app', run with the -n option in the command prompt.  
     ```
-    $ fosslight_dependency.exe -m android -n {application_name}
+    $ fosslight_dependency.exe -n {application_name}
     ```
 3. Results  
  - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
@@ -237,7 +237,7 @@ No prerequisites required. You can run it directly.
 </details>
 
 <details>
-<summary markdown="span">**[Python] Pip**</summary>
+<summary markdown="span">**[Python] Pypi**</summary>
 
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">
 
@@ -292,25 +292,6 @@ requirements.txt should contain only the packages needed for distribution.
 2. Windows  
   - Place fosslight_dependency.exe in the directory where pom.xml (Maven's manifest file) exists, then double-click to run.  
 3. Results  
-  - Example of target/generated-resources/licenses.xml   
-        <pre style="background-color: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; overflow-x: auto; font-size: 85%; line-height: 1.45;">
-          <code class="language-xml">&lt;licenseSummary&gt;
-                &lt;dependencies&gt;
-                  &lt;dependency&gt;
-                    &lt;groupId&gt;org.apache.maven&lt;/groupId&gt;
-                    &lt;artifactId&gt;maven-settings&lt;/artifactId&gt;
-                    &lt;version&gt;2.0.6&lt;/version&gt;
-                    &lt;licenses&gt;
-                      &lt;license&gt;
-                        &lt;name&gt;The Apache Software License, Version 2.0&lt;/name&gt;
-                        &lt;url&gt;http://www.apache.org/licenses/LICENSE-2.0.txt&lt;/url&gt;
-                        &lt;distribution&gt;repo&lt;/distribution&gt;
-                      &lt;/license&gt;
-                    &lt;/licenses&gt;
-                  &lt;/dependency&gt;
-                &lt;/dependencies&gt;
-              &lt;/licenseSummary&gt;</code>
-        </pre>
   - 'fosslight_report_dep_[datetime].xlsx' result file in the same directory     
   <img src="./images/fl_dep_maven_1.png" alt="maven1">   
   
@@ -330,16 +311,7 @@ requirements.txt should contain only the packages needed for distribution.
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
 <span class="specific-title">Prerequisites</span>  
-> If the flutter pub command is not available in the environment where FOSSLight Dependency Scanner is running, please perform the following steps in advance in an environment where flutter pub is available.
-1. Run flutter_oss_licenses with the following command. (optional)
-```
-$ flutter pub add dev:flutter_oss_licenses:'^2.0.1'
-$ flutter pub get
-$ flutter pub deps --json > tmp_deps.json
-$ flutter pub deps --no-dev -s compact > tmp_no_dev_deps.txt
-$ flutter pub run flutter_oss_licenses:generate.dart -o tmp_flutter_oss_licenses.json --json
-```
-2. Run FOSSLight Dependency Scanner in the path where the files generated in step 1 exist.
+1. Flutter must be installed to build the project.
 
 <span class="specific-title">How to Run and Results</span>   
 1. Linux/MacOS
@@ -363,32 +335,7 @@ $ flutter pub run flutter_oss_licenses:generate.dart -o tmp_flutter_oss_licenses
 
 <span class="specific-title">Prerequisites</span>
 
-1. Linux  
-  - You can analyze CocoaPods dependencies with simple environment setup if you only have Podfile and Podfile.lock.  
-    1. Install Ruby version 2.0 or higher and ubuntu-dev-tools to use gem package manager in Ubuntu  
-    ```
-    # First, check if ruby is installed.
-    $ ruby -v
-    # If not installed, run the following command.
-    $ sudo apt-get install ruby
-    # Install devtools.
-    $ sudo apt-get install ubuntu-dev-tools
-    ```
-    2. Install cocoapods
-    ```
-    # First, check if cocoapods is installed.
-    $ pod --version
-    # If not installed, run the following command.
-    $ sudo gem install cocoapods
-    ```
-    3. Download spec repository and install pod packages  
-    ```
-    $ pod setup
-    # In the top directory of the project where Podfile exists, run the following command to install Pod packages.
-    $ pod install
-    ```
-2. MacOS  
-  - Install Pod packages. 
+1. Install Pod packages.(MacOS) 
   ```
   # First, check if cocoapods is installed.
   $ pod --version
@@ -433,7 +380,7 @@ $ flutter pub run flutter_oss_licenses:generate.dart -o tmp_flutter_oss_licenses
 > **Execution Tip**  
 >   - You can run it using the following command in the path where {project_name}.xcodeproj file is located.  
 >   ```
->   $ fosslight_dependency -m swift -t <Github_Personal_Access_Token>
+>   $ fosslight_dependency -t <Github_Personal_Access_Token>
 >   ```  
 >     - In this case, it automatically finds the 'Package.resolved' file in {project_name}.xcodeproj/project.xcworkspace/xcshareddata/swiftpm and runs the program.  
 
@@ -501,8 +448,9 @@ Can be run immediately without prerequisites.
   $ fosslight_dependency  
   ```  
 2. Windows  
-  1). Download [FOSSLight Dependency Scanner Releases](https://github.com/fosslight/fosslight_dependency_scanner/releases) > Assets > fosslight_dependency_windows.zip and extract it.  
-  2). Place fosslight_dependency.exe in the corresponding path and double-click to run.   
+  ```
+  $ fosslight_dependency.exe 
+  ```  
 
 3. Results  
  - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
@@ -519,7 +467,7 @@ Can be run immediately without prerequisites.
 >     1. Close the project.  
 >     2. If packages.config exists in the project folder, delete it.  
 >     3. Remove all library reference items installed through NuGet from the .csproj file.  
->     4. If necessary, perform NuGet cache deletion and Solution Clean.  \
+>     4. If necessary, perform NuGet cache deletion and Solution Clean.
 >     5. Reopen the project and verify that all references are removed and packages.config file does not exist.  
 >     6. Then install packages through NuGet again, and a new packages.config will be created and packages will be installed normally.  
 
@@ -767,7 +715,6 @@ Each package manager uses the results of the following software:
 - NPM : [NPM License Checker](https://github.com/davglass/license-checker)
 - Gradle : [License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)
 - Maven : [license-maven-plugin](https://github.com/mojohaus/license-maven-plugin)
-- Pub : [flutter_oss_licenses](https://github.com/espresso3389/flutter_oss_licenses)
 - Android(gradle) : [android-dependency-scanning](https://github.com/fosslight/android-dependency-scanning)
 - Pypi : [pipdeptree](https://pypi.org/project/pipdeptree/)
 
