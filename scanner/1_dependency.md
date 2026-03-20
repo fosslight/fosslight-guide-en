@@ -72,7 +72,7 @@ $ pip3 install fosslight_dependency
    $ PATH=~/.npm/bin:$PATH
    ```
 
-<span class="specific-title">How to Run and Results</span>
+<span class="specific-title">How to Run</span>
 
 1. Run the following command in the directory where package.json exists.  
    ```
@@ -83,10 +83,6 @@ $ pip3 install fosslight_dependency
    ```
    $ fosslight_dependency -m npm
    ```
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.   
-   <img src="./images/fl_dep_npm_1.png" alt="npm2">
- 
 
 </div>
 
@@ -97,17 +93,13 @@ $ pip3 install fosslight_dependency
 
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 No prerequisites required. You can run it directly.  
 1. Run the following command in the directory where package.json exists.  
   ```
   $ fosslight_dependency
   ```
-
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-   <img src="./images/fl_dep_pnpm_1.png" alt="pnpm">  
 
 
 </div>
@@ -162,19 +154,9 @@ No prerequisites required. You can run it directly.
   ```
   fosslight_dependency -c {project.buildDir}
   ```
-
-<span class="specific-title">How to Run and Results</span>   
-1. Linux
-  - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
-    ```
-    $ fosslight_dependency
-    ``` 
-2. Windows  
-  - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
-3. Results
   - Example of build/reports/license/dependency-license.json
     ```
-     {
+    {
       "name": "commons-dbcp:commons-dbcp:1.4",
       "file": "commons-dbcp-1.4.jar",
       "licenses": [
@@ -194,9 +176,17 @@ No prerequisites required. You can run it directly.
         }
       ]
     },
-   ```  
-  - 'fosslight_report_dep_[datetime].xlsx' result file in the same directory 
-     <img src="./images/fl_dep_gradle_3.png" alt="gradle1">  
+   ``` 
+
+<span class="specific-title">How to Run</span>   
+1. Linux
+  - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
+    ```
+    $ fosslight_dependency
+    ``` 
+2. Windows  
+  - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
+
 </div>
 </details>
 
@@ -211,7 +201,7 @@ No prerequisites required. You can run it directly.
 2. If the Android application project does not have an 'app' (or module name) directory, please refer to the <a href="#prerequisite-for-gradle">Java/Kotlin Gradle guide</a> to perform Dependency analysis.
 
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 1. Linux
   - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
@@ -228,9 +218,6 @@ No prerequisites required. You can run it directly.
     ```
     $ fosslight_dependency.exe -n {application_name}
     ```
-3. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-   <img src="./images/fl_dep_android_gradle_1.png" alt="android_gradle1">  
 
 </div>
 
@@ -264,9 +251,6 @@ requirements.txt should contain only the packages needed for distribution.
     $ fosslight_dependency.exe
     ```
 
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-   <img src="./images/fl_dep_pypi_1.png" alt="pypi">
 </div>
 </details>
 
@@ -282,7 +266,7 @@ requirements.txt should contain only the packages needed for distribution.
 1. Maven version 3.5.4 or higher is required.
 2. JAVA environment must be installed. ([Open Source JDK 11 or higher](https://openjdk.java.net) required)   
 
-<span class="specific-title">How to Run and Results</span>   
+<span class="specific-title">How to Run</span>   
 
 1. Linux
   - Run the following command in the path where pom.xml (Maven's manifest file) exists.  
@@ -291,9 +275,6 @@ requirements.txt should contain only the packages needed for distribution.
     ``` 
 2. Windows  
   - Place fosslight_dependency.exe in the directory where pom.xml (Maven's manifest file) exists, then double-click to run.  
-3. Results  
-  - 'fosslight_report_dep_[datetime].xlsx' result file in the same directory     
-  <img src="./images/fl_dep_maven_1.png" alt="maven1">   
   
 > **Note**: When using a separately configured build output directory
 >   - The licenses.xml file will be created under {buildDir}/generated-resources. In this case, you must specify the build output directory with the -o option when running fosslight_dependency.  
@@ -313,7 +294,7 @@ requirements.txt should contain only the packages needed for distribution.
 <span class="specific-title">Prerequisites</span>  
 1. Flutter must be installed to build the project.
 
-<span class="specific-title">How to Run and Results</span>   
+<span class="specific-title">How to Run</span>   
 1. Linux/MacOS
   ```
   $ fosslight_dependency
@@ -321,9 +302,6 @@ requirements.txt should contain only the packages needed for distribution.
 2. Windows
   - Double-click fosslight_dependency.exe in the project top directory to run.  
 
-3. Results 
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-  <img src="./images/fl_dep_pub_1.png" alt="pub1">   
 </div>
 
 </details>
@@ -345,15 +323,12 @@ requirements.txt should contain only the packages needed for distribution.
   $ pod install
   ```
 
-<span class="specific-title">How to Run and Results</span>
+<span class="specific-title">How to Run</span>
 
 1. Run as follows in the directory where Podfile.lock exists.  
   ```
   $ fosslight_dependency
   ```
-2. Results 
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-  <img src="./images/fl_dep_cocoapods_1.png" alt="cocoapods">  
 </div>
 
 </details>
@@ -367,15 +342,12 @@ requirements.txt should contain only the packages needed for distribution.
 
 1. Create a Personal Access Token to query License information from Github repository, then use it with the -t parameter when running FOSSLight Dependency Scanner. Please refer to the [Github docs guide](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for how to create a token.
 
-<span class="specific-title">How to Run and Results</span> 
+<span class="specific-title">How to Run</span> 
 
 1. Run the following command in the directory where Package.resolved file is located.  
   ```
   $ fosslight_dependency -t <Github_Personal_Access_Token>
   ```
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-  <img src="./images/fl_dep_swift_1.png" alt="swift">  
 
 > **Execution Tip**  
 >   - You can run it using the following command in the path where {project_name}.xcodeproj file is located.  
@@ -401,15 +373,12 @@ requirements.txt should contain only the packages needed for distribution.
   ```  
 2. Create a Personal Access Token to query License information from Github repository, then use it with the -t parameter when running FOSSLight Dependency Scanner. Please refer to the [Github docs guide](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for how to create a token.  
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 1. Run the following command in the directory where Cartfile.resolved file is located.  
   ```
   $ fosslight_dependency -t <Github_Personal_Access_Token>
   ```  
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-  <img src="./images/fl_dep_carthage_1.png" alt="carthage">  
 </div>
 
 </details>
@@ -419,7 +388,7 @@ requirements.txt should contain only the packages needed for distribution.
 
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 Go is available for v1.14 or higher, and can be run immediately without any prerequisites.  
 
@@ -427,9 +396,6 @@ Go is available for v1.14 or higher, and can be run immediately without any prer
   ```
   fosslight_dependency 
   ```
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-  <img src="./images/fl_dep_go_1.png" alt="go">  
 
 </div>
 
@@ -440,7 +406,7 @@ Go is available for v1.14 or higher, and can be run immediately without any prer
 
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 Can be run immediately without prerequisites. 
 
 1. Linux/MacOS
@@ -451,11 +417,6 @@ Can be run immediately without prerequisites.
   ```
   $ fosslight_dependency.exe 
   ```  
-
-3. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-  <img src="./images/fl_dep_nuget_1.png" alt="nuget">  
-
 
 > **Execution Tip**  
 > 1. CPM project (Central Package Management)
@@ -482,7 +443,7 @@ Can be run immediately without prerequisites.
 
 
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 Can be run immediately without prerequisites.  
 1. Run the following command in the directory where Chart.yaml file is located.  
@@ -492,9 +453,6 @@ Can be run immediately without prerequisites.
 > FOSSLight Dependency Scanner only works in an environment where the 'helm dependency build' command runs normally to collect OSS information.  
 > If an error occurs during Helm execution, please resolve the error and run the scanner again.   
 
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-   <img src="./images/fl_dep_helm_1.png" alt="helm">  
 
 </div>
 
@@ -505,18 +463,13 @@ Can be run immediately without prerequisites.
 
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 Can be run immediately without prerequisites.  
 1. Run the following command in the directory where Library folder exists.   
   ```
   $ fosslight_dependency 
   ```
-
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-   <img src="./images/fl_dep_unity_1.png" alt="unity">  
-
 
 </div>
 
@@ -527,22 +480,26 @@ Can be run immediately without prerequisites.
 
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">    
 
-<span class="specific-title">How to Run and Results</span>  
+<span class="specific-title">How to Run</span>  
 
 Can be run immediately without prerequisites. 
 1. Run the following command in the directory where Cargo.toml file exists.  
   ```
   $ fosslight_dependency
   ```
-2. Results  
- - Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the same directory.  
-   <img src="./images/fl_dep_cargo_1.png" alt="cargo">  
-
 
 </div>
 
 </details>
 {::options parse_block_html="false" /}
+
+
+### 실행 결과  
+{: .specific-title}   
+Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the execution path.
+The output path can be changed using the -o option.
+<img src="./images/fl_dep_npm_1.png" alt="npm2">
+
 
 ### Options
 {: .specific-title}
@@ -661,8 +618,7 @@ The manifest files for each package manager are as follows:
   ```
   
 - Supplementary Output  
-  - fosslight_log_dep_[datetime].txt: File containing execution logs  
-  - fosslight_opossum_dep_[datetime].json : Dependency analysis result available for use in [OpossumUI](https://github.com/opossum-tool/OpossumUI) (-f opossum result)  
+  - fosslight_log_dep_[datetime].txt: File containing execution logs 
   - third_party_notice.txt : Created only when running with Unity, which collects and outputs third party notices for each package
 
 ### Graph Network Creation Result
@@ -706,21 +662,7 @@ Therefore, if information such as License or Homepage is missing in Chart.yaml, 
 ```  
 <br><br>
 
-## How it Works
-{: .left-bar-title} 
-FOSSLight Dependency Scanner utilizes open source software to analyze dependencies for each package manager. We choose open source software for each package manager that shows not only direct dependencies but also transitive dependencies including information such as OSS name, OSS version, and license name.
 
-Each package manager uses the results of the following software:
-
-- NPM : [NPM License Checker](https://github.com/davglass/license-checker)
-- Gradle : [License Gradle Plugin](https://github.com/hierynomus/license-gradle-plugin)
-- Maven : [license-maven-plugin](https://github.com/mojohaus/license-maven-plugin)
-- Android(gradle) : [android-dependency-scanning](https://github.com/fosslight/android-dependency-scanning)
-- Pypi : [pipdeptree](https://pypi.org/project/pipdeptree/)
-
-Because we utilize different open source software to analyze dependencies for each package manager, you need to set up the **Prerequisites** steps according to the package manager to analyze.
-
-<br><br>
 ## Package Support Level
 {: .left-bar-title} 
 <table>
