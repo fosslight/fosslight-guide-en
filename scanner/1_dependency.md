@@ -494,9 +494,9 @@ Can be run immediately without prerequisites.
 {::options parse_block_html="false" /}
 
 
-### 실행 결과  
+### Output Result  
 {: .specific-title}   
-Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the execution path.
+Verify that the 'fosslight_report_dep_[datetime].xlsx' result file is created in the execution path.  
 The output path can be changed using the -o option.
 <img src="./images/fl_dep_npm_1.png" alt="npm2">
 
