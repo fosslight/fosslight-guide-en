@@ -565,7 +565,7 @@ The output path can be changed using the -o option.
     fosslight_dependency --graph-path dependency_tree.pdf
 
 ```
-- Pattern matching guide for the -e option [Pattern Matching Guide](https://scancode-toolkit.readthedocs.io/en/stable/reference/scancode-cli/cli-pre-scan-options.html#glob-pattern-matchig)
+- Pattern matching guide for the -e option [Pattern Matching Guide](https://scancode-toolkit.readthedocs.io/en/stable/reference/scancode-cli/cli-pre-scan-options.html#glob-pattern-matching)
    - ⚠️ You must use double quotes ("") when entering values.
        - Example) fosslight_dependency -e "dev/" "tests/"
    - ⚠️ File names and extensions are case-sensitive, so enter them exactly as intended.
