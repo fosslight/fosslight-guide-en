@@ -49,7 +49,8 @@ $ pip3 install fosslight_dependency
 ## How to Run and Output  
 {: .left-bar-title} 
 - Please follow the prerequisites and execution methods according to the package manager used in your project.  
-- Dependency analysis must be performed in the same build environment as the package manager used during actual development. (e.g., npm build tools must be installed on the server to perform npm dependency analysis)  
+- Dependency analysis must be performed in the same build environment as the package manager used during actual development. (e.g., npm build tools must be installed on the server to perform npm dependency analysis)
+- For Windows, you can download and use the exe executable from [release assets](https://github.com/fosslight/fosslight_dependency_scanner/releases).
 
 {::options parse_block_html="true" /}
 <details>
@@ -179,13 +180,10 @@ No prerequisites required. You can run it directly.
    ``` 
 
 <span class="specific-title">How to Run</span>   
-1. Linux
-  - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
+1. Run the following command in the path where build.gradle (gradle's manifest file) exists.  
     ```
     $ fosslight_dependency
     ``` 
-2. Windows  
-  - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
 
 </div>
 </details>
@@ -203,20 +201,13 @@ No prerequisites required. You can run it directly.
 
 <span class="specific-title">How to Run</span>  
 
-1. Linux
-  - Run the following command in the path where build.gradle (gradle's manifest file) exists.  
+1. Run the following command in the path where build.gradle (gradle's manifest file) exists.  
     ```
     $ fosslight_dependency
     ``` 
     - If the application folder name is not 'app', you must specify the application folder name with the -n option.  
     ```
     $ fosslight_dependency -n {application_name}
-    ```
-2. Windows  
-  - Place fosslight_dependency.exe in the directory where build.gradle (gradle's manifest file) exists, then double-click to run.  
-  - If the application folder name is not 'app', run with the -n option in the command prompt.  
-    ```
-    $ fosslight_dependency.exe -n {application_name}
     ```
 
 </div>
@@ -242,14 +233,9 @@ No prerequisites required. You can run it directly.
 1. Run the following command in the project root directory (e.g., the path where requirements.txt is located).  
 At this time, to prevent debugging packages used during development or globally installed packages from being included in the analysis results,
 requirements.txt should contain only the packages needed for distribution.  
-  - Linux  
     ```
     $ fosslight_dependency
     ``` 
-  -  Windows 
-    ```
-    $ fosslight_dependency.exe
-    ```
 
 </div>
 </details>
@@ -268,13 +254,10 @@ requirements.txt should contain only the packages needed for distribution.
 
 <span class="specific-title">How to Run</span>   
 
-1. Linux
-  - Run the following command in the path where pom.xml (Maven's manifest file) exists.  
+1. Run the following command in the path where pom.xml (Maven's manifest file) exists.  
     ```
     $ fosslight_dependency
     ``` 
-2. Windows  
-  - Place fosslight_dependency.exe in the directory where pom.xml (Maven's manifest file) exists, then double-click to run.  
   
 > **Note**: When using a separately configured build output directory
 >   - The licenses.xml file will be created under {buildDir}/generated-resources. In this case, you must specify the build output directory with the -o option when running fosslight_dependency.  
@@ -295,12 +278,10 @@ requirements.txt should contain only the packages needed for distribution.
 1. Flutter must be installed to build the project.
 
 <span class="specific-title">How to Run</span>   
-1. Linux/MacOS
+1. Run the following command in the path where pubspec.yaml exists.
   ```
   $ fosslight_dependency
   ```
-2. Windows
-  - Double-click fosslight_dependency.exe in the project top directory to run.  
 
 </div>
 
@@ -409,14 +390,10 @@ Go is available for v1.14 or higher, and can be run immediately without any prer
 <span class="specific-title">How to Run</span>  
 Can be run immediately without prerequisites. 
 
-1. Linux/MacOS
+1. Run the following command in the top directory of the project.
   ```
   $ fosslight_dependency  
-  ```  
-2. Windows  
-  ```
-  $ fosslight_dependency.exe 
-  ```  
+  ```   
 
 > **Execution Tip**  
 > 1. CPM project (Central Package Management)
