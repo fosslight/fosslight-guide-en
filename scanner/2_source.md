@@ -4,92 +4,122 @@ title: "  ㄴ FOSSLight Source Scanner"
 ---
 # FOSSLight Source Scanner
 
-<img src="https://img.shields.io/pypi/l/fosslight_source" alt="FOSSLight Source is released under the Apache-2.0 License." /> <img src="https://img.shields.io/pypi/v/fosslight_source" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_source" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_source_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_source_scanner)
+<img src="https://img.shields.io/pypi/l/fosslight_source" alt="FOSSLight Source is released under the Apache-2.0 License." /> <img src="https://img.shields.io/pypi/v/fosslight_source" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_source" /><a href="https://github.com/fosslight/fosslight_source_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_source_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_source_scanner)
 
-[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) uses source code scanners, [ScanCode][sc] and [SCANOSS][scanoss]. [ScanCode][sc] detects copyright and license phrases contained in the file and [SCANOSS][scanoss] searches OSS Name, OSS Version, download location, copyright and license information from [OSSKB][osskb]. 
-It queries the file's origin from the KB server using the file MD5 value and outputs it as Download location.
-Some files (ex- build script), binary files, hidden directory and files in specific directories (ex-test) are excluded from the result. 
+[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) runs in [ScanCode][sc], [SCANOSS][scanoss], and KB (LGE Only) modes.  
+  - [ScanCode][sc]: Detects copyright and license phrases included in files.  
+  - [SCANOSS][scanoss]: Searches [OSSKB][osskb] for OSS Name, OSS Version, Download Location, Copyright, and License information.
+  - KB (LGE Only): Queries file provenance from LG Electronics' internal Knowledge Database server and outputs OSS Name, OSS Version, and Download Location.
+
+> Build scripts, binary files, directories, specific directories (for example, `test`), and files in hidden folders are excluded.
 
 [sc]: https://github.com/nexB/scancode-toolkit
 [scanoss]: https://github.com/scanoss/scanoss.py
 [osskb]: https://osskb.org/
 
-**Github Repository** : [https://github.com/fosslight/fosslight_source_scanner](https://github.com/fosslight/fosslight_source_scanner)    
-**License** : [Apache-2.0](https://github.com/fosslight/fosslight_source_scanner/blob/main/LICENSE)
 
-## Contents
-  - [Prerequisite](#-prerequisite)
-  - [How to install](#-how-to-install)
-  - [How to run](#-how-to-run)
-  - [Result](#-result)
+## Prerequisite
+{: .left-bar-title}
+[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) runs on Python 3.10+.     
+<br><br>
 
+## How to Install
+{: .left-bar-title}
+FOSSLight Source Scanner can be installed with `pip3`.     
+Installing in a [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment is recommended.
 
-## 📋 Prerequisite
-FOSSLight Source Scanner needs a Python 3.10+.    
-
-
-## 🎉 How to install
-It can be installed using pip3. It is recommended to install it in the [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment.
 ```
 $ pip3 install fosslight_source
 ```
+<br><br>
 
-## 🚀 How to run
-After the source code scanning print the FOSSLight Report.
+## How to Run
+{: .left-bar-title}
+
+After scanning source code, results are output in FOSSLight Report format.
 ````
 $ fosslight_source [option] <arg>
-````  
-#### Options
-```
-  Optional
-      -p <source_path>       Path to analyze source (Default: current directory)
-      -h                     Print help message
-      -v                     Print FOSSLight Source Scanner version
-      -m                     Print additional information for scan result on separate sheets
-      -e <path>              Path to exclude from analysis (file and directory, pattern matching is available)
-                              * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
-                                Example) fosslight_source -e "dev/" "tests/
-      -o <output_path>       Output path (Path or file name)
-      -f <format>            Output file format
-                             (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
-                             Multiple formats can be specified separated by space.
-  Options only for FOSSLight Source Scanner
-      -s <scanner>           Select which scanner to be run (scancode, scanoss, kb, all)
-      -j                     Generate raw result of scanners in json format
-      -t <float>             Stop scancode scanning if scanning takes longer than a timeout in seconds.
-      -c <core>              Select the number of cores to be scanned with ScanCode.
-      --no_correction        Enter if you don't want to correct OSS information with sbom-info.yaml
-      --correct_fpath <path> Path to the sbom-info.yaml file
-```
-- If scanner is not specified with -s option, all scanners (ScanCode, SCANOSS, KB) will be run and the result will be merged.
-- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
-   - ⚠️ Make sure to use double quotes ("") when entering values.
-      - Example) fosslight_source -e "dev/" "tests/"
-   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
+````
+### Options
+{: .specific-title}
 
-#### Example
-Print result to FOSSLight Report and results of ScanCode and SCANOSS in json file.
 ```
-$ fosslight_source -p /home/source_path -j
+📖 Usage
+    ────────────────────────────────────────────────────────────────────
+    fosslight_source [options] <arguments>
+
+    📝 Description
+    ────────────────────────────────────────────────────────────────────
+    FOSSLight Source Scanner analyzes source code to detect copyright and
+    license information using several modes.
+
+    Note: Build scripts, binary files, and test directories are automatically
+          excluded from analysis.
+
+    📚 Guide: https://fosslight.org/fosslight-guide/scanner/2_source.html
+
+    ⚙️  General Options
+    ────────────────────────────────────────────────────────────────────
+    -p <path>              Source path to analyze (default: current directory)
+    -o <path>              Output file path or directory
+    -f <format>            Output formats: excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml
+                           (multiple formats can be specified, separated by space)
+    -e <pattern>           Exclude paths from analysis (files and directories)
+                           ⚠️  IMPORTANT: Always wrap in quotes to avoid shell expansion
+                           Example: fosslight_source -e "dev/" "tests/" "*.jar"
+    -m                     Generate detailed scan results on separate sheets
+    -h                     Show this help message
+    -v                     Show version information
+
+    🔍 Scanner-Specific Options
+    ────────────────────────────────────────────────────────────────────
+    -s <mode>              Choose mode: scancode, scanoss, kb, or all(default)
+    -c <number>            Number of CPU cores/threads to use for scanning
+    -t <seconds>           Timeout in seconds for ScanCode scanning
+    -j                     Generate raw scanner results in JSON format
+    --no_correction        Skip OSS information correction with sbom-info.yaml
+    --correct_fpath <path> Path to custom sbom-info.yaml file
+
+    💡 Examples
+    ────────────────────────────────────────────────────────────────────
+    # Scan current directory
+    fosslight_source
+
+    # Scan specific path with exclusions
+    fosslight_source -p /path/to/source -e "test/" "node_modules/"
+
+    # Generate output in specific format
+    fosslight_source -f excel -o results/
+
+    # Generate raw scanner results in JSON format
+    fosslight_source -p /path/to/source -j
+```
+- If the `-s` option is not provided, results from all modes (ScanCode, SCANOSS, KB) are aggregated.
+- [Pattern Matching Guide](https://scancode-toolkit.readthedocs.io/en/stable/reference/scancode-cli/cli-pre-scan-options.html#glob-pattern-matching) for the `-e` option
+   - ⚠️ Always enter patterns using double quotes (`""`).
+      - Example: `fosslight_source -e "dev/" "tests/"`
+   - ⚠️ File names and extensions are case-sensitive and must match exactly.
+
+### Example
+{: .specific-title}
+Source code scan
+```
+$ fosslight_source -p /home/source_path
 ```
 
-## 📁 Result
-
+## Result
+{: .left-bar-title}
 ```
 $ tree
 .
-├── fosslight_log_220103_1540.txt
-├── fosslight_opossum_220103_1540.json
-├── fosslight_report_220103_1540.xlsx
-├── fosslight_report_220103_1540.csv
-├── scancode_raw_result.json
-├── scanner_output.wfp
-└── scanoss_raw_result.json
+├── fosslight_log_src_260311_1503.txt
+└── fosslight_report_src_260311_1544.xlsx
 ```
-- fosslight_log_[datetime].txt : The execution log.
-- fosslight_opossum_[datetime].json : FOSSLight Source Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
-- fosslight_report_[datetime].xlsx : FOSSLight Source Scanner result in spreadsheet format.
-- fosslight_report_[datetime].csv : FOSSLight Source Scanner result in csv format.
-- scancode_raw_result.json : The ScanCode raw result. (Generated only when the -j option is enabled.)
-- scanner_output.wfp : The finger prints generated by SCANOSS. (Generated only when the -j option is enabled.)
-- scanoss_raw_result.json : The SCANOSS raw result. (Generated only when the -j option is enabled.)
+
+  - fosslight_log_src_[datetime].txt: File that stores execution logs
+  - fosslight_report_src_[datetime].xlsx: Source code analysis result in FOSSLight Report format
+  - fosslight_opossum_src_[datetime].json: Source code analysis result that can be used in [OpossumUI](https://github.com/opossum-tool/OpossumUI) (`-f opossum` option)
+  - fosslight_report_src_[datetime].csv: FOSSLight Report exported as CSV (`-f csv` option)
+  - scancode_raw_result.json: ScanCode execution result (`-j` option)
+  - scanoss_raw_result.json: SCANOSS execution result (`-j` option)
+  - scanner_output.wfp: Fingerprint generated during SCANOSS execution (`-j` option)
