@@ -18,6 +18,7 @@ Example) Installing Python 3.10 (Recommended Python version: 3.10 ~ 3.12)
   ```
   $ sudo apt-get update
   $ sudo apt-get install python3.10 python3-pip python3.10-dev python3.10-distutils
+  $ sudo apt-get install python3-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
   ```  
 
 ### 2. macOS
