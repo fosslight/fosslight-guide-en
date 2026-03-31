@@ -79,6 +79,7 @@ $ fosslight_source [option] <arg>
     -j                     Generate raw scanner results in JSON format
     --no_correction        Skip OSS information correction with sbom-info.yaml
     --correct_fpath <path> Path to custom sbom-info.yaml file
+    --hide_progress        Hide the progress bar during scanning
 
     💡 Examples
     ────────────────────────────────────────────────────────────────────
