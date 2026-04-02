@@ -4,144 +4,122 @@ title: "  ㄴ FOSSLight Binary Scanner"
 ---
 # FOSSLight Binary Scanner
 
-<img src="https://img.shields.io/pypi/l/fosslight_binary" alt="FOSSLight Binary is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_binary" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_binary" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_binary_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_binary_scanner)
+<img src="https://img.shields.io/pypi/l/fosslight_binary" alt="FOSSLight Binary is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_binary" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_binary" /><a href="https://github.com/fosslight/fosslight_binary_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_binary_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_binary_scanner)
 
-[**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) searches for a binary and outputs OSS information if there is an identical or similar binary from the Binary DB.   
-It can analyze the open source info. in '.jar' file by using [**Dependency-check-py**](https://github.com/jhermann/dependency-check-py).   
-   
-**Github Repository** : [https://github.com/fosslight/fosslight_binary_scanner](https://github.com/fosslight/fosslight_binary_scanner)    
-**License** : [Apache-2.0](https://github.com/fosslight/fosslight_binary_scanner/blob/main/LICENSE)
+ [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) identifies binaries and outputs the results. When identical or similar binaries exist in the Binary DB, it provides OSS information (OSS Name, OSS Version, License). It also uses [**Dependency-check-py**](https://github.com/jhermann/dependency-check-py) for open source analysis of jar files.     
 
-## Contents
-- [Prerequisite](#-prerequisite)
-- [How to install](#-how-to-install)
-- [How to run](#-how-to-run)
-- [Result](#-result)
-- [How it works](#-how-it-works)
+## Prerequisite
+{: .left-bar-title} 
+- [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) runs in the Python 3.10+ environment.  
+- In environments where the Binary DB is configured, OSS information (OSS Name, OSS Version, License) can be extracted from that DB. If the Binary DB has not been pre-configured, you must set up the environment by referring to the [Binary DB setting guide](etc/binary_db.md).   
+- For jar file analysis, you must install [**Java 11+**](https://openjdk.java.net) based on an Open Source JDK.    
 
+<br><br> 
 
-## 📋 Prerequisite
-FOSSLight Binary Scanner needs a Python 3.10+.    
-To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
+## How to install
+{: .left-bar-title} 
 
-[**Java 11+**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
+### Method 1. Install using the executable file  
+{: .specific-title}  
+Download and use the FOSSLight Binary Scanner executable suitable for your OS. If your OS is not supported, install using 'Method 2'.    
+    - [FOSSLight Binary Scanner - Release](https://github.com/fosslight/fosslight_binary_scanner/releases)  
 
-## 🎉 How to install
-### Method 1. Download the executable file.
-Download the executable file suitable for the OS. : [Releases](https://github.com/fosslight/fosslight_binary_scanner/releases)
-### Method 2. Install fosslight_binary based on Python environment.
-It can be installed using pip3. 
-0. (Only for windows) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables packages and Build Tools.
-1. [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment setting.
-2. Install the Python package fosslight_binary.
+> 🛠️ Troubleshooting based on error messages  
+>  1. \[PYI-385915:ERROR\] Failed to load Python shared library '/tmp/_MEIpgjz34/libpython3.12.so.1.0': /lib/x86_64-linux-gnu/libm.so.6: version `GLIBC_2.38' not found (required by /tmp/_MEIpgjz34/libpython3.12.so.1.0).  
+>     If this error occurs, the executable is not supported for your OS or OS version. In this case, install using 'Method 2'.   
+
+### Method 2. Install the fosslight_binary package based on the Python environment  
+{: .specific-title} 
+On Windows, to build the Python package, install Microsoft Build Tools from [Visual Studio official site](https://visualstudio.microsoft.com/en/vs/older-downloads/) > 'Other tools, frameworks and redistributable packages'.     
+1. Set up the [python 3.10 + virtualenv](etc/guide_virtualenv.md) environment
+2. Install the Python package `fosslight_binary`
 ```
-$ pip3 install fosslight_binary
+$ pip3 install fosslight_binary  
 ```
 
-## 🚀 How to run
-### Method 1. If you run it as an executable on windows.
-After placing the fosslight_bin_windows.exe file in the path to be analyzed binary, double-click to run it.
-### Method 2. When executing with command.
+<br><br> 
+
+## How to run
+{: .left-bar-title} 
+
+### Method 1. Run as an executable on Windows  
+{: .specific-title}  
+1. Run by double-clicking the executable
+   - Place the `fosslight_bin_windows.exe` file in the path where you want to analyze binaries, then double-click to run.     
+2. Run the executable from the command prompt (cmd)
+   - fosslight_bin_windows.exe -p D:\Download\Dir_to_analyze (Path to analyze)
+
+### Method 2. For other cases, run via command (when installed as a Python package)  
+{: .specific-title} 
 ````
-$ fosslight_binary [option] <arg>
+$ fosslight_binary [option] <arg>  
 ````    
+
 ### Options
-```` 
-    Options:
-        -p <binary_path>                    Path to analyze binaries (Default: current directory)
-        -h                                  Print help message
-        -v                                  Print FOSSLight Binary Scanner version
-        -s                                  Extract only the binary list in simple mode
-        -e <path>                           Path to exclude from analysis (files and directories, pattern matching is available)
-                                            * IMPORTANT: Always wrap patterns in quotes("") to avoid shell expansion.
-                  				                Example) fosslight_bin -e "test/abc.py" "*.jar" "test/"
-        -o <output_path>                    Output path
-                                            (If you want to generate the specific file name, add the output path with file name.)        
-        -f <format> [<format> ...]          Output file formats
-                                            (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
-                                            Multiple formats can be specified separated by space. 
-        -d <db_url>                         DB Connection(format :'postgresql://username:password@host:port/database_name')
-        --notice                            Print the open source license notice text.
-        --no_correction                     Enter if you don't want to correct OSS information with sbom-info.yaml
-        --correct_fpath <path>              Path to the sbom-info.yaml file
-````    
-- Pattern Matching [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/scan-options-pre.html?highlight=ignore#glob-pattern-matching) Guide for the -e Option
-   - ⚠️ Make sure to use double quotes ("") when entering values.
-      - Example) fosslight_binary -e "*.png" "tests/"
-   - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended.
+````
+   📖 Usage
+    ────────────────────────────────────────────────────────────────────
+    fosslight_bin [options] <arguments>
 
+    📝 Description
+    ────────────────────────────────────────────────────────────────────
+    FOSSLight Binary Scanner extracts binaries and retrieves open source
+    and license information by comparing similarity with binaries stored
+    in the Binary DB using TLSH (Trend Micro Locality Sensitive Hash).
 
+    📚 Guide: https://fosslight.org/fosslight-guide/scanner/3_binary.html
 
-## ⚙️ Environment Variables
-You can control the behavior of FOSSLight Binary Scanner by setting the following environment variables.
+    ⚙️  General Options
+    ────────────────────────────────────────────────────────────────────
+    -p <path>              Binary path to analyze (default: current directory)
+    -o <path>              Output file path or directory
+    -f <format>            Output formats: excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml
+                           (multiple formats can be specified, separated by space)
+    -e <pattern>           Exclude paths from analysis (files and directories)
+                           ⚠️  IMPORTANT: Always wrap in quotes to avoid shell expansion
+                           Example: fosslight_bin -e "test/" "*.jar"
+    -h                     Show this help message
+    -v                     Show version information
 
-### 1. FOSSLIGHT_SKIP_AUTO_INSTALL
-Disables automatic download/installation of dependency-check in the execution environment (especially for deployed executables).
-Set to '1' or 'true' to disable auto-install.
-```
-Usage:
-   - Linux/macOS:
-     export FOSSLIGHT_SKIP_AUTO_INSTALL=1
-   - Windows (cmd):
-     set FOSSLIGHT_SKIP_AUTO_INSTALL=1
-   - Windows (PowerShell):
-     $env:FOSSLIGHT_SKIP_AUTO_INSTALL='1'
-```
+    🔍 Scanner-Specific Options
+    ────────────────────────────────────────────────────────────────────
+    -d <db_url>            DB Connection (format: 'postgresql://user:pass@host:port/db')
+    --notice               Print the open source license notice text
+    --no_correction        Skip OSS information correction with sbom-info.yaml
+    --correct_fpath <path> Path to custom sbom-info.yaml file
 
-### 2. DEPENDENCY_CHECK_HOME
-Specifies the installation path of dependency-check.
-- If already installed: path to the dependency-check directory (e.g., .../dependency-check)
-- If newly installed: path is determined as base + 'dependency-check'
-```
-   $ export DEPENDENCY_CHECK_HOME=/path/to/dependency-check
-```
+    💡 Examples
+    ────────────────────────────────────────────────────────────────────
+    # Scan current directory
+    fosslight_bin
 
-### 3. DEPENDENCY_CHECK_VERSION
-Stores the version of the currently installed dependency-check.    
-Set after successful installation or version check:
-- Automatically set by code (e.g., for version 12.1.7):    
-  os.environ['DEPENDENCY_CHECK_VERSION'] = '12.1.7'
-- Referenced in external scripts:
-     - Linux/macOS:
-       bash echo $DEPENDENCY_CHECK_VERSION
-     - Windows (cmd):
-       cmd echo %DEPENDENCY_CHECK_VERSION%
-  
-## 📁 Result
+    # Scan specific path with exclusions
+    fosslight_bin -p /path/to/binaries -e "test/" "*.so"
+
+    # Generate output in specific format
+    fosslight_bin -f excel -o results/
+
+    # Connect to Binary DB for OSS information
+    fosslight_bin -d "postgresql://user:pass@localhost:5432/exampledb"
+````
+- -e option: [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/reference/scancode-cli/cli-pre-scan-options.html#glob-pattern-matching)
+   - ⚠️ When using it, please enter values using double quotes ("").
+       - Example) fosslight_binary -e "*.png" "tests/"
+   - ⚠️ File names and extensions are case-sensitive, so please enter them exactly as intended.
+
+<br><br> 
+
+## Result
+{: .left-bar-title}
 
 ```
 $ tree
 .
-├── fosslight_log_220904_0912.txt
-├── fosslight_report_220904_0912.xlsx
-└── fosslight_opossum_220904_0912.json
+├── fosslight_log_bin_260401_1156.txt
+└── fosslight_report_bin_260401_1156.xlsx
 
 ```
-- fosslight_log_[datetime].txt : The execution log.
-- fosslight_report_[datetime].xlsx : FOSSLight binary result in FOSSLight Report format.    
-   - If analyzing jar files, 'Vulnerability Link' Column is added to FOSSLight-Report_[datetime].xlsx file.
-   - The checksum and tlsh values for each binary are hidden by default.   
-- fosslight_opossum_[datetime].json : FOSSLight binary Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
-
-## 🧐 How it works
-1. List up binaries except the following cases.    
-
-    |Excepted case         | Description                                                                                                                       |    
-   |------------------------|-----------------------------------------------------------------------------------------------------------------------------------|    
-   |symbolic link, FIFO file| Unable to read as file open.   It causes the FOSSLight Binary Scanner to stop when checking for file type or binary.              |    
-   |Non-Binary file extensions | 'qm', 'xlsx', 'pdf', 'pptx', 'jfif', 'docx', 'doc', 'whl', 'xls', 'xlsm', 'ppt', 'mp4', 'pyc', 'plist', 'dat', 'json', 'js' etc|    
-   |Specific file type         | Files that begin with 'data', 'timezone data', and 'applebinary property list'                                                 |    
-   |Specific path             | '.git'                                                                                                                          |
-
-2. Check “Exclude” in FOSSLight Report.
-     
-   |Exclude case                                                          |Description                                         |
-   |----------------------------------------------------------------------|-----------------------------------------------------|
-   |Binary included in ['fosslight_bin', 'fosslight_bin.exe']             | -                                                  |
-   |Path included in ["test", "test", "doc", "doc", "docs", "intermediates"] folder | Output only the results of the source code or binary included in the actual distribution  |
-   |Hidden folder (folders that begin with '.')                           | -                                                   |               
-   |Specific file extensions                                              | Not final build output (ex, '.class')               |
-
-3. Extract checksum and tlsh for each binary.     
-4. Load OSS information from Binary DB.      
-5. Create output files.  
+- fosslight_log_bin_[datetime].txt : Execution log
+- fosslight_report_bin_[datetime].xlsx : Binary analysis result in the FOSSLight Report format        
+   - For jar file analysis, security vulnerability information is added to the `Vulnerability Link` column.  
+   - For each binary, the checksum and `tlsh` columns are hidden by default.     
