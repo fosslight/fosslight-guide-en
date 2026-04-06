@@ -38,7 +38,7 @@ $ pip3 install fosslight_source
 
 After scanning source code, results are output in FOSSLight Report format.
 ````
-$ fosslight_source [option] <arg>
+$ fosslight_source [option] <arguments>
 ````
 ### Options
 {: .specific-title}

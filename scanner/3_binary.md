@@ -6,7 +6,7 @@ title: "  ㄴ FOSSLight Binary Scanner"
 
 <img src="https://img.shields.io/pypi/l/fosslight_binary" alt="FOSSLight Binary is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_binary" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_binary" /><a href="https://github.com/fosslight/fosslight_binary_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_binary_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_binary_scanner)
 
- [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) identifies binaries and outputs the results. When identical or similar binaries exist in the Binary DB, it provides OSS information (OSS Name, OSS Version, License). It also uses [**Dependency-check-py**](https://github.com/jhermann/dependency-check-py) for open source analysis of jar files.     
+ [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) identifies binaries and outputs the results. When identical or similar binaries exist in the Binary DB, it provides OSS information (OSS Name, OSS Version, License). In addition, it provides security vulnerability information after JAR file analysis.  
 
 ## Prerequisite
 {: .left-bar-title} 
@@ -52,7 +52,7 @@ $ pip3 install fosslight_binary
 ### Method 2. For other cases, run via command (when installed as a Python package)  
 {: .specific-title} 
 ````
-$ fosslight_binary [option] <arg>  
+$ fosslight_binary [option] <arguments>  
 ````    
 
 ### Options
