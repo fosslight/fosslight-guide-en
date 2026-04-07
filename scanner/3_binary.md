@@ -52,7 +52,7 @@ $ pip3 install fosslight_binary
 ### Method 2. For other cases, run via command (when installed as a Python package)  
 {: .specific-title} 
 ````
-$ fosslight_binary [option] <arguments>  
+$ fosslight_binary [options] <arguments>  
 ````    
 
 ### Options
