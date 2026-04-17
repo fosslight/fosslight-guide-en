@@ -98,7 +98,7 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
         -y <file_with_path>            oss-pkg-info.yaml
         -a <path>                      Path to analyze the binaries
         -n                             Print result in BIN(Android) format        
-        -s                             Analyze source code for unconfirmed Open Source
+        -s                             Analyze source code for New Open Source
         -c                             Analyze all the source code
         -e <path>                      Top build output path with bom.json to compress all the source code (ex. /data001/projectA/build)
         -o <path>                      Output Path
