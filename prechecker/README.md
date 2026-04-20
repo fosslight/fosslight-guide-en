@@ -22,9 +22,7 @@ title: 🚩FOSSLight Prechecker
 - [How to run](#-how-to-run)
 - [Result](#-result)
 - [How it works](#-how-it-works)
-
-## 📋 Prerequisite
-[**FOSSLight Prechecker**](https://github.com/fosslight/fosslight_prechecker) needs a Python 3.10+.   
+ 
 
 ## 🎉 How to install
 It can be installed using pip3.     
