@@ -22,8 +22,7 @@ title: 🚩FOSSLight Yocto Scanner
 - [How it works](#-how-it-works)
 
 
-## 📋 Prerequisite
-FOSSLight Yocto Scanner needs a Python 3.10+.    
+## 📋 Prerequisite   
 To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
 
 [**Java**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
