@@ -14,7 +14,7 @@ A guide for setting up a virtualenv environment to install and run Python packag
 {: .left-bar-title}  
 ### 1. Ubuntu  
 {: .specific-title}
-Example) Installing Python 3.10 (Recommended Python version: 3.10 ~ 3.12)
+Example) Installing Python 3.10 (Recommended Python version: 3.10 ~ 3.14)
   ```
   $ sudo apt-get update
   $ sudo apt-get install python3.10 python3-pip python3.10-dev python3.10-distutils
@@ -34,7 +34,7 @@ brew install python3
 {: .specific-title}  
 
 <details>
-  <summary markdown="span">Python installation (Recommended version: 3.10 ~ 3.12)</summary>
+  <summary markdown="span">Python installation (Recommended version: 3.10 ~ 3.14)</summary>
     Download and run the installer from https://www.python.org/downloads/windows/.<br> 
     1. Check "Add Python.exe to PATH" and then click "Install Now".<br>
     <img src="../images/fl_scanner_win_python_1.png" alt="python1"><br><br>
