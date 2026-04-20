@@ -18,11 +18,6 @@ title: "  ㄴ FOSSLight Source Scanner"
 [osskb]: https://osskb.org/
 
 
-## Prerequisite
-{: .left-bar-title}
-[**FOSSLight Source Scanner**](https://github.com/fosslight/fosslight_source_scanner) runs on Python 3.10+.     
-<br><br>
-
 ## How to Install
 {: .left-bar-title}
 FOSSLight Source Scanner can be installed with `pip3`.     
