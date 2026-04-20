@@ -10,7 +10,6 @@ title: "  ㄴ FOSSLight Binary Scanner"
 
 ## Prerequisite
 {: .left-bar-title} 
-- [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) runs in the Python 3.10+ environment.  
 - In environments where the Binary DB is configured, OSS information (OSS Name, OSS Version, License) can be extracted from that DB. If the Binary DB has not been pre-configured, you must set up the environment by referring to the [Binary DB setting guide](etc/binary_db.md).   
 - For jar file analysis, you must install [**Java 11+**](https://openjdk.java.net) based on an Open Source JDK.    
 
