@@ -51,7 +51,7 @@ rsync: # Multiple versions of the same package
   download location: "https://download.samba.org/pub/rsync/src"
   homepage: "http://rsync.samba.org"
 - version: "3.1.2"
-  source name or path: "test/tool"
+  source name or path: "test/tool_new"
   license: "GPL-3.0"
   download location: "https://download.samba.org/pub/rsync/src"
   homepage: "http://rsync.samba.org"
