@@ -8,7 +8,7 @@ title: 🚩FOSSLight Yocto Scanner
 
 <img src="https://img.shields.io/pypi/l/fosslight_yocto" alt="FOSSLight Yocto is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_yocto" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_yocto" /> <a href="https://github.com/fosslight/fosslight_yocto_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_yocto_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_yocto_scanner)
 
-[**FOSSLight Yocto Scanner**](https://github.com/fosslight/fosslight_yocto_scanner) is a Python script that uses the results extracted via [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) during a Yocto Project-based build process to output OSS information for packages included in the rootfs image in FOSS Report format.
+[**FOSSLight Yocto Scanner**](https://github.com/fosslight/fosslight_yocto_scanner) is a Python script that uses the results extracted via [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) during a Yocto Project-based build process to output OSS information for packages included in the rootfs image in FOSSLight Report format.
 
 - **Output**
     - SRC Sheet : Extracts the installed package list and outputs OSS information.
@@ -18,7 +18,7 @@ title: 🚩FOSSLight Yocto Scanner
     - OSS information per package outputs OSS Name (Recipe name), OSS Version, LICENSE, and Download Location based on the metadata defined in the Recipe.
 
 - **⚠️ Note**
-    - For images mounted on the target other than the rootfs image (e.g., kernel, bootloader), the script does not output OSS information. Users must manually add OSS information to the OSS Report for these.
+    - For images mounted on the target other than the rootfs image (e.g., kernel, bootloader), the script does not output OSS information. Users must manually add OSS information to the FOSSLight Report for these.
 
 <br><br>
 
@@ -140,15 +140,13 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
 ```
 $ tree
 .
-├── fosslight_log_yocto_260413_1443.txt
-├── fosslight_report_yocto_260413_1443.xlsx
-└── fosslight_opossum_yocto_260413_1443.json
+├── fosslight_log_yocto_260413_1443.txt  
+└── ffosslight_report_yocto_260413_1443.xlsx  
 
 ```
-- fosslight_log_yocto_[datetime].txt : Execution log.
-- fosslight_report_yocto_[datetime].xlsx : FOSSLight Yocto result in FOSSLight Report format.
-   - The checksum and TLSH values per binary are hidden by default in the report.
-- fosslight_opossum_yocto_[datetime].json : Binary analysis result available in [OpossumUI](https://github.com/opossum-tool/OpossumUI).
+- fosslight_log_yocto_[datetime].txt : Execution log.  
+- fosslight_report_yocto_[datetime].xlsx : FOSSLight Yocto result in FOSSLight Report format.  
+   - The checksum and TLSH values per binary are hidden by default in the report.  
 
 <br><br>
 
@@ -157,13 +155,13 @@ $ tree
 
 ### -y Option : Load OSS Information per Recipe/Package from SBOM Info File
 {: .specific-title}
-- When the script is run with the -y option, OSS information defined in the Recipe is not used; instead, the OSS Report is generated based on the OSS information contained in the SBOM file.
-  However, even if Recipe/Package information exists in the SBOM file, it will not be included in the OSS Report if the Recipe/Package is not actually installed.
+- When the script is run with the -y option, OSS information defined in the Recipe is not used; instead, the FOSSLight Report is generated based on the OSS information contained in the SBOM file.
+  However, even if Recipe/Package information exists in the SBOM file, it will not be included in the FOSSLight Report if the Recipe/Package is not actually installed.
 
     | OSS Information                          | Exclude                              | Comment                                |
     |------------------------------------------|--------------------------------------|----------------------------------------|
-    | Information extracted from Recipe        | O                                    | Excluded by oss-pkg-info.yaml          |
-    | Information added from oss-pkg-info.yaml | Value written in oss-pkg-info.yaml   | Info loaded from oss-pkg-info.yaml     |
+    | Information extracted from Recipe        | O                                    | Excluded by sbom-info.yaml          |
+    | Information added from sbom-info.yaml | Value written in sbom-info.yaml   | Info loaded from sbom-info.yaml     |
 
 #### Writing the SBOM Info File
 {: .under-bar-title}
