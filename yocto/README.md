@@ -2,53 +2,50 @@
 sort: 4
 published: true
 title: 🚩FOSSLight Yocto Scanner
+
 ---
 # FOSSLight Yocto Scanner
 
-<img src="https://img.shields.io/pypi/l/fosslight_yocto" alt="FOSSLight Yocto is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_yocto" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_yocto" /> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_yocto_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_yocto_scanner)
+<img src="https://img.shields.io/pypi/l/fosslight_yocto" alt="FOSSLight Yocto is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_yocto" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_yocto" /> <a href="https://github.com/fosslight/fosslight_yocto_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_yocto_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_yocto_scanner)
 
-[**FOSSLight Yocto Scanner**](https://github.com/fosslight/fosslight_yocto_scanner) is a Python script that outputs OSS information about the package included in the rootfs image in OSS Report format when building based on Yocto Project.
-- How to print OSS information: Prints the OSS information (OSS Name, OSS Version, LICENSE, Download location) defined in the recipe.
-- ⚠️**For images (ex- kernel, boot loader) mounted on target other than the rootfs image, the script does not print.** Therefore, for this, the user must manually add OSS information to the FOSS Report.  
-   
-**Github Repository** : [https://github.com/fosslight/fosslight_yocto_scanner](https://github.com/fosslight/fosslight_yocto_scanner)    
-**License** : [Apache-2.0](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/LICENSE)
+[**FOSSLight Yocto Scanner**](https://github.com/fosslight/fosslight_yocto_scanner) is a Python script that uses the results extracted via [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) during a Yocto Project-based build process to output OSS information for packages included in the rootfs image in FOSS Report format.
 
-## Contents
-- [Prerequisite](#-prerequisite)
-- [How to install](#-how-to-install)
-- [How to run](#-how-to-run)
-- [Result](#-result)
-- [How it works](#-how-it-works)
+- **Output**
+    - SRC Sheet : Extracts the installed package list and outputs OSS information.
+    - BIN Sheet : Extracts binaries from the folder where the rootfs image was decompressed, then outputs OSS information per binary.
 
+- **OSS Information Collection Criteria**
+    - OSS information per package outputs OSS Name (Recipe name), OSS Version, LICENSE, and Download Location based on the metadata defined in the Recipe.
 
-## 📋 Prerequisite   
-To use the function to extract OSS information (OSS Name, OSS Version, License) from Binary DB, see the [database setting guide](etc/binary_db.md).
+- **⚠️ Note**
+    - For images mounted on the target other than the rootfs image (e.g., kernel, bootloader), the script does not output OSS information. Users must manually add OSS information to the OSS Report for these.
 
-[**Java**](https://openjdk.java.net/) Installation for jar file analysis. (Install Open Source JDK)     
+<br><br>
 
-## 🎉 How to install
-It can be installed using pip3. 
-0. (Only for windows) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables packages and Build Tools.
-1. [python virtualenv](etc/guide_virtualenv.md) environment setting.
+## Prerequisite
+{: .left-bar-title}
+- [**FOSSLight Yocto Scanner**](https://github.com/fosslight/fosslight_yocto_scanner) runs on Python 3.10+.
+- To use the feature that extracts OSS information (OSS Name, OSS Version, License) from Binary DB, refer to the [DB Setting Guide](../scanner/etc/binary_db.md).
+
+<br><br>
+
+## How to Install
+{: .left-bar-title}
+0. (Windows only) Install Microsoft Build Tools from https://visualstudio.microsoft.com/en/vs/older-downloads/ > Redistributables and Build Tools.
+1. Set up a [python virtualenv](../scanner/etc/guide_virtualenv.md) environment.
 2. Install the Python package fosslight_yocto.
-```
-$ pip3 install fosslight_yocto
-```
+    ```
+    $ pip3 install fosslight_yocto
+    ```
+<br><br>
 
-## 🚀 How to run
-### Method 1. How to run using bom.bbclass
+## How to Run
+{: .left-bar-title}
 
----
-Convert the results extracted with [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) to FOSS Report using FOSSLight Yocto.
-- Output per sheet:
-    - SRC Sheet : Extract installed package list and print OSS information.
-    - BIN Sheet : fter extracting the binary from the folder where the rootfs image was extracted, print the OSS information for each binary.
 
----
-
-#### Build with bom.bbcalss
-1. After moving to the build directory (ex-poky / build), inherit buildhistory and bom in conf/local.conf.
+### Preparation
+{: .specific-title}
+1. Move to the build directory (e.g., poky/build), then inherit buildhistory and bom in conf/local.conf.
     ```
     $ cd poky/build
     poky/build$ vi conf/local.conf
@@ -57,91 +54,178 @@ Convert the results extracted with [bom.bbclass](https://github.com/fosslight/fo
     
     INHERIT += "bom"
     ```
-2. Copy a [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) file in meta/classes.
+2. Download the [bom.bbclass](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/files_for_preparation/bom.bbclass) file to the meta/classes directory under the top-level directory.
     - If meta/classes does not exist, download bom.bbclass to the classes folder of the meta layer included in the build.
         ```
         poky/meta/classes$ wget -O bom.bbclass "https://github.com/fosslight/fosslight_yocto_scanner/raw/main/files_for_preparation/bom.bbclass"
         ```
-    - For versions prior to yocto 2.5, the --runall function is not supported, so bom.bbclass should be modified as follows.
+    - For versions prior to Yocto 2.5, the --runall feature is not supported. To output bom.bbclass during the build, modify bom.bbclass as follows.
         ```
         addtask write_bom_info -> addtask write_bom_info before do_build
         ```
-3. After building the image, run write_bom_info task.
-    - yocto 2.5 or Later 
+3. After building the image, run write_bom_info.
+    - Yocto 2.5 or later
         ```
         poky/build $ bitbake <image>
         poky/build $ bitbake --runall=write_bom_info <image> (eg. bitbake --runall=write_bom_info  core-image-minimal)
         ```
-    - Earlier than yocto 2.5
+    - Earlier than Yocto 2.5
         ```
         poky/build $ bitbake <image>
         ```
-4. In the ${TOPDIR}/, bom.json file and buildhistory folder are created.
+4. The bom.json file and buildhistory folder are created under ${TOPDIR}/.
 
-#### Run the fosslight_yocto
+### Run
+{: .specific-title}
+Run the fosslight_yocto command.
 ```
 $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -a [path_to_binary_analysis]
 ```
 
 - Options
     ```
-    Mandatory
-        -p <path>                      Path of buildhistory/package
-        -b <file_with_path>            bom.json
-        -i <file_with_path>            installed-package-names.txt
-        -ip <file_with_path>           installed-packages.txt
+     Usage
+    ────────────────────────────────────────────────────────────────────
+    fosslight_yocto [options] <arguments>
 
-    Optional
-        -h                             Print help message
-        -v                             Print FOSSLight yocto version
-        -y <file_with_path>            oss-pkg-info.yaml
-        -a <path>                      Path to analyze the binaries
-        -n                             Print result in BIN(Android) format        
-        -s                             Analyze source code for New Open Source
-        -c                             Analyze all the source code
-        -e <path>                      Top build output path with bom.json to compress all the source code (ex. /data001/projectA/build)
-        -o <path>                      Output Path
-        -f <format>                    Output file format (excel, csv, opossum)
-        -pr                            Print all data of bom.json
-    ``` 
-After placing the fosslight_bin_windows.exe file in the path to be analyzed binary, double-click to run it.
+    📝 Description
+    ────────────────────────────────────────────────────────────────────
+    FOSSLight Yocto Scanner parses bom.json to extract open source
+    information for packages installed on a Yocto-based model.
 
-### Method 2. How to run using meta-doubleopen
+    📚 Guide: https://fosslight.org/fosslight-guide-en/scanner/7_yocto.html
 
----
-When building based on Yocto Project, OSS information about the package included in the rootfs image is extracted as spdx.json using [meta-doubleopen](https://github.com/doubleopen-project/meta-doubleopen) and converted into OSS Report format using FOSSLight Yocto.
-- Output per sheet:
-    - SRC_distributed: Packages included in rootfs image.
-    - SRC_recipe: Recipes included in build.
-    - SRC_not_distributed: Packages not included in rootfs image.
+    ⚙️  General Options
+    ────────────────────────────────────────────────────────────────────
+    -h                     Show this help message
+    -v                     Show version information
+    -o <path>              Output directory path (default: current directory)
+    -f <format>            Output file format (excel, csv, opossum)
 
-- OSS information output method for each package: Prints OSS information (OSS Name, OSS Version, LICENSE, Download Location, Homepage) defined in recipe.
+    🔍 Scanner-Specific Options
+    ────────────────────────────────────────────────────────────────────
+    -p <path>              Path of buildhistory/package directory
+    -b <file>              bom.json file path
+    -i <file>              installed-package-names.txt file path
+    -ip <file>             installed-packages.txt file path
+    -y <file>              sbom-info.yaml or oss-pkg-info.yaml file path
+    -a <path>              Path to analyze the binaries
+    -n                     Print result in BIN(Yocto) format
+    -s                     Analyze source code for New Open Source
+    -c                     Analyze all the source code
+    -e <path>              Top build output path with bom.json to compress
+                           all the source code
+    -pr                    Print all data of bom.json
 
----
+    💡 Examples
+    ────────────────────────────────────────────────────────────────────
+    # Basic scan with required inputs
+    fosslight_yocto -p buildhistory/packages -b bom.json \
+                    -i installed-package-names.txt -ip installed-packages.txt
 
-#### Build with meta-doubleopen
-Create a spdx.json file for the image using[meta-doubleopen](https://github.com/doubleopen-project/meta-doubleopen)
+    # Scan with sbom-info.yaml and output path
+    fosslight_yocto -p buildhistory/packages -b bom.json \
+                    -i installed-package-names.txt -ip installed-packages.txt \
+                    -y sbom-info.yaml -o results/
 
+    # Scan with binary analysis and source code analysis
+    fosslight_yocto -p buildhistory/packages -b bom.json \
+                    -i installed-package-names.txt -ip installed-packages.txt \
+                    -a /path/to/binaries -s
+    ```
+<br><br>
 
-#### Run the fosslight_doubleopen
-```
-$ source venv/bin/activate
-(.venv) $  fosslight_doubleopen -f core-image-minimal.spdx.json
-```
-
-- Option f {[image].spdx.json} : spdx.json file generated as a result of executing meta-doubleopen
-
-## 📁 Result
-
+## Result
+{: .left-bar-title}
 ```
 $ tree
 .
-├── fosslight_log_220904_0912.txt
-├── fosslight_report_220904_0912.xlsx
-└── fosslight_opossum_220904_0912.json
+├── fosslight_log_yocto_260413_1443.txt
+├── fosslight_report_yocto_260413_1443.xlsx
+└── fosslight_opossum_yocto_260413_1443.json
 
 ```
-- fosslight_log_[datetime].txt : The execution log.
-- fosslight_report_[datetime].xlsx : FOSSLight Yocto result in FOSSLight Report format.    
-   - The Checksum and TLSH values for each binary are hidden by default and written within FOSSLight Report.    
-- fosslight_opossum_[datetime].json : FOSSLight Yocto Scanner result for [OpossumUI](https://github.com/opossum-tool/OpossumUI)
+- fosslight_log_yocto_[datetime].txt : Execution log.
+- fosslight_report_yocto_[datetime].xlsx : FOSSLight Yocto result in FOSSLight Report format.
+   - The checksum and TLSH values per binary are hidden by default in the report.
+- fosslight_opossum_yocto_[datetime].json : Binary analysis result available in [OpossumUI](https://github.com/opossum-tool/OpossumUI).
+
+<br><br>
+
+## Additional Features
+{: .left-bar-title}
+
+### -y Option : Load OSS Information per Recipe/Package from SBOM Info File
+{: .specific-title}
+- When the script is run with the -y option, OSS information defined in the Recipe is not used; instead, the OSS Report is generated based on the OSS information contained in the SBOM file.
+  However, even if Recipe/Package information exists in the SBOM file, it will not be included in the OSS Report if the Recipe/Package is not actually installed.
+
+    | OSS Information                          | Exclude                              | Comment                                |
+    |------------------------------------------|--------------------------------------|----------------------------------------|
+    | Information extracted from Recipe        | O                                    | Excluded by oss-pkg-info.yaml          |
+    | Information added from oss-pkg-info.yaml | Value written in oss-pkg-info.yaml   | Info loaded from oss-pkg-info.yaml     |
+
+#### Writing the SBOM Info File
+{: .under-bar-title}
+Prepare a YAML file to write the SBOM info file, choosing one of the two formats below.
+1. Create a sbom-info.yaml file (YAML format) and enter the corresponding yocto_recipe or yocto_package for each OSS. ( e.g., [sbom-info.yaml](https://github.com/fosslight/fosslight_yocto_scanner/blob/main/test_files/sbom-info.yaml) )
+    - Fields that cannot be written as list type: version, download location, homepage, exclude
+    <br>
+
+#### How to Run
+{: .under-bar-title}
+- Specify the SBOM file with the -y parameter when running the script.
+    - For a single SBOM file:
+    ```
+    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -a [path_to_binary_analysis] -y [sbom-info.yaml]
+    ```
+    - To load two or more SBOM files (separated by comma):
+    ```
+    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -a [path_to_binary_analysis] -y [oss-pkg-info.yaml,sbom-info.yaml]
+    ```
+<br>
+
+### -s, -c Options : Source Code Analysis
+{: .specific-title}
+Runs source code analysis.
+
+#### How to Run
+{: .under-bar-title}
+- <span style="color:red">(Recommended)</span> Parameter -s : Analyzes only Recipes whose OSS is not stored in FOSSLight Hub.
+    ```
+    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -s
+    ```
+- Parameter -c : Analyzes source code for all installed Recipes.
+    ```
+    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -c
+    ```
+
+#### Result Files
+{: .under-bar-title}
+- source_analysis_report.xlsx : Source code analysis result file.
+- scancode_result folder : Result files per Recipe.
+
+<br>
+
+### -e Option : Copy and Compress Source Code per Recipe
+{: .specific-title}
+- This feature compresses the source code per installed Recipe into [recipe_name].zip, saves it to the package_zips folder, and then re-compresses them into a single archive. Note that socket, FIFO, and binary files are excluded.
+
+#### Preparation
+{: .under-bar-title}
+- Add the following item to the jsondata dictionary inside the do_write_bom_info() function of bom.bbclass, then generate the bom.json file.
+    > jsondata["file_path"] = d.getVar("FILESPATH", True)
+
+#### How to Run
+{: .under-bar-title}
+- Add the -e parameter.
+    ```
+    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -e
+    ```
+
+#### Result Files
+{: .under-bar-title}
+- package_zips : Folder containing the source code per Recipe copied and archived in [recipe_name].zip format.
+- packages.tar.gz : Compressed archive of the package_zips folder.
+- oss_source_path.txt : File that outputs the paths where source code was collected, limited to Recipes with SRC_URI starting with file://.
+- failed_to_compress_list.txt : File that outputs the list of Recipes for which compression failed in whole or in part.
