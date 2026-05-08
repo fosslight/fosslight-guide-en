@@ -28,8 +28,7 @@ $ pip3 install fosslight_prechecker
 
 FOSSLight Prechecker provides the following four modes, each performing different functions for managing copyright and license information in source code.  
 1. `lint` --- Check whether the [copyright and license writing rules][rule] in source code are complied with.     
-2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) or [oss-pkg-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/oss-pkg-info.yaml) to [Fosslight_Report.xlsx](https://fosslight.org/hub-guide-en/learn/2_fosslight_report.html) format.
-     - The contents of the yaml file are converted to the SRC Sheet of Fosslight_Report.xlsx.  
+2. `convert` --- Convert [sbom-info.yaml](https://github.com/fosslight/fosslight_prechecker/blob/main/tests/convert/sbom-info.yaml) into the [Fosslight_Report.xlsx](https://fosslight.org/hub-guide-en/learn/2_fosslight_report.html) format and reflect its contents in the SRC sheet.  
 3. `add` --- Add copyright, license, and download location information to files that are missing copyright or license information.  
 4. `download` --- Download the license text of each license specified in the sbom-info.yaml file as individual text files.  
 
@@ -53,7 +52,7 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
     rules in source code. It can lint, add, convert, and
     download license information.
 
-    📚 Guide: https://fosslight.org/fosslight-guide/scanner/1_prechecker.html
+    📚 Guide: https://fosslight.org/fosslight-guide/prechecker
 
     🔧 Modes
     ────────────────────────────────────────────────────────────────────
@@ -151,10 +150,7 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
           Summary:
             Open Source Package File:
             - convert/sbom-info.yaml
-            - add/oss-pkg-info.yaml
-            - convert/oss-pkg-info.yaml
             - lint/sub1/sbom-info.yaml
-            - lint/sub2/oss-pkg-info.yaml
             Detected Licenses:
             - Apache-2.0
             - GPL-3.0-only
@@ -266,7 +262,7 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
            <li>User-defined excluded paths (-e option)</li>
            <li>
              Paths with exclude set to True in
-             sbom-info.yaml or oss-pkg-info.yaml
+             sbom-info.yaml
            </li>
          </ul>
        </details>
@@ -305,10 +301,8 @@ If a file does not have existing copyright or license information, the missing i
   * Copyright: SPDX-FileCopyrightText: Copyright (c) 2011 LG Electronics Inc.
 
   # Missing license File(s)
-    * oss-pkg-info.yaml
     * test_no_license.py
     * Your input license : GPL-3.0-only
-  Successfully changed header of tests/add/oss-pkg-info.yaml
   Successfully changed header of tests/add/test_no_license.py
 
   # Missing Copyright File(s) 
@@ -318,10 +312,9 @@ If a file does not have existing copyright or license information, the missing i
 
   # Adding Download Location into your files
     * Your input DownloadLocation : https://www.testurl.com
-  Successfully changed header of tests/add/test_both_have_1.py
-  Successfully changed header of tests/add/test_both_have_2.py
-  Successfully changed header of tests/add/test_no_copyright.py
-  Successfully changed header of tests/add/oss-pkg-info.yaml
+  Successfully changed header of tests/add/test_both_have_1.py  
+  Successfully changed header of tests/add/test_both_have_2.py  
+  Successfully changed header of tests/add/test_no_copyright.py   
   Successfully changed header of tests/add/test_no_license.py
   OS: Linux 5.15.0-138-generic
   Path to analyze: tests/add
@@ -373,7 +366,7 @@ If a file does not have existing copyright or license information, the missing i
 
 ### Convert OSS information in YAML format to Fosslight Report  
 {: .specific-title}  
-- Analyzes sbom-info.yaml or oss-pkg-info.yaml files in the specified path and converts them to an Excel report in Fosslight_Report.xlsx format.  
+- Analyzes sbom-info.yaml files in the specified path and converts them to an Excel report in Fosslight_Report.xlsx format.  
 - If there are multiple YAML files, each file is converted to a separate individual sheet.  
 ```
 $ fosslight_prechecker convert -p tests/
@@ -383,45 +376,45 @@ $ fosslight_prechecker convert -p tests/
 <ul>
 <li>
 <details markdown="1">
-<summary markdown="span">oss-pkg-info.yaml</summary>
+<summary markdown="span">sbom-info.yaml</summary>
 
 When writing a path in the yaml file, if it starts with a special character ({, }, [, ], &, *, #, ?, |, -, <, >, =, !, %, @), use double quotation marks ("").
 
 ```yaml
-glibc:
-- version: '2.3'
+libidn:
+- version: "1.5"
   source name or path:
-  - tests/b.c
-  - tests/a.c
+  - a.c
+  - b.c
   license:
-  - GPL-3.0
-  - LGPL-2.1
-  download location: https://github.com/fsfe/glibc
-dbus:
-- version: '1.3'
-  source name or path:
-  - tests/src/*
-  license:
-  - GPL-2.0
-  download location: https://github.com/fsfe/dbus
-  copyright text: 'Copyright (c) 2020 Test Copyright (c) 2020 Sample'
-reuse-tool:
-- version: ''
-  source name or path:
-  - tests/
-  license:
-  - MIT
-  download location: https://github.com/fsfe/reuse
-  homepage: http://google.com
-  copyright text: Copyright (c) 2020 Test
-build-tool:
-- version: ''
-  source name or path:
-  - tests/
-  license:
-  - Apache-2.0
-  download location: http://gihub.com/bazel
-  exclude: true
+  - "GPL-3.0"
+  - "LGPL-2.1"
+  download location: "http://ftp.gnu.org/gnu/libidn"
+  homepage: "https://www.gnu.org/software/libidn"
+  copyright text: "Copyright (c) 2002-2007, Simon Josefsson"
+node-backoff:
+- version: "2.5.0"
+  source name or path: "src/*"
+  license: "MIT"
+  download location: "https://github.com/MathieuTurcotte/node-backoff"
+  homepage: "https://www.npmjs.com/package/backoff"
+  copyright text: "Copyright (c) 2012 Mathieu Turcotte"
+  exclude: True
+rsync:
+- version: "2.6.9"
+  source name or path: "test/tool"
+  license: "GPL-2.0"
+  download location: "https://download.samba.org/pub/rsync/src"
+  homepage: "http://rsync.samba.org"
+- version: "3.1.2"
+  source name or path: "test/tool"
+  license: "GPL-3.0"
+  download location: "https://download.samba.org/pub/rsync/src"
+  homepage: "http://rsync.samba.org"
+  copyright text:
+  - "Copyright (c) 1996 Andrew Tridgell"
+  - "Copyright (c) 1996 Paul Mackerras"
+  - "Copyright (c) 2003-2015 Wayne Davison"
 ```
 
 </details>
