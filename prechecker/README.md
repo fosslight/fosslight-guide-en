@@ -36,6 +36,9 @@ FOSSLight Prechecker provides the following four modes, each performing differen
 $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
 ```
 
+- **(For Windows)** Using the executable  
+  - Download `fosslight_prechecker_windows.exe` from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases). Double-clicking it runs lint mode in that directory; open **cmd** to run other modes.  
+
 ### How to Run by Mode & Parameters
 {: .specific-title}
 * Required parameter : **Modes**   
@@ -52,7 +55,7 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
     rules in source code. It can lint, add, convert, and
     download license information.
 
-    📚 Guide: https://fosslight.org/fosslight-guide/prechecker
+    📚 Guide:  https://fosslight.org/fosslight-guide/prechecker
 
     🔧 Modes
     ────────────────────────────────────────────────────────────────────
@@ -114,16 +117,7 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
        - Example) fosslight_prechecker -e "dev/" "tests/"
    - ⚠️ File names and extensions are **case-sensitive**, so please enter them exactly as intended. <br>
 
-- **(For Windows)** Run using executable file  
-  - Download fosslight_prechecker_windows.exe from [FOSSLight Prechecker - Release](https://github.com/fosslight/fosslight_prechecker/releases)  
-  - Two methods available:
-    - 1) Move the executable to the desired path and double-click to run  
-      - Runs only the default Lint mode  
-    - 2) Run via command line     
-      - Open 'cmd'    
-      - Run from the path where the file is located, following the 'How to Run by Mode and Parameters' instructions  
-         ex) fosslight_prechecker lint -p src/
-    
+
 <br><br>    
 
 ## lint mode
@@ -136,15 +130,57 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
   └── fosslight_log_pre_260423_1630.txt
 
   ```
+- **Result output fields**  
+Depending on the format, the fields written to the result may differ. (Default format: yaml)
 
-### 1. Analyze a specific path
-{: .specific-title}
+  - Compliant: Whether the lint result is compliant (OK or Not OK)
+  - Files without copyright: List of files without copyright
+  - Files without license: List of files without a license
+  - Files without license and copyright: List of files missing both copyright and license
+  - Summary
+      - Detected Licenses: Licenses detected in the source
+      - Files without copyright / total: Count of files without copyright / total file count
+      - Files without license / total: Count of files without license / total file count
+      - Files without license and copyright / total: Count of files missing both / total file count
+      - Open Source Package File: List of sbom-info*.yaml or oss-pkg-info*.yaml files
+      - Tool Info
+        - Analysis path: Path that was analyzed
+        - OS: OS version on which FOSSLight Prechecker was executed
+        - Python version: Python version on which FOSSLight Prechecker was executed
+        - fosslight_prechecker version: FOSSLight Prechecker version
+
+  
+  <ul>
+  <li>
+    <details>
+      <summary><strong>※ Items excluded when counting files ※ </strong></summary>
+      <ul>
+      <li>Hidden files and files inside hidden directories</li>
+      <li>Binary files</li>
+      <li>Files with certain extensions (jar, png, exe, so, a, dll, jpeg, jpg, ttf, lib, ttc, pfb, pfm, otf, afm, dfont, json)</li>
+      <li>Files inside venv and node_modules directories</li>
+      <li>Files listed in .gitignore</li>
+      <li>Untracked files relative to the git repository</li>
+      <li>User-defined excluded paths (`-e` option)</li>
+      <li>
+        Paths in sbom-info.yaml where
+        exclude is True
+      </li>
+      </ul>
+    </details>      
+  </li>
+  </ul>
+
+<ul>
+<li>
+<details markdown="1">
+<summary markdown="span">Example 1) Analyze a specific path</summary>
 
 ```
 (venv)$ fosslight_prechecker lint -p /home/tests -o result.yaml
 ```
 - Result
-    <pre>
+<pre>
        Checking copyright/license writing rules:
           Compliant: Not-OK
           Summary:
@@ -169,15 +205,22 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
             Analyze path: tests
             Python version: 3
             fosslight_prechecker version: fosslight_prechecker v4.0.8
-    </pre>
+</pre>
 
-### 2. Analyze specific files
-{: .specific-title}  
+</details>
+</li>
+</ul>
+
+<ul>
+<li>
+<details markdown="1">
+<summary markdown="span">Example 2) Analyze specific files</summary>
+
 ```
 (venv)$ fosslight_prechecker lint -p "src/file1.py,src/file2.py"
 ```
 - Result
-    <pre>
+<pre>
         [FOSSLIGHT_PRECHECKER] Tool Info : fosslight_prechecker v4.0.8
         [FOSSLIGHT_PRECHECKER] # src/fosslight_prechecker/cli.py
         [FOSSLIGHT_PRECHECKER] * License: GPL-3.0-only
@@ -206,132 +249,30 @@ $ fosslight_prechecker [Mode] [option1] <arg1> [option2] <arg2>...
             - src/fosslight_prechecker/_result.py
             Python version: 3
             fosslight_prechecker version: fosslight_prechecker v4.0.8
-    </pre>
-<ul>
- <li>
- <details>
-   <summary><strong>Contents of result</strong></summary>
+</pre>
 
-   <p>Depending on the format, the resulting output may differ.
-   (Default format: yaml)</p>
-
-   <ul>
-     <li><b>Compliant</b>: Whether the lint result is compliant (OK or Not OK)</li>
-     <li><b>Files without copyright</b>:
-       List of files without copyright</li>
-     <li><b>Files without license</b>:
-       List of files without a license</li>
-     <li><b>Files without license and copyright</b>:
-       List of files missing both copyright and license</li>
-
-     <li>
-       <b>Summary</b>
-       <ul>
-         <li><b>Detected Licenses</b>: Licenses detected in the source code</li>
-         <li><b>Files without copyright / total</b>:
-             Number of files without copyright / Total number of files</li>
-         <li><b>Files without license / total</b>:
-             Number of files without license / Total number of files</li>
-         <li><b>Open Source Package File</b>:
-             List of sbom-info*.yaml or oss-pkg-info*.yaml files</li>
-
-         <li>
-           <b>Tool Info</b>
-           <ul>
-             <li><b>Analysis path</b>: Path that was analyzed</li>
-             <li><b>OS</b>: OS version on which FOSSLight Prechecker was executed</li>
-             <li><b>Python version</b>:
-                 Python version on which FOSSLight Prechecker was executed</li>
-             <li><b>fosslight_prechecker version</b>:
-                 FOSSLight Prechecker version</li>
-           </ul>
-         </li>
-       </ul>
-     </li>
-
-     <li>
-       <details>
-         <summary><strong>Items excluded when calculating the number of files</strong></summary>
-         <ul>
-           <li>Hidden files and files within hidden directories</li>
-           <li>Binary files</li>
-           <li>Files with specific extensions (jar, png, exe, so, a, dll, jpeg, jpg, ttf, lib, ttc, pfb, pfm, otf, afm, dfont, json)</li>
-           <li>Files within venv and node_modules directories</li>
-           <li>Files defined in .gitignore</li>
-           <li>Untracked files based on git repo</li>
-           <li>User-defined excluded paths (-e option)</li>
-           <li>
-             Paths with exclude set to True in
-             sbom-info.yaml
-           </li>
-         </ul>
-       </details>
-     </li>
-   </ul>
- </details>
- </li>
+</details>
+</li>
 </ul>
+
 
 <br><br>
 
 ## add mode
 {: .left-bar-title} 
-If a file does not have existing copyright or license information, the missing information will be added to each file.  
+If a file has no existing copyright or license information, the corresponding information is added for each item.  
 
-### 1. Add copyright and license to files in a specific path
-{: .specific-title}
+- **Add copyright and license to files under a specific path**  
 
 ```
 (venv)$ fosslight_prechecker add -p tests/add -c "2025-2026 LG Electronics Inc." -l "GPL-3.0-only" -u "https://www.testurl.com"
 ```
-<ul>
- <li>
- <details markdown="1">
- <summary markdown="span">Result</summary>
-
-  ```bash
-  [FOSSLIGHT_PRECHECKER] 
-  # File list that have both license and copyright : 2 / 5
-  # test_both_have_1.py
-  * License: GPL-3.0-only
-  * Copyright: SPDX-FileCopyrightText: Copyright 2019-2021 LG Electronics Inc.
-
-  # test_both_have_2.py
-  * License: GPL-3.0-only
-  * Copyright: SPDX-FileCopyrightText: Copyright (c) 2011 LG Electronics Inc.
-
-  # Missing license File(s)
-    * test_no_license.py
-    * Your input license : GPL-3.0-only
-  Successfully changed header of tests/add/test_no_license.py
-
-  # Missing Copyright File(s) 
-    * test_no_copyright.py
-    * Your input Copyright : Copyright 2025-2026 LG Electronics Inc.
-  Successfully changed header of tests/add/test_no_copyright.py
-
-  # Adding Download Location into your files
-    * Your input DownloadLocation : https://www.testurl.com
-  Successfully changed header of tests/add/test_both_have_1.py  
-  Successfully changed header of tests/add/test_both_have_2.py  
-  Successfully changed header of tests/add/test_no_copyright.py   
-  Successfully changed header of tests/add/test_no_license.py
-  OS: Linux 5.15.0-138-generic
-  Path to analyze: tests/add
-  Python version: 3
-  Tool Info: fosslight_prechecker v4.0.8
-  ```
-
- </details>
- </li>
-</ul>
-
-### 2. Add copyright and license to specific files
-{: .specific-title} 
+- **Add copyright and license to specific files**  
 
 ```
 (venv)$ fosslight_prechecker add -p "tests/add/test_both_have_1.py,tests/add/test_both_have_2.py,tests/add/test_no_copyright.py,tests/add/test_no_license.py" -c "2025-2026 LG Electronics Inc." -l "GPL-3.0-only" -u "https://www.testurl.com"
 ```
+
 <ul>
  <li>
  <details markdown="1">
@@ -366,7 +307,7 @@ If a file does not have existing copyright or license information, the missing i
 
 ### Convert OSS information in YAML format to Fosslight Report  
 {: .specific-title}  
-- Analyzes sbom-info.yaml files in the specified path and converts them to an Excel report in Fosslight_Report.xlsx format.  
+- Analyzes sbom-info.yaml files under the specified path and converts them to an Excel report in Fosslight_Report.xlsx format.  
 - If there are multiple YAML files, each file is converted to a separate individual sheet.  
 ```
 $ fosslight_prechecker convert -p tests/
@@ -376,9 +317,9 @@ $ fosslight_prechecker convert -p tests/
 <ul>
 <li>
 <details markdown="1">
-<summary markdown="span">sbom-info.yaml</summary>
+<summary markdown="span">sbom-info.yaml file</summary>
 
-When writing a path in the yaml file, if it starts with a special character ({, }, [, ], &, *, #, ?, |, -, <, >, =, !, %, @), use double quotation marks ("").
+When writing a path in the yaml file, if it starts with a special character ({, }, [, ], &, *, #, ?, |, -, <, >, =, !, %, @), enclose it in double quotes ("").
 
 ```yaml
 libidn:
@@ -421,7 +362,7 @@ rsync:
 </li>
 <li>
 <details markdown="1">
-<summary markdown="span">fosslight_report.xlsx</summary>
+<summary markdown="span">fosslight_report.xlsx file</summary>
 
 <img src="images/fosslight_reuse_report.png" alt="FOSSLight Report">
 
@@ -437,7 +378,7 @@ rsync:
 
 ## download mode
 {: .left-bar-title} 
-1. **Download licenses written in sbom-info.yaml as text files**
+1. **Example: download each license from sbom-info.yaml as a text file**
 ```
 (venv)$ fosslight_prechecker download -p tests/
 ```
@@ -449,7 +390,7 @@ rsync:
   Successfully downloaded tests/LICENSES/GPL-2.0-only.txt.
  ``` 
 
-2. **Example of creating a representative license file**
+2. **Example: create a representative license file**
 ```
 (venv)$ fosslight_prechecker download -p tests/ -l "Apache-2.0"
 ```
