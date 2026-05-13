@@ -319,7 +319,7 @@ $ fosslight_prechecker convert -p tests/
 <details markdown="1">
 <summary markdown="span">sbom-info.yaml file</summary>
 
-When writing a path in the yaml file, if it starts with a special character ({, }, [, ], &, *, #, ?, |, -, <, >, =, !, %, @), enclose it in double quotes ("").
+<p>When writing a path in the yaml file, if it starts with a special character ({, }, [, ], &, *, #, ?, |, -, <, >, =, !, %, @), enclose it in double quotes ("").</p>
 
 ```yaml
 libidn:
