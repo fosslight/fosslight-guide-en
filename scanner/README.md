@@ -37,9 +37,8 @@ FOSSLight Scanner consists of the following 3 scanners, each responsible for dif
 {: .left-bar-title}
 
 1. [**FOSSLight Scanner**](https://github.com/fosslight/fosslight_scanner) runs on Python 3.10 or higher (officially supported versions: 3.10~3.14) and can be installed via pip3 command.    
-2. To analyze Jar files, [**Open Source JDK (Java)**](https://openjdk.java.net) must be installed.  
-3. (For Windows) [Microsoft Build Tools (Microsoft Visual C++ 14.0+)](https://visualstudio.microsoft.com/visual-cpp-build-tools/) must be installed.  
-4. The installation environment must be configured according to the [Virtualenv setup](etc/guide_virtualenv.md).
+2. (For Windows) [Microsoft Build Tools (Microsoft Visual C++ 14.0+)](https://visualstudio.microsoft.com/visual-cpp-build-tools/) must be installed.  
+3. The installation environment must be configured according to the [Virtualenv setup](etc/guide_virtualenv.md).
 <br><br>
 
 
