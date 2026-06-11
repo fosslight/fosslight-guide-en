@@ -54,6 +54,9 @@ Source, binary and dependency analysis is performed using [FOSSLight Scanner](ht
         - source : Analyze only the source code.
         - binary : Analyze only binary.
         - dependency : Analyze only dependency.
+    - **Pipeline options (Optional)**
+        - Analyze dependencies recursively : To analyze dependencies recursively by detecting manifest files in all subdirectories as well as the project's top-level directory, check the 'Enable recursive analysis' checkbox.
+        - Package Manager Environment : If you want to use a specific version of a package manager during dependency analysis, select the language or package manager, and then choose your desired version from the version list.
     - **Permission**
         - Private : Only the creator can view.
         - Public : Other people can view the project and download analysis results through the link.
