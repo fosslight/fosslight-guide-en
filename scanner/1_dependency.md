@@ -114,70 +114,7 @@ No prerequisites required. You can run it directly.
 
 <span class="specific-title">Prerequisites</span>   
 
-1. Add the plugin to the build.gradle file located in the project root directory as follows.  
-   - Java  
-      <pre><code>
-      plugins {
-          id <span style="color:#FFA500;">'com.github.hierynomus.license'</span> version <span style="color:#FFA500;">'0.16.1'</span> <span style="color:#888888;">// For gradle version 6.x or lower, use version '0.15.0' instead.</span>
-      }
-
-      downloadLicenses {
-          includeProjectDependencies = true
-          dependencyConfiguration = <span style="color:#FFA500;">'runtimeClasspath'</span> <span style="color:#888888;">// For gradle version 4.6 or lower, use 'runtime' instead of 'runtimeClasspath'.</span>
-      }
-      </code></pre>  
-
-    - Kotlin  
-      <pre><code>
-      plugins {
-          id(<span style="color:#FFA500;">"com.github.hierynomus.license"</span>) version <span style="color:#FFA500;">"0.16.1"</span>
-      }
-
-      downloadLicenses {
-          includeProjectDependencies = true
-          dependencyConfiguration = <span style="color:#FFA500;">"runtimeClasspath"</span>
-      }
-      </code></pre>  
-
-2. Run the 'downloadLicenses' task of the plugin.  
-  - Linux : In the root directory where build.gradle exists, enter the command as follows.   
-    ```
-    $ ./gradlew downloadLicenses
-    ```    
-  - Windows : How to run in development environment (eclipse)
-      1. Right-click the build.gradle file and click Run As > Gradle build....    
-      <img src="./images/fl_dep_gradle_1.png" alt="gradle1">
-      2. When the "Edit Configuration" window opens, enter 'downloadLicenses' in the "Gradle Tasks" tab and click Run to execute.  
-      <img src="./images/fl_dep_gradle_2.png" alt="gradle2">
-
-3. Verify that dependency-license.json is created in the build/reports/license directory. (The directory where it is created is the same for linux/windows environments)  
-  - If you changed project.buildDir, the result file will be created at {project.buildDir}/reports/license/dependency-license.json, and you must specify the build directory with the -c option when running FOSSLight Dependency Scanner.  
-  ```
-  fosslight_dependency -c {project.buildDir}
-  ```
-  - Example of build/reports/license/dependency-license.json
-    ```
-    {
-      "name": "commons-dbcp:commons-dbcp:1.4",
-      "file": "commons-dbcp-1.4.jar",
-      "licenses": [
-        {
-          "name": "The Apache Software License, Version 2.0",
-          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ]
-    },
-    {
-      "name": "com.amazonaws:aws-java-sdk-machinelearning:1.11.41",
-      "file": "aws-java-sdk-machinelearning-1.11.41.jar",
-      "licenses": [
-        {
-          "name": "Apache License, Version 2.0",
-          "url": "https://aws.amazon.com/apache2.0"
-        }
-      ]
-    },
-   ``` 
+1. For Java/Kotlin (gradle), if the gradlew executable file and build.gradle file exist in the input directory, the plugin addition and execution are automatically performed inside FOSSLight Dependency Scanner, so you can proceed directly to the execution method.  
 
 <span class="specific-title">How to Run</span>   
 1. Run the following command in the path where build.gradle (gradle's manifest file) exists.  
@@ -683,7 +620,7 @@ Therefore, if information such as License or Homepage is missing in Chart.yaml, 
   <tr>
     <td rowspan="2">Java</td>
     <td>Gradle</td>
-    <td>build.gradle</td>
+    <td>build.gradle,<br>build.gradle.kts</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
@@ -700,7 +637,7 @@ Therefore, if information such as License or Homepage is missing in Chart.yaml, 
   <tr>
     <td>Java (Android)</td>
     <td>Gradle</td>
-    <td>build.gradle</td>
+    <td>build.gradle,<br>build.gradle.kts</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
