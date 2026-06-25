@@ -74,6 +74,7 @@ Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](h
 ### How to run by mode & Parameters
 {: .specific-title}
 ```
+
     📖 Usage
     ────────────────────────────────────────────────────────────────────
     fosslight [mode] [options] <arguments>
@@ -103,7 +104,7 @@ Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](h
     -p <path>              Path to analyze
                            • Compare mode: path to two FOSSLight reports (excel/yaml)
     -w <url>               URL to download and analyze (git clone or wget)
-    -f <format>            Output format (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
+    -f <format>            Output format ({', '.join(SUPPORT_FORMAT)})
                            • Compare mode: excel, json, yaml, html
                            • Multiple formats: ex) -f excel yaml json (separated by space)
     -e <pattern>           Exclude paths from analysis (files and directories)
@@ -115,13 +116,11 @@ Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](h
     -t                     Hide progress bar
     -h                     Show this help message
     -v                     Show version information
-    -s <path>              Apply settings from JSON file(check format with 'setting.json' in this repository)
+    -s <path>              Apply settings from JSON file (check format with 'tests/fixtures/setting.json' in this repository)
                            Note: CLI flags override settings file
-                           Example: -f yaml -s setting.json → output is .yaml
+                           Example: -f yaml -s tests/fixtures/setting.json → output is .yaml
     --no_correction        Skip OSS information correction with sbom-info.yaml
-                           (Correction only supports excel format)
     --correct_fpath <path> Path to sbom-info.yaml file for correction
-    --ui                   Generate UI mode result file
     --recursive_dep        Recursively analyze dependencies
 
     🔍 Mode-Specific Options
@@ -132,6 +131,10 @@ Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](h
 
     For 'all' or 'dependency' mode:
       -d <args>            Additional arguments for dependency analysis
+
+    For 'all' or 'source' mode:
+      --kb_url <url>       KB API URL for source analysis
+      --kb_token <token>   KB API bearer token for source analysis
 
     💡 Examples
     ────────────────────────────────────────────────────────────────────
