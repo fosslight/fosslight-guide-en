@@ -104,7 +104,7 @@ Download the rust-init.exe file from [https://www.rust-lang.org/tools/install](h
     -p <path>              Path to analyze
                            • Compare mode: path to two FOSSLight reports (excel/yaml)
     -w <url>               URL to download and analyze (git clone or wget)
-    -f <format>            Output format ({', '.join(SUPPORT_FORMAT)})
+    -f <format>            Output format (excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml)
                            • Compare mode: excel, json, yaml, html
                            • Multiple formats: ex) -f excel yaml json (separated by space)
     -e <pattern>           Exclude paths from analysis (files and directories)
