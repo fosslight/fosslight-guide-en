@@ -57,22 +57,6 @@ $ pip3 install fosslight_dependency
 <summary markdown="span">**[NodeJS] Npm or Yarn**</summary>
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">  
 
-<span class="specific-title">Prerequisites</span>
-
-1. Install license-checker.  
-   ```
-   $ npm install -g license-checker
-   ```
-   > ▲ [Note] The '-g' option must be added to install license-checker as a global package.  
-   > This is to prevent the license-checker module and its dependencies from being included in the results and distributed with the target software.  
-   
-   ✓ If you don't have sudo privileges  
-   You can change the default path where global modules are installed.  
-   ```
-   $ npm set prefix ~/.npm
-   $ PATH=~/.npm/bin:$PATH
-   ```
-
 <span class="specific-title">How to Run</span>
 
 1. Run the following command in the directory where package.json exists.  
