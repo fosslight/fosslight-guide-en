@@ -39,7 +39,7 @@ $ fosslight_source [option] <arguments>
 {: .specific-title}
 
 ```
-📖 Usage
+    📖 Usage
     ────────────────────────────────────────────────────────────────────
     fosslight_source [options] <arguments>
 
@@ -57,7 +57,7 @@ $ fosslight_source [option] <arguments>
     ────────────────────────────────────────────────────────────────────
     -p <path>              Source path to analyze (default: current directory)
     -o <path>              Output file path or directory
-    -f <format>            Output formats: excel, csv, opossum, yaml, spdx-yaml, spdx-json, spdx-xml, spdx-tag, cyclonedx-json, cyclonedx-xml
+    -f <format>            Output formats: {', '.join(SUPPORT_FORMAT)}
                            (multiple formats can be specified, separated by space)
     -e <pattern>           Exclude paths from analysis (files and directories)
                            ⚠️  IMPORTANT: Always wrap in quotes to avoid shell expansion
@@ -75,6 +75,8 @@ $ fosslight_source [option] <arguments>
     --no_correction        Skip OSS information correction with sbom-info.yaml
     --correct_fpath <path> Path to custom sbom-info.yaml file
     --hide_progress        Hide the progress bar during scanning
+    --kb_url <url>         KB API URL (priority: parameter > KB_URL env > default)
+    --kb_token <token>     KB bearer token (priority: parameter > KB_TOKEN env)
 
     💡 Examples
     ────────────────────────────────────────────────────────────────────
