@@ -4,7 +4,7 @@ title: "  ㄴ FOSSLight Binary Scanner"
 ---
 # FOSSLight Binary Scanner
 
-<img src="https://img.shields.io/pypi/l/fosslight_binary" alt="FOSSLight Binary is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_binary" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_binary" /><a href="https://github.com/fosslight/fosslight_binary_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_binary_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_binary_scanner)
+<img src="https://img.shields.io/pypi/l/fosslight_binary" alt="FOSSLight Binary is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_binary" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_binary" /> <a href="https://github.com/fosslight/fosslight_binary_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_binary_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_binary_scanner)
 
  [**FOSSLight Binary Scanner**](https://github.com/fosslight/fosslight_binary_scanner) identifies binaries(including .jar files) and outputs the results. When identical or similar binaries exist in the Binary DB, it provides OSS information (OSS Name, OSS Version, License). In addition, it provides security vulnerability information after JAR file analysis.  
 
