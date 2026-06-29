@@ -5,7 +5,7 @@ title: 🚩FOSSLight Android Scanner
 ---
 # FOSSLight Android Scanner
 
-<img src="https://img.shields.io/pypi/l/fosslight_android" alt="FOSSLight Android is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_yocto" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_yocto" /><a href="https://github.com/fosslight/fosslight_android_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_android_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_android_scanner)
+<img src="https://img.shields.io/pypi/l/fosslight_android" alt="FOSSLight Android is released under the Apache-2.0." /> <img src="https://img.shields.io/pypi/v/fosslight_android" alt="Current python package version." /> <img src="https://img.shields.io/pypi/pyversions/fosslight_android" /> <a href="https://github.com/fosslight/fosslight_android_scanner"><img src="https://img.shields.io/badge/GitHub-Repository-purple?logo=github" alt="GitHub Repository" /></a> [![REUSE status](https://api.reuse.software/badge/github.com/fosslight/fosslight_android_scanner)](https://api.reuse.software/info/github.com/fosslight/fosslight_android_scanner)
 
 [**FOSSLight Android Scanner**](https://github.com/fosslight/fosslight_android_scanner) identifies all binaries loaded on an Android-based model, checks whether open source is used for each binary, and verifies that the notices required by the respective licenses are properly included in the OSS notice (e.g., NOTICE.html).
 
