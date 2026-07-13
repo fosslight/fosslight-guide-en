@@ -171,7 +171,7 @@ requirements.txt should contain only the packages needed for distribution.
 <span class="specific-title">Prerequisites</span>   
 
 1. Maven version 3.5.4 or higher is required.
-2. JAVA environment must be installed. ([Open Source JDK 11 or higher](https://openjdk.java.net) required)   
+2. JAVA environment must be installed. ([OpenJDK 11 or higher](https://openjdk.java.net) required)   
 
 <span class="specific-title">How to Run</span>   
 
