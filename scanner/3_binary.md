@@ -55,7 +55,7 @@ $ fosslight_binary [options] <arguments>
 
 ### Options
 ````
-   📖 Usage
+    📖 Usage
     ────────────────────────────────────────────────────────────────────
     fosslight_binary [options] <arguments>
 
@@ -81,7 +81,8 @@ $ fosslight_binary [options] <arguments>
 
     🔍 Scanner-Specific Options
     ────────────────────────────────────────────────────────────────────
-    -d <db_url>            DB Connection (format: 'postgresql://user:pass@host:port/db')
+    --kb_url <url>         KB API URL (priority: parameter > KB_URL env > default)
+    --kb_token <token>     KB bearer token (priority: parameter > KB_TOKEN env)
     --notice               Print the open source license notice text
     --no_correction        Skip OSS information correction with sbom-info.yaml
     --correct_fpath <path> Path to custom sbom-info.yaml file
@@ -97,8 +98,8 @@ $ fosslight_binary [options] <arguments>
     # Generate output in specific format
     fosslight_binary -f excel -o results/
 
-    # Connect to Binary DB for OSS information
-    fosslight_binary -d "postgresql://user:pass@localhost:5432/exampledb"
+    # Binary DB lookup via ldb_service
+    fosslight_binary --kb_url http://fosslight-kb.lge.com/ --kb_token <token>
 ````
 - -e option: [Pattern matching guide](https://scancode-toolkit.readthedocs.io/en/stable/reference/scancode-cli/cli-pre-scan-options.html#glob-pattern-matching)
    - ⚠️ When using it, please enter values using double quotes ("").
