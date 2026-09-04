@@ -111,8 +111,6 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
     -y <file>              sbom-info.yaml or oss-pkg-info.yaml file path
     -a <path>              Path to analyze the binaries
     -n                     Print result in BIN(Yocto) format
-    -s                     Analyze source code for New Open Source
-    -c                     Analyze all the source code
     -e <path>              Top build output path with bom.json to compress
                            all the source code
     -pr                    Print all data of bom.json
@@ -128,10 +126,10 @@ $ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistor
                     -i installed-package-names.txt -ip installed-packages.txt \
                     -y sbom-info.yaml -o results/
 
-    # Scan with binary analysis and source code analysis
+    # Scan with binary analysis
     fosslight_yocto -p buildhistory/packages -b bom.json \
                     -i installed-package-names.txt -ip installed-packages.txt \
-                    -a /path/to/binaries -s
+                    -a /path/to/binaries
     ```
 <br><br>
 
@@ -181,28 +179,6 @@ Prepare a YAML file to write the SBOM info file, choosing one of the two formats
     ```
     (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -a [path_to_binary_analysis] -y [oss-pkg-info.yaml,sbom-info.yaml]
     ```
-<br>
-
-### -s, -c Options : Source Code Analysis
-{: .specific-title}
-Runs source code analysis.
-
-#### How to Run
-{: .under-bar-title}
-- <span style="color:red">(Recommended)</span> Parameter -s : Analyzes only Recipes whose OSS is not stored in FOSSLight Hub.
-    ```
-    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -s
-    ```
-- Parameter -c : Analyzes source code for all installed Recipes.
-    ```
-    (.venv)$ fosslight_yocto -i [installed-package-names.txt] -b [bom.json] -p [buildhistory/packages] -c
-    ```
-
-#### Result Files
-{: .under-bar-title}
-- source_analysis_report.xlsx : Source code analysis result file.
-- scancode_result folder : Result files per Recipe.
-
 <br>
 
 ### -e Option : Copy and Compress Source Code per Recipe
