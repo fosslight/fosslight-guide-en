@@ -142,7 +142,8 @@ No prerequisites required. You can run it directly.
 
 ```tip
 - It is recommended to set up a virtual environment to separate the project dependencies from globally installed Python dependencies in the system.
-- If 'requirements.txt', 'setup.py' or 'pyproject.toml' files exists in the input path, FOSSLight Dependency Scanner can automatically install dependencies and run the analysis.
+- If any of the following files exists in the input path, FOSSLight Dependency Scanner can automatically install dependencies and run the analysis.
+  'requirements.txt', 'setup.py', 'pyproject.toml', 'uv.lock' 
 ```  
 
 <span class="specific-title">Prerequisites</span>  
@@ -501,7 +502,7 @@ The manifest files for each package manager are as follows:
     - Npm : package.json
     - Pnpm : pnpm-lock.yaml
     - Yarn : package.json
-    - Pypi : requirements.txt / setup.py / pyproject.toml
+    - Pypi : requirements.txt / setup.py / pyproject.toml / uv.lock
     - Maven : pom.xml
     - Gradle (Android) : build.gradle
     - Pub : pubspec.yaml
@@ -674,7 +675,7 @@ Therefore, if information such as License or Homepage is missing in Chart.yaml, 
   <tr>
     <td>Python</td>
     <td>Pypi</td>
-    <td>requirements.txt,<br>setup.py,<br>pyproject.toml</td>
+    <td>requirements.txt,<br>setup.py,<br>pyproject.toml,<br>uv.lock</td>
     <td>O</td>
     <td>O</td>
     <td>O</td>
