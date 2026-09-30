@@ -141,8 +141,9 @@ No prerequisites required. You can run it directly.
 <div style="border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin: 10px 0;">
 
 ```tip
-- It is recommended to set up a virtual environment to separate the project dependencies from globally installed Python dependencies in the system.
-- If the following files exist in the input path, FOSSLight Dependency Scanner runs dependency analysis based on these files: 'requirements.txt', 'setup.py', 'pyproject.toml', 'uv.lock' 
+- To separate the dependencies of the project being analyzed from Python dependencies installed globally on the system, **it is recommended to use a virtual environment.**
+- If one or more of the following files exist in the input path, FOSSLight Dependency Scanner performs dependency analysis based on these files: `requirements.txt`, `setup.py`, `pyproject.toml`, and `uv.lock`.
+- If `uv.lock` exists, **`uv.lock` is analyzed with priority**, and installation-based analysis using the other files is not performed.
 ```  
 
 <span class="specific-title">Prerequisites</span>  
