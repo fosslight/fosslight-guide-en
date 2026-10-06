@@ -30,3 +30,6 @@ Please refer the guide on how to install and use each scanner on the FOSSLight S
 
 #### FOSSLight Yocto Scanner
 [FOSSLight Yocto Scanner](yocto/README.md) is a Python script that outputs OSS information in FOSS Report format for packages included in the rootfs image when building based on the Yocto.
+
+#### FOSSLight Scanner GUI
+[FOSSLight Scanner GUI](scanner_gui/README.md) is a Windows desktop app. It runs Source, Dependency, and Binary analysis of [FOSSLight Scanner](scanner) without a separate Python installation, and shows the results on screen.
