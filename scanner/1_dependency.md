@@ -478,8 +478,8 @@ The output path can be changed using the -o option.
     Android:
       -n <name>                  Application directory name (default: app)
       --runtime-config <config>  Gradle 9 or later, specify the Runtime Configuration to analyze (default: releaseRuntimeClasspath)
-                                 If releaseRuntimeClasspath is unavailable, specify a Runtime Configuration available in the project.
-
+                                 If releaseRuntimeClasspath is unavailable,
+                                 specify another Runtime Configuration available in the project.
     💡 Examples
     ────────────────────────────────────────────────────────────────────
     # Scan current directory
