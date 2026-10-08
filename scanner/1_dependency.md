@@ -116,20 +116,32 @@ No prerequisites required. You can run it directly.
 
 <span class="specific-title">Prerequisites</span>   
 
-1. For Android (gradle), if the gradlew executable file and build.gradle file exist in the input directory, the plugin addition and execution are automatically performed inside FOSSLight Dependency Scanner, so you can proceed directly to the execution method.   
-2. If the Android application project does not have an 'app' (or module name) directory, please refer to the <a href="#prerequisite-for-gradle">Java/Kotlin Gradle guide</a> to perform Dependency analysis.
-
+1. For Android (Gradle), if the `gradlew` executable file and `build.gradle` file exist in the input directory, the plugin addition and execution are automatically performed inside FOSSLight Dependency Scanner, so you can proceed directly to the execution method.   
+2. If the Android application project does not have an `app` (or module name) directory, please refer to the <a href="#prerequisite-for-gradle">Java/Kotlin Gradle guide</a> to perform Dependency analysis.
+3. When using **Gradle 9 or later**, check whether `releaseRuntimeClasspath` is available in the project. If it is unavailable, run the following command to identify the Runtime Configuration to use for Dependency analysis.
+    ```
+    $ ./gradlew :app:resolvableConfigurations
+    $ ./gradlew :{application_name}:resolvableConfigurations (If the application module directory name is not `app`)
+    ```
 
 <span class="specific-title">How to Run</span>  
 
-1. Run the following command in the path where build.gradle (gradle's manifest file) exists.  
+1. Run the following command in the path where `build.gradle`(Gradle's manifest file) exists.  
     ```
     $ fosslight_dependency
     ``` 
-    - If the application folder name is not 'app', you must specify the application folder name with the -n option.  
+2. If the application module directory name is not `app`, specify the application module directory name with the `-n` option.  
     ```
     $ fosslight_dependency -n {application_name}
     ```
+3. For Android projects using **Gradle 9 or later**, if `releaseRuntimeClasspath` is unavailable, specify the Runtime Configuration identified in the prerequisites using the `--runtime-config` option. 
+    ```
+    $ fosslight_dependency --runtime-config {runtime_configuration}
+    ```
+4. If both the application module directory name and Runtime Configuration need to be specified, use the `-n` and `--runtime-config` options together.
+   ```
+   $ fosslight_dependency -n {application_name} --runtime-config {runtime_configuration}
+   ```
 
 </div>
 
@@ -436,35 +448,37 @@ The output path can be changed using the -o option.
 
     🔍 Scanner-Specific Options
     ────────────────────────────────────────────────────────────────────
-    -m <manager>           Specify package manager (npm, maven, gradle, pypi, pub,
-                           cocoapods, android, swift, carthage, go, nuget, helm,
-                           unity, cargo, pnpm, yarn)
-    -r                     Recursive mode: scan all subdirectories for manifest files
-    --graph-path <path>    Save dependency graph image (pdf, jpg, png) (recommend pdf extension)
-                           Example: fosslight_dependency --graph-path /your/path/filename.[pdf, jpg, png]
-    --graph-format <format> Set graph image format (default: pdf)
-    --graph-size <w> <h>   Set graph image size in pixels (requires --graph-path)
-    --direct <True|False>  Print direct/transitive dependency type
-                           Choose True or False (default: True)
-    --notice               Print the open source license notice text
+    -m <manager>                 Specify package manager (npm, maven, gradle, pypi, pub,
+                                 cocoapods, android, swift, carthage, go, nuget, helm,
+                                 unity, cargo, pnpm, yarn)
+    -r                           Recursive mode: scan all subdirectories for manifest files
+    --graph-path <path>          Save dependency graph image (pdf, jpg, png) (recommend pdf extension)
+                                 Example: fosslight_dependency --graph-path /your/path/filename.[pdf, jpg, png]
+    --graph-format <format>      Set graph image format (default: pdf)
+    --graph-size <w> <h>         Set graph image size in pixels (requires --graph-path)
+    --direct <True|False>        Print direct/transitive dependency type
+                                 Choose True or False (default: True)
+    --notice                     Print the open source license notice text
 
     🔧 Package Manager Specific Options
     ────────────────────────────────────────────────────────────────────
     Swift, Carthage:
-      -t <token>           GitHub personal access token
+      -t <token>                 GitHub personal access token
 
     Pypi:
-      -a <cmd>             Virtual environment activate command
-                           (ex: 'conda activate myenv')
-      -d <cmd>             Virtual environment deactivate command
-                           (ex: 'conda deactivate')
+      -a <cmd>                   Virtual environment activate command
+                                 (ex: 'conda activate myenv')
+      -d <cmd>                   Virtual environment deactivate command
+                                 (ex: 'conda deactivate')
 
     Gradle, Maven:
-      -c <dir>             Customized build output directory
-                           (default: 'build' for gradle, 'target' for maven)
+      -c <dir>                   Customized build output directory
+                                 (default: 'build' for gradle, 'target' for maven)
 
     Android:
-      -n <name>            Application directory name (default: app)
+      -n <name>                  Application directory name (default: app)
+      --runtime-config <config>  Gradle 9 or later, specify the Runtime Configuration to analyze (default: releaseRuntimeClasspath)
+                                 If releaseRuntimeClasspath is unavailable, specify a Runtime Configuration available in the project.
 
     💡 Examples
     ────────────────────────────────────────────────────────────────────
