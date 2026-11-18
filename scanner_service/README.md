@@ -172,6 +172,8 @@ A file card. Selecting a package opens the same OSS fields, plus **Depends on** 
 #### Identify
 {: .specific-title}
 
+How to save values, apply them to a folder, and handle them after another analysis is collected in [Identify](identify.md).
+
 1. Edit a row directly, then press **Save**. The file card works the same way.
 2. To change several rows together, tick the checkbox at the start of each row and press **Edit**. The checkbox selects every row on the current page.
 
