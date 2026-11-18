@@ -15,6 +15,7 @@ If any identified information is in effect, the [FOSSLight Report](https://fossl
 When the Identify work is finished, upload this report during [FOSSLight Hub Identification](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/).
 
 ## Who can use Identify?
+{: .left-bar-title}
 
 The project creator and an editor added in Settings can use it. Adding and removing editors is done in Settings by the creator or an admin.
 
@@ -24,6 +25,7 @@ Identify cannot be used in these cases.
 - The project is archived.
 
 ## How to use Identify
+{: .left-bar-title}
 
 Press the Dependency, Source, or Binary count on the project page. The result screen below opens.
 
@@ -54,6 +56,7 @@ A search under a column header matches part of the cell and ignores case.
 When several columns have a search, a row has to match all of them.
 
 ## How to read the status
+{: .left-bar-title}
 
 A row's status is whether the values on screen still match the scanner.
 
@@ -68,6 +71,7 @@ The info icon beside a Path or Purl means identified information is saved for th
 ![oss_table](images/7_fl_ss_v2_oss_table.png){: .styled-image}
 
 ## Information you enter in Identify
+{: .left-bar-title}
 
 | Field | What is saved |
 | --- | --- |
@@ -87,7 +91,11 @@ When the scanner finds more than one OSS on a path, the table lists a row for ea
 
 If nothing is selected, or nothing has changed, the button tells you so. The messages are `Select at least one row to edit.` and `There are no changes to save.`
 
-## Identify one package or file
+## How to identify
+{: .left-bar-title}
+
+### Identify one package or file
+{: .specific-title}
 
 1. Click one dependency or file.
 2. Type directly in the table cells. For License, type in the cell or press **...** and choose from the list.
@@ -113,7 +121,8 @@ What the file card shows. The numbers match the screen above.
 
 Selecting a package opens the same OSS fields, plus **Depends on** and **Required by**, so you can follow the dependency links.
 
-## Identify several packages or paths at once (Bulk Edit)
+### Identify several packages or paths at once (Bulk Edit)
+{: .specific-title}
 
 1. Tick the checkbox at the start of each row you want to change together. The checkbox in the table header selects every row on the current page. Rows on another page are not included.
 2. Press **Edit**.
@@ -123,7 +132,8 @@ Selecting a package opens the same OSS fields, plus **Depends on** and **Require
 
 ![edit_oss](images/7_fl_ss_v2_edit.png){: .styled-image}
 
-## Choose a license from the list
+### Choose a license from the list
+{: .specific-title}
 
 In Bulk Edit, **...** on License opens after you tick the License field.  
 In the OSS table and on the file card, press **...** directly.
@@ -137,6 +147,7 @@ In the OSS table and on the file card, press **...** directly.
 A license that is not in the list can be typed into the License field.
 
 ## Folder rule
+{: .left-bar-title}
 
 Identifying a folder row makes that the rule for the folder. Select the folder with By folder so the folder row is in the table. The folder row that holds the rule is marked **folder rule**.
 
@@ -156,6 +167,7 @@ Clearing every rule on a lower folder shows the rule from the higher folder agai
 A folder rule stays in place after another analysis. A change in one file's scanner values does not put the folder rule itself on the warning list. Only a value saved on a file row goes through the re-analysis check below.
 
 ## What is different for Dependency
+{: .left-bar-title}
 
 ![dependency_table](images/7_fl_ss_v2_dependency_table.png){: .styled-image}
 
@@ -167,6 +179,7 @@ A folder rule stays in place after another analysis. A change in one file's scan
 By dep. shows the dependency relationship from the packages under Direct. All dep. lists the packages in the Direct, Transitive, and Root package groups, and shows each package only once even when it would otherwise be repeated. Either view saves the same purl.
 
 ## FOSSLight Report
+{: .left-bar-title}
 
 **FOSSLight Report** on the project page is the file you upload in Hub Identification.
 
@@ -178,6 +191,7 @@ By dep. shows the dependency relationship from the packages under Direct. All de
 When identified values have been saved back to the previous scanned values and no saved record remains, later downloads are the scanner report again.
 
 ## After another analysis
+{: .left-bar-title}
 
 An identified value on a file or package is shown again automatically only when this scan's name, version, license, download location, comment, and exclude values are the same.  
 If any of those values differs, it is not shown as the identified information.  
