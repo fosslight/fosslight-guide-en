@@ -177,14 +177,6 @@ A file card. Selecting a package opens the same OSS fields, plus **Depends on** 
 
     ![edit_oss](images/7_fl_ss_v2_edit.png){: .styled-image}
 
-    1. **OSS Name**
-    2. **OSS Version**
-    3. **License**
-    4. **Download Location**
-    5. **Comment**
-    6. **Exclude**
-    7. **Change**
-
     Tick only the fields you want to change. Those fields are saved immediately on every selected row. Fields you leave unticked stay as they are. To clear a value, tick that field, leave it empty, and press 7, **Change**.
 3. On License, press **...**, filter the list, select one or more licenses, and press **Apply**.
 
