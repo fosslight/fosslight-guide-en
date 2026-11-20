@@ -12,12 +12,14 @@ The information that is saved is OSS Name, OSS Version, License, Download locati
 Identified information is kept apart from the scanned result.  
 When you analyze the same project again, the saved identified information appears by path for a file and by purl for a dependency.  
 If any identified information is in effect, the [FOSSLight Report](https://fosslight.org/hub-guide-en/learn/2_fosslight_report.html) download is the report that includes those values.  
+- Downloaded report name: **fosslight_report_YYMMDD_{part of the UUID}.xlsx**
+
 When the Identify work is finished, upload this report during [FOSSLight Hub Identification](https://fosslight.org/hub-guide-en/tutorial/1_project/2_Identification/).
 
 ## Who can use Identify?
 {: .left-bar-title}
 
-The project creator and an editor added in Settings can use it. Adding and removing editors is done in Settings by the creator or an admin.
+A project Creator or Editor can use it. Editors are added and removed in Settings.
 
 Identify cannot be used in these cases.
 
@@ -47,43 +49,42 @@ A dependency identification is stored on the purl. It is separate from a folder 
 7. **Licenses** : a bar and chips for the licenses found below the selected folder.
 8. **License chip** : the name keeps only paths with that license. The count lists the files with that license.
 9. **Copyright** : for the selected path, you can check how often each copyright appears, and you can copy them.
-9. **Edit** : opens the dialog that edits several rows at once.
-10. **Save** : stores values typed directly into the cells.
-11. **By folder / All files** : By folder lists the folders and files directly inside the selection. Editing a folder row writes the folder rule. All files lists every file below it, at any depth.
-12. **Identified only** : keeps rows whose status is Identified.
+10. **Edit** : opens the dialog that edits several rows at once.
+11. **Save** : stores values typed directly into the cells.
+12. **By folder / All files** : By folder lists the folders and files directly inside the selection. Editing a folder row writes the folder rule. All files lists every file below it, at any depth.
+13. **Identified only** : keeps rows whose status is Identified.
 
 A search under a column header matches part of the cell and ignores case.  
 When several columns have a search, a row has to match all of them.
 
-## How to read the status
+## How to check the status
 {: .left-bar-title}
 
-A row's status is whether the values on screen still match the scanner.
+A row's status depends on whether the values on screen match the analysis result (Scanned).
 
 - **Scanned** : the values on screen match this analysis. On the file tree the dot is blue.
 - **Identified** : the item has been identified. On the file tree the dot is yellow. The file card shows an Identified or Scanned tag.
 - **Partly identified** : this status is only for a folder dot, and the yellow fill is only half the dot. Only some of the files with OSS below that folder are identified, and the folder has no folder rule. Hover the dot to read the status.
-
-The folder dot is yellow when a folder rule covers it, or when every file with OSS below it is identified.  
-A file with no OSS has no dot, and a folder rule does not cover it.  
-The info icon beside a Path or Purl means identified information is saved for that path or package. Hover shows Identified.
+    - The folder dot is yellow when a folder rule covers it, or when every file with OSS below it is identified.
+    - The info icon beside a Path or Purl means identified information is saved for that path or package. Hover shows Identified.
+    - A file with no OSS has no dot, and a folder rule does not cover it.
 
 ![oss_table](images/7_fl_ss_v2_oss_table.png){: .styled-image}
 
 ## Information you enter in Identify
 {: .left-bar-title}
 
-| Field | What is saved |
+| Column | What to enter |
 | --- | --- |
 | OSS Name | The OSS name actually used. |
-| OSS Version | The OSS version actually used (one you can confirm from the tag). |
-| License | The license you confirm. Several licenses are stored separated by commas. Reordering them is not treated as a change. |
+| OSS Version | The OSS version you can confirm from a tag in the repository. |
+| License | The license you confirm. Write several licenses separated by commas. Reordering them is not treated as a change. |
 | Download location | A URL from which the source code can be downloaded. |
 | Comment | A note about the confirmation. |
 | Exclude | When checked, that row is left out of the FOSSLight Report. **Exclude from the report** on the file card is the same flag. |
 | Copyright | The scanned value, so it cannot be edited. A long value is shortened. Hover the cell to see every copyright. When there are three or more lines, click to copy them. |
 
-A field you leave untouched keeps the scanner value when you press **Save**. Clearing a field and saving stores that field as empty. Clearing License stores no license.
+A field you leave untouched keeps the Scanned value when you press **Save**. Clearing a field and saving stores that field as empty.
 
 Saving an identified value back to the previous scanned value deletes the identification, and the row returns to Scanned.
 
@@ -98,36 +99,36 @@ If nothing is selected, or nothing has changed, the button tells you so. The mes
 {: .specific-title}
 
 1. Click one dependency or file.
-2. Type directly in the table cells. For License, type in the cell or press **...** and choose from the list.
-2. Press **Save**.
-3. After the save, the screen reloads and the status updates.
+2. Type the values to change directly on the OSS card. For License, type in the field or press **...** and choose from the list.
+3. Press **Save**.
+4. After the save, the screen reloads and the status updates.
 
 ![file_oss](images/7_fl_ss_v2_file.png){: .styled-image}
 
 What the file card shows. The numbers match the screen above.
 
-1. **Full viewer** : the menu for checking the details of the file. It is separate from the identified values.
+1. **Full viewer** : the menu for checking the details of the file.
 2. **Download** : downloads the file.
-3. **Identified / Scanned** : shows the status of this dependency or file.
-4. **OSS name**
-5. **Version**
+3. **Identified / Scanned** : shows the status of the dependency or file.
+4. **OSS name** : the open source software name.
+5. **Version** : the open source software version.
 6. **License** : type it, or press **...** on the right to open the license list and select one.
-7. **Download location**
-8. **Comment**
-9. **Copyright**
+7. **Download location** : a URL from which the OSS can be downloaded.
+8. **Comment** : the value written during the scan, or a note for information you need.
+9. **Copyright** : the copyright found by the scan. It cannot be edited.
 10. **Exclude from the report** : check it to leave the row out of the report.
-11. **Save**
-12. **Code** : highlights the matched lines. Identified values are not edited here.
+11. **Save** : saves the values you entered.
+12. **Code** : highlights the matched lines. Identified values are not matched again.
 
-Selecting a package opens the same OSS fields, plus **Depends on** and **Required by**, so you can follow the dependency links.
+Selecting a package shows the same OSS card fields, plus **Depends on** and **Required by**, so you can check the dependency relationship.
 
 ### Identify several packages or paths at once (Bulk Edit)
 {: .specific-title}
 
-1. Tick the checkbox at the start of each row you want to change together. The checkbox in the table header selects every row on the current page. Rows on another page are not included.
+1. In the OSS table, tick the checkbox at the start of each row you want to change together. The checkbox in the table header selects every row on the page.
 2. Press **Edit**.
 3. Tick only the fields you want to change. Fields you leave unticked stay as they are on every selected row.
-4. Enter the value for each ticked field. To clear a value, tick that field and leave it empty.
+4. Enter the information to change in each ticked field. To clear a value, tick that field and leave it empty.
 5. Press **Change**. The ticked fields are saved immediately on every selected row.
 
 ![edit_oss](images/7_fl_ss_v2_edit.png){: .styled-image}
@@ -135,23 +136,24 @@ Selecting a package opens the same OSS fields, plus **Depends on** and **Require
 ### Choose a license from the list
 {: .specific-title}
 
-In Bulk Edit, **...** on License opens after you tick the License field.  
-In the OSS table and on the file card, press **...** directly.
+In the OSS table and on the file card, press **...** directly.  
+In Bulk Edit, **...** on License opens after you tick the License checkbox for that field.
 
 1. Type in **Filter the list** to shorten the list.
 2. Select one or more licenses.
-3. Press **Apply**. The chosen licenses are written into the field, separated by commas. Then press **Save** or **Change** to store them.
+   - A license that is not in the list can be typed into the License field.
+3. Press **Apply**. The chosen licenses are written into the field.  
+Then press **Save** or **Change** to store them.
 
 ![license_picker](images/7_fl_ss_v2_license.png){: .styled-image}
-
-A license that is not in the list can be typed into the License field.
 
 ## Folder rule
 {: .left-bar-title}
 
-Identifying a folder row makes that the rule for the folder. Select the folder with By folder so the folder row is in the table. The folder row that holds the rule is marked **folder rule**.
+Identifying a folder row makes that the rule for the folder.  
+With By folder, selecting a folder lists the folders and files under it in the OSS table. The folder row that holds the rule is marked **folder rule**.
 
-The rule applies to every path below that folder that already has OSS, on both Source and Binary.  
+On the Source and Binary tabs, the rule applies to paths below that folder that already have OSS.  
 **A file with no OSS, and a dependency package, are left out of the rule.**
 
 < Order >
@@ -173,10 +175,11 @@ A folder rule stays in place after another analysis. A change in one file's scan
 
 - The row key is **Purl**, not Path. The same purl in several manifests still has one identification.
 - The **dependency badge** is Direct, Transitive, or Root package. It is separate from the identified values, and it cannot be edited.
-- The info icon means that package has been identified.
+- The info icon next to the purl means that package has been identified.
 - It is not based on a path, so there is no folder rule.
 
-By dep. shows the dependency relationship from the packages under Direct. All dep. lists the packages in the Direct, Transitive, and Root package groups, and shows each package only once even when it would otherwise be repeated. Either view saves the same purl.
+By dep. shows the dependency relationship from the packages under Direct.  
+All dep. lists the packages in the Direct, Transitive, and Root package groups, and shows each package only once even when it would otherwise be repeated. Either view saves the same purl.
 
 ## FOSSLight Report
 {: .left-bar-title}
@@ -216,6 +219,7 @@ The dialog title is `적용되지 않은 Identify 결과`. The dialog is in Kore
 
 A record whose path or purl is absent from this analysis stays off the list and out of the warning count. When **the same path or purl** is found in a later analysis, that record comes back.
 
-An analysis that runs only Source, only Binary, or only Dependency leaves identified values of the kinds it did not produce as they are. A Source-only run does not drop values saved on dependencies.
+An analysis that runs only Source, only Binary, or only Dependency leaves identified values of the kinds it did not produce as they are.
+- For example, running only Source does not remove Identified values on dependencies.
 
 A folder rule is not removed by this warning. After another analysis it still applies to paths below that folder that have OSS.
